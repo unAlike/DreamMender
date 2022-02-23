@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Map.gd" type="Script" id=1]
+
+[sub_resource type="GradientTexture" id=2]
+
+[node name="Map" type="StaticBody2D"]
+position = Vector2( 3.71579, 0 )
+scale = Vector2( 1.0185, 1 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 509.852, 566 )
+polygon = PoolVector2Array( -19.6386, 11, -509.575, 12, -505.646, -10, 418.262, -11, 426.117, -564, 445.754, -564, 447.715, 12 )
+
+[node name="Sprite2" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( -181.641, 170 )
+rotation = -3.14054
+scale = Vector2( 0.451458, 21.141 )
+texture = SubResource( 2 )
+offset = Vector2( -317.717, 8.05196 )
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 628.373, -320 )
+rotation = 1.5827
+scale = Vector2( 0.468386, 24 )
+texture = SubResource( 2 )
+offset = Vector2( -317.717, 8.05196 )
