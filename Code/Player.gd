@@ -24,6 +24,11 @@ func get_Input():
 	if Input.is_action_pressed("walk_left"):
 		lastDir = 'left'
 		dir -= speed
+	if Input.is_action_pressed("crouch"):
+		scale.y =.5
+		dir *= .5
+	else:
+		scale.y = 1
 	if dir!=0:
 		vel.x = lerp(vel.x, dir, 0.25)
 	else:
