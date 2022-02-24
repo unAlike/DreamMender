@@ -19,3 +19,8 @@ texture = SubResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2( -21, -19 )
 shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+smoothing_enabled = true

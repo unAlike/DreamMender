@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://BlueRift.gd" type="Script" id=1]
+[ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 34.0147
+
+[node name="BlueRift" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Rift" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rift"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Rift"]
+position = Vector2( 1, -1 )
+scale = Vector2( 0.0990946, 0.181107 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Rift"]
+amount = 100
+speed_scale = 0.76
+randomness = 0.46
+draw_order = 1
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 276.66
+initial_velocity_random = 0.89
+scale_amount = 2.0
+color = Color( 0.12549, 0.933333, 1, 1 )
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Platforms"]
+polygon = PoolVector2Array( -138, -174, 144, -171, 146, -152, -138, -151 )

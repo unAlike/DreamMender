@@ -11,7 +11,7 @@ func _ready():
 	playerS = preload("res://Player.tscn")
 	player = playerS.instance()
 	add_child(player)
-	pass # Replace with function body.
+	$CollisionShape2D/Polygon2D.polygon = $CollisionShape2D.polygon
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
