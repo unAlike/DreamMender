@@ -9,25 +9,51 @@
 gradient = SubResource( 1 )
 
 [node name="Map" type="StaticBody2D"]
-position = Vector2( 3.71579, 0 )
-scale = Vector2( 1.0185, 1 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 284.0 ],
+"_edit_vertical_guides_": [ -287.0, 576.0 ]
+}
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 modulate = Color( 1, 0, 0, 1 )
 self_modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 476.47, 541 )
 polygon = PoolVector2Array( -19.6386, 11, -917.035, 19, -947.472, 970, -641.139, 969, -638.193, 1009, -648.994, 1332, -694.158, 1332, -690.231, 1010, -946.254, 1005.94, -962.308, 1548.19, 1555.23, 1565, 1559.16, 947, 1476.68, 944, 1465.88, 883, 1555.23, 894, 1603.34, -5, 1481.59, -8, 1481.59, -73, 1600.39, -75, 1608.25, -1037, 1647.52, -1041, 1601.37, 1568, 1609.23, 1652, -965.145, 1644, -1029.95, 1641, -955.326, 18, -929.799, -1069, -896.416, -1072, 1283.26, -1047, 1290.13, -1007, 1295.04, -660, 1358.86, -661, 1363.77, -617, 1284.89, -616.921, 1271.48, 382, 1390.28, 386, 1387.33, 453, 1271.48, 446, 1235.15, 1116, 1171.33, 1112, 1238.1, -1000, -869.907, -1017, -916.053, -8, 420, -11, 420, -564, 445.754, -564, 457.536, -18, 793.324, -20, 795.287, 12, 793.324, 538, 765.832, 540, 676.485, 537, 399.464, 534.144, 385.559, 1097.86, 867.943, 1104, 864.998, 1217, 377.025, 1209, 320.079, 1212, 325.334, 533.379, -148.516, 528.493, -153.166, 826, 60.8739, 824, 59.892, 859, 57.9283, 1227, 19.6367, 1227, 17.4531, 859.956, -162.003, 864, -203.24, 864, -196.367, 528, -196.367, 498, 749.141, 500, 754.256, 12, 447.715, 12 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
 color = Color( 0, 0.133333, 1, 1 )
 texture = SubResource( 2 )
 
-[node name="BlueRift" parent="." instance=ExtResource( 2 )]
-position = Vector2( 575.635, 287 )
-objectList = [ NodePath("../Polygon2D") ]
-riftOpen = false
+[node name="Area2D2" type="StaticBody2D" parent="."]
+position = Vector2( -16, -379 )
+scale = Vector2( 1, 1 )
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2( 32.6796, 2 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+position = Vector2( 12, -33 )
+polygon = PoolVector2Array( -97.2018, 70, 48.11, 98, 5.89102, -65 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D2"]
+position = Vector2( 0, -1 )
+offset = Vector2( -249, -201 )
 polygon = PoolVector2Array( 168.173, 234, 303.666, 261, 264.393, 104 )
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+scale = Vector2( 1, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+position = Vector2( -10, 28 )
+offset = Vector2( -250.889, -192 )
+polygon = PoolVector2Array( 168.173, 234, 303.666, 261, 264.393, 104 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -97.2018, 70, 48.11, 98, 5.89102, -65 )
+
+[node name="Box" type="Polygon2D" parent="."]
+position = Vector2( 470, 72 )
+scale = Vector2( 1, 1 )
+offset = Vector2( -470, -72 )
+polygon = PoolVector2Array( 397.922, 71, 483.342, 154, 538.325, 86, 464.687, -1 )
+
+[node name="BlueRift" parent="." instance=ExtResource( 2 )]
+position = Vector2( -403, -371 )
+InputObjectList = [ NodePath("../Area2D"), NodePath("../Box"), NodePath("../Area2D2") ]

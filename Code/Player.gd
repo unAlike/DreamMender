@@ -45,7 +45,6 @@ func _physics_process(delta):
 			vel.y *= .5
 	else:
 		timeOnWall = 0
-	print(lastDir)
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			vel.y = -jumpPower
