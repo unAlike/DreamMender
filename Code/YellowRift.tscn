@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Art/Nyan-Cat-PNG-Transparent.png" type="Texture" id=1]
+[ext_resource path="res://Art/yellowrift.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/YellowRift.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 47.0106
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0.00552486, 0.414365, 0.834254, 0.994475 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.0718232 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 403, 403 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 403, 0, 403, 403 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 806, 0, 403, 403 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 403, 403, 403 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="YellowRift" type="Node2D" groups=["YellowRift"]]
+script = ExtResource( 3 )
+riftOpen = false
+
+[node name="Rift" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rift"]
+shape = SubResource( 1 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Rift"]
+position = Vector2( 0, 1 )
+amount = 100
+randomness = 0.46
+lifetime_randomness = 0.14
+local_coords = false
+draw_order = 1
+texture = ExtResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector2( 0, 0 )
+spread = 0.0
+gravity = Vector2( 1, 0 )
+angular_velocity = 449.18
+angular_velocity_random = 0.54
+orbit_velocity = 0.1
+scale_amount = 0.03
+color = Color( 0.952941, 1, 0.12549, 1 )
+color_ramp = SubResource( 8 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Rift"]
+position = Vector2( 1, -1 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 7 )
+playing = true
+
+[node name="Position2D" type="Position2D" parent="Rift"]

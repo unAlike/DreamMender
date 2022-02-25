@@ -30,6 +30,11 @@ func get_Input():
 					obj.riftOpen = false
 				else:
 					obj.riftOpen = true
+		for obj in get_tree().get_nodes_in_group("YellowRift"):
+			if obj.riftOpen:
+				obj.riftOpen = false
+			else:
+				obj.riftOpen = true
 	if Input.is_action_pressed("crouch"):
 		$Sprite.scale.y = lerp($Sprite.scale.y, 65, .5)
 		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, .5, .5)
