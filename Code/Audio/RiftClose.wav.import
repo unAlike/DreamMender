@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/RiftClose.wav-32a66e4d524c536cc6984f3a26e14d14.sample"
+
+[deps]
+
+source_file="res://Audio/RiftClose.wav"
+dest_files=[ "res://.import/RiftClose.wav-32a66e4d524c536cc6984f3a26e14d14.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

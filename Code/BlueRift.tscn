@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/BlueRift.gd" type="Script" id=1]
 [ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=2]
+[ext_resource path="res://Audio/RiftOpen.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/RiftClose.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 47.0106
@@ -36,3 +38,9 @@ initial_velocity = 276.66
 initial_velocity_random = 0.89
 scale_amount = 2.0
 color = Color( 0.12549, 0.933333, 1, 1 )
+
+[node name="RiftClose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="RiftOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
