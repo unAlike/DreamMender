@@ -24,11 +24,21 @@ func get_Input():
 	if Input.is_action_pressed("walk_left"):
 		lastDir = 'left'
 		dir -= speed
+	if Input.is_action_just_pressed("swap"):
+		for obj in get_tree().get_nodes_in_group("BlueRift"):
+				if obj.riftOpen:
+					obj.riftOpen = false
+				else:
+					obj.riftOpen = true
 	if Input.is_action_pressed("crouch"):
-		scale.y =.5
+		$Sprite.scale.y = lerp($Sprite.scale.y, 65, .5)
+		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, .5, .5)
+		$CollisionPolygon2D.position.y = 30
 		dir *= .5
 	else:
-		scale.y = 1
+		$Sprite.scale.y = lerp($Sprite.scale.y, 130, .5)
+		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, 1, .5)
+		$CollisionPolygon2D.position.y = 0
 	if dir!=0:
 		vel.x = lerp(vel.x, dir, 0.25)
 	else:

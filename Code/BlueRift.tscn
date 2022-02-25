@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://BlueRift.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/BlueRift.gd" type="Script" id=1]
 [ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -9,7 +9,6 @@ radius = 47.0106
 [node name="BlueRift" type="Node2D"]
 position = Vector2( 0, 2 )
 script = ExtResource( 1 )
-riftOpen = false
 
 [node name="Rift" type="Area2D" parent="."]
 

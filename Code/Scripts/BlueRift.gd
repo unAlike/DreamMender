@@ -13,7 +13,7 @@ func _ready():
 	if InputObjectList.size()>0:
 		for obj in InputObjectList:
 			print(obj)
-			var plat = Platform.new(get_node(obj),get_node(obj).position,$Rift/Position2D.global_position)
+			var plat = Platform.new(get_node(obj),get_node(obj).position,$Rift/Position2D.global_position-($Rift/Position2D.global_position-get_node(obj).position).normalized()*200)
 			objectList.append([plat,false])
 	var circle = Shape2D.new()
 	add_child(circle)
@@ -26,11 +26,11 @@ func _process(delta):
 	if riftOpen:
 		$Rift/Particles2D.emitting = true
 		for obj in objectList:
-			obj[0].object.position = lerp(obj[0].object.position, obj[0].startPos, .05)
+			obj[0].object.position = lerp(obj[0].object.position, obj[0].startPos, delta)
 	else:
 		$Rift/Particles2D.emitting = false
 		for obj in objectList:
-			obj[0].object.position = lerp( obj[0].object.position, obj[0].toPos, .05)
+			obj[0].object.position = lerp( obj[0].object.position, obj[0].toPos, delta)
 
 class Platform:
 	var object
