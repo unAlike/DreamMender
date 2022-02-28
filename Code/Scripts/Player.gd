@@ -9,7 +9,7 @@ var gravity = 1000
 var jumpPower = 700
 var vel = Vector2.ZERO
 var numWallJump = 2
-var maxNumWallJump = 2
+var maxNumWallJump = 10
 var timeOnWall = 0
 var lastDir = 'left'
 var threadPath = []
@@ -81,7 +81,7 @@ func _physics_process(delta):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if threadPath.size() < 300:
+	if threadPath.size() < 30:
 		threadPath.append(global_position)
 	else:
 		threadPath.append(global_position)
@@ -90,7 +90,7 @@ func _process(delta):
 	update()
 	
 func _draw():
-#	for l in range(0,threadPath.size()-1):
-#		draw_line(to_local(threadPath[l]), to_local(threadPath[l+1]), Color(255,255,255), 5)
-#		threadPath[l].y+=1
+	for l in range(0,threadPath.size()-1):
+		draw_line(to_local(threadPath[l]), to_local(threadPath[l+1]), Color(255,255,255), 5)
+		threadPath[l].y+=1
 	pass
