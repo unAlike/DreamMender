@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 30.5, 65 )
@@ -31,3 +32,5 @@ position = Vector2( 1, 1 )
 current = true
 zoom = Vector2( 2, 2 )
 smoothing_enabled = true
+smoothing_speed = 3.0
+script = ExtResource( 2 )
