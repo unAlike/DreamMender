@@ -50,7 +50,7 @@ noise = SubResource( 6 )
 [sub_resource type="ShaderMaterial" id=4]
 shader = SubResource( 3 )
 shader_param/scale = Vector2( 18.495, 1.94207 )
-shader_param/y_zoom = 0.25
+shader_param/y_zoom = 0.24679
 shader_param/color = Color( 0.556863, 0.266667, 0.972549, 0.313726 )
 shader_param/distortion_scale = Vector2( 0.066, -0.144 )
 shader_param/intensity = 0.2
@@ -65,7 +65,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -177, 1371 )
+position = Vector2( -781, 1424 )
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 modulate = Color( 1, 0, 0, 1 )
