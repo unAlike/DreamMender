@@ -15,7 +15,6 @@ var lastDir = 'left'
 var threadPath = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass # Replace with function body.
 func get_Input():
 	var dir = 0
@@ -77,7 +76,7 @@ func _physics_process(delta):
 			if lastDir == 'right':
 				vel.x = -jumpPower
 			numWallJump -= 1
-	vel = move_and_slide_with_snap(vel, Vector2.UP, Vector2.UP)
+	vel = move_and_slide(vel, Vector2.UP, true, 4, 30)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=2]
@@ -8,55 +8,12 @@
 [ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=6]
 [ext_resource path="res://Reflect.gd" type="Script" id=7]
 [ext_resource path="res://Art/test_backround.png" type="Texture" id=8]
+[ext_resource path="res://Shaders/Reflect.tres" type="Material" id=9]
 
 [sub_resource type="Gradient" id=1]
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
-
-[sub_resource type="Shader" id=3]
-code = "shader_type canvas_item;
-
-uniform vec2 scale;
-uniform float y_zoom;
-uniform vec4 color : hint_color;
-uniform sampler2D noise;
-uniform vec2 distortion_scale;
-uniform float intensity;
-uniform float speed;
-
-void fragment(){
-	float distortion = texture(noise, UV*scale*distortion_scale + TIME*speed).x;
-	distortion -= .5;
-	
-	float uv_height = SCREEN_PIXEL_SIZE.y / TEXTURE_PIXEL_SIZE.y;
-	vec2 reflected_screenuv = vec2(SCREEN_UV.x - distortion*intensity, SCREEN_UV.y + uv_height * UV.y * scale.y * y_zoom * 2.0);
-	
-	vec4 reflection = texture(SCREEN_TEXTURE, reflected_screenuv);
-	
-	COLOR.rgb = mix(reflection.rbg, color.rgb, color.a);
-	
-	
-	
-}"
-
-[sub_resource type="OpenSimplexNoise" id=6]
-
-[sub_resource type="NoiseTexture" id=5]
-width = 291
-height = 128
-seamless = true
-noise = SubResource( 6 )
-
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
-shader_param/scale = Vector2( 28.6608, 8.32016 )
-shader_param/y_zoom = 0.15749
-shader_param/color = Color( 0.796078, 0.298039, 0.235294, 0.105882 )
-shader_param/distortion_scale = Vector2( 0.1, 0.5 )
-shader_param/intensity = 0.1
-shader_param/speed = 0.2
-shader_param/noise = SubResource( 5 )
 
 [node name="Map" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -184,7 +141,6 @@ InputObjectList = [ NodePath("../StaticBody2D"), NodePath("../StaticBody2D2") ]
 [node name="StaticBody2D" type="StaticBody2D" parent="Rifts/PR"]
 position = Vector2( 1103, 1350 )
 rotation = -0.00382241
-scale = Vector2( 1, 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Rifts/PR/StaticBody2D"]
 position = Vector2( 1.81604, 0.118408 )
@@ -198,7 +154,6 @@ polygon = PoolVector2Array( 981, 1339, 858.556, 1164.29, 1047, 1256 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="Rifts/PR"]
 position = Vector2( 1088, 1357 )
 rotation = 3.03288
-scale = Vector2( 1, 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Rifts/PR/StaticBody2D2"]
 position = Vector2( 1.81604, 0.118408 )
@@ -229,7 +184,7 @@ position = Vector2( -788, 849 )
 InputObjectList = [ NodePath("../Platform") ]
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 4 )
+material = ExtResource( 9 )
 position = Vector2( 3537, 3618.75 )
 scale = Vector2( 23.8189, 8.32016 )
 texture = ExtResource( 6 )
