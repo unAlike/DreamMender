@@ -3,12 +3,13 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 31, 65 )
+extents = Vector2( 30.5, 65 )
 
 [sub_resource type="GradientTexture" id=2]
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 342, 175 )
+collision/safe_margin = 0.1
 script = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
@@ -20,14 +21,6 @@ position = Vector2( -1.4782e-05, 63 )
 scale = Vector2( 0.03, 131.363 )
 texture = SubResource( 2 )
 offset = Vector2( -16.7862, -0.492381 )
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2( 1, -2 )
-amount = 10000
-local_coords = false
-spread = 0.0
-gravity = Vector2( 0, 0 )
-scale_amount = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 1, 1 )

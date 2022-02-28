@@ -12,6 +12,7 @@ var numWallJump = 2
 var maxNumWallJump = 2
 var timeOnWall = 0
 var lastDir = 'left'
+var threadPath = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -76,8 +77,20 @@ func _physics_process(delta):
 			if lastDir == 'right':
 				vel.x = -jumpPower
 			numWallJump -= 1
-	vel = move_and_slide(vel, Vector2.UP)
+	vel = move_and_slide_with_snap(vel, Vector2.UP, Vector2.UP)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if threadPath.size() < 300:
+		threadPath.append(global_position)
+	else:
+		threadPath.append(global_position)
+		threadPath.pop_front()
+	print(threadPath.size())
+	update()
+	
+func _draw():
+#	for l in range(0,threadPath.size()-1):
+#		draw_line(to_local(threadPath[l]), to_local(threadPath[l+1]), Color(255,255,255), 5)
+#		threadPath[l].y+=1
+	pass
