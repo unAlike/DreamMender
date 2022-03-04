@@ -87,9 +87,9 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if threadPath.size() < 30:
-		threadPath.append(global_position)
+		threadPath.append($ThreadPos.global_position)
 	else:
-		threadPath.append(global_position)
+		threadPath.append($ThreadPos.global_position)
 		threadPath.pop_front()
 	update()
 func _draw():
