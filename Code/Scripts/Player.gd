@@ -5,14 +5,16 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var speed = 500
-var gravity = 1000
-var jumpPower = 700
+var gravity = 2000
+var jumpPower = 1000
 var vel = Vector2.ZERO
 var numWallJump = 2
-var maxNumWallJump = 10
+var maxNumWallJump = 1
 var timeOnWall = 0
 var lastDir = 'left'
 var threadPath = []
+var numDJump = 2
+var maxNumDJump = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -69,6 +71,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			vel.y = -jumpPower
 			numWallJump = maxNumWallJump
+			numDJump = maxNumDJump
 		if is_on_wall() and numWallJump>0:
 			vel.y = -jumpPower
 			if lastDir == 'left':
@@ -76,6 +79,9 @@ func _physics_process(delta):
 			if lastDir == 'right':
 				vel.x = -jumpPower
 			numWallJump -= 1
+		elif numDJump > 0:
+			vel.y = -jumpPower
+			numDJump -= 1
 #	if (get_floor_angle(Vector2.UP) > 0.4) and is_on_floor():
 #		vel = Vector2.ZERO
 	print(str(is_on_floor()) + str(" Floor Ange: ") + str(get_floor_angle(Vector2.UP)))
