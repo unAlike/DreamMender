@@ -1,0 +1,42 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform vec2 scale;
+uniform float y_zoom;
+uniform vec4 color : hint_color;
+uniform sampler2D noise;
+uniform vec2 distortion_scale;
+uniform float intensity;
+uniform float speed;
+
+void fragment(){
+	float distortion = texture(noise, UV*scale*distortion_scale + TIME*speed).x;
+	distortion -= .5;
+	
+	float uv_height = SCREEN_PIXEL_SIZE.y / TEXTURE_PIXEL_SIZE.y;
+	vec2 reflected_screenuv = vec2(SCREEN_UV.x - distortion*intensity, SCREEN_UV.y + uv_height * UV.y * scale.y * y_zoom * 2.0);
+	
+	vec4 reflection = texture(SCREEN_TEXTURE, reflected_screenuv);
+	
+	COLOR.rgb = mix(reflection.rbg, color.rgb, color.a);	
+}"
+
+[sub_resource type="OpenSimplexNoise" id=6]
+
+[sub_resource type="NoiseTexture" id=5]
+width = 291
+height = 128
+seamless = true
+noise = SubResource( 6 )
+
+[resource]
+shader = SubResource( 3 )
+shader_param/scale = Vector2( 28.6608, 8.32016 )
+shader_param/y_zoom = 0.15749
+shader_param/color = Color( 0.796078, 0.298039, 0.235294, 0.105882 )
+shader_param/distortion_scale = Vector2( 1, 2 )
+shader_param/intensity = -0.007
+shader_param/speed = 0.2
+shader_param/noise = SubResource( 5 )
