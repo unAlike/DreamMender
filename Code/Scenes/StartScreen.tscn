@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=1]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.133333, 0.133333, 0.133333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="ColorRect" parent="."]
+margin_left = 344.0
+margin_top = 224.0
+margin_right = 1244.0
+margin_bottom = 324.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGameText" type="Label" parent="NewGame"]
+margin_right = 900.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0.341176, 0.52549, 1 )
+text = "NEW GAME
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadGame" type="ColorRect" parent="."]
+margin_left = 344.0
+margin_top = 376.0
+margin_right = 1244.0
+margin_bottom = 476.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadGameText" type="Label" parent="LoadGame"]
+margin_right = 900.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0.341176, 0.52549, 1 )
+text = "LOAD GAME
+"
+align = 1
+valign = 1
+
+[node name="Quit" type="ColorRect" parent="."]
+margin_left = 344.0
+margin_top = 528.0
+margin_right = 1244.0
+margin_bottom = 628.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitText" type="Label" parent="Quit"]
+margin_right = 900.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0.341176, 0.52549, 1 )
+text = "QUIT
+"
+align = 1
+valign = 1
