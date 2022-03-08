@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://PauseMenu.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 30.5, 65 )
@@ -32,3 +33,104 @@ current = true
 zoom = Vector2( 2, 2 )
 smoothing_enabled = true
 smoothing_speed = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.5
+margin_top = -70.0
+margin_right = 41.5
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_right = 83.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Resume"
+flat = true
+
+[node name="Collections" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 24.0
+margin_right = 83.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Collections"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 48.0
+margin_right = 83.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Controls"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 72.0
+margin_right = 83.0
+margin_bottom = 92.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Save"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 96.0
+margin_right = 83.0
+margin_bottom = 116.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Load"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 120.0
+margin_right = 83.0
+margin_bottom = 140.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Main Menu"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Resume" to="CanvasLayer" method="_on_Resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Collections" to="CanvasLayer" method="_on_Collections_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Controls" to="CanvasLayer" method="_on_Controls_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Save" to="CanvasLayer" method="_on_Save_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Load" to="CanvasLayer" method="_on_Load_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/MainMenu" to="CanvasLayer" method="_on_MainMenu_pressed"]

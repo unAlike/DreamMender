@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Reflect.gd" type="Script" id=7]
 [ext_resource path="res://Art/test_backround.png" type="Texture" id=8]
 [ext_resource path="res://Shaders/Reflect.tres" type="Material" id=9]
+[ext_resource path="res://Art/background.png" type="Texture" id=12]
 
 [sub_resource type="Gradient" id=1]
 
@@ -190,5 +191,13 @@ position = Vector2( 3084, 3618.75 )
 scale = Vector2( 25.6418, 8.32016 )
 texture = ExtResource( 6 )
 script = ExtResource( 7 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.588235, 0.588235, 0.588235, 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+show_behind_parent = true
+scale = Vector2( 100, 100 )
+texture = ExtResource( 12 )
 
 [connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]

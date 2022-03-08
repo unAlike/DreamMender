@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/BlueRift.gd" type="Script" id=1]
 [ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=2]
 [ext_resource path="res://Audio/RiftOpen.wav" type="AudioStream" id=3]
 [ext_resource path="res://Audio/RiftClose.wav" type="AudioStream" id=4]
 [ext_resource path="res://Art/Nyan-Cat-PNG-Transparent.png" type="Texture" id=5]
+[ext_resource path="res://Light.gd" type="Script" id=6]
+[ext_resource path="res://Art/light.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 47.0106
@@ -48,3 +50,15 @@ stream = ExtResource( 4 )
 
 [node name="RiftOpen" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+
+[node name="Lights" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="Lights"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+color = Color( 0.0313726, 0, 1, 0.588235 )
+shadow_enabled = true
+shadow_gradient_length = 5.0
+shadow_filter = 5
+shadow_filter_smooth = 15.0

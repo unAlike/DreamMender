@@ -48,14 +48,7 @@ texture = ExtResource( 3 )
 color = Color( 0.27451, 0.27451, 0.27451, 1 )
 
 [node name="Objects" type="Node2D" parent="."]
-
-[node name="Box" type="Sprite" parent="Objects"]
-position = Vector2( 300, 250 )
-texture = ExtResource( 2 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Objects/Box"]
-position = Vector2( 1, -10 )
-occluder = SubResource( 7 )
+position = Vector2( -200, 0 )
 
 [node name="Box2" type="Sprite" parent="Objects"]
 position = Vector2( 750, 250 )
@@ -65,11 +58,27 @@ texture = ExtResource( 2 )
 position = Vector2( 1, -10 )
 occluder = SubResource( 7 )
 
+[node name="Box3" type="Sprite" parent="Objects"]
+position = Vector2( 828, 343 )
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Objects/Box3"]
+position = Vector2( 1, -10 )
+occluder = SubResource( 7 )
+
+[node name="Box4" type="Sprite" parent="Objects"]
+position = Vector2( 626, 310 )
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Objects/Box4"]
+position = Vector2( 1, -10 )
+occluder = SubResource( 7 )
+
 [node name="Lights" type="Node2D" parent="."]
+position = Vector2( 500, 300 )
 script = ExtResource( 5 )
 
 [node name="Light2D" type="Light2D" parent="Lights"]
-position = Vector2( 700, 300 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 color = Color( 1, 1, 0, 0.588235 )
@@ -79,18 +88,6 @@ shadow_filter = 5
 shadow_filter_smooth = 15.0
 
 [node name="Sprite2" type="AnimatedSprite" parent="Lights/Light2D"]
-position = Vector2( 1, -1 )
-scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 6 )
-
-[node name="Light2D2" type="Light2D" parent="Lights"]
-position = Vector2( 250, 300 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
-color = Color( 1, 1, 0, 0.588235 )
-shadow_enabled = true
-
-[node name="Sprite2" type="AnimatedSprite" parent="Lights/Light2D2"]
 position = Vector2( 1, -1 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 6 )
