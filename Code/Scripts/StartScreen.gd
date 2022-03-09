@@ -4,10 +4,10 @@ func _ready():
 	$MenuButtons/StartButton.grab_focus()
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Map.tscn")
+	get_tree().change_scene("res://MainLevel.tscn")
 
 func _on_LoadButton_pressed():
-	var next_level_resource = load("res://Map.tscn")
+	var next_level_resource = load("res://MainLevel.tscn")
 	var next_level = next_level_resource.instance()
 	next_level.load_saved_game = true
 	get_tree().root.call_deferred("add_child", next_level)

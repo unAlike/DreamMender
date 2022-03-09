@@ -86,7 +86,7 @@ func _physics_process(delta):
 			numDJump -= 1
 #	if (get_floor_angle(Vector2.UP) > 0.4) and is_on_floor():
 #		vel = Vector2.ZERO
-	print(str(is_on_floor()) + str(" Floor Ange: ") + str(get_floor_angle(Vector2.UP)))
+
 #	if is_on_floor() and not Input.is_action_just_pressed("jump"):
 #		vel.y=16
 
