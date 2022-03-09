@@ -1,17 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Art/needle.png" type="Texture" id=2]
+[ext_resource path="res://Art/character_sprite_test.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 30.5, 65 )
-
-[sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0, 0.553846 )
-colors = PoolColorArray( 1, 0, 0, 1, 0.211487, 0.373459, 0.859375, 1 )
-
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 2 )
+extents = Vector2( 27, 76.5 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 342, 175 )
@@ -27,13 +21,12 @@ scale = Vector2( 0.658644, 1.95727 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.5, -2 )
+position = Vector2( -12, 0.5 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.4782e-05, 63 )
-scale = Vector2( 0.03, 131.363 )
-texture = SubResource( 4 )
+position = Vector2( 4.61469, -5.36281 )
+texture = ExtResource( 3 )
 offset = Vector2( -16.7862, -0.492381 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
