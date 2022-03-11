@@ -23,11 +23,11 @@ func get_Input():
 	if Input.is_action_pressed("walk_right"):
 		dir += speed
 		lastDir = 'right'
-		$Sprite.flip_h = false
+		$Sprite.flip_h = true
 	if Input.is_action_pressed("walk_left"):
 		lastDir = 'left'
 		dir -= speed
-		$Sprite.flip_h = true
+		$Sprite.flip_h = false
 	if Input.is_action_just_pressed("swap"):
 		for obj in get_tree().get_nodes_in_group("BlueRift"):
 				if obj.riftOpen:
@@ -40,18 +40,26 @@ func get_Input():
 			else:
 				obj.riftOpen = true
 	if Input.is_action_pressed("crouch"):
-		$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
+		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
 		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, .5, .5)
 		$CollisionPolygon2D.position.y = 30
 		dir *= .5
 	else:
-		$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
+		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
 		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, 1, 1)
 		$CollisionPolygon2D.position.y = 0
 	if dir!=0:
 		vel.x = lerp(vel.x, dir, 0.25)
 	else:
 		vel.x = lerp(vel.x, 0, .1)
+		
+	if Input.is_action_just_released("zoomin"):
+		$Camera2D.zoom = $Camera2D.zoom - Vector2(.1,.1)
+		print("IN")
+	if Input.is_action_just_released("zoomout"):
+		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
+		
+		
 
 func _physics_process(delta):
 	get_Input()
