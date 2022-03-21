@@ -6,7 +6,11 @@ extends Node2D
 # var b = "text"
 export var InputObjectList = []
 export var riftOpen = true
+export var riftUnstable = false
+var riftTimer = 0
+export var unstableTimer = 5
 var objectList = []
+
 var lastPlayed = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +25,12 @@ func _ready():
 
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	if delta==1:
+		riftTimer = riftTimer+1
+	if riftUnstable:
+		if int(riftTimer)%unstableTimer == 0:
+			riftTimer=0
+			riftOpen = !riftOpen
 	if riftOpen:
 		$Rift/Particles2D.emitting = false
 		for obj in objectList:
