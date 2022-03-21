@@ -26,6 +26,7 @@ func _process(delta):
 		$Rift/Particles2D.emitting = false
 		for obj in objectList:
 			obj[0].object.position = lerp(obj[0].object.position, obj[0].toPos, delta)
+#			obj[0].object.move_and_slide_with_snap(lerp(obj[0].object.position, obj[0].toPos, delta), Vector2.DOWN*32)
 		if lastPlayed == 0:
 			lastPlayed = 1
 		

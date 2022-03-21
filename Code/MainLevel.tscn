@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Nyan-Cat-PNG-Transparent.png" type="Texture" id=3]
+[ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art/icon.png" type="Texture" id=5]
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=6]
 
 [node name="Map" type="StaticBody2D"]
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 16886, -4380 )
+position = Vector2( 18453, -7569 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["collider"]]
 polygon = PoolVector2Array( -1, 0, -35, -946, -10, -12461, 52, -21, 1059, -72, 1070, -135, 1106, -175, 1150, -162, 1202, -115, 1235, -97, 1246, -74, 1345, -41, 1480, -12, 1484, 56, 1259, 63, 230, 36, 99, 35, 1, 45 )
@@ -43,7 +46,7 @@ polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
 
 [node name="Water" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 765, 639 )
-polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1401, -637, 1711, -657, 13726, -592, 42268, -651, 42268, -39, 1307, -536, 1058, -519 )
+polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1401, -637, 1711, -657, 13726, -592, 42268, -651, 73314, -654, 109761, -654, 109761, -271, 92968, -190, 56485, -170, 1307, -536, 1058, -519 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Water"]
 color = Color( 0.431373, 0.643137, 0.937255, 1 )
@@ -81,11 +84,11 @@ polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, 
 color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
 polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
 
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( 10564, -3011 )
+[node name="Island" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 22054, -5632 )
 polygon = PoolVector2Array( 732, -522, 1045, -620, 1294, -620, 3819, -524, 4064, 1, 3350, 848, 1712, 1359, 718, 1016, -143, 659, -752, -146, -367, -538, 319, -552 )
 
-[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D7"]
+[node name="Polygon2D" type="Polygon2D" parent="Island"]
 color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
 polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
 
@@ -114,7 +117,7 @@ color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
 polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( 14467, -3097 )
+position = Vector2( 9145.5, -2633.46 )
 polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D11"]
@@ -122,7 +125,7 @@ color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
 polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( 15992, -3059 )
+position = Vector2( 10670.5, -2595.46 )
 polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D12"]
@@ -130,7 +133,7 @@ color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
 polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( 18357, -3022 )
+position = Vector2( 13035.5, -2558.46 )
 rotation = -1.5789
 polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
 
@@ -139,9 +142,149 @@ color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
 polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
 
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( 17638, -3074 )
+position = Vector2( 12473, -2586 )
 polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D14"]
 color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
 polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
+
+[node name="Tree2Bottom" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 14007, -2778 )
+polygon = PoolVector2Array( 598, 1079, 351, 261, 789, 539, 742, -769, 741, -870, 782, -2393, 715, -3928, 1330, -3928, 2498, -3978, 3430, -4427, 2845, -3817, 1328, -3758, 1338.09, -2322.72, 1547, -2013, 2562, -2077, 1632, -1864, 2177, -1255, 2722, -1223, 3181, -1362, 3320, -1319, 3608, -1319, 2893, -999, 2263, -956, 1343.12, -1607.66, 1346, -1198, 1430, 517, 2252, -81, 1502, 983, 2193, 3263, 57, 3252 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Tree2Bottom"]
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
+
+[node name="Tree2Top" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 14019, -10111 )
+polygon = PoolVector2Array( 705, 2462, 369, 2046, -223, 2126, -671, 1534, -749, 1641, -788, 3716, -677, 3716, -800, 3787, -810, 4317, -707, 4315, -805, 4466, -829, 5069, -765, 5069, -839, 5260, -910, 5260, -819, 1692, -1487, 1326, -1567, 990, -1919, 990, -2287, 798, -2735, 734, -2319, -194, -2463, -482, -2223, -978, -1359, -1378, -591, -1458, -31, -1810, 641, -1554, 1537, -1666, 3153, -1362, 4193, -738, 5505, -258, 5553, 30, 5137, 350, 4817, 686, 4193, 526, 4097, 814, 3777, 926, 3361, 926, 3137, 1374, 2529, 1278, 1553, 1678, 1217, 2222, 1227, 2669, 703, 2831 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Tree2Top"]
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
+
+[node name="Branch" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 13498, -3024 )
+polygon = PoolVector2Array( 217, -630, 109, -755, 900, -630, 1294, -620, 1307, -536, 819, -513 )
+one_way_collision = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Branch"]
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
+
+[node name="Branch2" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 13498, -3710 )
+polygon = PoolVector2Array( -39, -753, 96, -879, 868, -780, 1272, -852, 1263, -573, 886, -645 )
+one_way_collision = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Branch2"]
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
+
+[node name="Branch3" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 13498, -6069 )
+polygon = PoolVector2Array( 217, -630, 109, -755, 900, -630, 1294, -620, 1307, -536, 819, -513 )
+one_way_collision = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Branch3"]
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+polygon = PoolVector2Array( 2920, 265, 2980, 261, 2831, 90 )
+
+[node name="YellowRift" parent="." instance=ExtResource( 4 )]
+position = Vector2( 20416, -6547 )
+scale = Vector2( 2.26036, 2.20633 )
+InputObjectList = [ NodePath("../Platform") ]
+riftOpen = true
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 23781, -6411 )
+scale = Vector2( 4.09375, 4.45313 )
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 26635, -4431 )
+polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D17"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 25797, -4982 )
+polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D18"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 25737, -3797 )
+polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D19"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 24785, -3374 )
+polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D20"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 23721, -2936 )
+polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D21"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 22756, -2459 )
+polygon = PoolVector2Array( 732, -522, 712, -640, 1045, -620, 1294, -620, 1307, -536, 1058, -519 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D22"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 21784, -2080 )
+polygon = PoolVector2Array( 419, -2084, 1155, -2389, 1477, -2191, 1398, -1739, 1007, -1660, 589, -1807, 391, -1869 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D23"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 20397, -4545 )
+rotation = 1.73931
+polygon = PoolVector2Array( 419, -2084, 1155, -2389, 1477, -2191, 1398, -1739, 1007, -1660, 589, -1807, 391, -1869 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D24"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 21892, 133 )
+polygon = PoolVector2Array( 591, 76, 227, -48, -105, -400, -324, -765, -386, -937, -310, -979, -348, -1603, -305, -1607, 47, -1389, -267, -1393, -243, -979, -104, -823, 100, -574, 422, -422, 705, -320, 1084, -291, 1188.31, -289.683, 1231, -2119, 1375, -2135, 1374.49, -2044.68, 2400, -1409, 1391, -1463, 1364.49, -287.458, 1480, -286, 1904, -348, 2195, -460, 2459, -568, 2727, -716, 2928, -783, 2990, -1372, 3318, -1111, 3030, -1123, 2967, -728, 2815, -476, 2395, -20, 1735, 140, 1031, 140 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D25"]
+position = Vector2( 1019, -572 )
+color = Color( 0.443137, 0.0588235, 0.0588235, 1 )
+offset = Vector2( -1019, 572 )
+
+[node name="Platform" parent="." instance=ExtResource( 6 )]
+position = Vector2( 18435, -7376 )
+scale = Vector2( 5.98206, 3.06692 )

@@ -30,10 +30,10 @@ func get_Input():
 		$Sprite.flip_h = false
 	if Input.is_action_just_pressed("swap"):
 		for obj in get_tree().get_nodes_in_group("BlueRift"):
-				if obj.riftOpen:
-					obj.riftOpen = false
-				else:
-					obj.riftOpen = true
+			if obj.riftOpen:
+				obj.riftOpen = false
+			else:
+				obj.riftOpen = true
 		for obj in get_tree().get_nodes_in_group("YellowRift"):
 			if obj.riftOpen:
 				obj.riftOpen = false
@@ -44,10 +44,10 @@ func get_Input():
 		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, .5, .5)
 		$CollisionPolygon2D.position.y = 30
 		dir *= .5
-	else:
+#	else:
 		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
-		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, 1, 1)
-		$CollisionPolygon2D.position.y = 0
+#		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, 1, 1)dd
+#		$CollisionPolygon2D.position.y = 0
 	if dir!=0:
 		vel.x = lerp(vel.x, dir, 0.25)
 	else:
@@ -64,8 +64,7 @@ func get_Input():
 func _physics_process(delta):
 	get_Input()
 	vel.y += gravity * delta
-	
-	
+
 	if is_on_wall() and numWallJump>0:
 		print(timeOnWall)
 		timeOnWall += delta
@@ -98,7 +97,7 @@ func _physics_process(delta):
 #	if is_on_floor() and not Input.is_action_just_pressed("jump"):
 #		vel.y=16
 
-	vel = move_and_slide_with_snap(vel, Vector2.UP, Vector2.UP, true, 4)
+	vel = move_and_slide_with_snap(vel, Vector2.DOWN*32, Vector2.UP)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
