@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Art/icon.png" type="Texture" id=5]
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/BoatPlatform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Utility/Waypoints.tscn" type="PackedScene" id=8]
 
 [node name="Map" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -289,3 +291,10 @@ offset = Vector2( -1019, 572 )
 [node name="Platform" parent="." instance=ExtResource( 6 )]
 position = Vector2( 18435, -7376 )
 scale = Vector2( 5.98206, 3.06692 )
+
+[node name="Waypoints" parent="." instance=ExtResource( 8 )]
+position = Vector2( 20618, -6312 )
+
+[node name="BoatPlatform" parent="." instance=ExtResource( 7 )]
+position = Vector2( 20736, -6206 )
+waypoints_path = NodePath("../Waypoints")
