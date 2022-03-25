@@ -43,7 +43,6 @@ animations = [ {
 
 [node name="YellowRift" type="Node2D" groups=["YellowRift"]]
 script = ExtResource( 3 )
-riftOpen = false
 
 [node name="Rift" type="Area2D" parent="."]
 
