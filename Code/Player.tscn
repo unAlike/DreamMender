@@ -1,11 +1,10 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://PauseMenu.gd" type="Script" id=2]
 [ext_resource path="res://Art/DW_Character_Jump_Sprite_Sheet.png" type="Texture" id=3]
-[ext_resource path="res://Dialogue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art/DW_Character_Run_Sprite_Sheet.png" type="Texture" id=4]
 [ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=5]
-[ext_resource path="res://Art/DW_Character_Run_Sprite_Sheet.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=49]
 radius = 16.5
@@ -53,62 +52,62 @@ region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 300, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 600, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 900, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 1200, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 1500, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 1800, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 2400, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 2700, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 3000, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=5]
@@ -147,11 +146,6 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 15.0
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": false,
-"name": "jump",
-"speed": 10.0
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": false,
@@ -295,7 +289,7 @@ position = Vector2( -44, -30 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 2
+frame = 7
 playing = true
 centered = false
 
@@ -412,8 +406,6 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Dialogue" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( -33, 44 )
