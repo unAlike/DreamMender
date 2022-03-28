@@ -30,10 +30,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		position += motion
 
-# Use for debugging to draw shape of rectange that matches collision shape
+#Use for debugging to draw shape of rectange that matches collision shape
 #func _draw() -> void:
 #	var shape: = $CollisionShape2D
-#	var extents: Vector2 = shape.shape.extents * 2.0
+#	var extents: Vector2 = shape.shape.extents * 2.0d
 #	var rect: = Rect2(shape.position - extents / 2.0, extents)
 #	draw_rect(rect, Color('fff'))
 

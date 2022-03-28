@@ -48,7 +48,6 @@ func get_next_point_position():
 	activePointIndex = (activePointIndex + 1) % get_child_count()
 	return get_current_point_position()
 
-# If 3+ waypoints are present, draw a line connecting the last waypoint to the first
 func draw_triangle(center:Vector2, angle:float, radius:float) -> void:
 	var points: = PoolVector2Array()
 	var colors: = PoolColorArray([triangleColor])

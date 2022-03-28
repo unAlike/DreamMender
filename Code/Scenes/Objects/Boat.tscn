@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/BoatPlatform.gd" type="Script" id=1]
+
+[node name="Boat" type="KinematicBody2D"]
+motion/sync_to_physics = true
+script = ExtResource( 1 )
+
+[node name="BoatShape" type="CollisionPolygon2D" parent="."]
+position = Vector2( -14982, 351 )
+polygon = PoolVector2Array( 14661, -363, 14883, -376, 14883, -531, 14907, -509, 14907, -378, 15311, -401, 15200, -270, 14741, -263 )
+
+[node name="Timer" type="Timer" parent="."]
