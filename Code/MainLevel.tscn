@@ -22,8 +22,8 @@ scale = Vector2( 2.65753, 2.93093 )
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 394, 234 )
-scale = Vector2( 0.980773, 0.904558 )
+position = Vector2( 416, 97 )
+scale = Vector2( 3.31556, 3.45321 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

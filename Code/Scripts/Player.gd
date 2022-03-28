@@ -4,9 +4,9 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var speed = 500
+var speed = 750
 var gravity = 2000
-var jumpPower = 1000
+var jumpPower = 1500
 var vel = Vector2.ZERO
 var numWallJump = 2
 var maxNumWallJump = 1
@@ -86,11 +86,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if GroundCheck():
 			state_machine.travel("jump")
-			$AnimationPlayer.play("jump")
 			vel.y = -jumpPower
 			numWallJump = maxNumWallJump
 			numDJump = maxNumDJump
 		if is_on_wall() and numWallJump>0:
+			
 			vel.y = -jumpPower
 			if lastDir == 'left':
 				vel.x = jumpPower
@@ -98,6 +98,9 @@ func _physics_process(delta):
 				vel.x = -jumpPower
 			numWallJump -= 1
 		elif numDJump > 0:
+			print("DJ")
+			$Sprite.frame = 0
+			$Sprite.playing = true
 			vel.y = -jumpPower
 			numDJump -= 1
 	if GroundCheck() and dir == 0:
@@ -108,12 +111,13 @@ func _physics_process(delta):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if threadPath.size() < 30:
-		threadPath.append($ThreadPos.global_position)
-	else:
-		threadPath.append($ThreadPos.global_position)
-		threadPath.pop_front()
-	update()
+#	if threadPath.size() < 30:
+#		threadPath.append($ThreadPos.global_position)
+#	else:
+#		threadPath.append($ThreadPos.global_position)
+#		threadPath.pop_front()
+#	update()
+	pass
 func _draw():
 	for l in range(0,threadPath.size()-1):
 		draw_line(to_local(threadPath[l]), to_local(threadPath[l+1]), Color(255,255,255), 5)
