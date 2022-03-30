@@ -16,5 +16,6 @@ func _ready():
 
 func _process(delta):
 	for c in get_tree().get_nodes_in_group("collider"):
+		c.get_child(0).global_position = c.global_position
 		c.get_child(0).polygon = c.polygon
 	

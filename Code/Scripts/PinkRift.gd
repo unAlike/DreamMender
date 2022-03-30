@@ -30,9 +30,10 @@ func _input(event):
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for obj in objectList:
-		var newloc = $Rift/Position2D.global_position + Vector2(cos(hexRotation), sin(hexRotation)) * ($Rift/Position2D.global_position-obj[0].global_position).length()
-		obj[0].global_position = lerp(obj[0].global_position, newloc, .1)
-		obj[0].rotation_degrees = lerp(obj[0].rotation_degrees, obj[1], .05)
+#		var newloc = $Rift/Position2D.global_position + Vector2(cos(hexRotation), sin(hexRotation)) * ($Rift/Position2D.global_position-obj[0].global_position).length()
+#		obj[0].global_position = lerp(obj[0].global_position, newloc, .1)
+#		obj[0].rotation_degrees = lerp(obj[0].rotation_degrees, obj[1], .05)
+		obj[0].rotation_degrees -= .3
 	$Rift.rotation_degrees = lerp($Rift.rotation_degrees, hexRotation, .05)
 		
 func RotateClockwise():

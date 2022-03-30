@@ -4,17 +4,17 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var speed = 750
+var speed = 500
 var gravity = 2000
-var jumpPower = 1500
+var jumpPower = 1000
 var vel = Vector2.ZERO
 var numWallJump = 2
-var maxNumWallJump = 1
+var maxNumWallJump = 10
 var timeOnWall = 0
 var lastDir = 'left'
 var threadPath = []
 var numDJump = 2
-var maxNumDJump = 2
+var maxNumDJump = 20
 var dir = 0
 var state_machine
 var lastGround
@@ -42,15 +42,7 @@ func get_Input():
 				obj.riftOpen = false
 			else:
 				obj.riftOpen = true
-	if Input.is_action_pressed("crouch"):
-		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
-		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, .5, .5)
-		$CollisionPolygon2D.position.y = 30
-		dir *= .5
-#	else:
-		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
-#		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, 1, 1)dd
-#		$CollisionPolygon2D.position.y = 0
+
 	if dir!=0:
 		vel.x = lerp(vel.x, dir, 0.25)
 	else:
@@ -59,7 +51,7 @@ func get_Input():
 	if Input.is_action_just_released("zoomin") and $Camera2D.zoom > Vector2(.5,.5):
 		$Camera2D.zoom = $Camera2D.zoom - Vector2(.1,.1)
 		print("IN")
-	if Input.is_action_just_released("zoomout") and $Camera2D.zoom < Vector2(2,2):
+	if Input.is_action_just_released("zoomout") and $Camera2D.zoom < Vector2(200,200):
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 		
 		
@@ -103,6 +95,8 @@ func _physics_process(delta):
 			$Sprite.playing = true
 			vel.y = -jumpPower
 			numDJump -= 1
+	if vel.y>1200:
+		vel.y = 1200
 	if GroundCheck() and dir == 0:
 		vel.x = 0
 		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP, true)

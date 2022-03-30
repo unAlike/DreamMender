@@ -2,89 +2,232 @@
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Art/backround_rough_02.png" type="Texture" id=3]
-[ext_resource path="res://Art/2wnfdtan9dw41.png" type="Texture" id=4]
-[ext_resource path="res://Art/tree_1-left.png" type="Texture" id=5]
-
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.609929 )
-colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/icon.png" type="Texture" id=4]
+[ext_resource path="res://Art/DW_Character_Jump_Sprite_Sheet.png" type="Texture" id=5]
+[ext_resource path="res://Rifts/PinkRift.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=7]
 
 [node name="Map" type="StaticBody2D"]
+position = Vector2( 48, -503 )
 script = ExtResource( 1 )
 
-[node name="BackroundRough02" type="Sprite" parent="."]
-position = Vector2( 9747, -1494 )
-scale = Vector2( 2.65753, 2.93093 )
-texture = ExtResource( 3 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 416, 97 )
-scale = Vector2( 3.31556, 3.45321 )
+position = Vector2( 32665, 4213 )
+scale = Vector2( 0.980773, 0.904558 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -16185, 1114 )
+polygon = PoolVector2Array( 16464, -776, 16435, -1142, 16495, -2681, 15974, -31416, 16221, -1486, 16247, -665, 16329, -662, 16443, -643, 16749, -647, 17663, -648, 17631, -774, 17291, -758, 16723, -773 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.2, 0.1 )
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D19"]
+color = Color( 0, 0, 0, 1 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 2211, -47 )
-scale = Vector2( 9.15831, 7.59232 )
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -16185, 4189 )
+polygon = PoolVector2Array( 16700, -1925, 16160, -1817, 16221, -1486, 17376, 41512 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D20"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -15602, 933 )
+polygon = PoolVector2Array( 17663, -648, 17631, -774, 17291, -758, 17279, -657 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D21"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -14958, 775 )
+polygon = PoolVector2Array( 17663, -648, 17631, -774, 17291, -758, 17279, -657 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D22"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -13686, 1127 )
+polygon = PoolVector2Array( 17697, -649, 18669, -649, 18722, -1046, 18752, -1237, 18773, -1938, 19013, -2025, 19256, -2090, 18858, -2074, 18736, -2012, 18653, -2001, 18589, -1269, 18281, -1249, 17641, -873, 17613, -1137, 17257, -1117, 17229, -845, 17173, -661 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D23"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -12961, 340 )
+polygon = PoolVector2Array( 17606, -621, 17611, -767, 17647, -1191, 17592, -1279, 17998, -1522, 17952, -1716, 17986, -2225, 17696, -1466, 17611, -1579, 17550, -1255, 17414, -1294, 17289, -1316, 17564, -1172, 17545, -633 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D24"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2( 6192, -675 )
+
+[node name="YellowRift" parent="Node2D2" instance=ExtResource( 3 )]
+InputObjectList = [ NodePath("../StaticBody2D") ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D2"]
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Node2D2/StaticBody2D" groups=["collider"]]
+polygon = PoolVector2Array( -195, -224, -185, -313, 232, -296, 272, -210 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D2/StaticBody2D/CollisionPolygon2D25"]
+position = Vector2( 1, 1 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -7861, -272 )
+polygon = PoolVector2Array( 17663, -648, 18783, -662, 18707, -805, 18272, -805, 17805, -779, 17631, -774, 17291, -758, 17279, -657 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D28"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="Icon" type="Sprite" parent="CollisionPolygon2D28"]
+position = Vector2( 17973, -1072 )
+scale = Vector2( 9.53125, 8.64063 )
 texture = ExtResource( 4 )
-normal_map = SubResource( 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -79, 462, 1951, 439, 2005, 487, 1998, 549, 1850, 599, 25, 617, -121, 576, -121, 496 )
+[node name="YellowRift4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 11443, -991 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-position = Vector2( 2107, -371 )
-polygon = PoolVector2Array( -79, 462, 847, 442, 906, 493, 883, 558, 753, 609, 25, 617, -121, 576, -121, 496 )
+[node name="YellowRift5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15582, -2434 )
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 3413, 1036, 3373, 225, 3257, 31, 3174, -25, 3179, -75, 3317, -143, 3852, -151, 4005, -113, 4109, -98, 4320, -145, 4572, -135, 4789, -123, 4907, -647, 5621, -639, 5663, -387, 5724, -413, 6152, -632, 6605, -629, 6647, -626, 6653, -584, 6368, -599, 6350, -278, 6899, -281, 6812, -764, 6671, -773, 6674, -1183, 6755, -1183, 6728, -1342, 6572, -1339, 6575, -1384, 6720, -1387, 6679, -1609, 6805, -1821, 7056, -1824, 6967, -1641, 6967, -1133, 7115, -423, 7392, 4, 7358, 274, 7470, 516, 7488, 664, 7421, 799, 7317, 853, 5222, 947, 5151, 902, 5030, 902, 4956, 845, 4849, 712, 4798, 596, 4736, 370, 4750, 254, 4795, 181, 4874, 132, 4795, 79, 4243, 25, 4193, 144, 4263, 161, 4354, 212, 4391, 291, 4393, 415, 4408, 599, 4441, 806, 4509, 1035 )
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -3002, -289 )
+polygon = PoolVector2Array( 17663, -648, 17663, -749, 16917, -758, 16913, -648 )
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 7044, -1773, 7169, -1700, 7555, -1534, 7495, -1521, 7382, -1578, 7152, -1689, 7022, -1754 )
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D29"]
+color = Color( 0, 0, 0, 1 )
 
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 6154, -764, 6363, -780, 6383, -792, 6576, -789, 6570, -1011, 6354, -1014, 6344, -1154, 6464, -1154, 6457, -1192, 6349, -1196, 6300, -1568, 6225, -1875, 6208, -1865, 6198, -1334, 6070, -1430, 6112, -1248, 6171, -1011 )
+[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -1658, -1507 )
+polygon = PoolVector2Array( 17663, -648, 17663, -749, 16917, -758, 16913, -648 )
 
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 11433, -2408, 11655, -2486, 12488, -2483, 12512, -2003, 12458, -1988, 12449, -2015, 12281, -2036, 12191, -2195, 12095, -2198, 11930, -2072, 11759, -2036, 11738, -1728, 11969, -1701, 12074, -1746, 12251, -1747, 12249, -1727, 12241, -1726, 12254, -1464, 12551, -1452, 12557, -1233, 12359, -1260, 12365, -1233, 12212, -1239, 12200, -1164, 12454, -1095, 12438, -764, 12428, -765, 12442, -1083, 12362, -1101, 12362, -611, 12156, -611, 12156, -504, 11541, -508, 11439, -490, 11265, -996, 11298, -1020, 11313, -981, 11346, -1272, 11229, -1287, 11253, -1341, 11337, -1329, 11421, -1344, 11508, -1979, 11406, -2090 )
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D30"]
+color = Color( 0, 0, 0, 1 )
 
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 12593, 1035, 12588, 501, 12184, 505, 12175, 442, 12139, 438, 12144, 510, 11475, 510, 11506, 451, 11470, 429, 11452, -231, 11403, -236, 11187, -936, 11138, -914, 11214, -604, 11172, -468, 10424, -389, 10393, -788, 10868, -855, 10884, -689, 10945, -685, 10918, -905, 10186, -797, 10133, -805, 10157, -1316, 10107, -1312, 10057, -1200, 9985, -1176, 9952, -1100, 10052, -1114, 10033, -800, 10007, -781, 9940, -941, 9812, -919, 9833, -879, 9852, -891, 9902, -734, 9809, -814, 9874, -726, 9698, -674, 9643, -681, 9688, -600, 9688, -544, 9493, -544, 9495, -496, 9686, -488, 9664, 113, 9137, 201, 9173, -64, 9131, 88, 9135, -204, 9289, -354, 9431, -368, 9283, -388, 9170, -331, 9188, -362, 9139, -323, 9130, -346, 9125, -442, 9110, -420, 9097, -594, 9072, -384, 9025, -333, 8960, -319, 8942, -153, 8914, -160, 8897, -157, 8874, -146, 8857, -99, 8834, 39, 8817, 45, 8823, -28, 8810, -61, 8784, -76, 8751, -77, 8733, -61, 8687, -302, 8723, -38, 8715, -6, 8703, 89, 8603, 883, 8591, 888, 8597, 712, 8571, 669, 8568, 492, 8585, 457, 8595, 389, 8602, 256, 8603, 125, 8594, -105, 8582, -141, 8559, -159, 8534, -161, 8506, -150, 8476, -128, 8462, -92, 8471, 16, 8457, 74, 8261, 88, 8260, 109, 8233, 149, 8454, 141, 8477, 845, 8457, 869, 8455, 930, 8419, 954, 8402, 990, 8368, 1000, 8349, 1035 )
+[node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -102, 1954 )
+polygon = PoolVector2Array( 24738, -716, 24886, -379, 24714, 1134, 24818, 1527, 27408, 1581, 28580, 1561, 29156, 1726, 29512, 1789, 30001, 1926, 30211, 1867, 30305, 1803, 30490, 1746, 31041, 1530, 31341, 1439, 31827, 1405, 32212, 1518, 32332, 1589, 32393, 1791, 31953, 2185, 31985, 2281, 32409, 2009, 32602, 1820, 32754, 2148, 33496, 1762, 33651, 1349, 33717, 1458, 33760, 1591, 33770, 1263, 33812, 1154, 34209, 1040, 34254, 1146, 34275, 1386, 34312, 1121, 34365, 1048, 34978, 933, 36051, 904, 36333, 859, 36336, 1209, 36041, 1206, 36041, 1286, 36565, 1276, 37189, 1360, 37936, 1344, 37831, -991, 37771, -1267, 37589, -1442, 37056, -1469, 27873, -1474, 27901, -1600, 25767, -1612, 25487, -1925, 25413, -2352, 25673, -2352, 25477, -2492, 25365.6, -2745.17, 25137.3, -4286.36, 25439, -4543, 26763, -4436, 26432, -4735, 25140, -4714, 24926, -4318, 24460, -4289, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20633, -1350, 20388, -955, 18680, -948, 18489, -967, 18326, -1071, 18006, -1284, 18305, -959, 17832.3, -930.582, 17614, -1057, 17528, -1306, 17456, -1567, 17453, -2075, 17687, -1927, 17493, -2163, 17519, -2371, 17621, -2380, 17691, -2269, 17736, -2175, 17731.3, -2352.58, 17775, -2417, 17924.3, -2441.03, 18113, -2443, 18105, -2509, 17968, -2528, 17859, -2642, 17845, -2544, 17606, -2514, 17513, -2540, 17487, -2590, 17480, -3049, 17706, -3275, 17493, -3269, 17440, -3709, 17451, -4152, 17310, -4181, 16762, -4331, 16612, -4274, 17316, -4020, 16917, -758, 16913, -648, 23555.7, -672.565, 23579, 1298, 23615, 1742, 23735, 2173, 23704, 2571, 23490, 10737, 23624, 10732, 43632, 10752, 43626, 10638, 23624, 10612, 23960, 2315, 23891, 1982, 23791, -623 )
 
-[node name="PLATFORM TODO" type="CollisionPolygon2D" parent="."]
-position = Vector2( -1689.08, -3.05176e-05 )
-scale = Vector2( 1.1434, 1 )
-polygon = PoolVector2Array( 11516, -204, 11534, -217, 12113, -218, 12090, -172, 12112, -146, 11515, -145 )
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D31"]
+color = Color( 0, 0, 0, 1 )
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 12174, -229, 12351, -230, 12384, -325, 12415, -252, 12468, -268, 12486, -355, 12513, -284, 12531, -422, 12545, -291, 12594, -266, 12610, -315, 12634, -283, 12693, -274, 12711, -309, 12725, -281, 12804, -250, 12805, -239, 12844, -241, 12849, -233, 12918, -228, 12917, -248, 12950, -266, 12958, -246, 12959, -280, 12975, -300, 12994, -230, 13004, -230, 13016, -287, 12986, -321, 13015, -312, 13015, -446, 12736, -445, 12734, -457, 12686, -468, 12694, -523, 12736, -509, 13013, -510, 13012, -566, 12866, -574, 12885, -586, 12667, -600, 12667, -625, 12686, -613, 12848, -616, 12851, -838, 12679, -840, 12679, -1043, 12615, -1044, 12615, -1052, 12679, -1052, 12676, -1188, 12688, -1188, 12689, -1382, 12678, -1380, 12680, -1403, 12685, -1402, 12684, -1398, 12847, -1396, 12847, -1450, 12904, -1453, 12915, -1440, 13085, -1509, 13101, -1551, 13087, -1609, 13022, -1589, 13022, -1643, 13077, -1645, 13026, -1883, 13043, -1897, 13026, -1967, 13105, -1968, 13104, -1981, 13124, -1956, 13725, -2198, 13847, -2234, 13819, -2201, 13734, -2139, 13762, -2061, 14200, -2058, 14152, -2005, 14155, -863, 14114, -835, 14116, -1991, 13786, -1987, 13792, -1969, 13758, -1986, 13698, -1985, 13697, -2014, 13621, -2048, 13131, -1718, 13138, -1654, 13251, -1683, 13256, -1653, 13143, -1623, 13161, -1539, 13259, -1581, 13263, -1539, 13155, -1467, 13264, -284, 14302, -284, 14302, -1126, 14340, -1168, 14339, -284, 14613, -280, 14612, 103, 16860, 106, 16854, -400, 16388, -404, 16382, -478, 16861, -474, 16873, -919, 16750, -921, 16742, -1027, 16916, -1021, 16909, -784, 17187, -779, 17189, -735, 16913, -741, 16911, -461, 17303, -468, 17322, -430, 16918, -419, 16983, 100, 17886, 104, 18306, 458, 18308, 1037, 12800, 1032, 12786, 6, 12179, -4 )
+[node name="YellowRift" parent="CollisionPolygon2D31" instance=ExtResource( 3 )]
+position = Vector2( 24155, -1938 )
 
-[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 12337, -1747, 12374, -1566, 12833, -1564, 12859, -1743, 12770, -2201, 12947, -2185, 12947, -2168, 13081, -2168, 13080, -2153, 13594, -2291, 13574, -2268, 14532, -2608, 14516, -2520, 14443, -2495, 14464, -2488, 14079, -2272, 14056, -2284, 14069, -2269, 13980, -2218, 14093, -2256, 14171, -2209, 14248, -2233, 14202, -2292, 14295, -2323, 14295, -1664, 14327, -1698, 14328, -2336, 14493, -2392, 14506, -2443, 14591, -2473, 14572, -2624, 14621, -2734, 13706, -2368, 13574, -2339, 13448, -2305, 13120, -2293, 13074, -2364, 13064, -2492, 13020, -2486, 12805, -3662, 12383, -3345, 11699, -3377, 11675, -3313, 11686, -3268, 11883, -3269, 12020, -2995, 12317, -2958, 12313, -2711, 12292, -2686, 12417, -2668, 12420, -2691, 12582, -2650, 12564, -1933, 12449, -1929, 12445, -1750 )
+[node name="PinkRift" parent="CollisionPolygon2D31" instance=ExtResource( 6 )]
+position = Vector2( 38093, 2155 )
 
-[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 7931, -1428, 8033, -1398, 8127, -1380, 8225, -1372, 8215, -1340, 7921, -1400 )
+[node name="YellowRift2" parent="CollisionPolygon2D31" instance=ExtResource( 3 )]
+position = Vector2( 35580, 2466 )
 
-[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 7709, -1481, 7800, -1473, 7791, -1450, 7708, -1456 )
+[node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 1292, 1394 )
+polygon = PoolVector2Array( 17193, -748, 17446, -695, 18478, -727, 19197, -1400, 19909, -1672, 20596, -1686, 21287, -1399, 21718, -1044, 22109, -1179, 22210, -1727, 22173, -2133, 22227, -2864, 22409, -3670, 22575, -4262, 22777, -4706, 23422, -5390, 22258, -5235, 21602, -2450, 20058, -2720, 18488, -1968, 17437, -990, 17206, -3742, 16979, -4136, 16762, -4331, 16612, -4274, 16372, -4336, 16252, -4149, 16939, -3689, 16908, -3143, 16492, -3152, 16861, -2906, 17006, -2314, 16434, -2305, 16666, -2217, 16787, -2155, 16945, -2083, 17053, -1979, 16978, -1777, 16680, -1675, 16689, -1539, 16772, -1635, 16916, -1677, 16899, -1498, 16729, -1394, 16674, -1413, 16716, -1364, 16872, -1371, 17056, -1277, 17133, -1055 )
 
-[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 8695, -1295, 8975, -1295, 8974, -1264, 8695, -1266 )
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D32"]
+color = Color( 0, 0, 0, 1 )
 
-[node name="BOAT TODO" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 14661, -363, 14883, -376, 14883, -531, 14907, -509, 14907, -378, 15311, -401, 15200, -270, 14741, -263 )
+[node name="YellowRift" parent="CollisionPolygon2D32" instance=ExtResource( 3 )]
+position = Vector2( 16288, -2573 )
 
-[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 16464, -776, 16460, -722, 16686, -716, 16686, -780 )
-
-[node name="Tree1-left" type="Sprite" parent="."]
-position = Vector2( 6709, -893 )
-scale = Vector2( 1.99035, 2.20571 )
+[node name="DwCharacterJumpSpriteSheet" type="Sprite" parent="."]
+position = Vector2( 17572, -612 )
+scale = Vector2( 0.229748, -0.15863 )
 texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 406, -420 )
+polygon = PoolVector2Array( 17375, -637, 17464, -681, 16958, -726, 16952, -639 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D33"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="DwCharacterJumpSpriteSheet3" type="Sprite" parent="."]
+position = Vector2( 17715, 700.999 )
+rotation = -2.35134
+scale = Vector2( 0.679037, 0.609809 )
+texture = ExtResource( 5 )
+
+[node name="DwCharacterJumpSpriteSheet2" type="Sprite" parent="."]
+position = Vector2( 18268, -532 )
+rotation = -1.55904
+scale = Vector2( 0.229748, -0.15863 )
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D34" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 6770, 1993 )
+polygon = PoolVector2Array( 17663, -648, 17663, -749, 16917, -758, 16913, -648 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D34"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="PinkRift" parent="." instance=ExtResource( 6 )]
+position = Vector2( 24080, -1211 )
+
+[node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 21517, -1029 )
+rotation = 0.325696
+scale = Vector2( 1.00388, 1.54874 )
+polygon = PoolVector2Array( 17013, -288.121, 17180.4, -332.244, 16904.5, -787.075, 16753.4, -764.229 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D35"]
+position = Vector2( 17304.8, -701.686 )
+rotation = 2.70103
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( -17312.5, 716.467 )
+
+[node name="DwCharacterIdleSpriteSheet" type="Sprite" parent="."]
+position = Vector2( 35979, 3155 )
+scale = Vector2( 0.0348633, 0.235114 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D36" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 18224, 4705 )
+polygon = PoolVector2Array( 17520, -644, 17487, -725, 17076, -745, 17056, -667 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D36"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="YellowRift6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 35594, 3138 )
+
+[node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 17594, 3871 )
+polygon = PoolVector2Array( 17520, -644, 17487, -725, 17076, -745, 17056, -667 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D37"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="CollisionPolygon2D38" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( 20492, 4786 )
+scale = Vector2( 1, 1.00741 )
+polygon = PoolVector2Array( 17520, -644, 17487, -725, 17076, -745, 15567, -660.105, 15577, -444.703, 15259, -459.592, 15254, -294.814, 14740, -299.777, 14267, -289.851, 14065, -434.776, 13939, -714.701, 13899, -1297.38, 13763, -925.14, 13722, -660.105, 13622, -639.26, 13526, -964.846, 13480, -1155.43, 13428, -920.177, 13276, -716.686, 12139, -355.365, 12065, -108.198, 11946, 144.926, 11827, 313.674, 11669, 470.512, 11420, 593.599, 11103, 656.135, 11008, 563.82, 11086, -0.992676, 11009, -11.9116, 10815, 639.26, 10526, 548.93, 10289, 392.093, 10136, 172.72, 9891, -482.423, 10130, -656.135, 10227, -692.863, 10341, -715.693, 10409, -842.751, 9958, -786.171, 9405, -533.048, 4258, -674.002, 4346, 3816.7, 11354, 3812.73, 17290, 3638.03 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D38"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="PinkRiftCirclePuzzle" type="Node2D" parent="."]
+position = Vector2( 31530, 4403 )
+scale = Vector2( 1, 1 )
+
+[node name="PinkRift2" parent="PinkRiftCirclePuzzle" instance=ExtResource( 6 )]
+InputObjectList = [ NodePath("../StaticBody2D") ]
+
+[node name="StaticBody2D" type="KinematicBody2D" parent="PinkRiftCirclePuzzle"]
+position = Vector2( 1, 1 )
+motion/sync_to_physics = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PinkRiftCirclePuzzle/StaticBody2D" groups=["collider"]]
+position = Vector2( -31640, -4365 )
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( 31948.4, 5072.9, 32098.4, 4961.9, 32201.4, 4854.9, 32279.4, 4763.9, 32353.4, 4613.9, 32424.4, 4404.9, 32446.4, 4280.9, 32398.4, 4009.9, 32281, 3819, 32073.4, 3661.9, 31897.4, 3608.9, 31721, 3579, 31541.4, 3569.9, 31343, 3582, 31169, 3654, 30924, 3876, 30818, 4100, 30782, 4274, 30779, 4456, 30813, 4658, 30933.4, 4873.9, 31067, 4979, 31230, 5081, 31381, 5122, 31517, 5141, 31747, 5190, 31748, 5126, 31748, 5063, 31619, 5048, 31531, 5042, 31400, 5015, 31218, 4930, 31079, 4847, 31144, 4744, 31342, 4515, 31294, 4395, 31307, 4275, 31339, 4195, 31422, 4133, 31550, 4088, 31662, 4083, 31828, 4104, 31924, 4184, 32001, 4299, 31991, 4483, 31884, 4627, 31745, 4665, 31604, 4673, 31487, 4653, 31426, 4610, 31379, 4663, 31458, 4708, 31596, 4746, 31750, 4740, 31855, 4713, 31969, 4657, 32055, 4587, 32111, 4483, 32103, 4323, 32033, 4182, 31956, 4075, 31868, 4003, 31740, 3987, 31636, 3981, 31484, 3992, 31355, 4029, 31278, 4088, 31201, 4187, 31182, 4334, 31189, 4532, 31036, 4678, 30948, 4610, 30888, 4391, 30909, 4167, 30984, 4002, 31133, 3840, 31277, 3750, 31431.4, 3687.9, 31597.4, 3676.9, 31804.4, 3699.9, 32039.4, 3744.9, 32220.4, 3885.9, 32308.4, 4078.9, 32336.4, 4202.9, 32341.4, 4323.9, 32310.4, 4506.9, 32246.4, 4651.9, 32163.4, 4766.9, 32043.4, 4873.9, 31958.4, 4956.9, 31901.4, 5006.9 )
+
+[node name="Polygon2D" type="Polygon2D" parent="PinkRiftCirclePuzzle/StaticBody2D/CollisionPolygon2D"]
+position = Vector2( 31640.4, 4364.9 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 32450, 13700 )
+scale = Vector2( -281.203, 30.4493 )
+texture = ExtResource( 4 )

@@ -1,15 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Rifts/PinkRift.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=6]
+[ext_resource path="res://Art/caster.png" type="Texture" id=6]
 [ext_resource path="res://Reflect.gd" type="Script" id=7]
 [ext_resource path="res://Art/test_backround.png" type="Texture" id=8]
 [ext_resource path="res://Shaders/Reflect.tres" type="Material" id=9]
-[ext_resource path="res://Art/background.png" type="Texture" id=12]
 
 [sub_resource type="Gradient" id=1]
 
@@ -36,7 +35,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1773, -1176 )
+position = Vector2( 7984, 1353 )
 
 [node name="Plat" type="CollisionPolygon2D" parent="."]
 modulate = Color( 1, 0, 0, 1 )
@@ -135,9 +134,10 @@ position = Vector2( 110.8, -1037 )
 polygon = PoolVector2Array( -126, 1178, -126, 878, -92, 878, -90, 1174 )
 
 [node name="PR" type="Node2D" parent="Rifts"]
+position = Vector2( 45, 5 )
 
 [node name="PinkRift" parent="Rifts/PR" instance=ExtResource( 5 )]
-position = Vector2( 1100, 1350 )
+position = Vector2( 1096, 1355 )
 InputObjectList = [ NodePath("../StaticBody2D"), NodePath("../StaticBody2D2") ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Rifts/PR"]
@@ -185,19 +185,25 @@ polygon = PoolVector2Array( -159, 79, 234, 86, 230, 61, -159, 54 )
 position = Vector2( -788, 849 )
 InputObjectList = [ NodePath("../Platform") ]
 
-[node name="Sprite" type="Sprite" parent="."]
-material = ExtResource( 9 )
-position = Vector2( 3084, 3618.75 )
-scale = Vector2( 25.6418, 8.32016 )
-texture = ExtResource( 6 )
-script = ExtResource( 7 )
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 9065, 1234 )
+build_mode = 1
+polygon = PoolVector2Array( -1738, 446, -1738, 352, 5427, 352, 5427, 460 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D2"]
+color = Color( 0, 0.133333, 1, 1 )
+texture = SubResource( 2 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-show_behind_parent = true
-scale = Vector2( 100, 100 )
-texture = ExtResource( 12 )
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 9 )
+position = Vector2( 4594, 2143 )
+scale = Vector2( 314, 30.25 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]

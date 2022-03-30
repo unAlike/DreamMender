@@ -14,11 +14,6 @@ position = Vector2( -0.849976, -0.799988 )
 scale = Vector2( 1.05, 1.05 )
 input_pickable = true
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Rift/OuterHex"]
-position = Vector2( 139.857, -67.8095 )
-scale = Vector2( 0.952381, 0.952381 )
-polygon = PoolVector2Array( -88, -22, -205, -23, -270, 62, -205, 167, -89, 169, -32, 70 )
-
 [node name="InnerHex" type="Polygon2D" parent="Rift"]
 position = Vector2( 0.150024, 0.200035 )
 color = Color( 0.945098, 0.368627, 0.870588, 1 )
