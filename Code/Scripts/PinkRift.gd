@@ -1,12 +1,5 @@
-extends Node2D
+extends "res://Scripts/Rift.gd"
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-export var InputObjectList = []
-var objectList = []
-var lastPlayed = 0
 var hexRotation = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +18,6 @@ func _input(event):
 				RotateClockwise()
 			else:
 				RotateCounterClockwise()
-		
 
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -34,12 +26,16 @@ func _process(delta):
 		obj[0].global_position = lerp(obj[0].global_position, newloc, .1)
 		obj[0].rotation_degrees = lerp(obj[0].rotation_degrees, obj[1], .05)
 	$Rift.rotation_degrees = lerp($Rift.rotation_degrees, hexRotation, .05)
-		
+
 func RotateClockwise():
 	hexRotation += 120
 	for obj in objectList:
 		obj[1] += 120
+
 func RotateCounterClockwise():
 	hexRotation -= 120
 	for obj in objectList:
 		obj[1] -= 120
+
+func Move():
+	pass

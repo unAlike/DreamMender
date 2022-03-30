@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
-[ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Rifts/PinkRift.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=6]
-[ext_resource path="res://Reflect.gd" type="Script" id=7]
-[ext_resource path="res://Art/test_backround.png" type="Texture" id=8]
-[ext_resource path="res://Shaders/Reflect.tres" type="Material" id=9]
-[ext_resource path="res://Art/background.png" type="Texture" id=12]
+[ext_resource path="res://Art/test_backround.png" type="Texture" id=1]
+[ext_resource path="res://Shaders/Reflect.tres" type="Material" id=2]
+[ext_resource path="res://Art/background.png" type="Texture" id=3]
+[ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Rifts/PinkRift.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Reflect.gd" type="Script" id=9]
+[ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Rift.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Gradient" id=1]
 
@@ -17,7 +18,7 @@
 gradient = SubResource( 1 )
 
 [node name="Map" type="StaticBody2D"]
-script = ExtResource( 1 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 2914.0, -1320.0 ],
 "_edit_vertical_guides_": [ -1460.0, 9017.0 ]
@@ -30,12 +31,12 @@ margin_top = 1666.0
 margin_right = 3876.0
 margin_bottom = 2509.0
 rect_scale = Vector2( 3.3099, -3.34759 )
-texture = ExtResource( 8 )
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1773, -1176 )
 
 [node name="Plat" type="CollisionPolygon2D" parent="."]
@@ -70,7 +71,7 @@ texture = SubResource( 2 )
 
 [node name="BR1" type="Node2D" parent="Rifts"]
 
-[node name="BlueRift" parent="Rifts/BR1" groups=["BlueRift"] instance=ExtResource( 2 )]
+[node name="BlueRift" parent="Rifts/BR1" groups=["BlueRift"] instance=ExtResource( 4 )]
 position = Vector2( 428, -734 )
 InputObjectList = [ NodePath("../Area2D"), NodePath("../Box"), NodePath("../Area2D2"), NodePath("../Platform") ]
 riftOpen = false
@@ -117,7 +118,7 @@ polygon = PoolVector2Array( 168.173, 234, 303.666, 261, 264.393, 104 )
 
 [node name="BR2" type="Node2D" parent="Rifts"]
 
-[node name="BlueRift" parent="Rifts/BR2" groups=["BlueRift"] instance=ExtResource( 2 )]
+[node name="BlueRift" parent="Rifts/BR2" groups=["BlueRift"] instance=ExtResource( 4 )]
 position = Vector2( 49, 1308 )
 InputObjectList = [ NodePath("../Door") ]
 riftOpen = false
@@ -136,7 +137,7 @@ polygon = PoolVector2Array( -126, 1178, -126, 878, -92, 878, -90, 1174 )
 
 [node name="PR" type="Node2D" parent="Rifts"]
 
-[node name="PinkRift" parent="Rifts/PR" instance=ExtResource( 5 )]
+[node name="PinkRift" parent="Rifts/PR" instance=ExtResource( 6 )]
 position = Vector2( 1100, 1350 )
 InputObjectList = [ NodePath("../StaticBody2D"), NodePath("../StaticBody2D2") ]
 
@@ -181,16 +182,16 @@ polygon = PoolVector2Array( 100.889, 244, 491.889, 253, 488.889, 226, 98.889, 22
 position = Vector2( -1, 2 )
 polygon = PoolVector2Array( -159, 79, 234, 86, 230, 61, -159, 54 )
 
-[node name="YellowRift" parent="Rifts/YR" instance=ExtResource( 4 )]
+[node name="YellowRift" parent="Rifts/YR" instance=ExtResource( 5 )]
 position = Vector2( -788, 849 )
 InputObjectList = [ NodePath("../Platform") ]
 
 [node name="Sprite" type="Sprite" parent="."]
-material = ExtResource( 9 )
+material = ExtResource( 2 )
 position = Vector2( 3084, 3618.75 )
 scale = Vector2( 25.6418, 8.32016 )
-texture = ExtResource( 6 )
-script = ExtResource( 7 )
+texture = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
@@ -198,6 +199,8 @@ color = Color( 0.588235, 0.588235, 0.588235, 1 )
 [node name="Sprite2" type="Sprite" parent="."]
 show_behind_parent = true
 scale = Vector2( 100, 100 )
-texture = ExtResource( 12 )
+texture = ExtResource( 3 )
+
+[node name="Rift" parent="." instance=ExtResource( 11 )]
 
 [connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]

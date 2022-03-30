@@ -1,9 +1,5 @@
 extends KinematicBody2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var speed = 500
 var gravity = 2000
 var jumpPower = 1000
@@ -18,6 +14,7 @@ var maxNumDJump = 2
 var dir = 0
 var state_machine
 var lastGround
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
@@ -31,24 +28,24 @@ func get_Input():
 		lastDir = 'left'
 		dir -= speed
 		$Sprite.flip_h = true
-	if Input.is_action_just_pressed("swap"):
-		for obj in get_tree().get_nodes_in_group("BlueRift"):
-			if obj.riftOpen:
-				obj.riftOpen = false
-			else:
-				obj.riftOpen = true
-		for obj in get_tree().get_nodes_in_group("YellowRift"):
-			if obj.riftOpen:
-				obj.riftOpen = false
-			else:
-				obj.riftOpen = true
+	#if Input.is_action_just_pressed("swap"):
+	#	for obj in get_tree().get_nodes_in_group("BlueRift"):
+	#		if obj.riftOpen:
+	#			obj.riftOpen = false
+	#		else:
+	#			obj.riftOpen = true
+	#	for obj in get_tree().get_nodes_in_group("YellowRift"):
+	#		if obj.riftOpen:
+	#			obj.riftOpen = false
+	#		else:
+	#			obj.riftOpen = true
 	if Input.is_action_pressed("crouch"):
 		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
 		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, .5, .5)
 		$CollisionPolygon2D.position.y = 30
 		dir *= .5
 #	else:
-		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
+#		$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
 #		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, 1, 1)dd
 #		$CollisionPolygon2D.position.y = 0
 	if dir!=0:
@@ -61,8 +58,6 @@ func get_Input():
 		print("IN")
 	if Input.is_action_just_released("zoomout") and $Camera2D.zoom < Vector2(2,2):
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
-		
-		
 
 func _physics_process(delta):
 	if dir!=0 and GroundCheck():
@@ -71,8 +66,6 @@ func _physics_process(delta):
 		state_machine.travel("idle")
 	get_Input()
 	vel.y += gravity * delta
-		
-
 	if is_on_wall() and numWallJump>0:
 		timeOnWall += delta
 		if timeOnWall<1 and timeOnWall>.01:
@@ -137,7 +130,6 @@ func GroundCheck():
 			lastGround = c.get_collision_normal()
 			return true
 	return false
-	
+
 func GetGroundTouching():
-	
 	return null

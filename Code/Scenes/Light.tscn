@@ -4,7 +4,7 @@
 [ext_resource path="res://Art/caster.png" type="Texture" id=2]
 [ext_resource path="res://Art/background.png" type="Texture" id=3]
 [ext_resource path="res://Art/light.png" type="Texture" id=4]
-[ext_resource path="res://Light.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Light.gd" type="Script" id=5]
 
 [sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( -17, -6, -17, 26, 15, 26, 15, -6 )

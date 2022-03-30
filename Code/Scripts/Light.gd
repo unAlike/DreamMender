@@ -1,12 +1,11 @@
-extends Node2D
+extends "res://Scripts/Rift.gd"
 
-var OldC : Color
-var OldS = Vector2.ZERO
-export var isActive = false
+var oldScale = Vector2.ZERO
+var isActive = false
 
 func _ready():
-	OldC = $Light2D.color
-	OldS = $Light2D.scale
+	oldScale = $Light2D.scale
+	isActive = !riftOpen
 
 func _process(delta):
 	if Input.is_action_just_pressed("swap"):
@@ -14,4 +13,4 @@ func _process(delta):
 	if !isActive:
 		$Light2D.scale = lerp($Light2D.scale, Vector2(.1,.1), .05)
 	elif isActive:
-		$Light2D.scale = lerp($Light2D.scale, OldS, .05)
+		$Light2D.scale = lerp($Light2D.scale, oldScale, .05)

@@ -5,7 +5,7 @@
 [ext_resource path="res://Audio/RiftOpen.wav" type="AudioStream" id=3]
 [ext_resource path="res://Audio/RiftClose.wav" type="AudioStream" id=4]
 [ext_resource path="res://Art/Nyan-Cat-PNG-Transparent.png" type="Texture" id=5]
-[ext_resource path="res://Light.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Light.gd" type="Script" id=6]
 [ext_resource path="res://Art/light.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]

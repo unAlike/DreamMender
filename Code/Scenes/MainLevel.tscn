@@ -1,11 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/backround_rough_02.png" type="Texture" id=3]
 [ext_resource path="res://Art/2wnfdtan9dw41.png" type="Texture" id=4]
 [ext_resource path="res://Art/icon.png" type="Texture" id=5]
 [ext_resource path="res://Art/tree_1-left.png" type="Texture" id=6]
+
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.609929 )
