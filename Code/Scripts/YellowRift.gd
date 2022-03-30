@@ -1,5 +1,14 @@
 extends "res://Scripts/Rift.gd"
 
+class Platform:
+	var object
+	var startPos
+	var toPos
+	func _init(obj, start, to):
+		object = obj
+		startPos = start
+		toPos = to
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if InputObjectList.size()>0:
@@ -9,12 +18,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if delta==1:
-		riftTimer = riftTimer+1
-	if riftUnstable:
-		if int(riftTimer)%unstableTimer == 0:
-			riftTimer=0
-			riftOpen = !riftOpen
 	if riftOpen:
 		$Rift/Particles2D.emitting = false
 		for obj in objectList:
@@ -28,9 +31,3 @@ func _process(delta):
 			obj[0].object.position = lerp( obj[0].object.position, obj[0].startPos, delta)
 		if lastPlayed == 1:
 			lastPlayed = 0
-
-func Move():
-	if riftOpen:
-		riftOpen = false
-	else:
-		riftOpen = true

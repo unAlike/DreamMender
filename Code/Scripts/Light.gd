@@ -1,11 +1,11 @@
-extends "res://Scripts/Rift.gd"
+extends Node2D
 
 var oldScale = Vector2.ZERO
 var isActive = false
 
 func _ready():
 	oldScale = $Light2D.scale
-	isActive = !riftOpen
+	
 
 func _process(delta):
 	if Input.is_action_just_pressed("swap"):

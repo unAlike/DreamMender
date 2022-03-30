@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Art/Nyan-Cat-PNG-Transparent.png" type="Texture" id=1]
 [ext_resource path="res://Art/yellowrift.png" type="Texture" id=2]
@@ -41,7 +41,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="YellowRift" type="Node2D" groups=["YellowRift"]]
+[sub_resource type="CircleShape2D" id=9]
+radius = 48.0
+
+[node name="YellowRift" type="Area2D" groups=["YellowRift"]]
 script = ExtResource( 3 )
 
 [node name="Rift" type="Area2D" parent="."]
@@ -73,7 +76,6 @@ color_ramp = SubResource( 8 )
 position = Vector2( 1, -1 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="Position2D" type="Position2D" parent="Rift"]
@@ -89,3 +91,10 @@ shadow_enabled = true
 shadow_gradient_length = 5.0
 shadow_filter = 5
 shadow_filter_smooth = 15.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 9 )
+
+[connection signal="area_entered" from="." to="." method="Interact"]

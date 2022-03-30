@@ -1,10 +1,11 @@
 extends "res://Scripts/Rift.gd"
 
+var platform = load("res://Scripts/Platform")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if InputObjectList.size()>0:
 		for obj in InputObjectList:
-			var plat = Platform.new(get_node(obj),get_node(obj).position,$Rift/Position2D.global_position-($Rift/Position2D.global_position-get_node(obj).position).normalized()*200)
+			var plat = platform.new(get_node(obj),get_node(obj).position,$Rift/Position2D.global_position-($Rift/Position2D.global_position-get_node(obj).position).normalized()*200)
 			objectList.append([plat,false])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,27 +1,38 @@
-extends Node2D
+extends Area2D
 
 # All Rift Variables
 export var InputObjectList = []
 export var riftOpen = true
 export var riftUnstable = false
-var riftTimer = 0
-export var unstableTimer = 5
+export var unstableTime = 5
+
 var objectList = []
 var lastPlayed = 0
-
-class Platform:
-	var object
-	var startPos
-	var toPos
-	func _init(obj, start, to):
-		object = obj
-		startPos = start
-		toPos = to
+onready var riftTimer : Timer = get_node("Timer")
+onready var unstableTimer : Timer = get_node("Timer")
 
 # Plan to have the player click the rift to DoSomething()
 func _process(delta):
-	if Input.is_action_just_pressed("swap"):
-		Move()
+	if !riftUnstable:
+		if riftTimer.get_time_left()<=0:
+			riftOpen = false
+	else:
+		if riftOpen and unstableTimer.get_time_left()<=0:
+			unstableTimer.start(unstableTime)
+			riftOpen = false
+		elif !riftOpen and unstableTimer.get_time_left()<=0:
+			unstableTimer.start(unstableTime)
+			riftOpen = true
+	
 
-func Move():
-	pass
+func Interact():
+	if !riftOpen:
+		if !riftUnstable:
+			if unstableTime > 0:
+				riftTimer.start(unstableTime)
+				riftOpen = true
+			else:
+				riftOpen = true
+	else:
+		if unstableTime > 0:
+			riftTimer.start(unstableTime)
