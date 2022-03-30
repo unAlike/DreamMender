@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Art/2wnfdtan9dw41.png" type="Texture" id=4]
 [ext_resource path="res://Art/icon.png" type="Texture" id=5]
 [ext_resource path="res://Art/tree_1-left.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/Utility/Waypoints.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Objects/Boat.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Gradient" id=1]
@@ -93,9 +92,5 @@ texture = ExtResource( 6 )
 position = Vector2( 1770, 403 )
 texture = ExtResource( 5 )
 
-[node name="Waypoints" parent="." instance=ExtResource( 8 )]
-position = Vector2( 353, 210 )
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1059, 302 )
-waypoints_path = NodePath("../Waypoints")
+[node name="Boat" parent="." instance=ExtResource( 9 )]
+position = Vector2( 840, 232 )
