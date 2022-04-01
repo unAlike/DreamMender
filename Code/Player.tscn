@@ -7,7 +7,7 @@
 [ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=49]
-radius = 16.5
+radius = 16.0
 height = 50.0
 
 [sub_resource type="AtlasTexture" id=50]
@@ -275,21 +275,21 @@ script = ExtResource( 1 )
 [node name="ThreadPos" type="Position2D" parent="."]
 position = Vector2( 32, -58 )
 
+[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -16, 39 )
+shape = SubResource( 49 )
+
 [node name="Needle" type="Sprite" parent="."]
 position = Vector2( 3, -8 )
 rotation = 2.52472
 scale = Vector2( 0.658644, 1.95727 )
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2( -16, 39 )
-shape = SubResource( 49 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -44, -30 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 5
+frame = 4
 playing = true
 centered = false
 
@@ -440,9 +440,19 @@ enabled = true
 cast_to = Vector2( 0, 36.733 )
 collide_with_areas = true
 
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -16, 39 )
+shape = SubResource( 49 )
+
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Resume" to="CanvasLayer" method="_on_Resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Collections" to="CanvasLayer" method="_on_Collections_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Controls" to="CanvasLayer" method="_on_Controls_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Load" to="CanvasLayer" method="_on_Load_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/MainMenu" to="CanvasLayer" method="_on_MainMenu_pressed"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

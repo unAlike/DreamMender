@@ -1,9 +1,7 @@
 extends KinematicBody2D
 
+signal hit
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var speed = 500
 var gravity = 2000
 var jumpPower = 1000
@@ -18,9 +16,11 @@ var maxNumDJump = 20
 var dir = 0
 var state_machine
 var lastGround
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+
 func get_Input():
 	dir = 0
 	if Input.is_action_pressed("walk_right"):
@@ -42,19 +42,15 @@ func get_Input():
 				obj.riftOpen = false
 			else:
 				obj.riftOpen = true
-
 	if dir!=0:
 		vel.x = lerp(vel.x, dir, 0.25)
 	else:
 		vel.x = lerp(vel.x, 0, .1)
-		
 	if Input.is_action_just_released("zoomin") and $Camera2D.zoom > Vector2(.5,.5):
 		$Camera2D.zoom = $Camera2D.zoom - Vector2(.1,.1)
 		print("IN")
 	if Input.is_action_just_released("zoomout") and $Camera2D.zoom < Vector2(200,200):
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
-		
-		
 
 func _physics_process(delta):
 	if dir!=0 and GroundCheck():
@@ -63,8 +59,6 @@ func _physics_process(delta):
 		state_machine.travel("idle")
 	get_Input()
 	vel.y += gravity * delta
-		
-
 	if is_on_wall() and numWallJump>0:
 		timeOnWall += delta
 		if timeOnWall<1 and timeOnWall>.01:
@@ -82,7 +76,6 @@ func _physics_process(delta):
 			numWallJump = maxNumWallJump
 			numDJump = maxNumDJump
 		if is_on_wall() and numWallJump>0:
-			
 			vel.y = -jumpPower
 			if lastDir == 'left':
 				vel.x = jumpPower
@@ -102,7 +95,7 @@ func _physics_process(delta):
 		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP, true)
 	else:
 		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP)
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #	if threadPath.size() < 30:
@@ -112,6 +105,7 @@ func _process(delta):
 #		threadPath.pop_front()
 #	update()
 	pass
+
 func _draw():
 	for l in range(0,threadPath.size()-1):
 		draw_line(to_local(threadPath[l]), to_local(threadPath[l+1]), Color(255,255,255), 5)
@@ -137,5 +131,14 @@ func GroundCheck():
 	return false
 	
 func GetGroundTouching():
-	
 	return null
+
+# Kills player
+func die():
+	print("player killed")
+	emit_signal("hit")
+	queue_free()
+
+# Checks for collision with dangerous objects that kill player and calls die() function
+func _on_Hitbox_body_entered(body):
+	die()
