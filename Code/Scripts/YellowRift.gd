@@ -12,9 +12,11 @@ export var unstableTimer = 5
 var objectList = []
 
 var lastPlayed = 0
+var NullCheck = load("res://Testing/Tests/null.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	if InputObjectList.size()>0:
 		for obj in InputObjectList:
 			print(obj)
