@@ -4,12 +4,13 @@ export var InputObjectList = []
 export var riftOpen = true
 export var riftUnstable = false
 export var unstableTime = 5
+export var speed = 1
 
 var objectList = []
 var lastPlayed = 0
 var original = false
-onready var riftTimer = get_node("riftTimer")
-onready var unstableTimer = get_node("unstableTimer")
+onready var riftTimer: Timer = get_node("riftTimer")
+onready var unstableTimer: Timer = get_node("unstableTimer")
 
 func _ready():
 	riftTimer.set_wait_time(unstableTime)

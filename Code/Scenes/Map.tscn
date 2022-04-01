@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Art/test_backround.png" type="Texture" id=1]
 [ext_resource path="res://Shaders/Reflect.tres" type="Material" id=2]
 [ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Utility/Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
@@ -69,22 +70,24 @@ texture = SubResource( 2 )
 [node name="YR" type="Node2D" parent="Rifts"]
 position = Vector2( 1878, -2090 )
 
-[node name="Platform" type="StaticBody2D" parent="Rifts/YR"]
-position = Vector2( -813, 596 )
-rotation = 0.0106837
-
-[node name="Polygon2D" type="Polygon2D" parent="Rifts/YR/Platform"]
-position = Vector2( 33, 72 )
-offset = Vector2( -293.889, -236 )
-polygon = PoolVector2Array( 100.889, 244, 491.889, 253, 488.889, 226, 98.889, 222 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rifts/YR/Platform"]
-position = Vector2( -1, 2 )
-polygon = PoolVector2Array( -159, 79, 234, 86, 230, 61, -159, 54 )
-
 [node name="YellowRift" parent="Rifts/YR" instance=ExtResource( 5 )]
 position = Vector2( -813, 596 )
 rotation = 0.0106837
+InputObjectList = [ NodePath("../Platform") ]
+speed = 3
+
+[node name="Platform" parent="Rifts/YR" instance=ExtResource( 4 )]
+position = Vector2( -802, 709 )
+scale = Vector2( 4.20516, 2.28363 )
+
+[node name="fromPos" parent="Rifts/YR/Platform" index="0"]
+position = Vector2( 226.626, -133.997 )
+
+[node name="toPos" parent="Rifts/YR/Platform" index="1"]
+position = Vector2( -2.14023, 148.886 )
+
+[node name="Polygon2D" parent="Rifts/YR/Platform" index="2"]
+position = Vector2( -310.571, -167.716 )
 
 [node name="RR" type="Node2D" parent="Rifts"]
 
@@ -102,3 +105,5 @@ script = ExtResource( 9 )
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
 
 [connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]
+
+[editable path="Rifts/YR/Platform"]
