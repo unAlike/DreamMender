@@ -28,17 +28,6 @@ func get_Input():
 		lastDir = 'left'
 		dir -= speed
 		$Sprite.flip_h = true
-	#if Input.is_action_just_pressed("swap"):
-	#	for obj in get_tree().get_nodes_in_group("BlueRift"):
-	#		if obj.riftOpen:
-	#			obj.riftOpen = false
-	#		else:
-	#			obj.riftOpen = true
-	#	for obj in get_tree().get_nodes_in_group("YellowRift"):
-	#		if obj.riftOpen:
-	#			obj.riftOpen = false
-	#		else:
-	#			obj.riftOpen = true
 	if Input.is_action_pressed("crouch"):
 		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
 		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, .5, .5)

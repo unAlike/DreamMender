@@ -252,8 +252,8 @@ shape = SubResource( 49 )
 position = Vector2( -45, -37 )
 scale = Vector2( 0.243832, 0.252689 )
 frames = SubResource( 4 )
-animation = "jump"
-frame = 4
+animation = "idle"
+frame = 6
 playing = true
 centered = false
 

@@ -36,6 +36,3 @@ func RotateCounterClockwise():
 	hexRotation -= 120
 	for obj in objectList:
 		obj[1] -= 120
-
-func Move():
-	pass

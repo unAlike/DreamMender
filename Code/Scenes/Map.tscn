@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Art/test_backround.png" type="Texture" id=1]
 [ext_resource path="res://Shaders/Reflect.tres" type="Material" id=2]
+[ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Reflect.gd" type="Script" id=9]
 [ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Rift.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Gradient" id=1]
 
@@ -86,6 +86,11 @@ polygon = PoolVector2Array( -159, 79, 234, 86, 230, 61, -159, 54 )
 position = Vector2( -813, 596 )
 rotation = 0.0106837
 
+[node name="RR" type="Node2D" parent="Rifts"]
+
+[node name="RedRift" parent="Rifts/RR" instance=ExtResource( 3 )]
+position = Vector2( 2043, -1387 )
+
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 2 )
 position = Vector2( 3084, 3618.75 )
@@ -95,7 +100,5 @@ script = ExtResource( 9 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
-
-[node name="Rift" parent="." instance=ExtResource( 11 )]
 
 [connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]

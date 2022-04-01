@@ -26,9 +26,3 @@ func _process(delta):
 			$RiftOpen.playing = false
 			$RiftClose.playing = true
 			lastPlayed = 0
-
-func Move():
-	if riftOpen:
-		riftOpen = false
-	else:
-		riftOpen = true
