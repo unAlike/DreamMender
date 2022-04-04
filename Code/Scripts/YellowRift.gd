@@ -1,55 +1,35 @@
-extends Node2D
+extends "res://Scripts/Rift.gd"
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-export var InputObjectList = []
-export var riftOpen = true
-export var riftUnstable = false
-var riftTimer = 0
-export var unstableTimer = 5
-var objectList = []
-
-var lastPlayed = 0
+var lerpVal = 1
+var platform
+var oldScale = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
+func _init():
+	platform = load("res://Scripts/Platform.gd")
+
 func _ready():
+	oldScale = $Light2D.scale
 	if InputObjectList.size()>0:
 		for obj in InputObjectList:
-			print(obj)
-			var plat = Platform.new(get_node(obj),get_node(obj).global_position,$Rift/Position2D.global_position-($Rift/Position2D.global_position-get_node(obj).global_position).normalized()*8000)
-			objectList.append([plat,false])
-	
-	
+			var plat = platform.new(get_node(obj),get_node(obj).get_node("fromPos").global_position,get_node(obj).get_node("toPos").global_position)
+			objectList.append(plat)
 
- #Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if delta==1:
-		riftTimer = riftTimer+1
-	if riftUnstable:
-		if int(riftTimer)%unstableTimer == 0:
-			riftTimer=0
-			riftOpen = !riftOpen
-	if riftOpen:
+	if riftOpen == false:
 		$Rift/Particles2D.emitting = false
+		$Light2D.scale = lerp($Light2D.scale, Vector2.ZERO, lerpVal)
+		#print(str(objectList))
 		for obj in objectList:
-			obj[0].object.global_position = lerp(obj[0].object.global_position, obj[0].toPos, delta)
-#			obj[0].object.move_and_slide_with_snap(lerp(obj[0].object.position, obj[0].toPos, delta), Vector2.DOWN*32)
-		if lastPlayed == 0:
-			lastPlayed = 1
-		
-	else:
+			obj.object.global_position = lerp(obj.fromPos, obj.toPos, lerpVal)
+		if lerpVal < 1:
+			lerpVal += delta/speed
+	elif riftOpen == true:
 		$Rift/Particles2D.emitting = true
+		$Light2D.scale = lerp($Light2D.scale, oldScale, lerpVal)
 		for obj in objectList:
-			obj[0].object.global_position = lerp( obj[0].object.global_position, obj[0].startPos, delta)
-		if lastPlayed == 1:
-			lastPlayed = 0
-class Platform:
-	var object
-	var startPos
-	var toPos
-	func _init(obj, start, to):
-		object = obj
-		startPos = start
-		toPos = to
+			obj.object.global_position = lerp( obj.fromPos, obj.toPos, lerpVal)
+		if lerpVal > 0:
+			lerpVal -= delta/speed
+	#print(lerpVal)

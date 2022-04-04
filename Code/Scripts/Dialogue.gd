@@ -8,7 +8,7 @@ var Interacting = false
 export var Radius = 100
 var InRadius = false
 onready var Player = get_parent().get_parent()
-onready var NPC = get_parent().get_parent().get_parent().get_node("NPC")
+#onready var NPC = get_parent().get_parent().get_parent().get_node("NPC")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,11 +16,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Player.get_global_position().distance_to(NPC.get_position()) < Radius:
+	#if Player.get_global_position().distance_to(NPC.get_position()) < Radius:
 		#print("In Range")
-		InRadius = true
-	else:
-		InRadius = false
+		#InRadius = true
+	#else:
+		#InRadius = false
 	
 	if InRadius and !Interacting:
 		Bubble.visible = true

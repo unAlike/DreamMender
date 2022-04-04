@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Art/test_backround.png" type="Texture" id=1]
+[ext_resource path="res://Shaders/Reflect.tres" type="Material" id=2]
+[ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Utility/Platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Reflect.gd" type="Script" id=9]
+[ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=10]
+
+[sub_resource type="Gradient" id=1]
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[node name="Map2" type="StaticBody2D"]
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 2914.0, -1320.0 ],
+"_edit_vertical_guides_": [ -1460.0, 9017.0 ]
+}
+Player = NodePath("Player")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 2377.0
+margin_top = 1666.0
+margin_right = 3876.0
+margin_bottom = 2509.0
+rect_scale = Vector2( 3.3099, -3.34759 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1773, -1176 )
+
+[node name="Plat" type="CollisionPolygon2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1311, 774 )
+scale = Vector2( 0.446319, 0.611573 )
+build_mode = 1
+polygon = PoolVector2Array( 5688.75, -1981.78, 5794.06, -1239.43, 6856.08, -1245.97, 6741.81, -2084.79 )
+
+[node name="BGCol" type="CollisionPolygon2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1311, 774 )
+scale = Vector2( 0.446319, 0.611573 )
+build_mode = 1
+polygon = PoolVector2Array( 3575, -1728, 3518, -1157, 4537, -887, 4552, 411, 3589, 418, 3511, 1665, 7930, 1693, 7830, 1394, 7452, 1330, 7353, 247, 7538, 33, 8607, -46, 8650, -708, 8999, -915, 9897, -908, 9982, -509, 10816, -459, 10973, 11, 10902, 354, 10781, 510, 9997, 439, 9947, 1016, 9177, 945, 8885, 1644, 12413, 1651, 12406, -2127, 13040, -2162, 13047, -2875, 2422.03, -3090.39, 2378, -2847, 2231.59, -3376.54, 2209.18, -3392.89, 2220.38, -3428.86, 2231.59, -3386.35, 3622.97, -4205.55, 13040, -4212.09, 13040, -4153.23, 3905.28, -4123.79, 3190.54, -3221.2, 5590, -2989, 13373, -3239, 12926, 1929, 8700, 1914, 9170, -31, 8129, 1822, 2378, 1679, 2369, -1250, 2212, -1236, 2198, -1407, 2362, -1407, 1861.89, -1800.28, 2362, -1799 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+build_mode = 1
+polygon = PoolVector2Array( -19.6386, 11, -917.035, 19, -947.472, 970, -641.139, 969, -638.193, 1009, -660, 1421, -382, 1426, -382, 1457, -658, 1454, -699, 1452, -690.231, 1010, -946.254, 1005.94, -963, 1576, 1555.23, 1565, 1559.16, 947, 1476.68, 944, 1465.88, 883, 1555.23, 894, 1603.34, -5, 1481.59, -8, 1481.59, -73, 1600.39, -75, 1608.25, -1037, 1647.52, -1041, 2137, -1033, 2154, -871, 2179, 1663, 1609.23, 1652, -965.145, 1644, -1029.95, 1641, -955.326, 18, -929.799, -1069, -896.416, -1072, 1283.26, -1047, 1290.13, -1007, 1295.04, -660, 1358.86, -661, 1363.77, -617, 1284.89, -616.921, 1271.48, 382, 1390.28, 386, 1387.33, 453, 1271.48, 446, 1235.15, 1116, 1171.33, 1112, 1183, 481, 1104, 481, 1099, 428, 1190, 428, 1238.1, -1000, -869.907, -1017, -916.053, -8, 420, -11, 420, -564, 445.754, -564, 457.536, -18, 793.324, -20, 794, 103, 885, 93, 890, 151, 794.759, 153.532, 793.324, 538, 765.832, 540, 676.485, 537, 399.464, 534.144, 385.559, 1097.86, 867.943, 1104, 864.998, 1217, 377.025, 1209, 320.079, 1212, 325.334, 533.379, -148.516, 528.493, -153.166, 826, 60.8739, 824, 59.892, 859, 57.9283, 1227, 19.6367, 1227, 17.4531, 859.956, -162.003, 864, -203.24, 864, -196.367, 528, -196.367, 498, 749.141, 500, 754.256, 12, 447.715, 12 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
+color = Color( 0, 0.133333, 1, 1 )
+texture = SubResource( 2 )
+
+[node name="Colliders" type="Node2D" parent="."]
+
+[node name="Rifts" type="Node2D" parent="."]
+
+[node name="YR" type="Node2D" parent="Rifts"]
+position = Vector2( 1878, -2090 )
+
+[node name="YellowRift" parent="Rifts/YR" instance=ExtResource( 5 )]
+position = Vector2( -813, 596 )
+rotation = 0.0106837
+InputObjectList = [ NodePath("../Platform") ]
+
+[node name="Platform" parent="Rifts/YR" instance=ExtResource( 4 )]
+position = Vector2( -802, 709 )
+scale = Vector2( 4.20516, 2.28363 )
+
+[node name="fromPos" parent="Rifts/YR/Platform" index="0"]
+position = Vector2( 226.626, -133.997 )
+
+[node name="toPos" parent="Rifts/YR/Platform" index="1"]
+position = Vector2( -2.14023, 148.886 )
+
+[node name="Polygon2D" parent="Rifts/YR/Platform" index="2"]
+position = Vector2( -310.571, -167.716 )
+
+[node name="RR" type="Node2D" parent="Rifts"]
+position = Vector2( 28, 1 )
+
+[node name="Platform" parent="Rifts/RR" instance=ExtResource( 4 )]
+position = Vector2( 2043, -1386 )
+
+[node name="fromPos" parent="Rifts/RR/Platform" index="0"]
+position = Vector2( 0, 0 )
+
+[node name="Polygon2D" parent="Rifts/RR/Platform" index="2"]
+position = Vector2( -5.69995, -27.9 )
+offset = Vector2( 166, -44 )
+polygon = PoolVector2Array( -217, -132, -107, -131, -108, -116, -218, -116 )
+
+[node name="CollisionPolygon2D" parent="Rifts/RR/Platform" index="3"]
+position = Vector2( -314.7, -360.9 )
+
+[node name="RedRift" parent="Rifts/RR" instance=ExtResource( 3 )]
+position = Vector2( 2043, -1386 )
+InputObjectList = [ NodePath("../Platform") ]
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 2 )
+position = Vector2( 5106, -2332 )
+scale = Vector2( 8.14476, 2.22426 )
+texture = ExtResource( 10 )
+script = ExtResource( 9 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.588235, 0.588235, 0.588235, 1 )
+
+[connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]
+
+[editable path="Rifts/YR/Platform"]
+[editable path="Rifts/RR/Platform"]
