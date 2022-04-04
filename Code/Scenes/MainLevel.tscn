@@ -1,19 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/icon.png" type="Texture" id=4]
 [ext_resource path="res://Art/DW_Character_Jump_Sprite_Sheet.png" type="Texture" id=5]
-[ext_resource path="res://Rifts/PinkRift.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Utility/Platform.tscn" type="PackedScene" id=8]
 
 [node name="Map" type="StaticBody2D"]
 position = Vector2( 48, -503 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 32665, 4213 )
+position = Vector2( 5418, -1495 )
 scale = Vector2( 0.980773, 0.904558 )
 
 [node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="." groups=["collider"]]
@@ -62,16 +63,18 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 6192, -675 )
 
 [node name="YellowRift" parent="Node2D2" instance=ExtResource( 3 )]
-InputObjectList = [ NodePath("../StaticBody2D") ]
+InputObjectList = [ NodePath("../Platform") ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D2"]
+[node name="Platform" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( -2, -254 )
+scale = Vector2( 3.69821, 2.85907 )
 
-[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Node2D2/StaticBody2D" groups=["collider"]]
-polygon = PoolVector2Array( -195, -224, -185, -313, 232, -296, 272, -210 )
+[node name="fromPos" parent="Node2D2/Platform" index="0"]
+position = Vector2( 4.05603, 15.7394 )
+scale = Vector2( 2.4081, 1.00876 )
 
-[node name="Polygon2D" type="Polygon2D" parent="Node2D2/StaticBody2D/CollisionPolygon2D25"]
-position = Vector2( 1, 1 )
-color = Color( 0, 0, 0, 1 )
+[node name="toPos" parent="Node2D2/Platform" index="1"]
+position = Vector2( 2.70398, -178.38 )
 
 [node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( -7861, -272 )
@@ -87,9 +90,11 @@ texture = ExtResource( 4 )
 
 [node name="YellowRift4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 11443, -991 )
+script = null
 
 [node name="YellowRift5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 15582, -2434 )
+script = null
 
 [node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( -3002, -289 )
@@ -114,12 +119,14 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="YellowRift" parent="CollisionPolygon2D31" instance=ExtResource( 3 )]
 position = Vector2( 24155, -1938 )
+script = null
 
 [node name="PinkRift" parent="CollisionPolygon2D31" instance=ExtResource( 6 )]
 position = Vector2( 38093, 2155 )
 
 [node name="YellowRift2" parent="CollisionPolygon2D31" instance=ExtResource( 3 )]
 position = Vector2( 35580, 2466 )
+script = null
 
 [node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 1292, 1394 )
@@ -130,6 +137,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="YellowRift" parent="CollisionPolygon2D32" instance=ExtResource( 3 )]
 position = Vector2( 16288, -2573 )
+script = null
 
 [node name="DwCharacterJumpSpriteSheet" type="Sprite" parent="."]
 position = Vector2( 17572, -612 )
@@ -191,6 +199,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="YellowRift6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 35594, 3138 )
+script = null
 
 [node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 17594, 3871 )
@@ -209,7 +218,6 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="PinkRiftCirclePuzzle" type="Node2D" parent="."]
 position = Vector2( 31530, 4403 )
-scale = Vector2( 1, 1 )
 
 [node name="PinkRift2" parent="PinkRiftCirclePuzzle" instance=ExtResource( 6 )]
 InputObjectList = [ NodePath("../StaticBody2D") ]
@@ -220,7 +228,6 @@ motion/sync_to_physics = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PinkRiftCirclePuzzle/StaticBody2D" groups=["collider"]]
 position = Vector2( -31640, -4365 )
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( 31948.4, 5072.9, 32098.4, 4961.9, 32201.4, 4854.9, 32279.4, 4763.9, 32353.4, 4613.9, 32424.4, 4404.9, 32446.4, 4280.9, 32398.4, 4009.9, 32281, 3819, 32073.4, 3661.9, 31897.4, 3608.9, 31721, 3579, 31541.4, 3569.9, 31343, 3582, 31169, 3654, 30924, 3876, 30818, 4100, 30782, 4274, 30779, 4456, 30813, 4658, 30933.4, 4873.9, 31067, 4979, 31230, 5081, 31381, 5122, 31517, 5141, 31747, 5190, 31748, 5126, 31748, 5063, 31619, 5048, 31531, 5042, 31400, 5015, 31218, 4930, 31079, 4847, 31144, 4744, 31342, 4515, 31294, 4395, 31307, 4275, 31339, 4195, 31422, 4133, 31550, 4088, 31662, 4083, 31828, 4104, 31924, 4184, 32001, 4299, 31991, 4483, 31884, 4627, 31745, 4665, 31604, 4673, 31487, 4653, 31426, 4610, 31379, 4663, 31458, 4708, 31596, 4746, 31750, 4740, 31855, 4713, 31969, 4657, 32055, 4587, 32111, 4483, 32103, 4323, 32033, 4182, 31956, 4075, 31868, 4003, 31740, 3987, 31636, 3981, 31484, 3992, 31355, 4029, 31278, 4088, 31201, 4187, 31182, 4334, 31189, 4532, 31036, 4678, 30948, 4610, 30888, 4391, 30909, 4167, 30984, 4002, 31133, 3840, 31277, 3750, 31431.4, 3687.9, 31597.4, 3676.9, 31804.4, 3699.9, 32039.4, 3744.9, 32220.4, 3885.9, 32308.4, 4078.9, 32336.4, 4202.9, 32341.4, 4323.9, 32310.4, 4506.9, 32246.4, 4651.9, 32163.4, 4766.9, 32043.4, 4873.9, 31958.4, 4956.9, 31901.4, 5006.9 )
 
 [node name="Polygon2D" type="Polygon2D" parent="PinkRiftCirclePuzzle/StaticBody2D/CollisionPolygon2D"]
@@ -231,3 +238,5 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 32450, 13700 )
 scale = Vector2( -281.203, 30.4493 )
 texture = ExtResource( 4 )
+
+[editable path="Node2D2/Platform"]
