@@ -51,7 +51,7 @@ self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 1311, 774 )
 scale = Vector2( 0.446319, 0.611573 )
 build_mode = 1
-polygon = PoolVector2Array( 3575, -1728, 3518, -1157, 4537, -887, 4552, 411, 3589, 418, 3511, 1665, 7930, 1693, 7830, 1394, 7452, 1330, 7353, 247, 7538, 33, 8607, -46, 8650, -708, 8999, -915, 9897, -908, 9982, -509, 10816, -459, 10973, 11, 10902, 354, 10781, 510, 9997, 439, 9947, 1016, 9177, 945, 8885, 1644, 12413, 1651, 12406, -2127, 13040, -2162, 13047, -2875, 2422.03, -3090.39, 2378, -2847, 2231.59, -3376.54, 2209.18, -3392.89, 2220.38, -3428.86, 2231.59, -3386.35, 5590, -2989, 13373, -3239, 12926, 1929, 8700, 1914, 9170, -31, 8129, 1822, 2378, 1679, 2369, -1250, 2212, -1236, 2198, -1407, 2362, -1407, 1861.89, -1800.28, 2362, -1799 )
+polygon = PoolVector2Array( 3575, -1728, 3518, -1157, 4537, -887, 4552, 411, 3589, 418, 3511, 1665, 7930, 1693, 7830, 1394, 7452, 1330, 7353, 247, 7538, 33, 8607, -46, 8650, -708, 8999, -915, 9897, -908, 9982, -509, 10816, -459, 10973, 11, 10902, 354, 10781, 510, 9997, 439, 9947, 1016, 9177, 945, 8885, 1644, 12413, 1651, 12406, -2127, 13040, -2162, 13047, -2875, 2422.03, -3090.39, 2378, -2847, 2231.59, -3376.54, 2209.18, -3392.89, 2220.38, -3428.86, 2231.59, -3386.35, 3622.97, -4205.55, 13040, -4212.09, 13040, -4153.23, 3905.28, -4123.79, 3190.54, -3221.2, 5590, -2989, 13373, -3239, 12926, 1929, 8700, 1914, 9170, -31, 8129, 1822, 2378, 1679, 2369, -1250, 2212, -1236, 2198, -1407, 2362, -1407, 1861.89, -1800.28, 2362, -1799 )
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 modulate = Color( 1, 0, 0, 1 )
@@ -89,14 +89,30 @@ position = Vector2( -2.14023, 148.886 )
 position = Vector2( -310.571, -167.716 )
 
 [node name="RR" type="Node2D" parent="Rifts"]
+position = Vector2( 28, 1 )
+
+[node name="Platform" parent="Rifts/RR" instance=ExtResource( 4 )]
+position = Vector2( 2043, -1386 )
+
+[node name="fromPos" parent="Rifts/RR/Platform" index="0"]
+position = Vector2( 0, 0 )
+
+[node name="Polygon2D" parent="Rifts/RR/Platform" index="2"]
+position = Vector2( -5.69995, -27.9 )
+offset = Vector2( 166, -44 )
+polygon = PoolVector2Array( -217, -132, -107, -131, -108, -116, -218, -116 )
+
+[node name="CollisionPolygon2D" parent="Rifts/RR/Platform" index="3"]
+position = Vector2( -314.7, -360.9 )
 
 [node name="RedRift" parent="Rifts/RR" instance=ExtResource( 3 )]
-position = Vector2( 2043, -1387 )
+position = Vector2( 2043, -1386 )
+InputObjectList = [ NodePath("../Platform") ]
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 2 )
-position = Vector2( 3084, 3618.75 )
-scale = Vector2( 25.6418, 8.32016 )
+position = Vector2( 5106, -2332 )
+scale = Vector2( 8.14476, 2.22426 )
 texture = ExtResource( 10 )
 script = ExtResource( 9 )
 
@@ -106,3 +122,4 @@ color = Color( 0.588235, 0.588235, 0.588235, 1 )
 [connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]
 
 [editable path="Rifts/YR/Platform"]
+[editable path="Rifts/RR/Platform"]

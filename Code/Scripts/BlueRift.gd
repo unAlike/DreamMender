@@ -1,19 +1,16 @@
 extends "res://Scripts/Rift.gd"
 
-var platform = load("res://Scripts/Platform")
+var player: Script
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if InputObjectList.size()>0:
-		for obj in InputObjectList:
-			var plat = platform.new(get_node(obj),get_node(obj).position,$Rift/Position2D.global_position-($Rift/Position2D.global_position-get_node(obj).position).normalized()*200)
-			objectList.append([plat,false])
+	player = get_tree().current_scene.get_node("Player").Player
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if riftOpen:
 		$Rift/Particles2D.emitting = true
 		for obj in objectList:
-			obj[0].object.position = lerp(obj[0].object.position, obj[0].startPos, delta)
+			pass
 		if lastPlayed == 0:
 			$RiftOpen.playing = true
 			$RiftClose.playing = false
@@ -21,7 +18,7 @@ func _process(delta):
 	else:
 		$Rift/Particles2D.emitting = false
 		for obj in objectList:
-			obj[0].object.position = lerp( obj[0].object.position, obj[0].toPos, delta)
+			pass
 		if lastPlayed == 1:
 			$RiftOpen.playing = false
 			$RiftClose.playing = true

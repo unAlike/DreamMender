@@ -9,7 +9,7 @@ script = ExtResource( 2 )
 [node name="Rift" type="Area2D" parent="."]
 
 [node name="OuterHex" type="StaticBody2D" parent="Rift"]
-position = Vector2( -0.849976, -0.799988 )
+position = Vector2( 1.78814e-07, 1.78814e-07 )
 scale = Vector2( 1.05, 1.05 )
 input_pickable = true
 
@@ -19,13 +19,11 @@ scale = Vector2( 0.952381, 0.952381 )
 polygon = PoolVector2Array( -88, -22, -205, -23, -270, 62, -205, 167, -89, 169, -32, 70 )
 
 [node name="InnerHex" type="Polygon2D" parent="Rift"]
-position = Vector2( 0.150024, 0.200035 )
 color = Color( 1, 0, 0, 1 )
 offset = Vector2( -221, -152 )
 polygon = PoolVector2Array( 163, 56, 280, 57, 335, 151, 277, 249, 161, 248, 97, 143 )
 
 [node name="Position2D" type="Position2D" parent="Rift"]
-position = Vector2( 1, 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.5, 0.5 )

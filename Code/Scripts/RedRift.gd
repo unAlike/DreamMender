@@ -7,24 +7,18 @@ export var toRotation = 120
 func _ready():
 	if InputObjectList.size()>0:
 		for obj in InputObjectList:
-			objectList.append([get_node(obj),get_node(obj).rotation_degrees])
+			objectList.append(get_node(obj))
 
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if riftOpen:
 		for obj in objectList:
-			var newloc = $Rift/Position2D.global_position + Vector2(cos(toRotation), sin(toRotation)) * ($Rift/Position2D.global_position-obj[0].global_position).length()
-			obj[0].global_position = lerp(obj[0].global_position, newloc, .1)
-			obj[0].rotation_degrees = lerp(obj[0].rotation_degrees, obj[1], .05)
-			obj[0].rotation_degrees -= .3
-		$Rift.rotation_degrees = lerp($Rift.rotation_degrees, toRotation, .05)
+			obj.rotation_degrees += 1
+		$Rift.rotation_degrees += 1
 	else:
 		for obj in objectList:
-			var newloc = $Rift/Position2D.global_position + Vector2(cos(fromRotation), sin(fromRotation)) * ($Rift/Position2D.global_position-obj[0].global_position).length()
-			obj[0].global_position = lerp(obj[0].global_position, newloc, .1)
-			obj[0].rotation_degrees = lerp(obj[0].rotation_degrees, obj[1], .05)
-			obj[0].rotation_degrees -= .3
-		$Rift.rotation_degrees = lerp($Rift.rotation_degrees, fromRotation, .05)
+			obj.rotation_degrees -= 1
+		$Rift.rotation_degrees -=1
 
 #func RotateClockwise():
 #	hexRotation += 120
