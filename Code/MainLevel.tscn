@@ -93,3 +93,4 @@ position = Vector2( 1770, 403 )
 texture = ExtResource( 5 )
 
 [node name="Boat" parent="." instance=ExtResource( 7 )]
+position = Vector2( 999, 204 )
