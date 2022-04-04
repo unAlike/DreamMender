@@ -142,3 +142,12 @@ func die():
 # Checks for collision with dangerous objects that kill player and calls die() function
 func _on_Hitbox_body_entered(body):
 	die()
+
+func _on_Hitbox_area_entered(area):
+	die()
+
+func _on_SpikeHitbox_body_entered(body):
+	die()
+
+func _on_SpikeHitbox_area_entered(area):
+	die()

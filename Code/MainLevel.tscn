@@ -186,13 +186,12 @@ scale = Vector2( 0.0348633, 0.235114 )
 texture = ExtResource( 7 )
 
 [node name="SpikeHitbox" type="Area2D" parent="SPIKESNOTSPRITESHEET"]
+position = Vector2( 0, -144.61 )
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SPIKESNOTSPRITESHEET/SpikeHitbox"]
-position = Vector2( 0, -34.0264 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="CollisionPolygon2D36" type="CollisionPolygon2D" parent="." groups=["collider"]]
@@ -242,3 +241,6 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 32450, 13700 )
 scale = Vector2( -281.203, 30.4493 )
 texture = ExtResource( 4 )
+
+[connection signal="area_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_area_entered"]
+[connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
