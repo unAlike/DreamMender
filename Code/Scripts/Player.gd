@@ -23,16 +23,13 @@ func get_Input():
 	if Input.is_action_pressed("walk_right"):
 		dir += speed
 		lastDir = 'right'
-		$Sprite.flip_h = false
+		if is_on_wall() or GroundCheck():
+			$Sprite.flip_h = false
 	if Input.is_action_pressed("walk_left"):
 		lastDir = 'left'
 		dir -= speed
-		$Sprite.flip_h = true
-	if Input.is_action_pressed("crouch"):
-		#$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
-		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, .5, .5)
-		$CollisionPolygon2D.position.y = 30
-		dir *= .5
+		if is_on_wall() or GroundCheck():
+			$Sprite.flip_h = true
 #	else:
 #		$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
 #		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, 1, 1)dd
@@ -56,6 +53,7 @@ func _physics_process(delta):
 	get_Input()
 	vel.y += gravity * delta
 	if is_on_wall() and numWallJump>0:
+		state_machine.travel("wall")
 		timeOnWall += delta
 		if timeOnWall<1 and timeOnWall>.01:
 			vel.y = 0
@@ -72,7 +70,7 @@ func _physics_process(delta):
 			numWallJump = maxNumWallJump
 			numDJump = maxNumDJump
 		if is_on_wall() and numWallJump>0:
-			
+			state_machine.travel("wallJump")
 			vel.y = -jumpPower
 			if lastDir == 'left':
 				vel.x = jumpPower

@@ -18,16 +18,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if riftOpen == false:
-		$Rift/Particles2D.emitting = false
-		$Light2D.scale = lerp($Light2D.scale, Vector2.ZERO, lerpVal)
+		$Rift/Particles2D.emitting = true
+		$Light2D.scale = lerp($Light2D.scale, oldScale, lerpVal)
 		#print(str(objectList))
 		for obj in objectList:
 			obj.object.global_position = lerp(obj.fromPos, obj.toPos, lerpVal)
 		if lerpVal < 1:
 			lerpVal += delta/speed
 	elif riftOpen == true:
-		$Rift/Particles2D.emitting = true
-		$Light2D.scale = lerp($Light2D.scale, oldScale, lerpVal)
+		$Rift/Particles2D.emitting = false
+		$Light2D.scale = lerp($Light2D.scale, Vector2.ZERO, lerpVal)
 		for obj in objectList:
 			obj.object.global_position = lerp( obj.fromPos, obj.toPos, lerpVal)
 		if lerpVal > 0:

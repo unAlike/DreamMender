@@ -39,7 +39,7 @@ Display=8
 [application]
 
 config/name="Dream Weaver"
-run/main_scene="res://Map.tscn"
+run/main_scene="res://Scenes/StartScreen.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]
