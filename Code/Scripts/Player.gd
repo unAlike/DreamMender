@@ -137,7 +137,8 @@ func GetGroundTouching():
 func die():
 	print("player killed")
 	emit_signal("hit")
-	queue_free()
+	#queue_free()
+	get_tree().reload_current_scene()
 
 # Checks for collision with dangerous objects that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Art/DW_Character_Jump_Sprite_Sheet.png" type="Texture" id=5]
 [ext_resource path="res://Rifts/PinkRift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1620.61, 331.754 )
@@ -185,7 +186,6 @@ priority = 10.0
 modulate = Color( 0.862745, 0.0431373, 0.0431373, 1 )
 self_modulate = Color( 0.909804, 0, 0, 1 )
 position = Vector2( -143.375, 318.993 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="." groups=["collider"]]
@@ -247,6 +247,9 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 32450, 13700 )
 scale = Vector2( -281.203, 30.4493 )
 texture = ExtResource( 4 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 8 )]
+position = Vector2( 33370, 4144 )
 
 [connection signal="area_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_area_entered"]
 [connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_onTouch"]
