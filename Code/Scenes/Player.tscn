@@ -372,8 +372,13 @@ scale = Vector2( 0.658644, 1.95727 )
 position = Vector2( -44, -30 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
+<<<<<<< HEAD:Code/Scenes/Player.tscn
 animation = "wallJump"
 frame = 2
+=======
+animation = "idle"
+frame = 5
+>>>>>>> origin/Boat-Movement:Code/Player.tscn
 playing = true
 centered = false
 
