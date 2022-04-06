@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Objects/EndGamePortal.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1620.61, 331.754 )
@@ -246,6 +247,9 @@ texture = ExtResource( 4 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 8 )]
 position = Vector2( 33370, 4144 )
+
+[node name="EndGamePortal" parent="." instance=ExtResource( 9 )]
+position = Vector2( 33662, 4016 )
 
 [connection signal="area_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_area_entered"]
 [connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_onTouch"]

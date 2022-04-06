@@ -23,9 +23,6 @@ margin_left = 200.0
 margin_top = -224.0
 margin_right = 368.0
 margin_bottom = -132.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StartButton" type="Button" parent="MenuButtons"]
 margin_right = 168.0
@@ -33,17 +30,17 @@ margin_bottom = 20.0
 focus_neighbour_top = NodePath("../QuitButton")
 text = "START"
 
-[node name="LoadButton" type="Button" parent="MenuButtons"]
+[node name="OptionsButton" type="Button" parent="MenuButtons"]
 margin_top = 24.0
 margin_right = 168.0
 margin_bottom = 44.0
-text = "LOAD"
+text = "OPTIONS"
 
-[node name="OptionsButton" type="Button" parent="MenuButtons"]
+[node name="CreditsButton" type="Button" parent="MenuButtons"]
 margin_top = 48.0
 margin_right = 168.0
 margin_bottom = 68.0
-text = "OPTIONS"
+text = "CREDITS"
 
 [node name="QuitButton" type="Button" parent="MenuButtons"]
 margin_top = 72.0
@@ -64,11 +61,8 @@ margin_bottom = 124.0
 rect_rotation = 0.368145
 rect_scale = Vector2( -0.669299, 0.676098 )
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="MenuButtons/LoadButton" to="." method="_on_LoadButton_pressed"]
 [connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="MenuButtons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/QuitButton" to="." method="_on_QuitButton_pressed"]
