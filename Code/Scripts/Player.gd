@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal hit
+
 var speed = 500
 var gravity = 2000
 var jumpPower = 1000
@@ -18,6 +20,7 @@ var lastGround
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+
 func get_Input():
 	dir = 0
 	if Input.is_action_pressed("walk_right"):
@@ -38,7 +41,6 @@ func get_Input():
 		vel.x = lerp(vel.x, dir, 0.25)
 	else:
 		vel.x = lerp(vel.x, 0, .1)
-		
 	if Input.is_action_just_released("zoomin") and $Camera2D.zoom > Vector2(.5,.5):
 		$Camera2D.zoom = $Camera2D.zoom - Vector2(.1,.1)
 		print("IN")
@@ -90,7 +92,7 @@ func _physics_process(delta):
 		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP, true)
 	else:
 		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP)
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #	if threadPath.size() < 30:
@@ -100,6 +102,7 @@ func _process(delta):
 #		threadPath.pop_front()
 #	update()
 	pass
+
 func _draw():
 	for l in range(0,threadPath.size()-1):
 		draw_line(to_local(threadPath[l]), to_local(threadPath[l+1]), Color(255,255,255), 5)
@@ -126,3 +129,15 @@ func GroundCheck():
 
 func GetGroundTouching():
 	return null
+
+# Kills player
+func die():
+	print("player killed")
+	emit_signal("hit")
+	#queue_free()
+	get_tree().reload_current_scene()
+
+# Checks for collision with dangerous objects that kill player and calls die() function
+func _on_SpikeHitbox_body_entered(body):
+	print("Touchs")
+	die()

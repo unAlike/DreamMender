@@ -42,9 +42,13 @@ config/name="Dream Weaver"
 run/main_scene="res://Scenes/StartScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Checkpoint="*res://Scripts/Checkpoint.gd"
+
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/WAT/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [global]
 
