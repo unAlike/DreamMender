@@ -67,10 +67,6 @@ position = Vector2( 6192, -675 )
 
 [node name="YellowRift" parent="Node2D2" instance=ExtResource( 3 )]
 
-[node name="Platform" parent="Node2D2" instance=ExtResource( 8 )]
-position = Vector2( -2, -254 )
-scale = Vector2( 3.69821, 2.85907 )
-
 [node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( -7861, -272 )
 polygon = PoolVector2Array( 17663, -648, 18783, -662, 18707, -805, 18272, -805, 17805, -779, 17631, -774, 17291, -758, 17279, -657 )
@@ -252,5 +248,5 @@ texture = ExtResource( 4 )
 position = Vector2( 33370, 4144 )
 
 [connection signal="area_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_area_entered"]
-[connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_onTouch"]
+[connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
