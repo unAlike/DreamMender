@@ -27,7 +27,8 @@ func _process(delta):
 	# If rift is stable & not in original state, change rift state after timeout
 	else:
 		if riftOpen != original and riftTimer.get_time_left() == 0:
-			riftOpen = !riftOpen
+			if riftTimer.get_wait_time()>0.1:
+				riftOpen = !riftOpen
 
 	# How Interact() is activated
 	if Input.is_action_just_pressed("swap"):
@@ -38,6 +39,7 @@ func Interact():
 	if riftUnstable:
 		unstableTimer.start()
 	else:
+		
 		if riftOpen == original:
 			riftOpen = !riftOpen
 		riftTimer.start()

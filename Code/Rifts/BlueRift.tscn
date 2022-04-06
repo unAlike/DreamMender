@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/BlueRift.gd" type="Script" id=1]
 [ext_resource path="res://Art/81-810178_blue-diamond-png-clipart-library-library-gemstone.png" type="Texture" id=2]
-[ext_resource path="res://Audio/RiftOpen.wav" type="AudioStream" id=3]
-[ext_resource path="res://Audio/RiftClose.wav" type="AudioStream" id=4]
 [ext_resource path="res://Art/Nyan-Cat-PNG-Transparent.png" type="Texture" id=5]
 [ext_resource path="res://Art/light.png" type="Texture" id=7]
 
@@ -15,6 +13,7 @@ radius = 47.0106
 
 [node name="BlueRift" type="Area2D"]
 position = Vector2( 0, 2 )
+monitorable = false
 script = ExtResource( 1 )
 
 [node name="Rift" type="Area2D" parent="."]
@@ -47,12 +46,6 @@ angular_velocity_random = 0.54
 scale_amount = 0.03
 color = Color( 0.12549, 0.933333, 1, 1 )
 
-[node name="RiftClose" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
-
-[node name="RiftOpen" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
-
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 7 )
@@ -64,3 +57,12 @@ shadow_filter_smooth = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="riftTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="unstableTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_BlueRift_body_entered"]
