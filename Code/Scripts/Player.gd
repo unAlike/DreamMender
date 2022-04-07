@@ -17,6 +17,7 @@ var dir = 0
 var state_machine
 var lastGround
 var flipped = false
+var inBlueRift = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

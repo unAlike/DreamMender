@@ -76,14 +76,18 @@ color_ramp = SubResource( 8 )
 position = Vector2( 1, -1 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="Position2D" type="Position2D" parent="Rift"]
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
+enabled = false
 texture = ExtResource( 5 )
 color = Color( 1, 1, 0, 0.588235 )
+range_z_min = -147
+range_z_max = 344
 shadow_enabled = true
 shadow_gradient_length = 5.0
 shadow_filter = 5

@@ -48,8 +48,8 @@ color = Color( 0.12549, 0.933333, 1, 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
+enabled = false
 texture = ExtResource( 7 )
-color = Color( 0.0313726, 0, 1, 0.588235 )
 shadow_enabled = true
 shadow_gradient_length = 5.0
 shadow_filter = 5

@@ -22,9 +22,10 @@ polygon = PoolVector2Array( 163, 56, 280, 57, 335, 151, 277, 249, 161, 248, 97, 
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
+enabled = false
 texture = ExtResource( 3 )
 color = Color( 0.898039, 0, 1, 0.588235 )
-shadow_enabled = true
+shadow_buffer_size = 2047
 shadow_gradient_length = 5.0
 shadow_filter = 5
 shadow_filter_smooth = 15.0
