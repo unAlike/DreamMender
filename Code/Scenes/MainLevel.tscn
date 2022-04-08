@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Objects/EndGamePortal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Reflect.gd" type="Script" id=10]
 [ext_resource path="res://Shaders/Reflect.tres" type="Material" id=11]
 [ext_resource path="res://Art/Level 3.png" type="Texture" id=12]
@@ -19,8 +19,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1620.61, 331.754 )
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [node name="Map" type="StaticBody2D"]
 position = Vector2( 48, -503 )
@@ -379,17 +377,9 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 33370, 4144 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 27500, 350 )
+position = Vector2( 5376, -1457 )
 scale = Vector2( 0.980773, 0.904558 )
 z_index = 4096
-
-[node name="AnimationTree" parent="Player" index="5"]
-parameters/playback = SubResource( 2 )
-
-[node name="Camera2D" parent="Player" index="6"]
-position = Vector2( -7.13672, -67.4355 )
-drag_margin_top = 1.0
-drag_margin_bottom = 1.0
 
 [node name="BlueRiftGroup" type="Node2D" parent="."]
 position = Vector2( 24221, 12120 )
@@ -472,6 +462,10 @@ polygon = PoolVector2Array( -71, -208, -47, -185, -47, -55, 357, -78, 246, 53, -
 
 [node name="Start" type="Position2D" parent="BoatBody"]
 
+[node name="EndGamePortal" parent="." instance=ExtResource( 9 )]
+position = Vector2( 42684, 12322 )
+scale = Vector2( 6.25616, 6.29056 )
+
 [connection signal="body_entered" from="Spikes/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="Spikes/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="Spikes/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
@@ -492,4 +486,3 @@ polygon = PoolVector2Array( -71, -208, -47, -185, -47, -55, 357, -78, 246, 53, -
 [editable path="ThornPuzzle/YellowRift/SpikeHitbox5"]
 [editable path="ThornPuzzle/YellowRift/SpikeHitbox6"]
 [editable path="YellowTo/Platform"]
-[editable path="Player"]
