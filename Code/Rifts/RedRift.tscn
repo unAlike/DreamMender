@@ -1,22 +1,80 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=14 format=2]
 
+[ext_resource path="res://Art/Rifts/Red_Rift_Closed_Sprite_Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/RedRift.gd" type="Script" id=2]
 [ext_resource path="res://Art/light.png" type="Texture" id=3]
+[ext_resource path="res://Art/Rifts/Red_Rift_Open_Sprite_Sheet.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 161, 171 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 161, 0, 161, 171 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 161, 171 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 161, 0, 161, 171 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 322, 0, 161, 171 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 483, 0, 161, 171 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 644, 0, 161, 171 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 805, 0, 161, 171 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "Closed",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Open",
+"speed": 5.0
+} ]
 
 [node name="RedRift" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="Rift" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
-[node name="OuterHex" type="StaticBody2D" parent="Rift"]
-position = Vector2( 1.78814e-07, 1.78814e-07 )
-scale = Vector2( 1.05, 1.05 )
-input_pickable = true
+[node name="InnerHex" type="AnimatedSprite" parent="Rift"]
+position = Vector2( -3, 2 )
+scale = Vector2( 1.96038, 1.8821 )
+frames = SubResource( 9 )
+animation = "Open"
 
-[node name="InnerHex" type="Polygon2D" parent="Rift"]
-color = Color( 1, 0, 0, 1 )
-offset = Vector2( -221, -152 )
-polygon = PoolVector2Array( 163, 56, 280, 57, 335, 151, 277, 249, 161, 248, 97, 143 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rift"]
+polygon = PoolVector2Array( -58, -96, 60, -95, 114, -1, 56, 97, -60, 96, -124, -8 )
 
 [node name="Position2D" type="Position2D" parent="Rift"]
 
@@ -37,4 +95,6 @@ one_shot = true
 one_shot = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -58, -96, 60, -95, 114, -1, 56, 97, -60, 96, -124, -8 )
+polygon = PoolVector2Array( -125, -9, -57, -95, 59, -95, 114, -1, 54, 97, -61, 97 )
+
+[connection signal="body_entered" from="Rift" to="." method="_on_Rift_body_entered"]

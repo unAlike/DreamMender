@@ -45,6 +45,7 @@ radius = 48.0
 
 [node name="YellowRift" type="Area2D" groups=["YellowRift"]]
 script = ExtResource( 3 )
+InputObjectList = [ null ]
 
 [node name="Rift" type="Area2D" parent="."]
 collision_layer = 3
@@ -79,7 +80,6 @@ color_ramp = SubResource( 8 )
 position = Vector2( 1, -1 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="Position2D" type="Position2D" parent="Rift"]

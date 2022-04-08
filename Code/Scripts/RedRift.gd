@@ -11,20 +11,18 @@ func _ready():
 
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if riftOpen:
+	if riftActive:
 		for obj in objectList:
 			obj.rotation_degrees += 1
 		$Rift.rotation_degrees += 1
 	else:
+		
 		for obj in objectList:
 			obj.rotation_degrees -= 1
 		$Rift.rotation_degrees -=1
 
-#func RotateClockwise():
-#	hexRotation += 120
-#	for obj in objectList:
-#		obj[1] += 120
-#func RotateCounterClockwise():
-#	hexRotation -= 120
-#	for obj in objectList:
-#		obj[1] -= 120
+
+func _on_Rift_body_entered(body):
+	if body.name == "Needle":
+		body.queue_free()
+		Interact()

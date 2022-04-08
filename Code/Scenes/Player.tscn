@@ -375,7 +375,6 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 3
 playing = true
 centered = false
 
@@ -529,7 +528,7 @@ cast_to = Vector2( 0, 36.733 )
 collide_with_areas = true
 
 [node name="Projectile" type="Node2D" parent="."]
-position = Vector2( -15, 30 )
+position = Vector2( 0, -42 )
 script = ExtResource( 7 )
 NeedleScene = ExtResource( 8 )
 

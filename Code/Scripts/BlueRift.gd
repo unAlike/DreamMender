@@ -21,7 +21,7 @@ func Interact():
 		player.gravity *= -1
 		get_parent().get_node("MirrorBottom").visible = false
 		get_parent().get_node("MirrorTop").visible = true
-		get_parent().get_node("MirrorBottom").material.set_shader_param("scale", Vector2(300,-18))
+		get_parent().get_node("MirrorTop").material.set_shader_param("scale", Vector2(1,-15.5))
 	else: 
 		player.flipped = false
 		player.global_position.y = blueRiftLine.global_position.y - abs(player.global_position.y-blueRiftLine.global_position.y)
@@ -29,7 +29,7 @@ func Interact():
 		player.gravity *= -1
 		get_parent().get_node("MirrorBottom").visible = true
 		get_parent().get_node("MirrorTop").visible = false
-		get_parent().get_node("MirrorBottom").material.set_shader_param("scale", Vector2(300,18))
+		get_parent().get_node("MirrorBottom").material.set_shader_param("scale", Vector2(1,15.5))
 
 
 func _on_BlueRift_body_entered(body):

@@ -1,16 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/icon.png" type="Texture" id=4]
-[ext_resource path="res://Art/DW_Character_Jump_Sprite_Sheet.png" type="Texture" id=5]
 [ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Reflect.gd" type="Script" id=10]
 [ext_resource path="res://Shaders/Reflect.tres" type="Material" id=11]
+[ext_resource path="res://Art/Level 3.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Utility/Platform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Utility/Spikes.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1620.61, 331.754 )
@@ -20,6 +22,51 @@ extents = Vector2( 1620.61, 331.754 )
 [node name="Map" type="StaticBody2D"]
 position = Vector2( 48, -503 )
 script = ExtResource( 1 )
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="SpikeHitbox" type="Area2D" parent="Spikes"]
+position = Vector2( 32837, 4312 )
+rotation = -2.67135e-08
+scale = Vector2( 0.0348633, 0.235114 )
+input_pickable = false
+monitorable = false
+priority = 10.0
+
+[node name="SPIKESNOTSPRITESHEET" type="Sprite" parent="Spikes/SpikeHitbox"]
+position = Vector2( -57.3125, 153.115 )
+rotation = 3.96115e-09
+scale = Vector2( 1, 1 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/SpikeHitbox"]
+modulate = Color( 0.862745, 0.0431373, 0.0431373, 1 )
+self_modulate = Color( 0.909804, 0, 0, 1 )
+position = Vector2( -143.375, 318.993 )
+shape = SubResource( 1 )
+
+[node name="SpikeHitbox2" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 17568, -617 )
+scale = Vector2( 0.113254, 1.11582 )
+
+[node name="SpikeHitbox3" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 18282, -532 )
+rotation = -1.5708
+scale = Vector2( 0.113254, 1.11582 )
+
+[node name="SPIKESNOTSPRITESHEET" parent="Spikes/SpikeHitbox3" index="0"]
+scale = Vector2( 9.67806, 1.13733 )
+
+[node name="CollisionShape2D" parent="Spikes/SpikeHitbox3" index="1"]
+scale = Vector2( 1, 1 )
+
+[node name="SpikeHitbox4" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 17617, 741 )
+rotation = 0.74002
+scale = Vector2( 0.401, 3.519 )
+
+[node name="CollisionShape2D" parent="Spikes/SpikeHitbox4" index="1"]
+position = Vector2( 6.25391, 9.8064 )
 
 [node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( -16185, 1114 )
@@ -63,44 +110,193 @@ polygon = PoolVector2Array( 17606, -621, 17611, -767, 17647, -1191, 17592, -1279
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D24"]
 color = Color( 0, 0, 0, 1 )
 
-[node name="Node2D2" type="Node2D" parent="."]
+[node name="UnstableYellowRift" type="Node2D" parent="."]
 position = Vector2( 6192, -675 )
 
-[node name="YellowRift" parent="Node2D2" instance=ExtResource( 3 )]
+[node name="YellowRift" parent="UnstableYellowRift" instance=ExtResource( 3 )]
+position = Vector2( 6, -11 )
+InputObjectList = [ NodePath("Platform") ]
+riftUnstable = true
+
+[node name="Platform" parent="UnstableYellowRift/YellowRift" instance=ExtResource( 13 )]
+position = Vector2( -9, -304 )
+scale = Vector2( 4.80683, 5.3145 )
+
+[node name="fromPos" parent="UnstableYellowRift/YellowRift/Platform" index="1"]
+position = Vector2( 2.08044, -0.376343 )
+
+[node name="toPos" parent="UnstableYellowRift/YellowRift/Platform" index="2"]
+position = Vector2( 0, -101.797 )
+
+[node name="UnstableYellowRift2" type="Node2D" parent="."]
+position = Vector2( 7064, -688 )
+
+[node name="YellowRift" parent="UnstableYellowRift2" instance=ExtResource( 3 )]
+InputObjectList = [ NodePath("Platform") ]
+riftOpen = false
+riftUnstable = true
+
+[node name="Platform" parent="UnstableYellowRift2/YellowRift" instance=ExtResource( 13 )]
+position = Vector2( -9, -304 )
+scale = Vector2( 4.80683, 5.3145 )
+
+[node name="fromPos" parent="UnstableYellowRift2/YellowRift/Platform" index="1"]
+position = Vector2( 0.208008, -0.940826 )
+
+[node name="toPos" parent="UnstableYellowRift2/YellowRift/Platform" index="2"]
+position = Vector2( -4.78479, -105.372 )
+
+[node name="UnstableYellowRift3" type="Node2D" parent="."]
+position = Vector2( 8034, -684 )
+
+[node name="YellowRift" parent="UnstableYellowRift3" instance=ExtResource( 3 )]
+InputObjectList = [ NodePath("Platform") ]
+riftUnstable = true
+
+[node name="Platform" parent="UnstableYellowRift3/YellowRift" instance=ExtResource( 13 )]
+position = Vector2( -9, -304 )
+scale = Vector2( 4.80683, 5.3145 )
+
+[node name="fromPos" parent="UnstableYellowRift3/YellowRift/Platform" index="1"]
+position = Vector2( 0, -1.31714 )
+
+[node name="toPos" parent="UnstableYellowRift3/YellowRift/Platform" index="2"]
+position = Vector2( -6.86523, -107.63 )
+
+[node name="StableRift1" type="Node2D" parent="."]
+position = Vector2( 10752, -1002 )
+
+[node name="YellowRift" parent="StableRift1" instance=ExtResource( 3 )]
+InputObjectList = [ NodePath("Platform") ]
+speed = 3
+
+[node name="Platform" parent="StableRift1/YellowRift" instance=ExtResource( 13 )]
+position = Vector2( 3282, 12 )
+rotation = 3.14159
+scale = Vector2( 9.99792, -10.0244 )
+
+[node name="fromPos" parent="StableRift1/YellowRift/Platform" index="1"]
+position = Vector2( 245.851, 0.199509 )
+
+[node name="toPos" parent="StableRift1/YellowRift/Platform" index="2"]
+position = Vector2( -106.122, -28.5303 )
+
+[node name="StableRift2" type="Node2D" parent="."]
+position = Vector2( -8394, -266 )
+
+[node name="YellowRift" parent="StableRift2" instance=ExtResource( 3 )]
+position = Vector2( 23821, -664 )
+InputObjectList = [ NodePath("Platform") ]
+speed = 3
+
+[node name="Platform" parent="StableRift2/YellowRift" instance=ExtResource( 13 )]
+position = Vector2( 165, -245 )
+rotation = -3.14159
+scale = Vector2( 8.40582, -7.41355 )
+
+[node name="fromPos" parent="StableRift2/YellowRift/Platform" index="1"]
+position = Vector2( -1.42761, 0.269775 )
+
+[node name="toPos" parent="StableRift2/YellowRift/Platform" index="2"]
+position = Vector2( -77.2085, -154.447 )
+
+[node name="StableRift3" type="Node2D" parent="."]
+position = Vector2( -6851, -455 )
+
+[node name="YellowRift" parent="StableRift3" instance=ExtResource( 3 )]
+position = Vector2( 24450, -1429 )
+InputObjectList = [ NodePath("Platform") ]
+speed = 3
+
+[node name="Platform" parent="StableRift3/YellowRift" instance=ExtResource( 13 )]
+position = Vector2( 16, 184 )
+rotation = -3.14159
+scale = Vector2( -6.40436, -4.65076 )
+
+[node name="fromPos" parent="StableRift3/YellowRift/Platform" index="1"]
+position = Vector2( 0.156128, -0.215027 )
+
+[node name="toPos" parent="StableRift3/YellowRift/Platform" index="2"]
+position = Vector2( 12.6476, 162.554 )
+
+[node name="ThornPuzzle" type="Node2D" parent="."]
+position = Vector2( -8394, -266 )
+
+[node name="YellowRift" parent="ThornPuzzle" instance=ExtResource( 3 )]
+position = Vector2( 29913, 942 )
+z_index = 6
+riftUnstable = true
+
+[node name="SpikeHitbox4" parent="ThornPuzzle/YellowRift" instance=ExtResource( 14 )]
+position = Vector2( -572, -159 )
+rotation = 2.72969
+scale = Vector2( 0.224, -1.507 )
+
+[node name="CollisionShape2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4" index="1"]
+position = Vector2( 6.25391, 9.8064 )
+
+[node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4"]
+position = Vector2( 0.390625, -115.888 )
+
+[node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4"]
+
+[node name="SpikeHitbox5" parent="ThornPuzzle/YellowRift" instance=ExtResource( 14 )]
+position = Vector2( 72, -348 )
+rotation = -0.0733038
+scale = Vector2( 0.148, 1.206 )
+
+[node name="CollisionShape2D" parent="ThornPuzzle/YellowRift/SpikeHitbox5" index="1"]
+position = Vector2( 6.25391, 9.8064 )
+
+[node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox5"]
+position = Vector2( 0.390625, -115.888 )
+
+[node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox5"]
+
+[node name="SpikeHitbox6" parent="ThornPuzzle/YellowRift" instance=ExtResource( 14 )]
+position = Vector2( 526, -280 )
+rotation = 0.436332
+scale = Vector2( 0.141, 0.884 )
+
+[node name="CollisionShape2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6" index="1"]
+position = Vector2( 6.25391, 9.8064 )
+
+[node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6"]
+position = Vector2( -21.5938, -151.919 )
+
+[node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6"]
+
+[node name="YellowTo" parent="." instance=ExtResource( 3 )]
+position = Vector2( 24066, 977 )
+InputObjectList = [ NodePath("Platform") ]
+speed = 3
+
+[node name="Platform" parent="YellowTo" instance=ExtResource( 13 )]
+position = Vector2( 2, -171 )
+scale = Vector2( 5.36, 5.12 )
+
+[node name="fromPos" parent="YellowTo/Platform" index="1"]
+position = Vector2( -1.30615, -1.3672 )
+
+[node name="toPos" parent="YellowTo/Platform" index="2"]
+position = Vector2( -5.22363, -249.023 )
+
+[node name="UnstableRedRift" type="Node2D" parent="."]
+position = Vector2( 24080, -1211 )
+
+[node name="PinkRift" parent="UnstableRedRift" instance=ExtResource( 6 )]
 
 [node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( -7861, -272 )
+position = Vector2( -8394, -266 )
 polygon = PoolVector2Array( 17663, -648, 18783, -662, 18707, -805, 18272, -805, 17805, -779, 17631, -774, 17291, -758, 17279, -657 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D28"]
 color = Color( 0, 0, 0, 1 )
 
 [node name="Icon" type="Sprite" parent="CollisionPolygon2D28"]
-position = Vector2( 17973, -1072 )
+position = Vector2( 17966, -1091 )
 scale = Vector2( 9.53125, 8.64063 )
 texture = ExtResource( 4 )
-
-[node name="YellowRift4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 11443, -991 )
-script = null
-
-[node name="YellowRift5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 15582, -2434 )
-script = null
-
-[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( -3002, -289 )
-polygon = PoolVector2Array( 17663, -648, 17663, -749, 16917, -758, 16913, -648 )
-
-[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D29"]
-color = Color( 0, 0, 0, 1 )
-
-[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( -1658, -1507 )
-polygon = PoolVector2Array( 17663, -648, 17663, -749, 16917, -758, 16913, -648 )
-
-[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D30"]
-color = Color( 0, 0, 0, 1 )
 
 [node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( -102, 1954 )
@@ -108,10 +304,6 @@ polygon = PoolVector2Array( 24738, -716, 24886, -379, 24714, 1134, 24818, 1527, 
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D31"]
 color = Color( 0, 0, 0, 1 )
-
-[node name="YellowRift" parent="CollisionPolygon2D31" instance=ExtResource( 3 )]
-position = Vector2( 24155, -1938 )
-script = null
 
 [node name="PinkRift" parent="CollisionPolygon2D31" instance=ExtResource( 6 )]
 position = Vector2( 38093, 2155 )
@@ -127,62 +319,12 @@ polygon = PoolVector2Array( 17193, -748, 17446, -695, 18478, -727, 19197, -1400,
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D32"]
 color = Color( 0, 0, 0, 1 )
 
-[node name="YellowRift" parent="CollisionPolygon2D32" instance=ExtResource( 3 )]
-position = Vector2( 16288, -2573 )
-script = null
-
-[node name="DwCharacterJumpSpriteSheet" type="Sprite" parent="."]
-position = Vector2( 17572, -612 )
-scale = Vector2( 0.229748, -0.15863 )
-texture = ExtResource( 5 )
-
-[node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( 406, -420 )
-polygon = PoolVector2Array( 17375, -637, 17464, -681, 16958, -726, 16952, -639 )
-
-[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D33"]
-color = Color( 0, 0, 0, 1 )
-
-[node name="DwCharacterJumpSpriteSheet3" type="Sprite" parent="."]
-position = Vector2( 17715, 700.999 )
-rotation = -2.35134
-scale = Vector2( 0.679037, 0.609809 )
-texture = ExtResource( 5 )
-
-[node name="DwCharacterJumpSpriteSheet2" type="Sprite" parent="."]
-position = Vector2( 18268, -532 )
-rotation = -1.55904
-scale = Vector2( 0.229748, -0.15863 )
-texture = ExtResource( 5 )
-
 [node name="CollisionPolygon2D34" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 6770, 1993 )
 polygon = PoolVector2Array( 17663, -648, 17663, -749, 16917, -758, 16913, -648 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D34"]
 color = Color( 0, 0, 0, 1 )
-
-[node name="PinkRift" parent="." instance=ExtResource( 6 )]
-position = Vector2( 24080, -1211 )
-
-[node name="SPIKESNOTSPRITESHEET" type="Sprite" parent="."]
-position = Vector2( 32835, 4348 )
-rotation = 1.59225e-15
-scale = Vector2( 0.0348633, 0.235114 )
-texture = ExtResource( 7 )
-
-[node name="SpikeHitbox" type="Area2D" parent="SPIKESNOTSPRITESHEET"]
-position = Vector2( 57.3125, -153.115 )
-rotation = -3.96115e-09
-input_pickable = false
-monitorable = false
-priority = 10.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SPIKESNOTSPRITESHEET/SpikeHitbox"]
-modulate = Color( 0.862745, 0.0431373, 0.0431373, 1 )
-self_modulate = Color( 0.909804, 0, 0, 1 )
-position = Vector2( -143.375, 318.993 )
-shape = SubResource( 1 )
 
 [node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 21517, -1029 )
@@ -244,11 +386,12 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 33370, 4144 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24181, 12476 )
+position = Vector2( 5503, -1117 )
 scale = Vector2( 0.980773, 0.904558 )
+z_index = 4096
 
 [node name="Sprite" parent="Player" index="3"]
-frame = 4
+frame = 6
 
 [node name="AnimationTree" parent="Player" index="5"]
 parameters/playback = SubResource( 2 )
@@ -266,11 +409,45 @@ scale = Vector2( 0.980773, 0.904558 )
 position = Vector2( -870.742, 496.375 )
 scale = Vector2( 1.0196, 1.10551 )
 
+[node name="BlueRiftFlip" type="Position2D" parent="BlueRiftGroup"]
+position = Vector2( 327.293, 505.218 )
+scale = Vector2( 1.0196, 1.10551 )
+
+[node name="BlueRift3" parent="BlueRiftGroup" instance=ExtResource( 9 )]
+position = Vector2( 408.861, 75.1753 )
+z_index = 3
+
+[node name="BlueRift2" parent="BlueRiftGroup" instance=ExtResource( 9 )]
+position = Vector2( 2074.89, 54.168 )
+z_index = 3
+
+[node name="BlueRift4" parent="BlueRiftGroup" instance=ExtResource( 9 )]
+position = Vector2( 408.859, 75.1748 )
+scale = Vector2( 1, 1 )
+z_index = 3
+
+[node name="Level3" type="Sprite" parent="BlueRiftGroup"]
+position = Vector2( 1180.7, 115.917 )
+rotation = 3.14159
+scale = Vector2( 1, 0.736204 )
+z_index = -10
+texture = ExtResource( 12 )
+
+[node name="Level4" type="Sprite" parent="BlueRiftGroup"]
+position = Vector2( 1182.74, 891.043 )
+rotation = 3.14159
+scale = Vector2( 1, 0.736 )
+z_index = -10
+texture = ExtResource( 12 )
+flip_v = true
+
 [node name="MirrorTop" type="Sprite" parent="BlueRiftGroup"]
+visible = false
 material = ExtResource( 11 )
 position = Vector2( 8884.83, -72.9629 )
 rotation = 3.14159
-scale = Vector2( 300, 18 )
+scale = Vector2( 300, -18 )
+z_index = 1
 texture = ExtResource( 4 )
 flip_v = true
 script = ExtResource( 10 )
@@ -280,30 +457,29 @@ material = ExtResource( 11 )
 position = Vector2( -301.803, 789.335 )
 rotation = 3.14159
 scale = Vector2( 300, -18 )
+z_index = 1
 texture = ExtResource( 4 )
 offset = Vector2( -30.232, 16.038 )
 script = ExtResource( 10 )
 
-[node name="BlueRiftFlip" type="Position2D" parent="BlueRiftGroup"]
-position = Vector2( 327.293, 505.218 )
-scale = Vector2( 1.0196, 1.10551 )
+[connection signal="body_entered" from="Spikes/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Spikes/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Spikes/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Spikes/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
 
-[node name="BlueRift3" parent="BlueRiftGroup" instance=ExtResource( 9 )]
-position = Vector2( 408.861, 75.1753 )
-
-[node name="BlueRift" parent="BlueRiftGroup" instance=ExtResource( 9 )]
-position = Vector2( 1242.9, 878.882 )
-unstableTime = 0
-speed = 0
-
-[node name="BlueRift2" parent="BlueRiftGroup" instance=ExtResource( 9 )]
-position = Vector2( 2074.89, 54.168 )
-
-[node name="BlueRift4" parent="BlueRiftGroup" instance=ExtResource( 9 )]
-position = Vector2( 2959.91, 771.646 )
-
-[connection signal="area_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_area_entered"]
-[connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_onTouch"]
-
+[editable path="Spikes/SpikeHitbox3"]
+[editable path="Spikes/SpikeHitbox4"]
+[editable path="UnstableYellowRift/YellowRift/Platform"]
+[editable path="UnstableYellowRift2/YellowRift/Platform"]
+[editable path="UnstableYellowRift3/YellowRift/Platform"]
+[editable path="StableRift1/YellowRift/Platform"]
+[editable path="StableRift2/YellowRift/Platform"]
+[editable path="StableRift3/YellowRift/Platform"]
+[editable path="ThornPuzzle/YellowRift/SpikeHitbox4"]
+[editable path="ThornPuzzle/YellowRift/SpikeHitbox5"]
+[editable path="ThornPuzzle/YellowRift/SpikeHitbox6"]
+[editable path="YellowTo/Platform"]
 [editable path="Player"]

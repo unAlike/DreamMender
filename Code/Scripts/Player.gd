@@ -7,12 +7,12 @@ var gravity = 2000
 var jumpPower = 1000
 var vel = Vector2.ZERO
 var numWallJump = 2
-var maxNumWallJump = 10
+export var maxNumWallJump = 10
 var timeOnWall = 0
 var lastDir = 'left'
 var threadPath = []
 var numDJump = 2
-var maxNumDJump = 20
+export var  maxNumDJump = 20
 var dir = 0
 var state_machine
 var lastGround

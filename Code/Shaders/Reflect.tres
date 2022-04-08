@@ -20,7 +20,10 @@ void fragment(){
 	
 	vec4 reflection = texture(SCREEN_TEXTURE, reflected_screenuv);
 	
-	COLOR.rgb = reflection.rbg;	
+	float avg = (reflection.r + reflection.g + reflection.b) / 3.0;
+	
+	COLOR.rgb = vec3(avg);
+	
 	//COLOR.rgb = mix(reflection.rbg, color.rgb, color.a);	
 }"
 
@@ -34,10 +37,10 @@ noise = SubResource( 6 )
 
 [resource]
 shader = SubResource( 3 )
-shader_param/scale = Vector2( 1, 15 )
+shader_param/scale = Vector2( 1, 15.5 )
 shader_param/y_zoom = 0.0
-shader_param/color = Color( 0, 0, 0, 1 )
-shader_param/distortion_scale = Vector2( -2.683, 1.479 )
-shader_param/intensity = -0.01
+shader_param/color = Color( 0, 0, 0, 0.168627 )
+shader_param/distortion_scale = Vector2( 0.654, 2.001 )
+shader_param/intensity = 0.024
 shader_param/speed = 0.1
 shader_param/noise = SubResource( 5 )

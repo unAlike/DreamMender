@@ -10,30 +10,30 @@ func _init():
 
 func _ready():
 	oldScale = $Light2D.scale
-	if InputObjectList.size()>0:
-		for obj in InputObjectList:
-			var plat = platform.new(get_node(obj),get_node(obj).get_node("fromPos").global_position,get_node(obj).get_node("toPos").global_position)
+	for obj in get_children():
+		if obj.get_node("toPos") != null:
+			var plat = platform.new(obj,obj.get_node("fromPos").global_position,obj.get_node("toPos").global_position)
 			objectList.append(plat)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if riftOpen == false:
+	if riftActive == true:
 		$Rift/Particles2D.emitting = true
 		$Light2D.scale = lerp($Light2D.scale, oldScale, lerpVal)
-		#print(str(objectList))
 		for obj in objectList:
 			obj.object.global_position = lerp(obj.fromPos, obj.toPos, lerpVal)
 		if lerpVal < 1:
 			lerpVal += delta/speed
-	elif riftOpen == true:
+	else:
 		$Rift/Particles2D.emitting = false
 		$Light2D.scale = lerp($Light2D.scale, Vector2.ZERO, lerpVal)
 		for obj in objectList:
 			obj.object.global_position = lerp( obj.fromPos, obj.toPos, lerpVal)
 		if lerpVal > 0:
 			lerpVal -= delta/speed
-	#print(lerpVal)
 
+	
 func _on_Rift_body_entered(body):
-	Interact()
-	body.queue_free()
+	if body.name == "Needle":
+		body.queue_free()
+		Interact()

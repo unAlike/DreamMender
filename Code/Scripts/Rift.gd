@@ -1,7 +1,7 @@
 extends Area2D
 
-export var InputObjectList = []
-export var riftOpen = true
+export (Array, NodePath) var InputObjectList = []
+export var riftActive = true
 export var riftUnstable = false
 export var unstableTime = 5
 export var speed = 1
@@ -17,19 +17,19 @@ func _ready():
 	riftTimer.set_wait_time(unstableTime)
 	unstableTimer.set_wait_time(unstableTime)
 	unstableTimer.start()
-	original = riftOpen
+	original = riftActive
 
 func _process(delta):
 	# If rift is unstable, change rift state after each timeout
 	if riftUnstable == true:
 		if unstableTimer.get_time_left() == 0:
-			riftOpen = !riftOpen
+			riftActive = !riftActive
 			unstableTimer.start()
 	# If rift is stable & not in original state, change rift state after timeout
 	else:
-		if riftOpen != original and riftTimer.get_time_left() == 0:
+		if riftActive != original and riftTimer.get_time_left() == 0:
 			if riftTimer.get_wait_time()>0.1:
-				riftOpen = !riftOpen
+				riftActive = !riftActive
 
 	# How Interact() is activated
 	if Input.is_action_just_pressed("swap"):
@@ -40,7 +40,6 @@ func Interact():
 	if riftUnstable:
 		unstableTimer.start()
 	else:
-		
-		if riftOpen == original:
-			riftOpen = !riftOpen
+		if riftActive == original:
+			riftActive = !riftActive
 		riftTimer.start()
