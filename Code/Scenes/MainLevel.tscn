@@ -377,13 +377,28 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 33370, 4144 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5376, -1457 )
+position = Vector2( 23928, -845 )
 scale = Vector2( 0.980773, 0.904558 )
 z_index = 4096
 
 [node name="BlueRiftGroup" type="Node2D" parent="."]
 position = Vector2( 24221, 12120 )
 scale = Vector2( 0.980773, 0.904558 )
+
+[node name="Level3" type="Sprite" parent="BlueRiftGroup"]
+position = Vector2( 1180.7, 115.917 )
+rotation = 3.14159
+scale = Vector2( 1, 0.736204 )
+z_index = -10
+texture = ExtResource( 12 )
+
+[node name="Level4" type="Sprite" parent="BlueRiftGroup"]
+position = Vector2( 1182.74, 891.043 )
+rotation = 3.14159
+scale = Vector2( 1, 0.736 )
+z_index = -10
+texture = ExtResource( 12 )
+flip_v = true
 
 [node name="CameraPos" type="Position2D" parent="BlueRiftGroup"]
 position = Vector2( -870.742, 496.375 )
@@ -400,21 +415,6 @@ z_index = 3
 [node name="BlueRift2" parent="BlueRiftGroup" instance=ExtResource( 9 )]
 position = Vector2( 2074.89, 54.168 )
 z_index = 3
-
-[node name="Level3" type="Sprite" parent="BlueRiftGroup"]
-position = Vector2( 1180.7, 115.917 )
-rotation = 3.14159
-scale = Vector2( 1, 0.736204 )
-z_index = -10
-texture = ExtResource( 12 )
-
-[node name="Level4" type="Sprite" parent="BlueRiftGroup"]
-position = Vector2( 1182.74, 891.043 )
-rotation = 3.14159
-scale = Vector2( 1, 0.736 )
-z_index = -10
-texture = ExtResource( 12 )
-flip_v = true
 
 [node name="MirrorTop" type="Sprite" parent="BlueRiftGroup"]
 visible = false

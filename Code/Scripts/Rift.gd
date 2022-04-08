@@ -30,6 +30,7 @@ func _process(delta):
 		if riftActive != original and riftTimer.get_time_left() == 0:
 			if riftTimer.get_wait_time()>0.1:
 				riftActive = !riftActive
+				riftTimer.start()
 
 	# How Interact() is activated
 	if Input.is_action_just_pressed("swap"):
