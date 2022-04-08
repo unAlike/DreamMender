@@ -303,7 +303,7 @@ position = Vector2( 2074.89, 54.168 )
 position = Vector2( 2959.91, 771.646 )
 
 [connection signal="area_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_area_entered"]
-[connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_onTouch"]
+[connection signal="body_entered" from="SPIKESNOTSPRITESHEET/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
 
 [editable path="Player"]

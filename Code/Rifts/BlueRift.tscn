@@ -66,3 +66,4 @@ one_shot = true
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_BlueRift_body_entered"]
+[connection signal="body_entered" from="Rift" to="." method="_on_Rift_body_entered"]

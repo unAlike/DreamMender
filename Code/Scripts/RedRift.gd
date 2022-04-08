@@ -28,3 +28,8 @@ func _process(delta):
 #	hexRotation -= 120
 #	for obj in objectList:
 #		obj[1] -= 120
+
+func _on_Rift_body_entered(body):
+	Interact()
+	if body.name == "Needle":
+		body.queue_free()
