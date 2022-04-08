@@ -386,12 +386,12 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 33370, 4144 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5503, -1117 )
+position = Vector2( 23746, -1374 )
 scale = Vector2( 0.980773, 0.904558 )
 z_index = 4096
 
 [node name="Sprite" parent="Player" index="3"]
-frame = 6
+frame = 4
 
 [node name="AnimationTree" parent="Player" index="5"]
 parameters/playback = SubResource( 2 )

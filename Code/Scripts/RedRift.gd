@@ -12,11 +12,12 @@ func _ready():
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if riftActive:
+		$Rift/InnerHex.animation = "Open"
 		for obj in objectList:
 			obj.rotation_degrees += 1
 		$Rift.rotation_degrees += 1
 	else:
-		
+		$Rift/InnerHex.animation = "Closed"
 		for obj in objectList:
 			obj.rotation_degrees -= 1
 		$Rift.rotation_degrees -=1
