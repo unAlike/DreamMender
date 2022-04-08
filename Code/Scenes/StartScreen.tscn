@@ -15,6 +15,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0.278431, 0.478431, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
 anchor_top = 1.0
@@ -61,6 +64,9 @@ margin_bottom = 124.0
 rect_rotation = 0.368145
 rect_scale = Vector2( -0.669299, 0.676098 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
