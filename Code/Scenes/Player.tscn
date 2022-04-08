@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=2]
@@ -10,19 +10,48 @@
 [ext_resource path="res://Scenes/Needle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Art/needle.png" type="Texture" id=9]
 
-[sub_resource type="CapsuleShape2D" id=49]
-radius = 16.0
-height = 50.0
+[sub_resource type="RectangleShape2D" id=93]
+extents = Vector2( 13, 41 )
 
-[sub_resource type="AtlasTexture" id=72]
+[sub_resource type="AtlasTexture" id=50]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=73]
+[sub_resource type="AtlasTexture" id=51]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 5 )
 region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
@@ -48,21 +77,6 @@ region = Rect2( 792, 0, 264, 452 )
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=82]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=70]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=71]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 900, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=58]
 flags = 4
@@ -124,73 +138,84 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=72]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=73]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 6 )
 region = Rect2( 300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=82]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 6 )
 region = Rect2( 600, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=53]
+[sub_resource type="AtlasTexture" id=71]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 6 )
 region = Rect2( 900, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=54]
+[sub_resource type="AtlasTexture" id=83]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=55]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=56]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=57]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 2100, 0, 300, 452 )
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 72 ), SubResource( 73 ) ],
-"loop": false,
-"name": "wall",
-"speed": 5.0
+"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": false,
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
-"loop": false,
-"name": "wallJump",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
-"loop": true,
-"name": "idle",
+"frames": [ SubResource( 72 ), SubResource( 73 ) ],
+"loop": false,
+"name": "wall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": false,
+"name": "wallJump",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=84]
+resource_name = "fall"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fall" ]
+}
 
 [sub_resource type="Animation" id=36]
 resource_name = "idle"
@@ -221,6 +246,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=37]
 resource_name = "jump"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -275,6 +301,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=74]
 resource_name = "wall"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -290,6 +317,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=75]
 resource_name = "wallJump"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -302,6 +330,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "wallJump" ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=85]
+animation = "fall"
 
 [sub_resource type="AnimationNodeAnimation" id=38]
 animation = "idle"
@@ -318,40 +361,53 @@ animation = "wall"
 [sub_resource type="AnimationNodeAnimation" id=77]
 animation = "wallJump"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=40]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=41]
-advance_condition = "running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=45]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=46]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=47]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=48]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=78]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=79]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=80]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=81]
+[sub_resource type="AnimationNodeStateMachineTransition" id=97]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=98]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=99]
+advance_condition = "onGround"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=100]
+advance_condition = "onWall"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=101]
+switch_mode = 2
+auto_advance = true
+advance_condition = "falling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=102]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=103]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=104]
+advance_condition = "falling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=105]
+advance_condition = "falling"
 
 [sub_resource type="AnimationNodeStateMachine" id=42]
+states/fall/node = SubResource( 85 )
+states/fall/position = Vector2( 230, 49 )
 states/idle/node = SubResource( 38 )
-states/idle/position = Vector2( 291, 211.988 )
+states/idle/position = Vector2( 187, 325.988 )
 states/jump/node = SubResource( 44 )
-states/jump/position = Vector2( 406.667, 90 )
+states/jump/position = Vector2( 103, 145 )
 states/run/node = SubResource( 39 )
-states/run/position = Vector2( 592.333, 212.333 )
+states/run/position = Vector2( 514.333, 357.988 )
 states/wall/node = SubResource( 76 )
-states/wall/position = Vector2( 773, 49 )
+states/wall/position = Vector2( 845, 49 )
 states/wallJump/node = SubResource( 77 )
-states/wallJump/position = Vector2( 826, 158 )
-transitions = [ "idle", "run", SubResource( 40 ), "run", "idle", SubResource( 41 ), "idle", "jump", SubResource( 45 ), "jump", "idle", SubResource( 46 ), "jump", "run", SubResource( 47 ), "run", "jump", SubResource( 48 ), "jump", "wall", SubResource( 78 ), "wall", "wallJump", SubResource( 79 ), "wallJump", "wall", SubResource( 80 ), "wallJump", "jump", SubResource( 81 ) ]
+states/wallJump/position = Vector2( 836, 217 )
+transitions = [ "wall", "wallJump", SubResource( 79 ), "wallJump", "wall", SubResource( 80 ), "idle", "jump", SubResource( 97 ), "jump", "fall", SubResource( 98 ), "fall", "idle", SubResource( 99 ), "fall", "wall", SubResource( 100 ), "wallJump", "fall", SubResource( 101 ), "idle", "run", SubResource( 102 ), "run", "idle", SubResource( 103 ), "wall", "fall", SubResource( 104 ), "run", "fall", SubResource( 105 ) ]
 start_node = "idle"
+graph_offset = Vector2( 0, 6.98399 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 
@@ -362,8 +418,8 @@ script = ExtResource( 1 )
 position = Vector2( 32, -58 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -41 )
-shape = SubResource( 49 )
+position = Vector2( 0, -40 )
+shape = SubResource( 93 )
 
 [node name="Needle" type="Sprite" parent="."]
 position = Vector2( 2, -8 )
@@ -374,13 +430,13 @@ scale = Vector2( 0.658644, 1.95727 )
 position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
-animation = "idle"
-frame = 6
+animation = "fall"
 playing = true
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
+anims/fall = SubResource( 84 )
 anims/idle = SubResource( 36 )
 anims/jump = SubResource( 37 )
 anims/run = SubResource( 32 )
@@ -392,7 +448,9 @@ tree_root = SubResource( 42 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 43 )
-parameters/conditions/running = false
+parameters/conditions/falling = false
+parameters/conditions/onGround = false
+parameters/conditions/onWall = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 5, -67 )
@@ -525,34 +583,8 @@ Mouse - Aim
 Left Click - Throw Needle
 Scroll - Zoom In/Out"
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( -16, -36 )
-enabled = true
-cast_to = Vector2( 0, 36.733 )
-collide_with_areas = true
-
-[node name="RayCast2D2" type="RayCast2D" parent="."]
-position = Vector2( 16, -35 )
-enabled = true
-cast_to = Vector2( 0, 36.733 )
-collide_with_areas = true
-
 [node name="RayCast2D3" type="RayCast2D" parent="."]
-position = Vector2( 0.999998, -36 )
-scale = Vector2( 0.954545, 1.00362 )
-enabled = true
-cast_to = Vector2( 0, 36.733 )
-collide_with_areas = true
-
-[node name="RayCast2D4" type="RayCast2D" parent="."]
-position = Vector2( -7, -36 )
-scale = Vector2( 0.954545, 1.00362 )
-enabled = true
-cast_to = Vector2( 0, 36.733 )
-collide_with_areas = true
-
-[node name="RayCast2D5" type="RayCast2D" parent="."]
-position = Vector2( 9, -36 )
+position = Vector2( 5.96046e-08, -35 )
 scale = Vector2( 0.954545, 1.00362 )
 enabled = true
 cast_to = Vector2( 0, 36.733 )

@@ -38,7 +38,7 @@ func _process(delta):
 # Activates an inactive rift or resets the timer of an active one
 func Interact():
 	if riftUnstable:
-		unstableTimer.start()
+		pass
 	else:
 		if riftActive == original:
 			riftActive = !riftActive

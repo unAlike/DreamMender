@@ -14,14 +14,18 @@ var threadPath = []
 var numDJump = 2
 export var  maxNumDJump = 20
 var dir = 0
-var state_machine
+var state_machine : AnimationNodeStateMachinePlayback
 var lastGround
 var flipped = false
 var inBlueRift = false
+var lastState = null
+var stateConditions
+var timeFalling = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+	stateConditions = $AnimationTree.get("parameters/conditions")
 
 func get_Input():
 	dir = 0
@@ -35,10 +39,6 @@ func get_Input():
 		dir -= speed
 		if is_on_wall() or GroundCheck():
 			$Sprite.flip_h = true
-#	else:
-#		$Sprite.scale.y = lerp($Sprite.scale.y, 1, 1)
-#		$CollisionPolygon2D.scale.y = lerp($CollisionPolygon2D.scale.y, 1, 1)dd
-#		$CollisionPolygon2D.position.y = 0
 	if dir!=0:
 		vel.x = lerp(vel.x, dir, 0.25)
 	else:
@@ -50,29 +50,31 @@ func get_Input():
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 
 func _physics_process(delta):
-	if dir!=0 and GroundCheck():
-		state_machine.travel("run")
-	if dir == 0 and GroundCheck():
-		state_machine.travel("idle")
+	
+	if lastState != state_machine.get_current_node():
+		lastState = state_machine.get_current_node()
+	if GroundCheck():
+		numWallJump = maxNumWallJump
+		numDJump = maxNumDJump
+		if dir!=0:
+			state_machine.travel("run")
+		if dir == 0:
+			state_machine.travel("idle")
+	
 	get_Input()
 	vel.y += gravity * delta
 	if is_on_wall() and numWallJump>0:
 		state_machine.travel("wall")
 		timeOnWall += delta
-		if timeOnWall<1 and timeOnWall>.01:
-			vel.y = 0
-		elif timeOnWall>2 :
-			vel.y *= 1
-		else:
-			vel.y *= .5
+		vel.y = timeOnWall*100
+#		if vel.y>gravity:
+#			vel.y = gravity
 	else:
 		timeOnWall = 0
 	if Input.is_action_just_pressed("jump"):
 		if GroundCheck():
 			state_machine.travel("jump")
 			vel.y = -jumpPower * scale.y
-			numWallJump = maxNumWallJump
-			numDJump = maxNumDJump
 		if is_on_wall() and numWallJump>0:
 			state_machine.travel("wallJump")
 			vel.y = -jumpPower * scale.y
@@ -82,19 +84,43 @@ func _physics_process(delta):
 				vel.x = -jumpPower
 			numWallJump -= 1
 		elif numDJump > 0:
-			print("DJ")
 			$Sprite.frame = 0
 			$Sprite.playing = true
+			$AnimationPlayer.play()
 			vel.y = -jumpPower * scale.y
 			numDJump -= 1
 	if vel.y>1200:
 		vel.y = 1200
-	if GroundCheck() and dir == 0:
+	var snap = Vector2.ZERO
+	if is_on_floor() and dir == 0:
+		snap = -get_floor_normal() * .02
 		vel.x = 0
-		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP, true)
+		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP, true, 1, .78)
 	else:
-		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP)
-
+		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP, false, 4, .78)
+		
+	if $AnimationTree.get("parameters/conditions/falling"):
+		if vel.x>0:
+			$Sprite.flip_h = false
+		if vel.x<0:
+			$Sprite.flip_h = true
+	
+	if timeFalling>.1:
+		$AnimationTree.set("parameters/conditions/onGround", is_on_floor())
+		$AnimationTree.set("parameters/conditions/onWall", is_on_wall())
+		if not is_on_wall() and not is_on_floor():
+			$AnimationTree.set("parameters/conditions/falling", true)
+		else:
+			$AnimationTree.set("parameters/conditions/falling", false)
+	else:
+		$AnimationTree.set("parameters/conditions/falling", false)
+	if not is_on_wall() and !is_on_floor():
+		timeFalling+=delta
+	else:
+		timeFalling = 0
+	if not is_on_wall() and !is_on_floor():
+		timeFalling+=delta
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #	if threadPath.size() < 30:
@@ -122,14 +148,20 @@ func save():
 
 #Checks all Player Raycast2D's to check if on ground
 func GroundCheck():
-	var raycasters = [$RayCast2D,$RayCast2D2,$RayCast2D3,$RayCast2D4,$RayCast2D5]
-	for c in raycasters:
-		if c.is_colliding():
-			lastGround = c.get_collision_normal()
-			return true
-	return false
+	return is_on_floor()
+#	var raycasters = []
+#	for c in get_children():
+#		if c is RayCast2D:
+#			raycasters.append(c)
+#	for c in raycasters:
+#		if c.is_colliding():
+#			lastGround = c.get_collision_normal()
+#			return true
+#	return false
 
 func GetGroundTouching():
+	if is_on_floor():
+		return get_floor_angle()
 	return null
 
 # Kills player

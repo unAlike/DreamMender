@@ -18,6 +18,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if riftActive == true:
+		$Rift/Sprite.animation = "Open"
 		$Rift/Particles2D.emitting = true
 		$Light2D.scale = lerp($Light2D.scale, oldScale, lerpVal)
 		for obj in objectList:
@@ -25,6 +26,7 @@ func _process(delta):
 		if lerpVal < 1:
 			lerpVal += delta/speed
 	else:
+		$Rift/Sprite.animation = "Closed"
 		$Rift/Particles2D.emitting = false
 		$Light2D.scale = lerp($Light2D.scale, Vector2.ZERO, lerpVal)
 		for obj in objectList:
