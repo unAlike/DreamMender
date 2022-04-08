@@ -47,6 +47,9 @@ radius = 48.0
 script = ExtResource( 3 )
 
 [node name="Rift" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rift"]
 shape = SubResource( 1 )
@@ -76,6 +79,7 @@ color_ramp = SubResource( 8 )
 position = Vector2( 1, -1 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
+frame = 3
 playing = true
 
 [node name="Position2D" type="Position2D" parent="Rift"]
@@ -99,3 +103,4 @@ one_shot = true
 shape = SubResource( 9 )
 
 [connection signal="area_entered" from="." to="." method="Interact"]
+[connection signal="body_entered" from="Rift" to="." method="_on_Rift_body_entered"]

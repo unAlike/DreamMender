@@ -33,3 +33,7 @@ func _process(delta):
 		if lerpVal > 0:
 			lerpVal -= delta/speed
 	#print(lerpVal)
+
+func _on_Rift_body_entered(body):
+	Interact()
+	body.queue_free()

@@ -11,6 +11,7 @@ var lastPlayed = 0
 var original = false
 onready var riftTimer: Timer = get_node("riftTimer")
 onready var unstableTimer: Timer = get_node("unstableTimer")
+#onready var colDetect : Area2D = get_node("NeedleDetector")
 
 func _ready():
 	riftTimer.set_wait_time(unstableTime)
