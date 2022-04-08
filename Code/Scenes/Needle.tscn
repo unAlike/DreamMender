@@ -7,7 +7,7 @@
 radius = 8.0
 height = 32.0
 
-[node name="Needle" type="KinematicBody2D" groups=["Needle"]]
+[node name="Needle" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
@@ -23,8 +23,5 @@ shape = SubResource( 1 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 2.38419e-07, 5 )
 scale = Vector2( 0.8, 2.4 )
-
-[node name="Life" type="Timer" parent="."]
-one_shot = true
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

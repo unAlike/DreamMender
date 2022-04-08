@@ -36,5 +36,4 @@ func _process(delta):
 
 func _on_Rift_body_entered(body):
 	Interact()
-	if body.name == "Needle":
-		body.queue_free()
+	body.queue_free()

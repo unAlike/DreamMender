@@ -12,7 +12,6 @@ position = Vector2( 550, 240 )
 [node name="Platform" parent="." instance=ExtResource( 1 )]
 position = Vector2( 500, 330 )
 scale = Vector2( 10, 1 )
-collision_layer = 3
 
 [node name="YellowRift" parent="." instance=ExtResource( 3 )]
 position = Vector2( 940, 243 )

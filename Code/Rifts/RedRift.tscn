@@ -7,8 +7,6 @@
 script = ExtResource( 2 )
 
 [node name="Rift" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
 
 [node name="OuterHex" type="StaticBody2D" parent="Rift"]
 position = Vector2( 1.78814e-07, 1.78814e-07 )
@@ -21,9 +19,6 @@ offset = Vector2( -221, -152 )
 polygon = PoolVector2Array( 163, 56, 280, 57, 335, 151, 277, 249, 161, 248, 97, 143 )
 
 [node name="Position2D" type="Position2D" parent="Rift"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rift"]
-polygon = PoolVector2Array( 60, -96, -59, -96, -125, -9, -59, 96, 57, 97, 114, 0 )
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -43,5 +38,3 @@ one_shot = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -58, -96, 60, -95, 114, -1, 56, 97, -60, 96, -124, -8 )
-
-[connection signal="body_entered" from="Rift" to="." method="_on_Rift_body_entered"]

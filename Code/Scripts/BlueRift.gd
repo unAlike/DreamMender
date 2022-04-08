@@ -35,9 +35,3 @@ func Interact():
 func _on_BlueRift_body_entered(body):
 	Interact()
 	pass # Replace with function body.
-
-
-func _on_Rift_body_entered(body):
-	Interact()
-	if body.name == "Needle":
-		body.queue_free()
