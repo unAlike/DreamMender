@@ -16,6 +16,8 @@ var maxNumDJump = 20
 var dir = 0
 var state_machine
 var lastGround
+var flipped = false
+var inBlueRift = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -68,12 +70,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if GroundCheck():
 			state_machine.travel("jump")
-			vel.y = -jumpPower
+			vel.y = -jumpPower * scale.y
 			numWallJump = maxNumWallJump
 			numDJump = maxNumDJump
 		if is_on_wall() and numWallJump>0:
 			state_machine.travel("wallJump")
-			vel.y = -jumpPower
+			vel.y = -jumpPower * scale.y
 			if lastDir == 'left':
 				vel.x = jumpPower
 			if lastDir == 'right':
@@ -83,7 +85,7 @@ func _physics_process(delta):
 			print("DJ")
 			$Sprite.frame = 0
 			$Sprite.playing = true
-			vel.y = -jumpPower
+			vel.y = -jumpPower * scale.y
 			numDJump -= 1
 	if vel.y>1200:
 		vel.y = 1200

@@ -1,6 +1,7 @@
 
 extends Sprite
 
+export var flipped = false
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,6 +18,7 @@ func _process(delta):
 	_zoom_changed()
 func _zoom_changed():
 	material.set_shader_param("y_zoom", get_viewport_transform().get_scale().y)
+	
 
 func _on_Sprite_item_rect_changed():
 	material.set_shader_param("scale", scale)
