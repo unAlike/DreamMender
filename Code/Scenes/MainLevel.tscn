@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/icon.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Tachi.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/DW_Character_Idle_Sprite Sheet.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=8]
@@ -13,6 +14,8 @@
 [ext_resource path="res://Art/Level 3.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Utility/Platform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Utility/Spikes.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Art/background.png" type="Texture" id=15]
+[ext_resource path="res://TempScript.gd" type="Script" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1620.61, 331.754 )
@@ -36,7 +39,6 @@ priority = 10.0
 [node name="SPIKESNOTSPRITESHEET" type="Sprite" parent="Spikes/SpikeHitbox"]
 position = Vector2( -57.3125, 153.115 )
 rotation = 3.96115e-09
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/SpikeHitbox"]
@@ -56,9 +58,6 @@ scale = Vector2( 0.113254, 1.11582 )
 
 [node name="SPIKESNOTSPRITESHEET" parent="Spikes/SpikeHitbox3" index="0"]
 scale = Vector2( 9.67806, 1.13733 )
-
-[node name="CollisionShape2D" parent="Spikes/SpikeHitbox3" index="1"]
-scale = Vector2( 1, 1 )
 
 [node name="SpikeHitbox4" parent="Spikes" instance=ExtResource( 14 )]
 position = Vector2( 17617, 741 )
@@ -133,7 +132,6 @@ position = Vector2( 7064, -688 )
 
 [node name="YellowRift" parent="UnstableYellowRift2" instance=ExtResource( 3 )]
 InputObjectList = [ NodePath("Platform") ]
-riftOpen = false
 riftUnstable = true
 
 [node name="Platform" parent="UnstableYellowRift2/YellowRift" instance=ExtResource( 13 )]
@@ -293,11 +291,6 @@ polygon = PoolVector2Array( 17663, -648, 18783, -662, 18707, -805, 18272, -805, 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D28"]
 color = Color( 0, 0, 0, 1 )
 
-[node name="Icon" type="Sprite" parent="CollisionPolygon2D28"]
-position = Vector2( 17966, -1091 )
-scale = Vector2( 9.53125, 8.64063 )
-texture = ExtResource( 4 )
-
 [node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( -102, 1954 )
 polygon = PoolVector2Array( 24738, -716, 24886, -379, 24714, 1134, 24818, 1527, 27408, 1581, 28580, 1561, 29156, 1726, 29512, 1789, 30001, 1926, 30211, 1867, 30305, 1803, 30490, 1746, 31041, 1530, 31341, 1439, 31827, 1405, 32212, 1518, 32332, 1589, 32393, 1791, 31953, 2185, 31985, 2281, 32409, 2009, 32602, 1820, 32754, 2148, 33496, 1762, 33651, 1349, 33717, 1458, 33760, 1591, 33770, 1263, 33812, 1154, 34209, 1040, 34254, 1146, 34275, 1386, 34312, 1121, 34365, 1048, 34978, 933, 36051, 904, 36333, 859, 36336, 1209, 36041, 1206, 36041, 1286, 36565, 1276, 37189, 1360, 37936, 1344, 37831, -991, 37771, -1267, 37589, -1442, 37056, -1469, 27873, -1474, 27901, -1600, 25767, -1612, 25487, -1925, 25413, -2352, 25673, -2352, 25477, -2492, 25365.6, -2745.17, 25137.3, -4286.36, 25439, -4543, 26763, -4436, 26432, -4735, 25140, -4714, 24926, -4318, 24460, -4289, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20633, -1350, 20388, -955, 18680, -948, 18489, -967, 18326, -1071, 18006, -1284, 18305, -959, 17832.3, -930.582, 17614, -1057, 17528, -1306, 17456, -1567, 17453, -2075, 17687, -1927, 17493, -2163, 17519, -2371, 17621, -2380, 17691, -2269, 17736, -2175, 17731.3, -2352.58, 17775, -2417, 17924.3, -2441.03, 18113, -2443, 18105, -2509, 17968, -2528, 17859, -2642, 17845, -2544, 17606, -2514, 17513, -2540, 17487, -2590, 17480, -3049, 17706, -3275, 17493, -3269, 17440, -3709, 17451, -4152, 17310, -4181, 16762, -4331, 16612, -4274, 17316, -4020, 16917, -758, 16913, -648, 23555.7, -672.565, 23579, 1298, 23615, 1742, 23735, 2173, 23704, 2571, 23499, 10633, 23623, 10630, 43624, 10696, 43626, 10638, 23624, 10612, 23619, 10135, 23960, 2315, 23891, 1982, 23791, -623 )
@@ -386,12 +379,9 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 33370, 4144 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 23746, -1374 )
+position = Vector2( 27500, 350 )
 scale = Vector2( 0.980773, 0.904558 )
 z_index = 4096
-
-[node name="Sprite" parent="Player" index="3"]
-frame = 4
 
 [node name="AnimationTree" parent="Player" index="5"]
 parameters/playback = SubResource( 2 )
@@ -419,11 +409,6 @@ z_index = 3
 
 [node name="BlueRift2" parent="BlueRiftGroup" instance=ExtResource( 9 )]
 position = Vector2( 2074.89, 54.168 )
-z_index = 3
-
-[node name="BlueRift4" parent="BlueRiftGroup" instance=ExtResource( 9 )]
-position = Vector2( 408.859, 75.1748 )
-scale = Vector2( 1, 1 )
 z_index = 3
 
 [node name="Level3" type="Sprite" parent="BlueRiftGroup"]
@@ -461,6 +446,31 @@ z_index = 1
 texture = ExtResource( 4 )
 offset = Vector2( -30.232, 16.038 )
 script = ExtResource( 10 )
+
+[node name="Tachi" parent="." instance=ExtResource( 5 )]
+position = Vector2( 9650, -1090 )
+
+[node name="Stop" type="Position2D" parent="."]
+position = Vector2( 37100, 420 )
+
+[node name="BoatBody" type="KinematicBody2D" parent="."]
+position = Vector2( 28100, 410 )
+motion/sync_to_physics = true
+script = ExtResource( 16 )
+
+[node name="Sprite" type="Sprite" parent="BoatBody"]
+position = Vector2( 16, 4.40002 )
+scale = Vector2( 3.5625, 0.75 )
+texture = ExtResource( 15 )
+
+[node name="BoatShape" type="CollisionPolygon2D" parent="BoatBody"]
+position = Vector2( -14954, 323.4 )
+polygon = PoolVector2Array( 14661, -363, 14883, -376, 14883, -531, 14907, -509, 14907, -378, 15311, -401, 15200, -270, 14741, -263 )
+
+[node name="Polygon2D" type="Polygon2D" parent="BoatBody"]
+polygon = PoolVector2Array( -71, -208, -47, -185, -47, -55, 357, -78, 246, 53, -213, 60, -293, -40, -71, -53 )
+
+[node name="Start" type="Position2D" parent="BoatBody"]
 
 [connection signal="body_entered" from="Spikes/SpikeHitbox" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="Spikes/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]

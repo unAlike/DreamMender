@@ -31,7 +31,9 @@ func Interact():
 		get_parent().get_node("MirrorTop").visible = false
 		get_parent().get_node("MirrorBottom").material.set_shader_param("scale", Vector2(1,15.5))
 
-
-func _on_BlueRift_body_entered(body):
-	Interact()
-	pass # Replace with function body.
+func _on_Rift_body_entered(body):
+	if body.name == "Needle":
+		body.queue_free()
+		Interact()
+	else:
+		Interact()

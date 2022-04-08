@@ -24,4 +24,7 @@ shape = SubResource( 1 )
 position = Vector2( 2.38419e-07, 5 )
 scale = Vector2( 0.8, 2.4 )
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

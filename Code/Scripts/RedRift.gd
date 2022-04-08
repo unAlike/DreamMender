@@ -22,7 +22,6 @@ func _process(delta):
 			obj.rotation_degrees -= 1
 		$Rift.rotation_degrees -=1
 
-
 func _on_Rift_body_entered(body):
 	if body.name == "Needle":
 		body.queue_free()

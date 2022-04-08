@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Art/test_backround.png" type="Texture" id=1]
 [ext_resource path="res://Shaders/Reflect.tres" type="Material" id=2]
 [ext_resource path="res://Rifts/RedRift.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Utility/Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Rifts/YellowRift.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/background.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Reflect.gd" type="Script" id=9]
@@ -79,14 +80,11 @@ InputObjectList = [ NodePath("../Platform") ]
 position = Vector2( -802, 709 )
 scale = Vector2( 4.20516, 2.28363 )
 
-[node name="fromPos" parent="Rifts/YR/Platform" index="0"]
+[node name="fromPos" parent="Rifts/YR/Platform" index="1"]
 position = Vector2( 226.626, -133.997 )
 
-[node name="toPos" parent="Rifts/YR/Platform" index="1"]
+[node name="toPos" parent="Rifts/YR/Platform" index="2"]
 position = Vector2( -2.14023, 148.886 )
-
-[node name="Polygon2D" parent="Rifts/YR/Platform" index="2"]
-position = Vector2( -310.571, -167.716 )
 
 [node name="RR" type="Node2D" parent="Rifts"]
 position = Vector2( 28, 1 )
@@ -94,13 +92,8 @@ position = Vector2( 28, 1 )
 [node name="Platform" parent="Rifts/RR" instance=ExtResource( 4 )]
 position = Vector2( 2043, -1386 )
 
-[node name="fromPos" parent="Rifts/RR/Platform" index="0"]
+[node name="fromPos" parent="Rifts/RR/Platform" index="1"]
 position = Vector2( 0, 0 )
-
-[node name="Polygon2D" parent="Rifts/RR/Platform" index="2"]
-position = Vector2( -5.69995, -27.9 )
-offset = Vector2( 166, -44 )
-polygon = PoolVector2Array( -217, -132, -107, -131, -108, -116, -218, -116 )
 
 [node name="CollisionPolygon2D" parent="Rifts/RR/Platform" index="3"]
 position = Vector2( -314.7, -360.9 )
@@ -118,6 +111,14 @@ script = ExtResource( 9 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+show_behind_parent = true
+scale = Vector2( 1000, 1000 )
+texture = ExtResource( 6 )
+
+[node name="YellowRift" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1600, -1451 )
 
 [connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]
 

@@ -32,7 +32,6 @@ func _process(delta):
 		if lerpVal > 0:
 			lerpVal -= delta/speed
 
-	
 func _on_Rift_body_entered(body):
 	if body.name == "Needle":
 		body.queue_free()

@@ -7,7 +7,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )
-Text = PoolStringArray( "Why hello there little one.", "What brings you to the place\?", "Me\? Oh, I am just a wandering soul helping all those who have lost their way.", "My name\?", "Oh, I guess I haven’t introduced myself have I.", "My name is Needle Master Tachi. I am the guide for all who wander the land of demons.", "Yes, you heard correctly, this land is home to the things you wish to keep inside.", "A place that gives voice and body to the insecurities that lay within.", "It’s dangerous to go alone! Take this!", "(Tachi gives needle and yellow spool)" )
+Text = PoolStringArray( "Why hello there little one.", "What brings you to this place\?", "Me\? Oh, I am just a wandering soul helping all those who have lost their way.", "My name\?", "Oh, I guess I haven’t introduced myself have I.", "My name is Needle Master Tachi. I am the guide for all who wander the land of demons.", "Yes, you heard correctly, this land is home to the things you wish to keep inside.", "A place that gives voice and body to the insecurities that lay within.", "It’s dangerous to go alone! Take this!", "(Tachi gives needle and yellow spool)" )
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -32,7 +32,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
-wait_time = 0.05
+wait_time = 0.02
 
 [node name="ENTER" type="ColorRect" parent="CanvasLayer"]
 visible = false

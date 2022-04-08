@@ -14,46 +14,6 @@
 radius = 16.0
 height = 50.0
 
-[sub_resource type="AtlasTexture" id=50]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=51]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=52]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=53]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=54]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=55]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=56]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=57]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 2100, 0, 300, 452 )
-
 [sub_resource type="AtlasTexture" id=72]
 flags = 4
 atlas = ExtResource( 6 )
@@ -164,13 +124,48 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2100, 0, 300, 452 )
+
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
-"loop": true,
-"name": "idle",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 72 ), SubResource( 73 ) ],
 "loop": false,
 "name": "wall",
@@ -189,6 +184,11 @@ animations = [ {
 "frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "run",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
+"loop": true,
+"name": "idle",
 "speed": 10.0
 } ]
 
@@ -375,6 +375,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
+frame = 6
 playing = true
 centered = false
 
@@ -435,6 +436,7 @@ text = "Resume"
 flat = true
 
 [node name="Collections" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+visible = false
 margin_top = 24.0
 margin_right = 83.0
 margin_bottom = 44.0
@@ -447,9 +449,9 @@ __meta__ = {
 }
 
 [node name="Controls" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 48.0
+margin_top = 24.0
 margin_right = 83.0
-margin_bottom = 68.0
+margin_bottom = 44.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
 text = "Controls"
@@ -459,6 +461,7 @@ __meta__ = {
 }
 
 [node name="Save" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+visible = false
 margin_top = 72.0
 margin_right = 83.0
 margin_bottom = 92.0
@@ -471,9 +474,10 @@ __meta__ = {
 }
 
 [node name="Load" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 96.0
+visible = false
+margin_top = 72.0
 margin_right = 83.0
-margin_bottom = 116.0
+margin_bottom = 92.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
 text = "Load"
@@ -483,9 +487,9 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 120.0
+margin_top = 48.0
 margin_right = 83.0
-margin_bottom = 140.0
+margin_bottom = 68.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
 text = "Main Menu"
@@ -493,6 +497,33 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ControlsMenu" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ControlsMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+text = "				Controls:
+
+W - Jump
+A - Move Left
+D - Move Right
+Mouse - Aim
+Left Click - Throw Needle
+Scroll - Zoom In/Out"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( -16, -36 )

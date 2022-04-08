@@ -5,16 +5,6 @@
 [ext_resource path="res://Art/light.png" type="Texture" id=3]
 [ext_resource path="res://Art/Rifts/Red_Rift_Open_Sprite_Sheet.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 161, 171 )
-
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 161, 0, 161, 171 )
-
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 4 )
@@ -45,16 +35,26 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 805, 0, 161, 171 )
 
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 161, 171 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 161, 0, 161, 171 )
+
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "Closed",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "Open",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "Closed",
 "speed": 5.0
 } ]
 
