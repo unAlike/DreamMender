@@ -3,8 +3,8 @@ extends Area2D
 export (Array, NodePath) var InputObjectList = []
 export var riftActive = true
 export var riftUnstable = false
-export var unstableTime = 5
-export var speed = 1
+export var Time = 5
+export var speed = 1.0
 
 var objectList = []
 var lastPlayed = 0
@@ -14,8 +14,8 @@ onready var unstableTimer: Timer = get_node("unstableTimer")
 #onready var colDetect : Area2D = get_node("NeedleDetector")
 
 func _ready():
-	riftTimer.set_wait_time(unstableTime)
-	unstableTimer.set_wait_time(unstableTime)
+	riftTimer.set_wait_time(Time)
+	unstableTimer.set_wait_time(Time)
 	unstableTimer.start()
 	original = riftActive
 

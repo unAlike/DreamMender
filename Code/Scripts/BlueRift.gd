@@ -15,18 +15,14 @@ func _process(delta):
 func Interact():
 	player.inBlueRift = true
 	if !player.flipped:
-		player.flipped = true
-		player.scale.y *= -1
+		player.flipPlayer()
 		player.global_position.y = blueRiftLine.global_position.y + abs(player.global_position.y-blueRiftLine.global_position.y)
-		player.gravity *= -1
 		get_parent().get_node("MirrorBottom").visible = false
 		get_parent().get_node("MirrorTop").visible = true
 		get_parent().get_node("MirrorTop").material.set_shader_param("scale", Vector2(1,-15.5))
 	else: 
-		player.flipped = false
+		player.flipPlayer()
 		player.global_position.y = blueRiftLine.global_position.y - abs(player.global_position.y-blueRiftLine.global_position.y)
-		player.scale.y *= -1
-		player.gravity *= -1
 		get_parent().get_node("MirrorBottom").visible = true
 		get_parent().get_node("MirrorTop").visible = false
 		get_parent().get_node("MirrorBottom").material.set_shader_param("scale", Vector2(1,15.5))

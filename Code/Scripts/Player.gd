@@ -50,7 +50,7 @@ func get_Input():
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 
 func _physics_process(delta):
-	
+	print(GroundCheck())
 	if lastState != state_machine.get_current_node():
 		lastState = state_machine.get_current_node()
 	if GroundCheck():
@@ -92,7 +92,7 @@ func _physics_process(delta):
 	if vel.y>1200:
 		vel.y = 1200
 	var snap = Vector2.ZERO
-	if is_on_floor() and dir == 0:
+	if GroundCheck() and dir == 0:
 		snap = -get_floor_normal() * .02
 		vel.x = 0
 		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP, true, 1, .78)
@@ -106,19 +106,19 @@ func _physics_process(delta):
 			$Sprite.flip_h = true
 	
 	if timeFalling>.1:
-		$AnimationTree.set("parameters/conditions/onGround", is_on_floor())
+		$AnimationTree.set("parameters/conditions/onGround", GroundCheck())
 		$AnimationTree.set("parameters/conditions/onWall", is_on_wall())
-		if not is_on_wall() and not is_on_floor():
+		if not is_on_wall() and not GroundCheck():
 			$AnimationTree.set("parameters/conditions/falling", true)
 		else:
 			$AnimationTree.set("parameters/conditions/falling", false)
 	else:
 		$AnimationTree.set("parameters/conditions/falling", false)
-	if not is_on_wall() and !is_on_floor():
+	if not is_on_wall() and !GroundCheck():
 		timeFalling+=delta
 	else:
 		timeFalling = 0
-	if not is_on_wall() and !is_on_floor():
+	if not is_on_wall() and !GroundCheck():
 		timeFalling+=delta
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -148,7 +148,9 @@ func save():
 
 #Checks all Player Raycast2D's to check if on ground
 func GroundCheck():
-	return is_on_floor()
+	if is_on_floor() or $RayCast2D3.is_colliding():
+		return true
+	return false
 #	var raycasters = []
 #	for c in get_children():
 #		if c is RayCast2D:
@@ -175,3 +177,8 @@ func die():
 func _on_SpikeHitbox_body_entered(body):
 	print("Touchs")
 	die()
+
+func flipPlayer():
+	flipped = !flipped
+	gravity *= -1
+	scale.y *= -1

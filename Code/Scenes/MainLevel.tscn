@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -29,6 +29,8 @@
 [ext_resource path="res://Art/Level1/Bark.png" type="Texture" id=27]
 [ext_resource path="res://Art/Level1/DW_small_tree.png" type="Texture" id=28]
 [ext_resource path="res://Art/Level2/rock_texture.png" type="Texture" id=29]
+[ext_resource path="res://Art/Level3/Level 3.png" type="Texture" id=30]
+[ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1620.61, 331.754 )
@@ -208,7 +210,6 @@ position = Vector2( 10752, -1002 )
 
 [node name="YellowRift" parent="StableRift1" instance=ExtResource( 3 )]
 InputObjectList = [ NodePath("Platform") ]
-speed = 3
 
 [node name="Platform" parent="StableRift1/YellowRift" instance=ExtResource( 13 )]
 position = Vector2( 3282, 12 )
@@ -227,7 +228,6 @@ position = Vector2( -8394, -266 )
 [node name="YellowRift" parent="StableRift2" instance=ExtResource( 3 )]
 position = Vector2( 23821, -664 )
 InputObjectList = [ NodePath("Platform") ]
-speed = 3
 
 [node name="Platform" parent="StableRift2/YellowRift" instance=ExtResource( 13 )]
 position = Vector2( 165, -245 )
@@ -242,7 +242,7 @@ position = Vector2( -77.2085, -154.447 )
 
 [node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="."]
 position = Vector2( -102, 1954 )
-polygon = PoolVector2Array( 24738, -716, 24886, -379, 24714, 1134, 24818, 1527, 27408, 1581, 28580, 1561, 29156, 1726, 29512, 1789, 30001, 1926, 30211, 1867, 30305, 1803, 30490, 1746, 31041, 1530, 31341, 1439, 31827, 1405, 32212, 1518, 32332, 1589, 32393, 1791, 31953, 2185, 31985, 2281, 32409, 2009, 32602, 1820, 32754, 2148, 33496, 1762, 33651, 1349, 33717, 1458, 33760, 1591, 33770, 1263, 33812, 1154, 34209, 1040, 34254, 1146, 34275, 1386, 34312, 1121, 34365, 1048, 34978, 933, 36051, 904, 36333, 859, 36336, 1209, 36041, 1206, 36041, 1286, 36565, 1276, 37189, 1360, 37936, 1344, 37831, -991, 37771, -1267, 37589, -1442, 37056, -1469, 27873, -1474, 27901, -1600, 25767, -1612, 25487, -1925, 25413, -2352, 25673, -2352, 25477, -2492, 25365.6, -2745.17, 25137.3, -4286.36, 25439, -4543, 26763, -4436, 26432, -4735, 25140, -4714, 24926, -4318, 24460, -4289, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20633, -1350, 20388, -955, 19949, -827, 18640, -813, 18535, -870, 18489, -967, 18326, -1071, 17985, -1314, 18232, -955, 17832.3, -930.582, 17612, -1036, 17464, -1130, 17320, -1472, 17316, -1898, 17273, -2219, 17329, -2522, 17549, -2437, 17653, -2396, 17758, -2405, 17850, -2392, 17855, -2456, 17761, -2486, 17729, -2534, 17801, -2632, 17793, -2665, 17681, -2558, 17599, -2536, 17513, -2540, 17446, -2576, 17361, -2592, 17480, -3049, 17488, -3213, 17553, -3148, 17581, -3145, 17588, -3194, 17564, -3232, 17511, -3283, 17619, -3245, 17740, -3250, 17818, -3251, 17870, -3262, 17740, -3291, 17777, -3318, 17645, -3308, 17415, -3412, 17440, -3709, 17496, -4145, 17430, -4169, 17298, -4184, 16938, -4199, 16869, -4160, 16992, -4088, 17202, -3900, 17319, -3759, 16991, -2374, 16775, -1251, 16775, -713, 16913, -648, 23555.7, -672.565, 23579, 1298, 23615, 1742, 23735, 2173, 23704, 2571, 23499, 10633, 23623, 10630, 43624, 10696, 43626, 10638, 23624, 10612, 23619, 10135, 23960, 2315, 23891, 1982, 23791, -623 )
+polygon = PoolVector2Array( 24738, -716, 24886, -379, 24714, 1134, 24818, 1527, 27408, 1581, 28580, 1561, 29156, 1726, 29512, 1789, 30001, 1926, 30211, 1867, 30305, 1803, 30490, 1746, 31041, 1530, 31341, 1439, 31827, 1405, 32212, 1518, 32332, 1589, 32393, 1791, 31953, 2185, 31985, 2281, 32409, 2009, 32602, 1820, 32754, 2148, 33496, 1762, 33651, 1349, 33717, 1458, 33760, 1591, 33770, 1263, 33812, 1154, 34209, 1040, 34254, 1146, 34275, 1386, 34312, 1121, 34365, 1048, 34978, 933, 36051, 904, 36333, 859, 36336, 1209, 36041, 1206, 36041, 1286, 36565, 1276, 37189, 1360, 37936, 1344, 37831, -991, 37771, -1267, 37589, -1442, 37056, -1469, 27873, -1474, 27901, -1600, 25513, -1596, 25487, -1925, 25413, -2352, 25350, -2498, 25343, -2755, 25343, -3604, 25475, -3937, 25811, -4352, 25060, -4428, 24833, -4118, 24671, -3956, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20633, -1350, 20388, -955, 19949, -827, 18640, -813, 18535, -870, 18489, -967, 18326, -1071, 17985, -1314, 18232, -955, 17832.3, -930.582, 17612, -1036, 17464, -1130, 17320, -1472, 17316, -1898, 17273, -2219, 17329, -2522, 17549, -2437, 17653, -2396, 17758, -2405, 17850, -2392, 17855, -2456, 17761, -2486, 17729, -2534, 17801, -2632, 17793, -2665, 17681, -2558, 17599, -2536, 17513, -2540, 17446, -2576, 17361, -2592, 17480, -3049, 17488, -3213, 17553, -3148, 17581, -3145, 17588, -3194, 17564, -3232, 17511, -3283, 17619, -3245, 17740, -3250, 17818, -3251, 17870, -3262, 17740, -3291, 17777, -3318, 17645, -3308, 17415, -3412, 17440, -3709, 17496, -4145, 17430, -4169, 17298, -4184, 16938, -4199, 16869, -4160, 16992, -4088, 17202, -3900, 17319, -3759, 16991, -2374, 16775, -1251, 16775, -713, 16913, -648, 23555.7, -672.565, 23579, 1298, 23615, 1742, 23735, 2173, 23704, 2571, 23499, 10633, 23623, 10630, 43624, 10696, 43626, 10638, 23624, 10612, 23619, 10135, 23960, 2315, 23891, 1982, 23791, -623 )
 
 [node name="Wood10" type="Sprite" parent="CollisionPolygon2D31"]
 position = Vector2( 19094, -1494 )
@@ -349,11 +349,11 @@ texture = ExtResource( 27 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D31"]
 modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
+color = Color( 0.905882, 0.905882, 0.905882, 1 )
 antialiased = true
 texture = ExtResource( 29 )
-texture_scale = Vector2( 0.001, 0.001 )
 texture_rotation_degrees = -360.0
-polygon = PoolVector2Array( 19945, -829, 20404, -960, 20560, -1202, 20635, -1348, 21437, -1681, 21956, -1721, 22399, -1515, 22596, -1212, 22702, -1011, 24254, -885, 24960, -1177, 25304, -475, 25881, -407, 27610, -399, 37441, -240, 37855, -246, 37929, 1343, 37202, 1360, 36606, 1292, 36345, 1201, 36345, 861, 34995, 923, 34331, 1048, 34217, 1021, 33836, 1142, 33633, 1351, 33503, 1753, 32767, 2157, 32614, 1821, 32385, 1780, 32325, 1580, 31861, 1428, 31303, 1415, 30014, 1916, 28642, 1567, 28202, 1525, 24832, 1548, 23816, 779, 19142, 491, 17108, 296, 17021, -638, 18357, -626, 19837.3, -654.299 )
+polygon = PoolVector2Array( 19945, -829, 20404, -960, 20560, -1202, 20635, -1348, 21437, -1681, 21956, -1721, 22399, -1515, 22596, -1212, 22702, -1011, 24254, -885, 24960, -1177, 25304, -475, 25881, -407, 25626, -793, 25543, -940, 25503, -1591, 25763, -1613, 27902, -1600, 27876, -1474, 27864, -397, 37441, -240, 37855, -246, 37929, 1343, 37202, 1360, 36645, 1289, 36564, 1279, 36423, 1281, 36040, 1288, 36040, 1206, 36336, 1208, 36334, 863, 36048, 904, 34968, 930, 34331, 1048, 34217, 1021, 33836, 1142, 33633, 1351, 33503, 1753, 32767, 2157, 32614, 1821, 32410, 2013, 31992, 2278, 31944, 2196, 32385, 1780, 32325, 1580, 31861, 1428, 31303, 1415, 30014, 1916, 28642, 1567, 28202, 1525, 24832, 1548, 23816, 779, 19142, 491, 17108, 296, 17021, -638, 18357, -626, 19853, -683 )
 
 [node name="StableRift3" type="Node2D" parent="."]
 position = Vector2( -6851, -455 )
@@ -361,7 +361,6 @@ position = Vector2( -6851, -455 )
 [node name="YellowRift" parent="StableRift3" instance=ExtResource( 3 )]
 position = Vector2( 24450, -1429 )
 InputObjectList = [ NodePath("Platform") ]
-speed = 3
 
 [node name="Platform" parent="StableRift3/YellowRift" instance=ExtResource( 13 )]
 position = Vector2( 16, 184 )
@@ -424,7 +423,6 @@ position = Vector2( -21.5938, -151.919 )
 [node name="YellowTo" parent="." instance=ExtResource( 3 )]
 position = Vector2( 24066, 977 )
 InputObjectList = [ NodePath("Platform") ]
-speed = 3
 
 [node name="Platform" parent="YellowTo" instance=ExtResource( 13 )]
 position = Vector2( 2, -171 )
@@ -542,7 +540,7 @@ scale = Vector2( 1, 1.00741 )
 polygon = PoolVector2Array( 17520, -644, 17487, -725, 17076, -745, 15567, -660.105, 15577, -444.703, 15259, -459.592, 15254, -294.814, 14740, -299.777, 14267, -289.851, 14065, -434.776, 13939, -714.701, 13899, -1297.38, 13763, -925.14, 13722, -660.105, 13622, -639.26, 13526, -964.846, 13480, -1155.43, 13428, -920.177, 13276, -716.686, 12139, -355.365, 12065, -108.198, 11946, 144.926, 11827, 313.674, 11669, 470.512, 11420, 593.599, 11103, 656.135, 11008, 563.82, 11086, -0.992676, 11009, -11.9116, 10815, 639.26, 10526, 548.93, 10289, 392.093, 10136, 172.72, 9891, -482.423, 10130, -656.135, 10227, -692.863, 10341, -715.693, 10409, -842.751, 9958, -786.171, 9405, -533.048, 4258, -674.002, 4346, 3816.7, 11354, 3812.73, 17290, 3638.03 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D38"]
-color = Color( 0, 0, 0, 1 )
+texture = ExtResource( 29 )
 
 [node name="PinkRift" parent="." instance=ExtResource( 6 )]
 position = Vector2( 37922, 3985 )
@@ -552,6 +550,8 @@ position = Vector2( 31530, 4403 )
 
 [node name="PinkRift2" parent="PinkRiftCirclePuzzle" instance=ExtResource( 6 )]
 InputObjectList = [ NodePath("../StaticBody2D") ]
+Time = 20
+toRotation = -240
 
 [node name="StaticBody2D" type="KinematicBody2D" parent="PinkRiftCirclePuzzle"]
 position = Vector2( 1, 1 )
@@ -563,13 +563,13 @@ polygon = PoolVector2Array( 31948.4, 5072.9, 32098.4, 4961.9, 32201.4, 4854.9, 3
 
 [node name="Polygon2D" type="Polygon2D" parent="PinkRiftCirclePuzzle/StaticBody2D/CollisionPolygon2D"]
 position = Vector2( 31640.4, 4364.9 )
-color = Color( 0, 0, 0, 1 )
+texture = ExtResource( 29 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 8 )]
 position = Vector2( 33370, 4144 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 523, 232 )
+position = Vector2( 23909, 12358 )
 scale = Vector2( 0.980773, 0.904558 )
 z_index = 4090
 maxNumWallJump = 2
@@ -579,19 +579,6 @@ maxNumDJump = 2
 position = Vector2( 24221, 12120 )
 scale = Vector2( 0.980773, 0.904558 )
 
-[node name="Level3" type="Sprite" parent="BlueRiftGroup"]
-position = Vector2( 1180.7, 115.917 )
-rotation = 3.14159
-scale = Vector2( 1, 0.736204 )
-z_index = -10
-
-[node name="Level4" type="Sprite" parent="BlueRiftGroup"]
-position = Vector2( 1182.74, 891.043 )
-rotation = 3.14159
-scale = Vector2( 1, 0.736 )
-z_index = -10
-flip_v = true
-
 [node name="CameraPos" type="Position2D" parent="BlueRiftGroup"]
 position = Vector2( -870.742, 496.375 )
 scale = Vector2( 1.0196, 1.10551 )
@@ -600,34 +587,48 @@ scale = Vector2( 1.0196, 1.10551 )
 position = Vector2( 327.293, 505.218 )
 scale = Vector2( 1.0196, 1.10551 )
 
-[node name="BlueRift3" parent="BlueRiftGroup" instance=ExtResource( 9 )]
-position = Vector2( 408.861, 75.1753 )
-z_index = 3
-
-[node name="BlueRift2" parent="BlueRiftGroup" instance=ExtResource( 9 )]
-position = Vector2( 2074.89, 54.168 )
-z_index = 3
-
 [node name="MirrorTop" type="Sprite" parent="BlueRiftGroup"]
 visible = false
 material = ExtResource( 11 )
-position = Vector2( 8884.83, -72.9629 )
+position = Vector2( 8886.87, -80.7031 )
 rotation = 3.14159
 scale = Vector2( 300, -18 )
-z_index = 1
+z_index = 4096
 texture = ExtResource( 4 )
 flip_v = true
 script = ExtResource( 10 )
 
 [node name="MirrorBottom" type="Sprite" parent="BlueRiftGroup"]
 material = ExtResource( 11 )
-position = Vector2( -301.803, 789.335 )
+position = Vector2( -183.529, 797.076 )
 rotation = 3.14159
 scale = Vector2( 300, -18 )
-z_index = 1
+z_index = 4096
 texture = ExtResource( 4 )
 offset = Vector2( -30.232, 16.038 )
 script = ExtResource( 10 )
+
+[node name="Level3" type="Sprite" parent="BlueRiftGroup"]
+position = Vector2( 1211.29, -28.7432 )
+z_index = -2
+texture = ExtResource( 30 )
+
+[node name="Level4" type="Sprite" parent="BlueRiftGroup"]
+position = Vector2( 1209.25, 1051.34 )
+rotation = -3.14159
+scale = Vector2( 1, 1 )
+z_index = -2
+texture = ExtResource( 30 )
+
+[node name="BlueRift" parent="BlueRiftGroup" instance=ExtResource( 31 )]
+position = Vector2( 227.371, 200.992 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 24220, 12501 )
+scale = Vector2( 0.980773, 0.131196 )
+texture = ExtResource( 29 )
+texture_scale = Vector2( 0.1, 0.1 )
+polygon = PoolVector2Array( -839.135, 646.602, 19689.6, 498.586, 19689.6, 646.602, -839.135, 498.586 )
 
 [node name="Stop" type="Position2D" parent="."]
 position = Vector2( 37100, 420 )

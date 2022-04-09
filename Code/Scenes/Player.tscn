@@ -10,7 +10,6 @@
 [ext_resource path="res://Scenes/Needle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Art/Character/needle.png" type="Texture" id=9]
 
-
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 13, 41 )
 
@@ -149,6 +148,11 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 300, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
 [sub_resource type="AtlasTexture" id=82]
 flags = 4
 atlas = ExtResource( 6 )
@@ -163,11 +167,6 @@ region = Rect2( 600, 0, 300, 452 )
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -184,22 +183,22 @@ animations = [ {
 "frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "run",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [ SubResource( 72 ), SubResource( 73 ) ],
 "loop": false,
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
-"loop": false,
-"name": "wallJump",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 83 ) ],
 "loop": false,
 "name": "fall",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": false,
+"name": "wallJump",
+"speed": 10.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -431,7 +430,8 @@ scale = Vector2( 0.658644, 1.95727 )
 position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
-animation = "fall"
+animation = "run"
+frame = 7
 playing = true
 centered = false
 
