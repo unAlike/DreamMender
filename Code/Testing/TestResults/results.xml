@@ -1,5 +1,12 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="0.031">
+<testsuites failures="0" name="TestXML" tests="2" time="1.939">
+	<testsuite name="Rift Test" failures="0"  tests="4" time="0">
+		<testcase name="Default riftActive Test" time="0"></testcase>
+		<testcase name="Rift Interact() Result" time="0"></testcase>
+		<testcase name="Rift Timer Reset" time="0"></testcase>
+		<testcase name="Needle Deletion Test" time="0"></testcase>
+	</testsuite>
+
 	<testsuite name="Null Value Test" failures="0"  tests="2" time="0">
 		<testcase name="My Example Test Method" time="0"></testcase>
 		<testcase name=" null" time="0"></testcase>
