@@ -9,7 +9,7 @@ export(PoolStringArray) var Text
 var InRadius = false
 var Interacting = false
 var At = 0
-onready var Player = get_parent().get_parent().get_node("Player")
+onready var Player = get_tree().current_scene.get_node("Player")
 onready var NPC = get_parent().get_node("NPC")
 
 # Called when the node enters the scene tree for the first time.
