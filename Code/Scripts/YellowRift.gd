@@ -3,6 +3,7 @@ extends "res://Scripts/Rift.gd"
 var lerpVal = 1
 var platform
 var oldScale = Vector2.ZERO
+export var delay = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _init():
@@ -17,6 +18,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(lerpVal)
 	if riftActive == true:
 		$Rift/Sprite.animation = "Open"
 		$Rift/Particles2D.emitting = true
@@ -24,7 +26,7 @@ func _process(delta):
 		for obj in objectList:
 			obj.object.global_position = lerp(obj.fromPos, obj.toPos, lerpVal)
 		if lerpVal < 1:
-			lerpVal += delta/speed
+			lerpVal += delta/(riftTimer.wait_time-delay)
 	else:
 		$Rift/Sprite.animation = "Closed"
 		$Rift/Particles2D.emitting = false
@@ -32,7 +34,7 @@ func _process(delta):
 		for obj in objectList:
 			obj.object.global_position = lerp( obj.fromPos, obj.toPos, lerpVal)
 		if lerpVal > 0:
-			lerpVal -= delta/speed
+			lerpVal -= delta/(riftTimer.wait_time-delay)
 
 func _on_Rift_body_entered(body):
 	if body.name == "Needle":

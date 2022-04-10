@@ -50,7 +50,6 @@ func get_Input():
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 
 func _physics_process(delta):
-	print(GroundCheck())
 	if lastState != state_machine.get_current_node():
 		lastState = state_machine.get_current_node()
 	if GroundCheck():

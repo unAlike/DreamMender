@@ -25,10 +25,10 @@ var credits = [
 		"Dream Mender"
 	],[
 		"Programming",
-		"Carter Gehl",
-		"Devlyn Nwokeuku",
 		"Ryan Ungerleider",
-		"Tyler Svihovec"
+		"Devlyn Nwokeuku",
+		"Tyler Svihovec",
+		"Carter Gehl"
 	],[
 		"Art",
 		"Ryan Wayne",
