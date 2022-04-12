@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	if player.inBlueRift:
-		player.get_node("Camera2D").zoom = Vector2(2,2)
+		player.get_node("Camera2D").zoom = Vector2(3,3)
 		player.get_node("Camera2D").global_position.y = get_tree().current_scene.get_node("BlueRiftGroup").get_node("CameraPos").global_position.y
 
 func Interact():
@@ -17,19 +17,17 @@ func Interact():
 	if !player.flipped:
 		player.flipPlayer()
 		player.global_position.y = blueRiftLine.global_position.y + abs(player.global_position.y-blueRiftLine.global_position.y)
-		get_parent().get_node("MirrorBottom").visible = false
-		get_parent().get_node("MirrorTop").visible = true
-		get_parent().get_node("MirrorTop").material.set_shader_param("scale", Vector2(1,-15.5))
+		get_parent().get_parent().get_node("MirrorBottom").visible = false
+		get_parent().get_parent().get_node("MirrorTop").visible = true
+		get_parent().get_parent().get_node("MirrorTop").material.set_shader_param("scale", Vector2(1,-15.5))
 	else: 
 		player.flipPlayer()
 		player.global_position.y = blueRiftLine.global_position.y - abs(player.global_position.y-blueRiftLine.global_position.y)
-		get_parent().get_node("MirrorBottom").visible = true
-		get_parent().get_node("MirrorTop").visible = false
-		get_parent().get_node("MirrorBottom").material.set_shader_param("scale", Vector2(1,15.5))
+		get_parent().get_parent().get_node("MirrorBottom").visible = true
+		get_parent().get_parent().get_node("MirrorTop").visible = false
+		get_parent().get_parent().get_node("MirrorBottom").material.set_shader_param("scale", Vector2(1,15.5))
 
 func _on_Rift_body_entered(body):
 	if body.name == "Needle":
 		body.queue_free()
-		Interact()
-	else:
 		Interact()

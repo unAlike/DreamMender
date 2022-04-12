@@ -426,12 +426,21 @@ position = Vector2( 2, -8 )
 rotation = 2.52472
 scale = Vector2( 0.658644, 1.95727 )
 
+[node name="Reflection" type="AnimatedSprite" parent="."]
+position = Vector2( -28, 7 )
+scale = Vector2( 0.205, 0.242 )
+frames = SubResource( 4 )
+animation = "fall"
+playing = true
+centered = false
+flip_h = true
+flip_v = true
+
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
-animation = "run"
-frame = 5
+animation = "fall"
 playing = true
 centered = false
 

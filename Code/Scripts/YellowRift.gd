@@ -18,7 +18,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(lerpVal)
 	if riftActive == true:
 		$Rift/Sprite.animation = "Open"
 		$Rift/Particles2D.emitting = true

@@ -26,6 +26,7 @@ var timeFalling = 0
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
 	stateConditions = $AnimationTree.get("parameters/conditions")
+	$Reflection.scale = $Sprite.scale
 
 func get_Input():
 	dir = 0
@@ -46,7 +47,7 @@ func get_Input():
 	if Input.is_action_just_released("zoomin") and $Camera2D.zoom > Vector2(1,1):
 		$Camera2D.zoom = $Camera2D.zoom - Vector2(.1,.1)
 		print("IN")
-	if Input.is_action_just_released("zoomout") and $Camera2D.zoom < Vector2(2.4,2.4):
+	if Input.is_action_just_released("zoomout"):# and $Camera2D.zoom < Vector2(2.4,2.4):
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 
 func _physics_process(delta):
@@ -122,12 +123,12 @@ func _physics_process(delta):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#	if threadPath.size() < 30:
-#		threadPath.append($ThreadPos.global_position)
-#	else:
-#		threadPath.append($ThreadPos.global_position)
-#		threadPath.pop_front()
-#	update()
+	$Reflection.global_position.y = 7446 + (7446 - global_position.y)
+	$Reflection.animation = $Sprite.animation
+	$Reflection.playing = $Sprite.playing
+	$Reflection.frames = $Sprite.frames
+	$Reflection.frame = $Sprite.frame
+	$Reflection.flip_h = $Sprite.flip_h
 	pass
 
 func _draw():

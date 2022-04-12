@@ -16,7 +16,7 @@ void fragment(){
 	distortion -= .5;
 	
 	float uv_height = SCREEN_PIXEL_SIZE.y / TEXTURE_PIXEL_SIZE.y;
-	vec2 reflected_screenuv = vec2(SCREEN_UV.x - distortion*intensity, SCREEN_UV.y + uv_height * UV.y * scale.y * y_zoom * 2.0);
+	vec2 reflected_screenuv = vec2(SCREEN_UV.x - distortion*intensity, SCREEN_UV.y - distortion*intensity);
 	
 	vec4 reflection = texture(SCREEN_TEXTURE, reflected_screenuv);
 	
@@ -39,7 +39,7 @@ noise = SubResource( 6 )
 shader = SubResource( 3 )
 shader_param/scale = Vector2( 1, 15.5 )
 shader_param/y_zoom = 0.0
-shader_param/color = Color( 0, 0, 0, 0.168627 )
+shader_param/color = Color( 0, 0, 0, 0.156863 )
 shader_param/distortion_scale = Vector2( 0.654, 2.001 )
 shader_param/intensity = 0.024
 shader_param/speed = 0.1
