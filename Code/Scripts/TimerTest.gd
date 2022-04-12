@@ -10,7 +10,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Time.get_time_left())
 	if Time.get_time_left() == 0:
 		print("Timer has stopped")
 		Time.start()

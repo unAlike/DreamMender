@@ -1,25 +1,35 @@
 extends "res://Scripts/Rift.gd"
 
-var player: Script
+var player : KinematicBody2D
+var blueRiftLine : Position2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_tree().current_scene.get_node("Player").Player
+	player = get_tree().current_scene.get_node("Player")
+	blueRiftLine = get_parent().get_node("BlueRiftFlip")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if riftOpen:
-		$Rift/Particles2D.emitting = true
-		for obj in objectList:
-			pass
-		if lastPlayed == 0:
-			$RiftOpen.playing = true
-			$RiftClose.playing = false
-			lastPlayed = 1
+	if player.inBlueRift:
+		player.get_node("Camera2D").zoom = Vector2(2,2)
+		player.get_node("Camera2D").global_position.y = get_tree().current_scene.get_node("BlueRiftGroup").get_node("CameraPos").global_position.y
+
+func Interact():
+	player.inBlueRift = true
+	if !player.flipped:
+		player.flipPlayer()
+		player.global_position.y = blueRiftLine.global_position.y + abs(player.global_position.y-blueRiftLine.global_position.y)
+		get_parent().get_node("MirrorBottom").visible = false
+		get_parent().get_node("MirrorTop").visible = true
+		get_parent().get_node("MirrorTop").material.set_shader_param("scale", Vector2(1,-15.5))
+	else: 
+		player.flipPlayer()
+		player.global_position.y = blueRiftLine.global_position.y - abs(player.global_position.y-blueRiftLine.global_position.y)
+		get_parent().get_node("MirrorBottom").visible = true
+		get_parent().get_node("MirrorTop").visible = false
+		get_parent().get_node("MirrorBottom").material.set_shader_param("scale", Vector2(1,15.5))
+
+func _on_Rift_body_entered(body):
+	if body.name == "Needle":
+		body.queue_free()
+		Interact()
 	else:
-		$Rift/Particles2D.emitting = false
-		for obj in objectList:
-			pass
-		if lastPlayed == 1:
-			$RiftOpen.playing = false
-			$RiftClose.playing = true
-			lastPlayed = 0
+		Interact()

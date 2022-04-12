@@ -15,26 +15,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0.278431, 0.478431, 1 )
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -57.5
-margin_top = -7.0
-margin_right = 57.5
-margin_bottom = 7.0
-text = "Options go here..."
-
 [node name="BackButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -21.0
-margin_top = 39.0
+margin_top = 76.619
 margin_right = 21.0
-margin_bottom = 10.0
+margin_bottom = 96.619
 text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -77.0
+margin_top = -32.5
+margin_right = 77.0
+margin_bottom = 32.5
+text = "Move: A and D
+Jump / Double Jump: W
+Throw Needle: Left Click
+Interact: E"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
