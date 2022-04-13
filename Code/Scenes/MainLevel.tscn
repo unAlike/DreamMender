@@ -48,7 +48,7 @@ scale = Vector2( 0.988409, 0.989795 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 655.599, 160.639 )
+position = Vector2( 18566.2, -2867.26 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -61,7 +61,6 @@ z_index = 50
 
 [node name="Collectable" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 5488.62, -1224.5 )
-scale = Vector2( 0.24, 0.24 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
 
