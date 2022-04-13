@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Scenes/Utility/Platform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Utility/Spikes.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Art/Level1/tree_1-right_02.png" type="Texture" id=15]
-[ext_resource path="res://TempScript.gd" type="Script" id=16]
 [ext_resource path="res://Art/Level1/DW_Flower_Stump_02.png" type="Texture" id=17]
 [ext_resource path="res://Art/Level1/inner_Tree.png" type="Texture" id=18]
 [ext_resource path="res://Art/Level1/DW_Flower_Stump_2_2.png" type="Texture" id=19]
@@ -47,7 +46,7 @@ position = Vector2( 48, -503 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 784, 55 )
+position = Vector2( 24100, 5058 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -722,7 +721,6 @@ color = Color( 0.215686, 0.211765, 0.211765, 1 )
 [node name="BoatBody" type="KinematicBody2D" parent="."]
 position = Vector2( 28100, 410 )
 motion/sync_to_physics = true
-script = ExtResource( 16 )
 
 [node name="Sprite" type="Sprite" parent="BoatBody"]
 position = Vector2( 16, 4.40002 )
