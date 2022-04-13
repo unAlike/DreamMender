@@ -171,7 +171,11 @@ func die():
 	print("player killed")
 	emit_signal("hit")
 	#queue_free()
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	if Checkpoint.last_position != null:
+		global_position = Checkpoint.last_position
+	else:
+		get_tree().reload_current_scene()
 
 # Checks for collision with dangerous objects that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):
