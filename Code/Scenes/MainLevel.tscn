@@ -131,7 +131,7 @@ centered = false
 flip_v = true
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="Paralax"]
-motion_scale = Vector2( 0.05, 0 )
+motion_scale = Vector2( 0.3, 0 )
 motion_offset = Vector2( 23000, 7000 )
 motion_mirroring = Vector2( 3840, 0 )
 
