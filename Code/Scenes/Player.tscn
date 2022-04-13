@@ -78,6 +78,36 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1056, 0, 264, 452 )
 
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 900, 0, 300, 452 )
+
 [sub_resource type="AtlasTexture" id=58]
 flags = 4
 atlas = ExtResource( 4 )
@@ -138,36 +168,6 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=72]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=73]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=82]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=70]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=71]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 900, 0, 300, 452 )
-
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
@@ -180,25 +180,25 @@ animations = [ {
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 72 ), SubResource( 73 ) ],
 "loop": false,
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 83 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": false,
 "name": "wallJump",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -396,18 +396,18 @@ advance_condition = "falling"
 states/fall/node = SubResource( 85 )
 states/fall/position = Vector2( 230, 49 )
 states/idle/node = SubResource( 38 )
-states/idle/position = Vector2( 229.222, 358.432 )
+states/idle/position = Vector2( 187, 325.988 )
 states/jump/node = SubResource( 44 )
-states/jump/position = Vector2( 77.6667, 199.667 )
+states/jump/position = Vector2( 103, 145 )
 states/run/node = SubResource( 39 )
 states/run/position = Vector2( 514.333, 357.988 )
 states/wall/node = SubResource( 76 )
 states/wall/position = Vector2( 845, 49 )
 states/wallJump/node = SubResource( 77 )
-states/wallJump/position = Vector2( 846.222, 217 )
+states/wallJump/position = Vector2( 836, 217 )
 transitions = [ "wall", "wallJump", SubResource( 79 ), "wallJump", "wall", SubResource( 80 ), "idle", "jump", SubResource( 97 ), "jump", "fall", SubResource( 98 ), "fall", "idle", SubResource( 99 ), "fall", "wall", SubResource( 100 ), "wallJump", "fall", SubResource( 101 ), "idle", "run", SubResource( 102 ), "run", "idle", SubResource( 103 ), "wall", "fall", SubResource( 104 ), "run", "fall", SubResource( 105 ) ]
 start_node = "idle"
-graph_offset = Vector2( -187, -98.016 )
+graph_offset = Vector2( 0, 6.98399 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 
