@@ -48,7 +48,7 @@ scale = Vector2( 0.988409, 0.989795 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 4778.39, -1389.18 )
+position = Vector2( 655.599, 160.639 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
