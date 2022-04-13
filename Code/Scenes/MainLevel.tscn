@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -29,8 +29,11 @@
 [ext_resource path="res://Art/Level1/Bark.png" type="Texture" id=27]
 [ext_resource path="res://Art/Level1/DW_small_tree.png" type="Texture" id=28]
 [ext_resource path="res://Art/Level2/rock_texture.png" type="Texture" id=29]
-[ext_resource path="res://Art/Level3/Level 3.png" type="Texture" id=30]
+[ext_resource path="res://Art/Level3/Level_3_Background_Layer_2.png" type="Texture" id=30]
 [ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Art/Level3/Level_3_Background_Layer_1.png" type="Texture" id=32]
+[ext_resource path="res://Art/Level3/Level_3_Background.png" type="Texture" id=33]
+[ext_resource path="res://Particle.tscn" type="PackedScene" id=34]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0.0151515, 1 )
@@ -44,26 +47,98 @@ position = Vector2( 48, -503 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24037, 7518 )
-scale = Vector2( 0.980773, 0.904558 )
+position = Vector2( 30271, 7391 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
 
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 33212, 9023 )
+
 [node name="CheckPoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 32866, 4156 )
+position = Vector2( 32546, 3836 )
+
+[node name="Paralax" type="ParallaxBackground" parent="."]
+layer = -1
+offset = Vector2( 27000, 145.845 )
+transform = Transform2D( 1, 0, 0, 1, 27000, 145.845 )
+follow_viewport_enable = true
+scroll_limit_end = Vector2( 100000, 10000 )
+scroll_ignore_camera_zoom = true
+
+[node name="Background" type="ParallaxLayer" parent="Paralax"]
+motion_scale = Vector2( 0, 0 )
+motion_offset = Vector2( 23000, 7000 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="Level3Background" type="Sprite" parent="Paralax/Background"]
+modulate = Color( 0.270588, 0.270588, 0.270588, 1 )
+position = Vector2( 0, -1080 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Level3BackgroundFlipped" type="Sprite" parent="Paralax/Background"]
+modulate = Color( 0.270588, 0.270588, 0.270588, 1 )
+texture = ExtResource( 33 )
+centered = false
+flip_v = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Paralax"]
+motion_scale = Vector2( 0.05, 0 )
+motion_offset = Vector2( 23000, 7000 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="CPUParticles2D" parent="Paralax/ParallaxLayer" instance=ExtResource( 34 )]
+position = Vector2( 1882, -49 )
+scale = Vector2( 3.5, 3.5 )
+speed_scale = 2.57
+color = Color( 0.282353, 0.160784, 0.160784, 1 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Paralax"]
+motion_scale = Vector2( 0.1, 0 )
+motion_offset = Vector2( 23000, 7000 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="Level3BackgroundLayer" type="Sprite" parent="Paralax/ParallaxLayer2"]
+modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
+position = Vector2( 0, -1080 )
+texture = ExtResource( 32 )
+centered = false
+
+[node name="Level3BackgroundLayerFlipped" type="Sprite" parent="Paralax/ParallaxLayer2"]
+modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
+texture = ExtResource( 32 )
+centered = false
+flip_v = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Paralax"]
+motion_scale = Vector2( 0.2, 0 )
+motion_offset = Vector2( 23000, 7000 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="Level3BackgroundLayer2" type="Sprite" parent="Paralax/ParallaxLayer3"]
+modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
+position = Vector2( 0, -1080 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Level3BackgroundLayerFlipped" type="Sprite" parent="Paralax/ParallaxLayer3"]
+modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
+texture = ExtResource( 30 )
+centered = false
+flip_v = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( 48, -503 )
-motion_scale = Vector2( 0.5, 0.2 )
-motion_mirroring = Vector2( 3866, 0 )
+motion_scale = Vector2( 0.5, 0 )
+motion_mirroring = Vector2( 3840, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1482, -99 )
+position = Vector2( 1512, 158 )
 texture = ExtResource( 7 )
 
 [node name="StumpJumps" type="CollisionPolygon2D" parent="."]
@@ -557,7 +632,7 @@ texture = ExtResource( 29 )
 
 [node name="BlueRiftArea" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 24456, 7443 )
-polygon = PoolVector2Array( -1525.33, 1604.1, -1275.52, 1911.43, -652.547, 1924.7, 9931.96, 1946.81, 9609.77, -1028.13, 8332.2, -1103.3, -21.4102, -1116.57, -14.2734, -568.233, -81.5684, -40.9038, 228.393, -540.595, 8663.57, -518.485, 8689.07, 238.791, 8692.41, 1578.18, -703.525, 1588.62, -686, 1540, -693.019, 516.274, 8709.46, 516.274, 8709.46, 495.27, 498.371, 495.27, 362.146, 495.27, -692.301, 495.27, -702.506, -2198.86, -695.369, -2413.33, -711.684, -2497.35, -1882.19, -2600.16, -1558.97, -944.107 )
+polygon = PoolVector2Array( -3044, 2268, -1212, 2340, -652.547, 1924.7, 9931.96, 1946.81, 9609.77, -1028.13, 8332.2, -1103.3, -21.4102, -1116.57, -27, -516, 249, -518, 6606, -506, 6615, 1496, -642, 1429, -685, 1429, -693.019, 516.274, 6805.86, 516.274, 6804.17, 495.27, 498.371, 495.27, 362.146, 495.27, -692.301, 495.27, -686, -732, -702.506, -2198.86, -695.369, -2413.33, -711.684, -2497.35, -2577, -3137, -3008, -1611 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftArea"]
 color = Color( 0, 0, 0, 1 )
@@ -571,10 +646,11 @@ position = Vector2( -49.9627, 563.812 )
 scale = Vector2( 1.0196, 1.10551 )
 
 [node name="MirrorTop" type="Sprite" parent="BlueRiftGroup"]
+visible = false
 material = ExtResource( 11 )
-position = Vector2( 3997.22, -38.2245 )
+position = Vector2( 3026.72, -38.222 )
 rotation = 3.14159
-scale = Vector2( 147.198, 18.4659 )
+scale = Vector2( 116.87, 18.4659 )
 z_index = 4096
 texture = ExtResource( 4 )
 flip_v = true
@@ -582,32 +658,15 @@ script = ExtResource( 10 )
 
 [node name="MirrorBottom" type="Sprite" parent="BlueRiftGroup"]
 material = ExtResource( 11 )
-position = Vector2( -453.631, 840.334 )
+position = Vector2( -507.252, 840.334 )
 rotation = 3.14159
-scale = Vector2( 147.227, -17.0995 )
+scale = Vector2( 116.899, -17.0995 )
 z_index = 4096
 texture = ExtResource( 4 )
 offset = Vector2( -30.232, 16.038 )
 script = ExtResource( 10 )
 
-[node name="Level3" type="Sprite" parent="BlueRiftGroup"]
-position = Vector2( 1211.29, -7.44082 )
-scale = Vector2( 1, 1.03945 )
-z_index = -2
-texture = ExtResource( 30 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="Level4" type="Sprite" parent="BlueRiftGroup"]
-position = Vector2( 1209.25, 1078.13 )
-rotation = -3.14159
-scale = Vector2( 1, 0.950382 )
-z_index = -2
-texture = ExtResource( 30 )
-
 [node name="Rifts" type="Node2D" parent="BlueRiftGroup"]
-scale = Vector2( 1, 1 )
 
 [node name="BlueRiftFlip" type="Position2D" parent="BlueRiftGroup/Rifts"]
 position = Vector2( -525.096, 560.495 )
@@ -615,34 +674,27 @@ scale = Vector2( 1.0196, 1.10551 )
 
 [node name="BlueRift" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
 position = Vector2( 227.373, 200.992 )
-scale = Vector2( 1, 1 )
 
 [node name="BlueRift2" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
 position = Vector2( 688.23, 1012.65 )
-scale = Vector2( 1, 1 )
 
 [node name="BlueRift3" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
 position = Vector2( 1023.68, -87.3354 )
-scale = Vector2( 1, 1 )
 
 [node name="BlueRift4" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
 position = Vector2( 995.135, 795.968 )
-scale = Vector2( 1, 1 )
 
 [node name="BlueRift5" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
 position = Vector2( 350.744, 1405.11 )
-scale = Vector2( 1, 1 )
 
 [node name="BlueRift6" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
 position = Vector2( 1238.82, 1350.94 )
-scale = Vector2( 1, 1 )
 
 [node name="Obsticles" type="StaticBody2D" parent="BlueRiftGroup"]
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider"]]
 position = Vector2( 522.037, 559.39 )
-polygon = PoolVector2Array( -11.2148, -12.1611, -53.0195, -12.1611, -34.666, -1198.38, -75.4492, -1198.38, -89.7246, -250.952, -91.7637, -13.2666, -1228.62, -12.1611, -1229.64, 12.1602, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -424.154, 658.885, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 440.469, 11.0547, 569.959, 11.0547, 610.744, 11.0547, 803.449, 13.2656, 803.449, 360.396, 836.076, 360.396, 1088.94, 373.663, 1085.88, 637.88, 1127.68, 636.774, 1571.21, 643.408, 1569.17, 1214.96, 1620.15, 1212.75, 1619.13, 625.72, 1619.13, 573.761, 1620.15, 4.42188, 1583.45, 5.52734, 1581.41, 268.64, 1317.33, 271.956, 1317.33, 326.126, 1582.33, 318.588, 1581.41, 575.972, 1127.68, 577.077, 1128.7, 466.526, 1128.7, 339.392, 836.076, 339.392, 834.472, 281.882, 828.939, 11.0547, 1622.19, 13.2656, 8334.24, 5.52734, 8334.24, -6.63379, 1620.15, -13.2666, 1581.41, -14.3721, 825.881, -12.1611, 836.076, -346.025, 1129.72, -342.709, 1129.72, -370.347, 1129.72, -609.138, 1406.04, -605.821, 1406.04, -634.564, 1124.62, -637.881, 1083.84, -640.092, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 484.313, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.449, -306.227, 595.449, -347.131, 355.842, -348.237, 355.374, -166.263, 353.803, -12.1611 )
+polygon = PoolVector2Array( -11.2148, -12.1611, -53.0195, -12.1611, -34.666, -1198.38, -75.4492, -1198.38, -89.7246, -250.952, -91.7637, -13.2666, -1228.62, -12.1611, -1229.64, 12.1602, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -424.154, 658.885, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 440.469, 11.0547, 569.959, 11.0547, 610.744, 11.0547, 803.449, 13.2656, 803.449, 360.396, 836.076, 360.396, 1088.94, 373.663, 1085.88, 637.88, 1127.68, 636.774, 1571.21, 643.408, 1569.17, 1214.96, 1620.15, 1212.75, 1619.13, 625.72, 1619.13, 573.761, 1620.15, 4.42188, 1583.45, 5.52734, 1581.41, 268.64, 1317.33, 271.956, 1317.33, 326.126, 1582.33, 318.588, 1581.41, 575.972, 1127.68, 577.077, 1128.7, 466.526, 1128.7, 339.392, 836.076, 339.392, 834.472, 281.882, 828.939, 11.0547, 1622.19, 13.2656, 6280.76, 7.89478, 6279.74, -8.66339, 1620.15, -13.2666, 1581.41, -14.3721, 825.881, -12.1611, 836.076, -346.025, 1129.72, -342.709, 1129.72, -370.347, 1129.72, -609.138, 1406.04, -605.821, 1406.04, -634.564, 1124.62, -637.881, 1083.84, -640.092, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 484.313, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.449, -306.227, 595.449, -347.131, 355.842, -348.237, 355.374, -166.263, 353.803, -12.1611 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D"]
 color = Color( 0.215686, 0.211765, 0.211765, 1 )
@@ -673,7 +725,7 @@ polygon = PoolVector2Array( -71, -208, -47, -185, -47, -55, 357, -78, 246, 53, -
 [node name="Start" type="Position2D" parent="BoatBody"]
 
 [node name="EndGamePortal" parent="." instance=ExtResource( 9 )]
-position = Vector2( 32683, 7515 )
+position = Vector2( 30618, 7533 )
 scale = Vector2( 6.25616, 6.29056 )
 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="."]

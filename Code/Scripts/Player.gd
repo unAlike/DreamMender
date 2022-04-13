@@ -48,7 +48,7 @@ func get_Input():
 		$Camera2D.zoom = $Camera2D.zoom - Vector2(.1,.1)
 		print("IN")
 	if Input.is_action_just_released("zoomout"):# and $Camera2D.zoom < Vector2(2.4,2.4):
-		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
+		$Camera2D.zoom = $Camera2D.zoom+Vector2(1,1)
 
 func _physics_process(delta):
 	if lastState != state_machine.get_current_node():

@@ -396,18 +396,18 @@ advance_condition = "falling"
 states/fall/node = SubResource( 85 )
 states/fall/position = Vector2( 230, 49 )
 states/idle/node = SubResource( 38 )
-states/idle/position = Vector2( 187, 325.988 )
+states/idle/position = Vector2( 229.222, 358.432 )
 states/jump/node = SubResource( 44 )
-states/jump/position = Vector2( 103, 145 )
+states/jump/position = Vector2( 77.6667, 199.667 )
 states/run/node = SubResource( 39 )
 states/run/position = Vector2( 514.333, 357.988 )
 states/wall/node = SubResource( 76 )
 states/wall/position = Vector2( 845, 49 )
 states/wallJump/node = SubResource( 77 )
-states/wallJump/position = Vector2( 836, 217 )
+states/wallJump/position = Vector2( 846.222, 217 )
 transitions = [ "wall", "wallJump", SubResource( 79 ), "wallJump", "wall", SubResource( 80 ), "idle", "jump", SubResource( 97 ), "jump", "fall", SubResource( 98 ), "fall", "idle", SubResource( 99 ), "fall", "wall", SubResource( 100 ), "wallJump", "fall", SubResource( 101 ), "idle", "run", SubResource( 102 ), "run", "idle", SubResource( 103 ), "wall", "fall", SubResource( 104 ), "run", "fall", SubResource( 105 ) ]
 start_node = "idle"
-graph_offset = Vector2( 0, 6.98399 )
+graph_offset = Vector2( -187, -98.016 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 
@@ -440,7 +440,8 @@ flip_v = true
 position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
-animation = "fall"
+animation = "idle"
+frame = 6
 playing = true
 centered = false
 
