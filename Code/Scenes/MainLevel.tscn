@@ -46,7 +46,7 @@ position = Vector2( 48, -503 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24100, 5058 )
+position = Vector2( 26724, 7722 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -61,8 +61,8 @@ position = Vector2( 32546, 3836 )
 
 [node name="Paralax" type="ParallaxBackground" parent="."]
 layer = -1
-offset = Vector2( 27000, 145.845 )
-transform = Transform2D( 1, 0, 0, 1, 27000, 145.845 )
+offset = Vector2( 25000, 145.845 )
+transform = Transform2D( 1, 0, 0, 1, 25000, 145.845 )
 follow_viewport_enable = true
 scroll_limit_end = Vector2( 100000, 10000 )
 scroll_ignore_camera_zoom = true
@@ -70,7 +70,7 @@ scroll_ignore_camera_zoom = true
 [node name="Background" type="ParallaxLayer" parent="Paralax"]
 motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( 23000, 7000 )
-motion_mirroring = Vector2( 3840, 0 )
+motion_mirroring = Vector2( 7681, 0 )
 
 [node name="Level3Background" type="Sprite" parent="Paralax/Background"]
 modulate = Color( 0.270588, 0.270588, 0.270588, 1 )
@@ -84,21 +84,35 @@ texture = ExtResource( 33 )
 centered = false
 flip_v = true
 
+[node name="Level3Background2" type="Sprite" parent="Paralax/Background"]
+modulate = Color( 0.270588, 0.270588, 0.270588, 1 )
+position = Vector2( 3840, -1080 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Level3BackgroundFlipped2" type="Sprite" parent="Paralax/Background"]
+modulate = Color( 0.270588, 0.270588, 0.270588, 1 )
+position = Vector2( 3840, 0 )
+texture = ExtResource( 33 )
+centered = false
+flip_v = true
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Paralax"]
 motion_scale = Vector2( 0.05, 0 )
 motion_offset = Vector2( 23000, 7000 )
-motion_mirroring = Vector2( 3840, 0 )
+motion_mirroring = Vector2( 7681, 0 )
 
 [node name="CPUParticles2D" parent="Paralax/ParallaxLayer" instance=ExtResource( 34 )]
-position = Vector2( 1882, -49 )
+position = Vector2( 3740, -45.845 )
 scale = Vector2( 3.5, 3.5 )
 speed_scale = 2.57
+emission_rect_extents = Vector2( 1080, 250 )
 color = Color( 0.282353, 0.160784, 0.160784, 1 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Paralax"]
 motion_scale = Vector2( 0.1, 0 )
 motion_offset = Vector2( 23000, 7000 )
-motion_mirroring = Vector2( 3840, 0 )
+motion_mirroring = Vector2( 7681, 0 )
 
 [node name="Level3BackgroundLayer" type="Sprite" parent="Paralax/ParallaxLayer2"]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
@@ -112,10 +126,23 @@ texture = ExtResource( 32 )
 centered = false
 flip_v = true
 
+[node name="Level3BackgroundLayer2" type="Sprite" parent="Paralax/ParallaxLayer2"]
+modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
+position = Vector2( 3840, -1080 )
+texture = ExtResource( 32 )
+centered = false
+
+[node name="Level3BackgroundLayerFlipped2" type="Sprite" parent="Paralax/ParallaxLayer2"]
+modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
+position = Vector2( 3840, 0 )
+texture = ExtResource( 32 )
+centered = false
+flip_v = true
+
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Paralax"]
 motion_scale = Vector2( 0.2, 0 )
 motion_offset = Vector2( 23000, 7000 )
-motion_mirroring = Vector2( 3840, 0 )
+motion_mirroring = Vector2( 7681, 0 )
 
 [node name="Level3BackgroundLayer2" type="Sprite" parent="Paralax/ParallaxLayer3"]
 modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
@@ -129,15 +156,29 @@ texture = ExtResource( 30 )
 centered = false
 flip_v = true
 
+[node name="Level3BackgroundLayer3" type="Sprite" parent="Paralax/ParallaxLayer3"]
+modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
+position = Vector2( 3840, -1080 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Level3BackgroundLayerFlipped2" type="Sprite" parent="Paralax/ParallaxLayer3"]
+modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
+position = Vector2( 3840, 0 )
+texture = ExtResource( 30 )
+centered = false
+flip_v = true
+
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="Paralax"]
 motion_scale = Vector2( 0.4, 0 )
 motion_offset = Vector2( 23000, 7000 )
-motion_mirroring = Vector2( 3840, 0 )
+motion_mirroring = Vector2( 7681, 0 )
 
 [node name="CPUParticles2D" parent="Paralax/ParallaxLayer4" instance=ExtResource( 34 )]
-position = Vector2( 1882, -49 )
+position = Vector2( 3754, -63.845 )
 scale = Vector2( 3.5, 3.5 )
 speed_scale = 2.57
+emission_rect_extents = Vector2( 1080, 250 )
 initial_velocity = 1.0
 scale_amount_random = 0.1
 color = Color( 0.839216, 1, 0.184314, 1 )
