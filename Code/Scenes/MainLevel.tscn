@@ -56,6 +56,26 @@ maxNumDJump = 2
 [node name="Checkpoint" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 32866, 4156 )
 
+[node name="Checkpoint2" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 5172.96, -1250.76 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint3" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 10272.1, -1132.56 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint4" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 19823.8, 1012.33 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint5" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 32648.4, 4141.26 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint6" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 24512.1, 4110.95 )
+scale = Vector2( 4.07565, 4.07565 )
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -682,26 +702,6 @@ rotation = 1.5708
 scale = Vector2( 0.10259, 188.243 )
 z_index = -28
 texture = SubResource( 3 )
-
-[node name="Checkpoint" parent="." instance=ExtResource( 8 )]
-position = Vector2( 5172.96, -1250.76 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 10272.1, -1132.56 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 19823.8, 1012.33 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 32648.4, 4141.26 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 24512.1, 4110.95 )
-scale = Vector2( 4.07565, 4.07565 )
 
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
