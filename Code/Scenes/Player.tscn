@@ -78,31 +78,6 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1056, 0, 264, 452 )
 
-[sub_resource type="AtlasTexture" id=82]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=70]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=71]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=72]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=73]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
 [sub_resource type="AtlasTexture" id=58]
 flags = 4
 atlas = ExtResource( 4 )
@@ -163,10 +138,35 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
 [sub_resource type="AtlasTexture" id=83]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 900, 0, 300, 452 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -180,25 +180,25 @@ animations = [ {
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
-"loop": false,
-"name": "wallJump",
-"speed": 10.0
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
 }, {
 "frames": [ SubResource( 72 ), SubResource( 73 ) ],
 "loop": false,
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
-}, {
 "frames": [ SubResource( 83 ) ],
 "loop": false,
 "name": "fall",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": false,
+"name": "wallJump",
+"speed": 10.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -431,7 +431,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 4
+frame = 1
 playing = true
 centered = false
 
@@ -463,6 +463,19 @@ smoothing_speed = 2.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
 script = ExtResource( 2 )
+
+[node name="Collectables" type="Label" parent="CanvasLayer"]
+margin_right = 78.0
+margin_bottom = 14.0
+text = "Collectables:"
+
+[node name="Count" type="Label" parent="CanvasLayer/Collectables"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 77.0
+margin_bottom = 13.0
 
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false
