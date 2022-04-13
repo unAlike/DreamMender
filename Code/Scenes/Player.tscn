@@ -190,6 +190,11 @@ animations = [ {
 "name": "wall",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 72 ), SubResource( 73 ) ],
+"loop": false,
+"name": "wall",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": false,
 "name": "wallJump",

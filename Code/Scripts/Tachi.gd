@@ -13,3 +13,5 @@ func Message():
 	Dialogue.text = Text[At]
 	Dialogue.visible_characters = 0
 	Duration.start()
+	if At == 9:
+		Spools.yellowSpool = true

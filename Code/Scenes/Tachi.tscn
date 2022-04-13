@@ -3,12 +3,12 @@
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Tachi.gd" type="Script" id=2]
 
-
 [node name="Tachi" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )
 Text = PoolStringArray( "Why hello there little one.", "What brings you to this place\?", "Me\? Oh, I am just a wandering soul helping all those who have lost their way.", "My name\?", "Oh, I guess I haven’t introduced myself have I.", "My name is Needle Master Tachi. I am the guide for all who wander the land of demons.", "Yes, you heard correctly, this land is home to the things you wish to keep inside.", "A place that gives voice and body to the insecurities that lay within.", "It’s dangerous to go alone! Take this!", "(Tachi gives needle and yellow spool)" )
+Next = PoolStringArray( "This land is home to the things you wish to keep inside.", "A place that gives voice and body to the insecurities that lay within.", "We needle masters help guide those who wander these lands conquer their insecurities.", "Only when you have mastered all parts of yourself, can you truly find the exit to this place." )
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
 visible = false

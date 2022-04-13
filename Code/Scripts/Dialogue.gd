@@ -6,11 +6,13 @@ onready var Duration = get_node("Timer")
 onready var Bubble = get_node("ENTER")
 export var Radius = 100
 export(PoolStringArray) var Text
+export(PoolStringArray) var Next
 var InRadius = false
 var Interacting = false
 var At = 0
 onready var Player = get_tree().current_scene.get_node("Player")
 onready var NPC = get_parent().get_node("NPC")
+onready var Spools = get_tree().get_current_scene().get_node("Player/Projectile")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,10 +43,6 @@ func _process(delta):
 		elif Interacting and At != Text.size():
 			Message()
 			At += 1
-	if Input.is_action_just_pressed("ui_accept") and !InRadius and Interacting:
-		Box.visible = false
-		Interacting = false
-		At = 0
 
 func Message():
 	pass
