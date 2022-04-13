@@ -53,61 +53,6 @@ flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 2100, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 264, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 528, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 792, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=72]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=73]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=82]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=70]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=71]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 900, 0, 300, 452 )
-
 [sub_resource type="AtlasTexture" id=58]
 flags = 4
 atlas = ExtResource( 4 )
@@ -168,6 +113,61 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 264, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 528, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 792, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
@@ -175,9 +175,14 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": false,
-"name": "jump",
+"name": "wallJump",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 83 ) ],
@@ -190,20 +195,10 @@ animations = [ {
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 72 ), SubResource( 73 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": false,
-"name": "wall",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
-"loop": false,
-"name": "wallJump",
+"name": "jump",
 "speed": 10.0
-}, {
-"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -446,7 +441,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 6
+frame = 2
 playing = true
 centered = false
 
@@ -592,9 +587,10 @@ margin_right = 100.0
 margin_bottom = 100.0
 text = "				Controls:
 
-W - Jump
-A - Move Left
-D - Move Right
+W/Space - Jump
+A/Left - Move Left
+D/Right - Move Right
+E/Enter - Interact
 Mouse - Aim
 Left Click - Throw Needle
 Scroll - Zoom In/Out"
