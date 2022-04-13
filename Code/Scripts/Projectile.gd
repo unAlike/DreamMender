@@ -5,6 +5,7 @@ export var Cooldown = 2
 var yellowSpool = false
 var redSpool = false
 var blueSpool = false
+onready var Flip = get_tree().get_current_scene().get_node("Player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,4 +30,7 @@ func Throw():
 	get_tree().current_scene.add_child(Needle)
 	Needle.global_position = $Node2D/Position2D.global_position
 	Needle.Velocity = get_global_mouse_position() - Needle.global_position
-	Needle.rotate(get_angle_to(get_global_mouse_position()) + (PI/2))
+	if Flip.flipped:
+		Needle.rotate((get_angle_to(get_global_mouse_position()) + PI + (PI/2))*(-1))
+	else:
+		Needle.rotate(get_angle_to(get_global_mouse_position()) + (PI/2))
