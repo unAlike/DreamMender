@@ -479,6 +479,19 @@ smoothing_speed = 2.0
 pause_mode = 2
 script = ExtResource( 2 )
 
+[node name="Collectables" type="Label" parent="CanvasLayer"]
+margin_right = 78.0
+margin_bottom = 14.0
+text = "Collectables:"
+
+[node name="Count" type="Label" parent="CanvasLayer/Collectables"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 77.0
+margin_bottom = 13.0
+
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false
 anchor_right = 1.0
