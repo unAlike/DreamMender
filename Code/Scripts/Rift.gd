@@ -11,7 +11,7 @@ var lastPlayed = 0
 var original = false
 onready var riftTimer: Timer = get_node("riftTimer")
 onready var unstableTimer: Timer = get_node("unstableTimer")
-#onready var colDetect : Area2D = get_node("NeedleDetector")
+onready var Spools = get_tree().get_current_scene().get_node("Player/Projectile")
 
 func _ready():
 	riftTimer.set_wait_time(Time)
@@ -32,7 +32,7 @@ func _process(delta):
 				riftActive = !riftActive
 				riftTimer.start()
 
-	# How Interact() is activated
+	# For testing purposes press "SPACE" to Interact()
 	if Input.is_action_just_pressed("swap"):
 		Interact()
 

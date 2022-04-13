@@ -30,6 +30,5 @@ func Interact():
 func _on_Rift_body_entered(body):
 	if body.name == "Needle":
 		body.queue_free()
-		Interact()
-	else:
-		Interact()
+		if Spools.blueSpool:
+			Interact()
