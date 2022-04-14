@@ -21,12 +21,14 @@ var inBlueRift = false
 var lastState = null
 var stateConditions
 var timeFalling = 0
+var blueFlipY
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
 	stateConditions = $AnimationTree.get("parameters/conditions")
 	$Reflection.scale = $Sprite.scale
+	blueFlipY = get_tree().current_scene.get_node("BlueRiftGroup").get_node("Rifts").get_node("BlueRiftFlip").global_position.y
 
 func get_Input():
 	dir = 0
@@ -123,7 +125,7 @@ func _physics_process(delta):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Reflection.global_position.y = 7446 + (7446 - global_position.y)
+	$Reflection.global_position.y =  blueFlipY + (blueFlipY - global_position.y)
 	$Reflection.animation = $Sprite.animation
 	$Reflection.playing = $Sprite.playing
 	$Reflection.frames = $Sprite.frames
