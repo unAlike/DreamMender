@@ -53,31 +53,6 @@ flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 2100, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 264, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 528, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 792, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
 [sub_resource type="AtlasTexture" id=58]
 flags = 4
 atlas = ExtResource( 4 )
@@ -138,6 +113,31 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 264, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 528, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 792, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
 [sub_resource type="AtlasTexture" id=72]
 flags = 4
 atlas = ExtResource( 6 )
@@ -147,11 +147,6 @@ region = Rect2( 0, 0, 300, 452 )
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
 
 [sub_resource type="AtlasTexture" id=82]
 flags = 4
@@ -168,6 +163,11 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 900, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
@@ -175,30 +175,30 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": false,
-"name": "jump",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "run",
 "speed": 20.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": false,
+"name": "jump",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 72 ), SubResource( 73 ) ],
 "loop": false,
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 83 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": false,
 "name": "wallJump",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -440,7 +440,7 @@ flip_v = true
 position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
-animation = "idle"
+animation = "fall"
 playing = true
 centered = false
 
@@ -474,17 +474,22 @@ pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="Collectables" type="Label" parent="CanvasLayer"]
-margin_right = 78.0
-margin_bottom = 14.0
+margin_left = 859.0
+margin_top = 8.0
+margin_right = 941.0
+margin_bottom = 22.0
 text = "Collectables:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Count" type="Label" parent="CanvasLayer/Collectables"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = -1.0
-margin_right = 77.0
-margin_bottom = 13.0
+margin_left = 84.0
+margin_top = -15.0
+margin_right = 160.0
+margin_bottom = -1.0
 
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -631,6 +636,32 @@ visible = false
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Footsteps" type="Node2D" parent="Sounds"]
+
+[node name="Footstep1" type="AudioStreamPlayer2D" parent="Sounds/Footsteps"]
+
+[node name="Footstep2" type="AudioStreamPlayer2D" parent="Sounds/Footsteps"]
+
+[node name="Footstep3" type="AudioStreamPlayer2D" parent="Sounds/Footsteps"]
+
+[node name="Footstep4" type="AudioStreamPlayer2D" parent="Sounds/Footsteps"]
+
+[node name="Footstep5" type="AudioStreamPlayer2D" parent="Sounds/Footsteps"]
+
+[node name="Throw" type="Node2D" parent="Sounds"]
+
+[node name="Throw" type="AudioStreamPlayer2D" parent="Sounds/Throw"]
+
+[node name="Jump" type="Node2D" parent="Sounds"]
+
+[node name="Jump1" type="AudioStreamPlayer2D" parent="Sounds/Jump"]
+
+[node name="Jump2" type="AudioStreamPlayer2D" parent="Sounds/Jump"]
+
+[node name="Jump3" type="AudioStreamPlayer2D" parent="Sounds/Jump"]
 
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Resume" to="CanvasLayer" method="_on_Resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Collections" to="CanvasLayer" method="_on_Collections_pressed"]

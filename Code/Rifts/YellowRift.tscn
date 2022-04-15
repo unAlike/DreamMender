@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Art/Misc/Button.png" type="Texture" id=1]
 [ext_resource path="res://Art/Rifts/Yellow_Rift_Closed_Sprite_Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/YellowRift.gd" type="Script" id=3]
 [ext_resource path="res://Art/Rifts/Yellow_Rift_Open_Sprite_Sheet.png" type="Texture" id=4]
 [ext_resource path="res://Art/Misc/light.png" type="Texture" id=5]
+[ext_resource path="res://Audio/Dreamy_Ambient_Song.mp3" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 47.0106
@@ -97,6 +98,7 @@ position = Vector2( 1, -1 )
 scale = Vector2( 0.640497, 0.725867 )
 frames = SubResource( 7 )
 animation = "Open"
+frame = 1
 playing = true
 
 [node name="Position2D" type="Position2D" parent="Rift"]
@@ -121,6 +123,14 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 9 )
+
+[node name="OpenRift" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -2 )
+stream = ExtResource( 6 )
+
+[node name="CloseRift" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -2 )
+stream = ExtResource( 6 )
 
 [connection signal="area_entered" from="." to="." method="Interact"]
 [connection signal="body_entered" from="Rift" to="." method="_on_Rift_body_entered"]
