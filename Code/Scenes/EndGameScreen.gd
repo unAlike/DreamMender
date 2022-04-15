@@ -24,33 +24,50 @@ var credits = [
 	[
 		"Dream Mender"
 	],[
-		"Programming",
 		"Ryan Ungerleider",
+		"Lead Programmer",
+		"Scrum Master"
+	],[
 		"Devlyn Nwokeuku",
+		"Programmer"
+	],[
 		"Tyler Svihovec",
-		"Carter Gehl"
+		"Programmer"
 	],[
-		"Art",
+		"Carter Gehl",
+		"UX Lead",
+		"Lead Story Writer",
+		"Programmer"
+	],[
 		"Ryan Wayne",
-		"Toni Madges"
+		"Lead Artist",
+		"Lead Enviornment Artist"
 	],[
-		"Composing",
-		"Cole Puertas"
+		"Toni Madges",
+		"Lead Character Artist",
+		"Character Animator",
+		"Additional Environments Artist"
 	],[
-		"Sound Design",
+		"Cole Puertas",
+		"Composer"
+		
+	],[
+		"Satbir Mangat",
+		"Sound Designer"
+	],[
 		"Mason Waldrip",
-		"Satbir Mangat"
+		"Sound Designer"
 	],[
-		"Professor",
-		"Michael Tetzlaff"
+		"Michael Tetzlaff",
+		"Professor"
 	],[
 		"Developed with Godot Engine",
 		"https://godotengine.org/license"
 	],[
 		"Special thanks",
-		"My parents",
+		"My family",
 		"My friends",
-		"My pet rabbit"
+		"UW Stout GDD and SGX Staff"
 	]
 ]
 
