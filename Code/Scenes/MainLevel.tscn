@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://Scenes/Shadow2.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Art/Character/DW_Shadow_Yellow_Character_Idle_Sprite_Sheet.png" type="Texture" id=39]
 [ext_resource path="res://Art/Character/DW_Shadow_Red_Character_Idle_Sprite_Sheet.png" type="Texture" id=40]
+[ext_resource path="res://Scenes/Objects/Boat(New).tscn" type="PackedScene" id=42]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0.0151515, 1 )
@@ -935,26 +936,6 @@ polygon = PoolVector2Array( 604.625, -826.923, 608.703, 19.8994, 358.9, 21.0049,
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D2"]
 color = Color( 0.215686, 0.211765, 0.211765, 1 )
 
-[node name="BoatBody" type="KinematicBody2D" parent="."]
-position = Vector2( 28100, 410 )
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="BoatBody"]
-position = Vector2( 16, 4.40002 )
-scale = Vector2( 3.5625, 0.75 )
-
-[node name="BoatShape" type="CollisionPolygon2D" parent="BoatBody"]
-position = Vector2( -14954, 323.4 )
-polygon = PoolVector2Array( 14661, -363, 14883, -376, 14883, -531, 14907, -509, 14907, -378, 15311, -401, 15200, -270, 14741, -263 )
-
-[node name="Polygon2D" type="Polygon2D" parent="BoatBody"]
-polygon = PoolVector2Array( -71, -208, -47, -185, -47, -55, 357, -78, 246, 53, -213, 60, -293, -40, -71, -53 )
-
-[node name="Start" type="Position2D" parent="BoatBody"]
-
-[node name="Shadow3" parent="BoatBody" instance=ExtResource( 38 )]
-position = Vector2( -124.738, -98.8245 )
-
 [node name="EndGamePortal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 30618, 7533 )
 scale = Vector2( 6.25616, 6.29056 )
@@ -1031,7 +1012,7 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 28 )
 animation = "Yellow"
-frame = 4
+frame = 3
 playing = true
 flip_h = true
 script = ExtResource( 36 )
@@ -1039,9 +1020,13 @@ script = ExtResource( 36 )
 [node name="Shadow2" parent="Shadows" instance=ExtResource( 37 )]
 position = Vector2( 22985.4, 925.444 )
 
-[node name="Boat" parent="." instance=ExtResource( 35 )]
-position = Vector2( 28144.2, 399.073 )
-scale = Vector2( 6.26098, 6.26098 )
+[node name="Boat" parent="." instance=ExtResource( 42 )]
+position = Vector2( 28294, 345.526 )
+scale = Vector2( 10, 10 )
+
+[node name="Shadow3" parent="Boat" instance=ExtResource( 38 )]
+position = Vector2( 14.7715, -12.8309 )
+scale = Vector2( 0.2, 0.2 )
 
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
@@ -1065,4 +1050,3 @@ scale = Vector2( 6.26098, 6.26098 )
 [editable path="StableYellowRift3/Platform"]
 [editable path="Tachi2"]
 [editable path="StableRift4/YellowRift/Platform"]
-[editable path="Boat"]
