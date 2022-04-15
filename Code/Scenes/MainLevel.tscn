@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://Art/Level3/Level_3_Background_Layer_1.png" type="Texture" id=32]
 [ext_resource path="res://Art/Level3/Level_3_Background.png" type="Texture" id=33]
 [ext_resource path="res://Particle.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Scenes/Utility/Boat(New).tscn" type="PackedScene" id=35]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0.0151515, 1 )
@@ -61,9 +62,12 @@ z_index = 50
 
 [node name="Collectable" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 5488.62, -1224.5 )
-scale = Vector2( 0.24, 0.24 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
+
+[node name="Checkpoint7" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 973.654, 188.986 )
+scale = Vector2( 4.07565, 4.07565 )
 
 [node name="Checkpoint" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 32546, 3836 )
@@ -748,6 +752,7 @@ polygon = PoolVector2Array( 604.625, -826.923, 608.703, 19.8994, 358.9, 21.0049,
 color = Color( 0.215686, 0.211765, 0.211765, 1 )
 
 [node name="BoatBody" type="KinematicBody2D" parent="."]
+visible = false
 position = Vector2( 28100, 410 )
 motion/sync_to_physics = true
 
@@ -759,10 +764,15 @@ scale = Vector2( 3.5625, 0.75 )
 position = Vector2( -14954, 323.4 )
 polygon = PoolVector2Array( 14661, -363, 14883, -376, 14883, -531, 14907, -509, 14907, -378, 15311, -401, 15200, -270, 14741, -263 )
 
+[node name="Platform2" parent="BoatBody" instance=ExtResource( 35 )]
+
 [node name="Polygon2D" type="Polygon2D" parent="BoatBody"]
 polygon = PoolVector2Array( -71, -208, -47, -185, -47, -55, 357, -78, 246, 53, -213, 60, -293, -40, -71, -53 )
 
 [node name="Start" type="Position2D" parent="BoatBody"]
+
+[node name="Platform" parent="BoatBody" instance=ExtResource( 35 )]
+position = Vector2( -1499.68, -307.959 )
 
 [node name="EndGamePortal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 30618, 7533 )
@@ -809,6 +819,10 @@ rotation = 1.5708
 scale = Vector2( 0.10259, 188.243 )
 z_index = -28
 texture = SubResource( 3 )
+
+[node name="Platform" parent="." instance=ExtResource( 35 )]
+position = Vector2( 28144.2, 399.073 )
+scale = Vector2( 6.26098, 6.26098 )
 
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
