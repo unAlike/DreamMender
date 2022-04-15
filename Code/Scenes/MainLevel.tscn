@@ -36,7 +36,6 @@
 [ext_resource path="res://Scenes/Utility/Particle.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Scenes/Objects/Boat(New).tscn" type="PackedScene" id=35]
 
-
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0.0151515, 1 )
 colors = PoolColorArray( 0.207411, 0.18182, 0.604492, 1, 0.0260353, 0.0380859, 0.0380859, 1 )
@@ -50,7 +49,7 @@ scale = Vector2( 0.988409, 0.989795 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 592.872, 154.577 )
+position = Vector2( 27473.4, 32.3299 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -848,6 +847,12 @@ texture = SubResource( 3 )
 position = Vector2( 28144.2, 399.073 )
 scale = Vector2( 6.26098, 6.26098 )
 
+[node name="fromPos" parent="Boat" index="2"]
+position = Vector2( -0.319824, 0.968124 )
+
+[node name="toPos" parent="Boat" index="3"]
+position = Vector2( 748.661, -2.7433 )
+
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
@@ -868,3 +873,4 @@ scale = Vector2( 6.26098, 6.26098 )
 [editable path="ThornPuzzle/YellowRift/SpikeHitbox5"]
 [editable path="ThornPuzzle/YellowRift/SpikeHitbox6"]
 [editable path="StableYellowRift3/Platform"]
+[editable path="Boat"]
