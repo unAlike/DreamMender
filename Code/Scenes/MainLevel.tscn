@@ -34,7 +34,7 @@
 [ext_resource path="res://Art/Level3/Level_3_Background_Layer_1.png" type="Texture" id=32]
 [ext_resource path="res://Art/Level3/Level_3_Background.png" type="Texture" id=33]
 [ext_resource path="res://Particle.tscn" type="PackedScene" id=34]
-[ext_resource path="res://Scenes/Utility/Boat(New).tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/Objects/Boat(New).tscn" type="PackedScene" id=35]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0.0151515, 1 )
@@ -49,7 +49,7 @@ scale = Vector2( 0.988409, 0.989795 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 655.599, 160.639 )
+position = Vector2( 26871.5, 46.4742 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -751,29 +751,6 @@ polygon = PoolVector2Array( 604.625, -826.923, 608.703, 19.8994, 358.9, 21.0049,
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D2"]
 color = Color( 0.215686, 0.211765, 0.211765, 1 )
 
-[node name="BoatBody" type="KinematicBody2D" parent="."]
-visible = false
-position = Vector2( 28100, 410 )
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="BoatBody"]
-position = Vector2( 16, 4.40002 )
-scale = Vector2( 3.5625, 0.75 )
-
-[node name="BoatShape" type="CollisionPolygon2D" parent="BoatBody"]
-position = Vector2( -14954, 323.4 )
-polygon = PoolVector2Array( 14661, -363, 14883, -376, 14883, -531, 14907, -509, 14907, -378, 15311, -401, 15200, -270, 14741, -263 )
-
-[node name="Platform2" parent="BoatBody" instance=ExtResource( 35 )]
-
-[node name="Polygon2D" type="Polygon2D" parent="BoatBody"]
-polygon = PoolVector2Array( -71, -208, -47, -185, -47, -55, 357, -78, 246, 53, -213, 60, -293, -40, -71, -53 )
-
-[node name="Start" type="Position2D" parent="BoatBody"]
-
-[node name="Platform" parent="BoatBody" instance=ExtResource( 35 )]
-position = Vector2( -1499.68, -307.959 )
-
 [node name="EndGamePortal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 30618, 7533 )
 scale = Vector2( 6.25616, 6.29056 )
@@ -820,7 +797,7 @@ scale = Vector2( 0.10259, 188.243 )
 z_index = -28
 texture = SubResource( 3 )
 
-[node name="Platform" parent="." instance=ExtResource( 35 )]
+[node name="Boat" parent="." instance=ExtResource( 35 )]
 position = Vector2( 28144.2, 399.073 )
 scale = Vector2( 6.26098, 6.26098 )
 
