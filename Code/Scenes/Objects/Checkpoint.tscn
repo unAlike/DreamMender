@@ -1,24 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Objects/Checkpoint.gd" type="Script" id=1]
+[ext_resource path="res://Art/Misc/DW_Checkpoint_Off.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 18.5 )
 
 [node name="Checkpoint" type="Area2D"]
+scale = Vector2( 0.56, 0.56 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Sprite"]
-margin_left = -20.0
-margin_top = -18.0
-margin_right = 20.0
-margin_bottom = 18.0
-color = Color( 0.141176, 0.654902, 0.631373, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+modulate = Color( 0.388235, 1, 0.870588, 1 )
+scale = Vector2( 0.149805, 0.149805 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
