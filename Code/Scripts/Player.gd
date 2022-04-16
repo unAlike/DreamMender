@@ -49,8 +49,8 @@ func get_Input():
 	if Input.is_action_just_released("zoomin") and $Camera2D.zoom > Vector2(1,1):
 		$Camera2D.zoom = $Camera2D.zoom - Vector2(.1,.1)
 		print("IN")
-	if Input.is_action_just_released("zoomout"):# and $Camera2D.zoom < Vector2(2.4,2.4):
-		$Camera2D.zoom = $Camera2D.zoom+Vector2(1,1)
+	if Input.is_action_just_released("zoomout") and $Camera2D.zoom < Vector2(2.4,2.4):
+		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 
 func _physics_process(delta):
 	if lastState != state_machine.get_current_node():
@@ -181,8 +181,9 @@ func die():
 
 # Checks for collision with dangerous objects that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):
-	print("Touchs")
-	die()
+	if body.name == "Player":
+		print("Touchs")
+		die()
 
 func flipPlayer():
 	flipped = !flipped
