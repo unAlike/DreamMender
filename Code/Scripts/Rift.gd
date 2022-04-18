@@ -10,21 +10,18 @@ var objectList = []
 var lastPlayed = 0
 var original = false
 onready var riftTimer: Timer = get_node("riftTimer")
-onready var unstableTimer: Timer = get_node("unstableTimer")
 onready var Spools = get_tree().get_current_scene().get_node("Player/Projectile")
 
 func _ready():
 	riftTimer.set_wait_time(Time)
-	unstableTimer.set_wait_time(Time)
-	unstableTimer.start()
 	original = riftActive
 
 func _process(delta):
 	# If rift is unstable, change rift state after each timeout
 	if riftUnstable == true:
-		if unstableTimer.get_time_left() == 0:
+		if riftTimer.get_time_left() == 0:
 			riftActive = !riftActive
-			unstableTimer.start()
+			riftTimer.start()
 	# If rift is stable & not in original state, change rift state after timeout
 	else:
 		if riftActive != original and riftTimer.get_time_left() == 0:
@@ -41,6 +38,7 @@ func Interact():
 	if riftUnstable:
 		pass
 	else:
+		print("BOB")
 		if riftActive == original:
 			riftActive = !riftActive
 		riftTimer.start()

@@ -59,6 +59,7 @@ enabled=PoolStringArray(  )
 
 input=false
 stretch=false
+global=false
 
 [input]
 

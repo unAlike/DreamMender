@@ -53,6 +53,7 @@ func get_Input():
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 
 func _physics_process(delta):
+	get_Input()
 	if lastState != state_machine.get_current_node():
 		lastState = state_machine.get_current_node()
 	if GroundCheck():
@@ -63,7 +64,7 @@ func _physics_process(delta):
 		if dir == 0:
 			state_machine.travel("idle")
 	
-	get_Input()
+	
 	vel.y += gravity * delta
 	if is_on_wall() and numWallJump>0:
 		state_machine.travel("wall")
@@ -189,3 +190,10 @@ func flipPlayer():
 	flipped = !flipped
 	gravity *= -1
 	scale.y *= -1
+
+
+func _on_Area2D_body_entered(body):
+	inBlueRift = true
+	get_tree().get_current_scene().get_node("Player/Projectile").yellowSpool = true
+	get_tree().get_current_scene().get_node("Player/Projectile").blueSpool = true
+	pass # Replace with function body.

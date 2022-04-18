@@ -1,22 +1,59 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/EndGamePortal.gd" type="Script" id=1]
+[ext_resource path="res://Art/Rifts/White_Rift.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 20 )
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 324, 339 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 324, 0, 324, 339 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 648, 0, 324, 339 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 972, 0, 324, 339 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1296, 0, 324, 339 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1620, 0, 324, 339 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 21.0
 
 [node name="EndGamePortal" type="Area2D"]
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Sprite"]
-margin_right = 40.0
-margin_bottom = 40.0
-color = Color( 1, 0.937255, 0, 1 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 21, 14 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 20, 20 )
-shape = SubResource( 1 )
+position = Vector2( 21, 20 )
+shape = SubResource( 9 )
 
 [connection signal="body_entered" from="." to="." method="_on_EndGamePortal_body_entered"]

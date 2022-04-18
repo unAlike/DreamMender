@@ -10,9 +10,9 @@ onready var Flip = get_tree().get_current_scene().get_node("Player")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Annoying
-	yellowSpool = true
-	redSpool = true
-	blueSpool = true
+	yellowSpool = false
+	redSpool = false
+	blueSpool = false
 	$Timer.set_wait_time(Cooldown)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

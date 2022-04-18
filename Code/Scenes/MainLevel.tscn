@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -42,13 +42,6 @@
 [ext_resource path="res://Art/Character/DW_Shadow_Red_Character_Idle_Sprite_Sheet.png" type="Texture" id=40]
 [ext_resource path="res://Scenes/Objects/Boat(New).tscn" type="PackedScene" id=42]
 
-[sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0.0151515, 1 )
-colors = PoolColorArray( 0.207411, 0.18182, 0.604492, 1, 0.0260353, 0.0380859, 0.0380859, 1 )
-
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
-
 [sub_resource type="Shader" id=29]
 code = "shader_type canvas_item;
 
@@ -80,36 +73,62 @@ noise = SubResource( 31 )
 
 [sub_resource type="ShaderMaterial" id=30]
 shader = SubResource( 29 )
-shader_param/scale = Vector2( 10, 10 )
+shader_param/scale = Vector2( 20, 20 )
 shader_param/y_zoom = 0.0
-shader_param/color = Color( 0.0392157, 0.513726, 0.537255, 0.337255 )
-shader_param/distortion_scale = Vector2( 0.763, 1 )
-shader_param/intensity = 0.04
-shader_param/speed = 0.05
+shader_param/color = Color( 0.0392157, 0.537255, 0.2, 0.337255 )
+shader_param/distortion_scale = Vector2( 0.449, 1 )
+shader_param/intensity = 0.342
+shader_param/speed = 0.055
 shader_param/noise = SubResource( 32 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.0151515, 0.401515, 0.893939, 1 )
+colors = PoolColorArray( 0.207411, 0.18182, 0.604492, 1, 0.154393, 0.139805, 0.438927, 1, 0.398336, 0.129505, 0.129505, 1, 0.0260353, 0.0380859, 0.0380859, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="CircleShape2D" id=33]
+radius = 427.181
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 0, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 600, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 900, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 1200, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 1500, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 1800, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=4]
@@ -152,51 +171,35 @@ flags = 4
 atlas = ExtResource( 40 )
 region = Rect2( 2100, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=12]
 region = Rect2( 0, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=13]
 region = Rect2( 300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=14]
 region = Rect2( 600, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=15]
 region = Rect2( 900, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=16]
 region = Rect2( 1200, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=17]
 region = Rect2( 1500, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=18]
 region = Rect2( 1800, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=19]
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
-"name": "Yellow",
+"name": "Red",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
@@ -204,9 +207,9 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
-"name": "Red",
+"name": "Yellow",
 "speed": 5.0
 } ]
 
@@ -216,7 +219,7 @@ scale = Vector2( 0.988409, 0.989795 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 27594.9, 183.876 )
+position = Vector2( 769.924, 221.258 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -399,6 +402,15 @@ motion_mirroring = Vector2( 3840, 0 )
 position = Vector2( 1512, 158 )
 texture = ExtResource( 7 )
 
+[node name="1stWater" type="Sprite" parent="."]
+material = SubResource( 30 )
+position = Vector2( -93705.1, 6929.7 )
+rotation = 1.57083
+scale = Vector2( 0.669486, 19265.6 )
+z_index = 3685
+texture = SubResource( 3 )
+offset = Vector2( -8595.23, -5.23591 )
+
 [node name="StumpJumps" type="CollisionPolygon2D" parent="."]
 position = Vector2( -16385, 1157 )
 polygon = PoolVector2Array( 16659, -827, 16660, -1215, 16495, -2681, 15974, -31416, 16221, -1486, 16247, -665, 16329, -662, 16443, -643, 16749, -647, 17417, -212, 17673, -272, 19385, -261, 19589, -268, 19538, -405, 19642, -841, 19570, -985, 19578, -1157, 19274, -1167, 19250, -1067, 19124, -987, 19118, -1043, 18902, -1021, 18840, -1009, 18772, -949, 18728, -875, 18762, -817, 18836, -729, 18858, -599, 18914, -389, 18450.2, -336.287, 18078, -337, 18304, -644, 18277, -807, 18290, -850, 18279, -878, 18148, -874, 18114, -952, 17921, -936, 17912, -622, 17933, -349, 17572, -390, 17652, -653, 17652, -853, 17629, -879, 17364, -874, 17282, -885, 17266, -839, 17230, -803, 17175, -788, 17057, -825, 16947, -834, 16842, -839, 16706, -825 )
@@ -566,7 +578,7 @@ position = Vector2( -77.2085, -154.447 )
 
 [node name="SpikeTreeLeft" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( -102, 1954 )
-polygon = PoolVector2Array( 23872, 1521, 24818, 1527, 26012, 1795, 26152, 1682, 26326, 1647, 26507, 1618, 26726, 1576, 26952, 1588, 27202, 1629, 27451, 1697, 27121, 2310, 27160, 2415, 27548, 1900, 27640, 1848, 27787, 2010, 27859, 2237, 27877, 2414, 28599, 2192, 28777, 2058, 28879, 1760, 29091, 1553, 29288, 1488, 29369, 1773, 29395, 1520, 29482, 1293, 29625, 1172, 29806, 1153, 30012, 1147, 30361, 1166, 30816, 1153, 31060.8, 1271.92, 31143, 1444, 31138, 1545, 31239.9, 1976.11, 31307.7, 1715.45, 31404.8, 1639.67, 31812.6, 1864.97, 33091.4, 1922.56, 33266.4, 1864.97, 33219, -661, 33215, -918, 33219, -1042, 33215, -1191, 33250, -1480, 33152, -1528, 33085, -1566, 32980, -1506, 32762.6, -946.721, 31895.5, -622.411, 29586.8, -526.432, 28597.3, -566.844, 28115.7, -946.721, 27873, -1474, 27901, -1600, 25513, -1596, 25487, -1925, 25413, -2352, 25350, -2498, 25343, -2755, 25343, -3604, 25475, -3937, 25811, -4352, 25060, -4428, 24833, -4118, 24671, -3956, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20633, -1350, 20388, -955, 19949, -827, 18640, -813, 18535, -870, 18489, -967, 18326, -1071, 17985, -1314, 18232, -955, 17832.3, -930.582, 17612, -1036, 17464, -1130, 17320, -1472, 17316, -1898, 17273, -2219, 17329, -2522, 17549, -2437, 17653, -2396, 17758, -2405, 17850, -2392, 17855, -2456, 17761, -2486, 17729, -2534, 17801, -2632, 17793, -2665, 17681, -2558, 17599, -2536, 17513, -2540, 17446, -2576, 17361, -2592, 17480, -3049, 17488, -3213, 17553, -3148, 17581, -3145, 17588, -3194, 17564, -3232, 17511, -3283, 17619, -3245, 17740, -3250, 17818, -3251, 17870, -3262, 17740, -3291, 17777, -3318, 17645, -3308, 17415, -3412, 17440, -3709, 17496, -4145, 17430, -4169, 17298, -4184, 16938, -4199, 16869, -4160, 16992, -4088, 17202, -3900, 17319, -3759, 16991, -2374, 16775, -1251, 16775, -713, 16913, -648, 23555.7, -672.565, 23579, 1298, 23615, 1742, 23650, 2218, 23674, 3266, 23876, 3322, 23872, 1968 )
+polygon = PoolVector2Array( 23872, 1521, 24818, 1527, 26012, 1795, 26152, 1682, 26326, 1647, 26507, 1618, 26726, 1576, 26952, 1588, 27202, 1629, 27451, 1697, 27121, 2310, 27160, 2415, 27548, 1900, 27640, 1848, 27787, 2010, 27859, 2237, 27877, 2414, 28599, 2192, 28777, 2058, 28879, 1760, 29091, 1553, 29288, 1488, 29369, 1773, 29395, 1520, 29482, 1293, 29625, 1172, 29806, 1153, 30012, 1147, 30361, 1166, 30816, 1153, 31060.8, 1271.92, 31143, 1444, 31138, 1545, 31239.9, 1976.11, 31307.7, 1715.45, 31404.8, 1639.67, 31812.6, 1864.97, 33091.4, 1922.56, 33266.4, 1864.97, 33219, -661, 33215, -918, 33219, -1042, 33215, -1191, 33250, -1480, 33152, -1528, 33085, -1566, 32980, -1506, 32762.6, -946.721, 31895.5, -622.411, 29586.8, -526.432, 28597.3, -566.844, 28115.7, -946.721, 27873, -1474, 27901, -1600, 25513, -1596, 25487, -1925, 25413, -2352, 25350, -2498, 25343, -2755, 25343, -3604, 25475, -3937, 25811, -4352, 25060, -4428, 24833, -4118, 24671, -3956, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20633, -1350, 20388, -955, 19949, -827, 18640, -813, 18535, -870, 18489, -967, 18326, -1071, 17985, -1314, 18232, -955, 17832.3, -930.582, 17612, -1036, 17464, -1130, 17320, -1472, 17316, -1898, 17273, -2219, 17329, -2522, 17549, -2437, 17653, -2396, 17758, -2405, 17850, -2392, 17855, -2456, 17761, -2486, 17729, -2534, 17801, -2632, 17793, -2665, 17681, -2558, 17599, -2536, 17513, -2540, 17446, -2576, 17361, -2592, 17480, -3049, 17488, -3213, 17553, -3148, 17581, -3145, 17588, -3194, 17564, -3232, 17511, -3283, 17619, -3245, 17740, -3250, 17818, -3251, 17870, -3262, 17740, -3291, 17777, -3318, 17645, -3308, 17415, -3412, 17440, -3709, 17496, -4145, 17430, -4169, 17298, -4184, 16938, -4199, 16869, -4160, 16992, -4088, 17202, -3900, 17319, -3759, 16991, -2374, 16775, -1251, 16775, -713, 16986.7, 70.6616, 23595.3, 81.775, 23579, 1298, 23615, 1742, 23650, 2218, 23674, 3266, 23876, 3322, 23872, 1968 )
 
 [node name="Polygon2D" type="Polygon2D" parent="SpikeTreeLeft"]
 texture = ExtResource( 29 )
@@ -834,18 +846,6 @@ rotation = 8.2419
 scale = Vector2( 0.845168, 0.416332 )
 texture = ExtResource( 24 )
 
-[node name="Level2Door" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( 16717, -782 )
-rotation = 0.325696
-scale = Vector2( 1.00388, 1.54874 )
-polygon = PoolVector2Array( 17013, -288.121, 17180.4, -332.244, 16904.5, -787.075, 16753.4, -764.229 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Level2Door"]
-position = Vector2( 13394.2, 6.27051 )
-rotation = 2.70103
-color = Color( 0, 0, 0, 1 )
-offset = Vector2( -17312.5, 716.467 )
-
 [node name="YellowRift6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 30771, 3431 )
 InputObjectList = [  ]
@@ -885,22 +885,29 @@ texture = ExtResource( 29 )
 
 [node name="Level2DoorRedRift" parent="." instance=ExtResource( 6 )]
 position = Vector2( 33103.2, 4308.3 )
+riftActive = false
+Time = 10
+toRotation = 180
+
+[node name="Platform" parent="Level2DoorRedRift" instance=ExtResource( 13 )]
+position = Vector2( -4.55078, -371.226 )
+rotation = 1.57536
+scale = Vector2( 6.00825, 6.7487 )
 
 [node name="PinkRiftCirclePuzzle" type="Node2D" parent="."]
 position = Vector2( 26725, 4546 )
 
 [node name="PinkRift2" parent="PinkRiftCirclePuzzle" instance=ExtResource( 6 )]
-InputObjectList = [ NodePath("../StaticBody2D") ]
-Time = 20
-toRotation = -240
+riftActive = false
+Time = 10
+toRotation = 360
+spinList = [ NodePath("../StaticBody2D") ]
 
 [node name="StaticBody2D" type="KinematicBody2D" parent="PinkRiftCirclePuzzle"]
-position = Vector2( 1, 1 )
 motion/sync_to_physics = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PinkRiftCirclePuzzle/StaticBody2D" groups=["collider"]]
-position = Vector2( -31640, -4365 )
-polygon = PoolVector2Array( 31948.4, 5072.9, 32098.4, 4961.9, 32201.4, 4854.9, 32279.4, 4763.9, 32353.4, 4613.9, 32424.4, 4404.9, 32446.4, 4280.9, 32398.4, 4009.9, 32281, 3819, 32073.4, 3661.9, 31897.4, 3608.9, 31721, 3579, 31541.4, 3569.9, 31343, 3582, 31169, 3654, 30924, 3876, 30818, 4100, 30782, 4274, 30779, 4456, 30813, 4658, 30933.4, 4873.9, 31067, 4979, 31230, 5081, 31381, 5122, 31517, 5141, 31747, 5190, 31748, 5126, 31748, 5063, 31619, 5048, 31531, 5042, 31400, 5015, 31218, 4930, 31079, 4847, 31144, 4744, 31342, 4515, 31294, 4395, 31307, 4275, 31339, 4195, 31422, 4133, 31550, 4088, 31662, 4083, 31828, 4104, 31924, 4184, 32001, 4299, 31991, 4483, 31884, 4627, 31745, 4665, 31604, 4673, 31487, 4653, 31426, 4610, 31379, 4663, 31458, 4708, 31596, 4746, 31750, 4740, 31855, 4713, 31969, 4657, 32055, 4587, 32111, 4483, 32103, 4323, 32033, 4182, 31956, 4075, 31868, 4003, 31740, 3987, 31636, 3981, 31484, 3992, 31355, 4029, 31278, 4088, 31201, 4187, 31182, 4334, 31189, 4532, 31036, 4678, 30948, 4610, 30888, 4391, 30909, 4167, 30984, 4002, 31133, 3840, 31277, 3750, 31431.4, 3687.9, 31597.4, 3676.9, 31804.4, 3699.9, 32039.4, 3744.9, 32220.4, 3885.9, 32308.4, 4078.9, 32336.4, 4202.9, 32341.4, 4323.9, 32310.4, 4506.9, 32246.4, 4651.9, 32163.4, 4766.9, 32043.4, 4873.9, 31958.4, 4956.9, 31901.4, 5006.9 )
+polygon = PoolVector2Array( -558.707, 493.427, -644.703, 382.292, -709.455, 249.942, -744.865, 75.1582, -736.771, -89.5222, -720.584, -202.677, -652.797, -346.141, -488.898, -593.667, -296.67, -737.131, -53.8555, -809.874, 198.064, -782.595, 368.035, -731.069, 565.322, -601.75, 672.564, -461.316, 762.609, -278.45, 797.008, -105.687, 786.891, 31.7148, 778.797, 104.457, 735.293, 204.478, 664.471, 309.55, 570.381, 433.818, 418.621, 568.189, 251.686, 646.994, 111.057, 660.128, -77.125, 671.241, -271.377, 641.942, -226.859, 381.282, -340.174, 311.571, -406.947, 173.158, -432.24, 32.7253, -339.162, -171.357, -254.178, -86.4915, -321.963, 35.7561, -305.775, 167.097, -256.201, 244.89, -206.625, 280.251, -25.5273, 302.478, 146.467, 226.705, 225.381, 113.55, 265.852, -66.2852, 209.193, -233.997, 45.2949, -294.615, -104.441, -219.852, -165.145, -278.45, 59.459, -364.327, 213.24, -323.914, 311.379, -209.749, 330.602, -40.0171, 301.262, 136.787, 196.041, 278.23, 4.29144, 390.817, 5.83594, 524.746, 171.76, 507.571, 314.414, 443.921, 433.797, 327.736, 550.146, 222.664, 612.873, 142.849, 624.002, 7.46753, 626.025, -200.656, 546.1, -389.584, 412.551, -549.213, 193.006, -658.327, -36.6563, -692.677, -275.424, -625.997, -445.393, -461.316, -546.566, -242.079, -609.293, -101.646, -617.387, 39.7974, -592.094, 190.333, -552.637, 312.581, -484.852, 434.829 )
 
 [node name="Polygon2D" type="Polygon2D" parent="PinkRiftCirclePuzzle/StaticBody2D/CollisionPolygon2D"]
 position = Vector2( 31640.4, 4364.9 )
@@ -908,7 +915,7 @@ texture = ExtResource( 29 )
 
 [node name="BlueRiftArea" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 24456, 7443 )
-polygon = PoolVector2Array( -3044, 2268, -1212, 2340, -652.547, 1924.7, 9931.96, 1946.81, 9609.77, -1028.13, 8332.2, -1103.3, -21.4102, -1116.57, -27, -516, 249, -518, 6606, -506, 6615, 1496, -642, 1429, -685, 1429, -693.019, 516.274, 6805.86, 516.274, 6804.17, 495.27, 498.371, 495.27, 362.146, 495.27, -692.301, 495.27, -686, -732, -702.506, -2198.86, -695.369, -2413.33, -711.684, -2497.35, -2577, -3137, -3008, -1611 )
+polygon = PoolVector2Array( -3044, 2268, -1212, 2340, -652.547, 1924.7, 9931.96, 1946.81, 9609.77, -1028.13, 8332.2, -1103.3, -21.4102, -1116.57, -27, -516, 249, -518, 8430.19, -550.664, 8412.99, 1435.61, -642, 1429, -685, 1429, -693.019, 516.274, 4962.69, 516.274, 6805.86, 516.274, 6804.17, 495.27, 498.371, 495.27, 362.146, 495.27, -692.301, 495.27, -686, -732, -702.506, -2198.86, -695.369, -2413.33, -711.684, -2497.35, -2577, -3137, -3008, -1611 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftArea"]
 color = Color( 0, 0, 0, 1 )
@@ -924,9 +931,9 @@ scale = Vector2( 1.0196, 1.10551 )
 [node name="MirrorTop" type="Sprite" parent="BlueRiftGroup"]
 visible = false
 material = ExtResource( 11 )
-position = Vector2( 3026.72, -38.222 )
+position = Vector2( 3941.04, -38.2243 )
 rotation = 3.14159
-scale = Vector2( 116.87, 18.4659 )
+scale = Vector2( 145.443, 18.4659 )
 z_index = 4096
 texture = ExtResource( 4 )
 flip_v = true
@@ -934,9 +941,9 @@ script = ExtResource( 10 )
 
 [node name="MirrorBottom" type="Sprite" parent="BlueRiftGroup"]
 material = ExtResource( 11 )
-position = Vector2( -507.252, 840.334 )
+position = Vector2( -457.215, 840.334 )
 rotation = 3.14159
-scale = Vector2( 116.899, -17.0995 )
+scale = Vector2( 145.201, -17.0995 )
 z_index = 4096
 texture = ExtResource( 4 )
 offset = Vector2( -30.232, 16.038 )
@@ -966,24 +973,94 @@ position = Vector2( 350.744, 1405.11 )
 [node name="BlueRift6" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
 position = Vector2( 1238.82, 1350.94 )
 
+[node name="BlueRift7" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 2637.15, -347.409 )
+
+[node name="BlueRift8" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 2815.62, 1417.31 )
+
+[node name="BlueRift9" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 3378.85, -294.914 )
+
+[node name="BlueRift10" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 2263.73, 1449.7 )
+
+[node name="BlueRift11" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 3525.33, 1407.26 )
+
+[node name="BlueRift12" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 3202.45, 78.1343 )
+
+[node name="BlueRift13" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 2575.26, 1036.44 )
+
+[node name="BlueRift14" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 3598.57, 416.558 )
+
+[node name="BlueRift15" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 2849.66, 731.527 )
+
+[node name="YellowRift" parent="BlueRiftGroup/Rifts" instance=ExtResource( 3 )]
+position = Vector2( 3927.64, 257.957 )
+
+[node name="Platform" parent="BlueRiftGroup/Rifts/YellowRift" groups=["killNeedle"] instance=ExtResource( 13 )]
+position = Vector2( 311.531, -314.969 )
+scale = Vector2( 3.22747, 3.07734 )
+
+[node name="fromPos" parent="BlueRiftGroup/Rifts/YellowRift/Platform" index="1"]
+position = Vector2( -97.1641, 102.351 )
+
+[node name="toPos" parent="BlueRiftGroup/Rifts/YellowRift/Platform" index="2"]
+position = Vector2( 3.19531, -20.325 )
+
+[node name="YellowRift2" parent="BlueRiftGroup/Rifts" instance=ExtResource( 3 )]
+position = Vector2( 4586.8, 270.243 )
+
+[node name="Platform" parent="BlueRiftGroup/Rifts/YellowRift2" groups=["killNeedle"] instance=ExtResource( 13 )]
+position = Vector2( -341.445, -224.499 )
+scale = Vector2( -3.43716, 3.54631 )
+
+[node name="fromPos" parent="BlueRiftGroup/Rifts/YellowRift2/Platform" index="1"]
+position = Vector2( -99.3389, 63.3049 )
+
+[node name="toPos" parent="BlueRiftGroup/Rifts/YellowRift2/Platform" index="2"]
+position = Vector2( -0.299805, -0.314941 )
+
+[node name="BlueRift16" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 4253.61, -240.186 )
+
+[node name="BlueRift17" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 4285.59, 1117.98 )
+
+[node name="BlueRift18" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
+position = Vector2( 4913.81, 761.683 )
+
 [node name="Obsticles" type="StaticBody2D" parent="BlueRiftGroup"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider"]]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider", "killNeedle"]]
 position = Vector2( 522.037, 559.39 )
-polygon = PoolVector2Array( -11.2148, -12.1611, -53.0195, -12.1611, -34.666, -1198.38, -75.4492, -1198.38, -89.7246, -250.952, -91.7637, -13.2666, -1228.62, -12.1611, -1229.64, 12.1602, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -424.154, 658.885, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 440.469, 11.0547, 569.959, 11.0547, 610.744, 11.0547, 803.449, 13.2656, 803.449, 360.396, 836.076, 360.396, 1088.94, 373.663, 1085.88, 637.88, 1127.68, 636.774, 1571.21, 643.408, 1569.17, 1214.96, 1620.15, 1212.75, 1619.13, 625.72, 1619.13, 573.761, 1620.15, 4.42188, 1583.45, 5.52734, 1581.41, 268.64, 1317.33, 271.956, 1317.33, 326.126, 1582.33, 318.588, 1581.41, 575.972, 1127.68, 577.077, 1128.7, 466.526, 1128.7, 339.392, 836.076, 339.392, 834.472, 281.882, 828.939, 11.0547, 1622.19, 13.2656, 6280.76, 7.89478, 6279.74, -8.66339, 1620.15, -13.2666, 1581.41, -14.3721, 825.881, -12.1611, 836.076, -346.025, 1129.72, -342.709, 1129.72, -370.347, 1129.72, -609.138, 1406.04, -605.821, 1406.04, -634.564, 1124.62, -637.881, 1083.84, -640.092, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 484.313, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.449, -306.227, 595.449, -347.131, 355.842, -348.237, 355.374, -166.263, 353.803, -12.1611 )
+polygon = PoolVector2Array( -11.2148, -12.1611, -53.0195, -12.1611, -34.666, -1198.38, -75.4492, -1198.38, -89.7246, -250.952, -91.7637, -13.2666, -1228.62, -12.1611, -1229.64, 12.1602, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -424.154, 658.885, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 440.469, 11.0547, 569.959, 11.0547, 610.744, 11.0547, 803.449, 13.2656, 803.449, 360.396, 836.076, 360.396, 1088.94, 373.663, 1085.88, 637.88, 1127.68, 636.774, 1571.21, 643.408, 1569.17, 1214.96, 1620.15, 1212.75, 3820.29, 1296.87, 4630.06, 1127.09, 4622.84, 12.4189, 4583.64, 12.4189, 4585.71, 1111.46, 3319.17, 1145.32, 3316.31, 828.077, 3315.75, 765.234, 3311.73, 360.895, 4181.33, 357.544, 4178.24, 315.102, 3311.73, 319.569, 2177.01, 321.803, 2178.04, 350.843, 2548.38, 354.193, 2552.5, 579.809, 2585.51, 582.043, 2583.45, 354.193, 3267.37, 356.427, 3277.69, 1189.64, 1616.88, 1178.47, 1617.91, 662.46, 1755.1, 659.109, 1758.2, 627.836, 1619.13, 625.72, 1619.13, 573.761, 1620.15, 4.42188, 1583.45, 5.52734, 1581.41, 268.64, 1317.33, 271.956, 1317.33, 326.126, 1582.33, 318.588, 1581.41, 575.972, 1127.68, 577.077, 1128.7, 466.526, 1128.7, 339.392, 836.076, 339.392, 834.472, 281.882, 828.939, 11.0547, 1622.19, 13.2656, 2146.06, 12.4189, 2147.1, 322.92, 1863.42, 319.569, 1752.01, 321.803, 1753.04, 355.31, 1856.2, 355.31, 1861.36, 639.005, 1857.23, 752.93, 1854.13, 796.489, 1869.61, 1178.47, 1905.71, 1178.47, 1907.78, 641.239, 2020.87, 639.152, 2663.91, 641.239, 2675.26, 1150.55, 2722.71, 1152.78, 2719.61, 641.239, 2812.72, 639.883, 3071.38, 640.122, 3064.15, 589.861, 1899.52, 586.511, 1895.4, 355.31, 2175.98, 353.076, 2175.98, 12.4189, 4030.73, 4.60059, 4179.27, 14.6523, 4189.59, 779.736, 3316.89, 778.619, 3316.89, 805.425, 4223.63, 804.308, 4214.35, 11.3018, 8113.64, 11.3018, 8107.46, -19.9717, 4214.35, -30.0244, 4212.28, -1365.85, 3610.88, -1232.94, 3612.95, -678.949, 3645.96, -678.949, 3650.08, -1175.97, 3807.91, -1154.75, 3809.97, -686.767, 3837.82, -689.001, 3837.82, -1156.99, 4191.65, -1144.7, 4176.18, -26.6729, 2046.01, -12.8459, 1897.46, -16.6211, 1894.37, -313.719, 2153.29, -313.719, 2155.35, -353.928, 1890.24, -353.928, 1885.08, -621.986, 3252.93, -611.935, 3250.87, -349.46, 2364.76, -356.162, 2370.95, -615.285, 2318.34, -614.168, 2314.21, -353.928, 2318.34, -309.251, 3247.77, -305.901, 3260.15, -12.1533, 3317.92, -12.1533, 3285.94, -618.636, 3285.94, -654.377, 3275.63, -1152.52, 3246.74, -1153.64, 3249.84, -646.559, 2427.68, -655.494, 2418.4, -1246.34, 2059.41, -1236.29, 1888.18, -1228.47, 1866.51, -1144.7, 1913.96, -1149.17, 1924.28, -800.692, 1967.61, -799.575, 2254.38, -800.692, 2254.38, -830.849, 1965.54, -829.732, 1967.61, -1144.7, 2367.85, -1150.29, 2368.88, -657.728, 2101.71, -657.728, 2052.19, -656.611, 1886.11, -651.026, 1853.1, -651.026, 1855.98, -13.0336, 1620.15, -13.2666, 1581.41, -14.3721, 825.881, -12.1611, 836.076, -346.025, 1129.72, -342.709, 1129.72, -370.347, 1129.72, -609.138, 1406.04, -605.821, 1406.04, -634.564, 1124.62, -637.881, 1083.84, -640.092, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 484.313, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.449, -306.227, 595.449, -347.131, 355.842, -348.237, 355.374, -166.263, 353.803, -12.1611 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D"]
 color = Color( 0.215686, 0.211765, 0.211765, 1 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider"]]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider", "killNeedle"]]
 position = Vector2( 1503.92, 193.465 )
 polygon = PoolVector2Array( 604.625, -826.923, 608.703, 19.8994, 358.9, 21.0049, 358.9, 60.8032, 610.744, 59.6978, 646.43, 61.9087, 646.43, -826.923 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D2"]
 color = Color( 0.215686, 0.211765, 0.211765, 1 )
 
+[node name="Area2D" type="Area2D" parent="BlueRiftGroup"]
+position = Vector2( 0.486328, 12.2368 )
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueRiftGroup/Area2D"]
+position = Vector2( -334.773, -906.98 )
+shape = SubResource( 33 )
+
 [node name="EndGamePortal" parent="." instance=ExtResource( 9 )]
-position = Vector2( 30618, 7533 )
+position = Vector2( 32500.7, 7590.46 )
 scale = Vector2( 6.25616, 6.29056 )
 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="."]
@@ -1008,26 +1085,10 @@ input_pickable = false
 monitorable = false
 priority = 10.0
 
-[node name="SPIKESNOTSPRITESHEET" type="Sprite" parent="WaterDeath"]
-position = Vector2( 347.16, -30.1874 )
-rotation = 1.5708
-scale = Vector2( 0.10259, 674.76 )
-z_index = -28
-texture = SubResource( 3 )
-offset = Vector2( -1877.88, 0.530191 )
-
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="WaterDeath"]
 modulate = Color( 0.862745, 0.0431373, 0.0431373, 1 )
 self_modulate = Color( 0.909804, 0, 0, 1 )
-polygon = PoolVector2Array( 212.127, -323.613, 325.541, -323.613, 327.657, 151.706, 730.861, 156.063, 731.27, -332.327, 921.16, -324.405, 921.939, -7.12955, 873.195, 34.857, 749.238, 487.994, 149.127, 646.433, -342.21, 687.232, -373.505, -331.931, -6.86795, -331.931 )
-
-[node name="SPIKESNOTSPRITESHEET2" type="Sprite" parent="WaterDeath"]
-material = SubResource( 30 )
-position = Vector2( 827.611, -90.2491 )
-rotation = 1.5708
-scale = Vector2( 0.265183, 195.212 )
-z_index = -28
-texture = SubResource( 3 )
+polygon = PoolVector2Array( 212.127, -323.613, 325.541, -323.613, 327.657, 151.706, 730.861, 156.063, 731.27, -332.327, 921.16, -324.405, 921.939, -7.12955, 873.195, 34.857, 749.238, 487.994, 149.127, 646.433, -342.21, 687.232, -344.734, -133.836, -373.505, -331.931, -6.86795, -331.931 )
 
 [node name="Tachi2" parent="." instance=ExtResource( 35 )]
 position = Vector2( 36969.5, 4147.32 )
@@ -1059,7 +1120,7 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 28 )
 animation = "Yellow"
-frame = 4
+frame = 7
 playing = true
 flip_h = true
 script = ExtResource( 36 )
@@ -1074,12 +1135,15 @@ z_index = -4096
 z_as_relative = false
 bobSpeed = 2
 
+[node name="CollisionShape2D" parent="Boat/CollisionDetector" index="0"]
+position = Vector2( 3.80933, -12 )
+
 [node name="toPos" parent="Boat" index="3"]
 position = Vector2( 431.093, -1.61649 )
 
 [node name="Shadow3" parent="Boat" instance=ExtResource( 38 )]
-position = Vector2( 14.7715, -12.8309 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 16.0859, -6.06186 )
+scale = Vector2( 0.0774465, 0.0737734 )
 
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
@@ -1087,6 +1151,7 @@ scale = Vector2( 0.2, 0.2 )
 [connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="BlueRiftGroup/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="WaterDeath" to="Player" method="_on_SpikeHitbox_body_entered"]
 
 [editable path="UnstableYellowRift/YellowRift/Platform"]
@@ -1103,6 +1168,8 @@ scale = Vector2( 0.2, 0.2 )
 [editable path="StableYellowRift3/Platform"]
 [editable path="YellowRift6/Platform"]
 [editable path="YellowRift2/Platform"]
+[editable path="BlueRiftGroup/Rifts/YellowRift/Platform"]
+[editable path="BlueRiftGroup/Rifts/YellowRift2/Platform"]
 [editable path="Tachi2"]
 [editable path="StableRift4/YellowRift/Platform"]
 [editable path="Boat"]
