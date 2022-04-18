@@ -102,11 +102,6 @@ func _physics_process(delta):
 	else:
 		vel = move_and_slide_with_snap(vel, Vector2.DOWN, Vector2.UP, false, 4, .78)
 		
-	if $AnimationTree.get("parameters/conditions/falling"):
-		if vel.x>0:
-			$Sprite.flip_h = false
-		if vel.x<0:
-			$Sprite.flip_h = true
 	
 	if timeFalling>.1:
 		$AnimationTree.set("parameters/conditions/onGround", GroundCheck())
@@ -117,12 +112,23 @@ func _physics_process(delta):
 			$AnimationTree.set("parameters/conditions/falling", false)
 	else:
 		$AnimationTree.set("parameters/conditions/falling", false)
+		
 	if not is_on_wall() and !GroundCheck():
 		timeFalling+=delta
+		$AnimationTree.set("parameters/conditions/falling", true)
 	else:
 		timeFalling = 0
-	if not is_on_wall() and !GroundCheck():
-		timeFalling+=delta
+		$AnimationTree.set("parameters/conditions/falling", false)
+		
+	if GroundCheck():
+		$AnimationTree.set("parameters/conditions/onGround", GroundCheck())
+		
+		
+	if $AnimationTree.get("parameters/conditions/falling"):
+		if vel.x>0:
+			$Sprite.flip_h = false
+		if vel.x<0:
+			$Sprite.flip_h = true
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
