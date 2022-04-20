@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://Scenes/Shadow2.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Art/Character/DW_Shadow_Yellow_Character_Idle_Sprite_Sheet.png" type="Texture" id=39]
 [ext_resource path="res://Art/Character/DW_Shadow_Red_Character_Idle_Sprite_Sheet.png" type="Texture" id=40]
+[ext_resource path="res://Scripts/WaterDeath.gd" type="Script" id=41]
 [ext_resource path="res://Scenes/Objects/Boat(New).tscn" type="PackedScene" id=42]
 
 [sub_resource type="Shader" id=29]
@@ -219,7 +220,7 @@ scale = Vector2( 0.988409, 0.989795 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 769.924, 221.258 )
+position = Vector2( 26836.1, 129.32 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -1084,6 +1085,7 @@ scale = Vector2( 26.9367, 2.52462 )
 input_pickable = false
 monitorable = false
 priority = 10.0
+script = ExtResource( 41 )
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="WaterDeath"]
 modulate = Color( 0.862745, 0.0431373, 0.0431373, 1 )
@@ -1145,6 +1147,10 @@ position = Vector2( 431.093, -1.61649 )
 position = Vector2( 16.0859, -6.06186 )
 scale = Vector2( 0.0774465, 0.0737734 )
 
+[node name="Checkpoint" parent="." instance=ExtResource( 8 )]
+position = Vector2( 27331.8, 200.041 )
+
+[connection signal="hit" from="Player" to="WaterDeath" method="_on_Player_hit"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
