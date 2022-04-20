@@ -9,5 +9,6 @@ func _ready():
 
 
 func _on_Checkpoint_body_entered(body):
-	checkpoint_sprite.set_texture(checkpoint_on)
-	Checkpoint.last_position = global_position
+	if body.name == "Player":
+		checkpoint_sprite.set_texture(checkpoint_on)
+		Checkpoint.last_position = global_position

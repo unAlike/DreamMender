@@ -177,10 +177,7 @@ func GetGroundTouching():
 
 # Kills player
 func die():
-	print("player killed")
 	emit_signal("hit")
-	#queue_free()
-	#get_tree().reload_current_scene()
 	if Checkpoint.last_position != null:
 		global_position = Checkpoint.last_position
 	else:
