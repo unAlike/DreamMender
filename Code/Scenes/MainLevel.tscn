@@ -91,44 +91,28 @@ gradient = SubResource( 2 )
 [sub_resource type="CircleShape2D" id=33]
 radius = 427.181
 
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=12]
 region = Rect2( 0, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=13]
 region = Rect2( 300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=14]
 region = Rect2( 600, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=15]
 region = Rect2( 900, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=16]
 region = Rect2( 1200, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=17]
 region = Rect2( 1500, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=18]
 region = Rect2( 1800, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 39 )
+[sub_resource type="AtlasTexture" id=19]
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=4]
@@ -171,35 +155,51 @@ flags = 4
 atlas = ExtResource( 40 )
 region = Rect2( 2100, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 0, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 600, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 900, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 1200, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 1500, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 1800, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
-"name": "Red",
+"name": "Yellow",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
@@ -207,9 +207,9 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
-"name": "Yellow",
+"name": "Red",
 "speed": 5.0
 } ]
 
@@ -1120,7 +1120,7 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 28 )
 animation = "Yellow"
-frame = 7
+frame = 3
 playing = true
 flip_h = true
 script = ExtResource( 36 )
