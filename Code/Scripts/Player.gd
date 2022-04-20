@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 signal hit
 
@@ -54,12 +55,15 @@ func get_Input():
 
 # Called when jumping off the ground
 func Jump():
-	state_machine.travel("jump")
+	if(state_machine != null) :
+		state_machine.travel("jump")
 	vel.y = -jumpPower * scale.y
+
 
 # Called when jumping off a wall
 func Wall_Jump():
-	state_machine.travel("wallJump")
+	if(state_machine != null) :
+		state_machine.travel("wallJump")
 	vel.y = -jumpPower * scale.y
 	if lastDir == 'left':
 		vel.x = jumpPower

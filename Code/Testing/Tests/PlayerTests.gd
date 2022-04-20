@@ -11,23 +11,47 @@ extends WAT.Test
 func title() -> String:
 	return "Player Tests"
 
-# Any method in a Test that starts with the word test is a Test method.
-func test_simple_example() -> void:
-	describe("My Example Test Method")
-	asserts.is_true(true, "optional context")
+# Developers may create a Scene Director from the string path of the Scene..
+# ..and then call .double() on it to create a Scene Test Double, this will
+# ..double every node in the Scene as well. Developers may only call double
+# ..once, any successive calls will fail.
+func test_create_a_test_scene_director_from_string_path() -> void:
+	describe("Player is player type")
+	var scene = direct.scene("res://Scenes/Player.tscn")
+	var double = scene.double()
+	asserts.is_class_instance(double, Player)
 
-func test_player_dies_to_spikes() -> void:
-	describe("Player should die when _on_SpikeHitbox_body_entered(body)" +
-	" is called. Like when the player hits spikes.")
+func test_player_basic_jump() -> void:
+	describe("Basic Jump Test")
+	var scene = direct.scene("res://Scenes/Player.tscn")
+	var player = scene.double()
+
+	player.Jump()
 	
-	var player = load("res://Scenes//Player.tscn")
-	var instance = player.instance()
+	asserts.is_less_than(player.vel.y, 0)
+	asserts.is_equal(player.numDJump, 2)
+	asserts.is_equal(player.numWallJump, 2)
+
+func test_player_wall_jump() -> void:
+	describe("Basic Wall Jump Test")
+	var scene = direct.scene("res://Scenes/Player.tscn")
+	var player = scene.double()
+	asserts.is_equal(player.numDJump, 2)
+	asserts.is_equal(player.numWallJump, 2)
 	
-	asserts.is_equal(instance.speed, 500)
-	#watch(instance, "hit")
-	#instance.die()
-	#asserts.signal_was_emitted(instance, "hit")
-	#unwatch(instance, "hit")
+	player.Wall_Jump()
+	asserts.is_equal(player.vel.y, -player.jumpPower * player.scale.y)
+	asserts.is_equal(player.numDJump, 2)
+	asserts.is_equal(player.numWallJump, 1)
+
+func test_player_double_jump() -> void:
+	describe("Basic Double Jump Test")
+	var scene = direct.scene("res://Scenes/Player.tscn")
+	var player = scene.double()
+	player.Double_Jump()
+	#asserts.is_equal(player.vel.y, -player.jumpPower * player.scale.y)
+	asserts.is_equal(player.numDJump, 1)
+	asserts.is_equal(player.numWallJump, 2)
 
 func start() -> void:
 	print("Developers may override the start method to execute code" +
