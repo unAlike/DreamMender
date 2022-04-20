@@ -146,15 +146,6 @@ func _draw():
 		threadPath[l].y+=1
 	pass
 
-func save():
-	var save_dict = {
-		"filename" : get_filename(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x, # Vector2 is not supported by JSON
-		"pos_y" : position.y
-	}
-	return save_dict
-
 #Checks all Player Raycast2D's to check if on ground
 func GroundCheck():
 	if is_on_floor() or $RayCast2D3.is_colliding():
@@ -183,10 +174,9 @@ func die():
 	else:
 		get_tree().reload_current_scene()
 
-# Checks for collision with dangerous objects that kill player and calls die() function
+# Checks for collision with spikes that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):
 	if body.name == "Player":
-		print("Touchs")
 		die()
 
 func flipPlayer():
@@ -194,9 +184,7 @@ func flipPlayer():
 	gravity *= -1
 	scale.y *= -1
 
-
 func _on_Area2D_body_entered(body):
 	inBlueRift = true
 	get_tree().get_current_scene().get_node("Player/Projectile").yellowSpool = true
 	get_tree().get_current_scene().get_node("Player/Projectile").blueSpool = true
-	pass # Replace with function body.

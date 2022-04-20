@@ -27,12 +27,6 @@ func _on_Controls_pressed():
 	$ControlsMenu.visible = !$ControlsMenu.visible
 	InControls = true
 
-func _on_Save_pressed():
-	pass # Replace with function body.
-
-func _on_Load_pressed():
-	pass # Replace with function body.
-
 func _on_MainMenu_pressed():
 	get_tree().change_scene("res://Scenes/StartScreen.tscn")
 	get_tree().paused = !get_tree().paused
