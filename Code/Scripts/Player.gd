@@ -59,7 +59,6 @@ func Jump():
 		state_machine.travel("jump")
 	vel.y = -jumpPower * scale.y
 
-
 # Called when jumping off a wall
 func Wall_Jump():
 	if(state_machine != null) :
@@ -201,15 +200,6 @@ func GroundCheck():
 	if is_on_floor() or $RayCast2D3.is_colliding():
 		return true
 	return false
-#	var raycasters = []
-#	for c in get_children():
-#		if c is RayCast2D:
-#			raycasters.append(c)
-#	for c in raycasters:
-#		if c.is_colliding():
-#			lastGround = c.get_collision_normal()
-#			return true
-#	return false
 
 func GetGroundTouching():
 	if is_on_floor():
