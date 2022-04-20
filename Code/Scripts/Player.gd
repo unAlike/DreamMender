@@ -52,10 +52,36 @@ func get_Input():
 	if Input.is_action_just_released("zoomout") and $Camera2D.zoom < Vector2(2.4,2.4):
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 
-func _physics_process(delta):
-	get_Input()
+# Called when jumping off the ground
+func Jump():
+	state_machine.travel("jump")
+	vel.y = -jumpPower * scale.y
+
+# Called when jumping off a wall
+func Wall_Jump():
+	state_machine.travel("wallJump")
+	vel.y = -jumpPower * scale.y
+	if lastDir == 'left':
+		vel.x = jumpPower
+	if lastDir == 'right':
+		vel.x = -jumpPower
+	numWallJump -= 1
+
+# Called when player is already in air
+# and wants to jump again
+func Double_Jump():
+	$Sprite.frame = 0
+	$Sprite.playing = true
+	$AnimationPlayer.play()
+	vel.y = -jumpPower * scale.y
+	numDJump -= 1
+
+# Updates Player's State in lastState
+# If on ground, check's if player is runing or idle
+# If on ground, resets Jumps and Wall Jumps
+func Update_Last_State():
 	if lastState != state_machine.get_current_node():
-		lastState = state_machine.get_current_node()
+			lastState = state_machine.get_current_node()
 	if GroundCheck():
 		numWallJump = maxNumWallJump
 		numDJump = maxNumDJump
@@ -63,35 +89,46 @@ func _physics_process(delta):
 			state_machine.travel("run")
 		if dir == 0:
 			state_machine.travel("idle")
-	
-	
-	vel.y += gravity * delta
+
+# Checks if player is on wall and handles acordingly
+func Process_On_Wall(delta):
 	if is_on_wall() and numWallJump>0:
 		state_machine.travel("wall")
 		timeOnWall += delta
 		vel.y = timeOnWall*100
-#		if vel.y>gravity:
-#			vel.y = gravity
+	#if vel.y>gravity:
+		#vel.y = gravity
 	else:
 		timeOnWall = 0
+
+func _physics_process(delta):
+	get_Input()
+	
+	# Updates Player's State in lastState
+	# If on ground, check's if player is runing or idle
+	# If on ground, resets Jumps and Wall Jumps
+	Update_Last_State()
+	
+	vel.y += gravity * delta
+	
+	# Checks if player is on wall and handles acordingly
+	Process_On_Wall(delta)
+	
+	# Check for jump input
+	# and process input
 	if Input.is_action_just_pressed("jump"):
+		# Jump if on ground
 		if GroundCheck():
-			state_machine.travel("jump")
-			vel.y = -jumpPower * scale.y
+			Jump()
+		# Jump if on wall
+		# and you have wall jumps left
 		if is_on_wall() and numWallJump>0:
-			state_machine.travel("wallJump")
-			vel.y = -jumpPower * scale.y
-			if lastDir == 'left':
-				vel.x = jumpPower
-			if lastDir == 'right':
-				vel.x = -jumpPower
-			numWallJump -= 1
+			Wall_Jump()
+		# Jump if already in air
+		# and you have double jumps left
 		elif numDJump > 0:
-			$Sprite.frame = 0
-			$Sprite.playing = true
-			$AnimationPlayer.play()
-			vel.y = -jumpPower * scale.y
-			numDJump -= 1
+			Double_Jump()
+			
 	if vel.y>1200:
 		vel.y = 1200
 	var snap = Vector2.ZERO
@@ -192,11 +229,12 @@ func _on_SpikeHitbox_body_entered(body):
 		print("Touchs")
 		die()
 
+# Flips player and player's gravity
+# Sets flipped to current reflection
 func flipPlayer():
 	flipped = !flipped
 	gravity *= -1
 	scale.y *= -1
-
 
 func _on_Area2D_body_entered(body):
 	inBlueRift = true
