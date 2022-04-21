@@ -10,7 +10,6 @@ var objectList = []
 var lastPlayed = 0
 var original = false
 onready var riftTimer: Timer = get_node("riftTimer")
-onready var Spools = get_tree().get_current_scene().get_node("Player/Projectile")
 
 func _ready():
 	riftTimer.set_wait_time(Time)

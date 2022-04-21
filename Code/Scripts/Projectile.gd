@@ -2,31 +2,24 @@ extends Node2D
 
 export(PackedScene) var NeedleScene
 export var Cooldown = 2
-var yellowSpool = false
-var redSpool = false
-var blueSpool = false
 onready var Flip = get_tree().get_current_scene().get_node("Player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Annoying
-	yellowSpool = false
-	redSpool = false
-	blueSpool = false
 	$Timer.set_wait_time(Cooldown)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Node2D.look_at(get_global_mouse_position())
-	if Input.is_action_just_pressed("left_click") and $Timer.get_time_left() == 0 and yellowSpool:
+	if Input.is_action_just_pressed("left_click") and $Timer.get_time_left() == 0 and Stats.getYellow():
 		Throw()
 		$Timer.start()
 	
 	# For testing purposes press "P" to unlock all spools
 	if Input.is_action_just_pressed("Cheat"):
-		yellowSpool = true
-		redSpool = true
-		blueSpool = true
+		Stats.setYellow(true)
+		Stats.setRed(true)
+		Stats.setBlue(true)
 		print("Unlocked all spools")
 
 func Throw():

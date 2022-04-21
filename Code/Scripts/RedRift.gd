@@ -38,8 +38,7 @@ func _process(delta):
 				get_node(obj).rotation_degrees = lerp(fromRotation,toRotation,riftTimer.time_left/riftTimer.wait_time)
 
 func _on_Rift_body_entered(body):
-	print(Spools.redSpool)
 	if body.name == "Needle":
 		body.queue_free()
-		if Spools.redSpool:
+		if Stats.getRed():
 			Interact()

@@ -238,6 +238,5 @@ func flipPlayer():
 
 func _on_Area2D_body_entered(body):
 	inBlueRift = true
-	get_tree().get_current_scene().get_node("Player/Projectile").yellowSpool = true
-	get_tree().get_current_scene().get_node("Player/Projectile").blueSpool = true
+#	Stats.setBlue(true)
 	pass # Replace with function body.

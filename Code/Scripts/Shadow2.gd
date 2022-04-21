@@ -7,6 +7,7 @@ onready var Sub = get_parent().get_node("NPC")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Moving = true
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +20,6 @@ func Message():
 	Dialogue.text = Text[At]
 	Dialogue.visible_characters = 0
 	Duration.start()
-	if At == 5:
+	if At == Text.size() - 1:
 		Fade = true
 		Interactable = false

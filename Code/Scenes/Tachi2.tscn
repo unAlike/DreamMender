@@ -5,44 +5,44 @@
 [ext_resource path="res://Art/Character/DW_Tachi_With_Needle.png" type="Texture" id=3]
 [ext_resource path="res://Art/Character/DW_Tachi_With_Red_Thread.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 526, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 1052, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 1578, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 2104, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 2630, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 3156, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 3682, 0, 526, 583 )
 
 [sub_resource type="AtlasTexture" id=9]
@@ -85,51 +85,51 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3682, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 526, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 1052, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 1578, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 2104, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 2630, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 3156, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 3682, 0, 526, 583 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
-"name": "Needle",
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
@@ -137,9 +137,9 @@ animations = [ {
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Needle",
 "speed": 5.0
 } ]
 
@@ -148,6 +148,8 @@ animations = [ {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 1 )
 Text = PoolStringArray( "Hello again little one.", "Do you know why I am here\?", "I took a nap in one place and found myself somewhere else.", "Imminent danger\?", "I don’t remember being in danger.", "Though I have been asleep this whole time.", "I found this next to me when I woke up.", "Here, you can have it.", "Use this to activate stable red rifts.", "(Gives Red Thread)" )
+Text2 = PoolStringArray( "You encountered a shadow of yourself\?", "That is not uncommon for this world.", "In fact, I wouldn’t be surprised if you encounter more than one.", "If you want to escape this world you will have to venture further down." )
+Text3 = PoolStringArray( "How do you like your needle\?", "Has it been useful\?", "That’s good to hear." )
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -206,5 +208,7 @@ __meta__ = {
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 25 )
 animation = "Red"
+frame = 7
+playing = true
 
 [connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_Timer_timeout"]

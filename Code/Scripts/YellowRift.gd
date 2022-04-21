@@ -38,5 +38,5 @@ func _process(delta):
 func _on_Rift_body_entered(body):
 	if body.name == "Needle":
 		body.queue_free()
-		if Spools.yellowSpool:
+		if Stats.getYellow():
 			Interact()

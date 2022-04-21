@@ -45,6 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Checkpoint="*res://Scripts/Checkpoint.gd"
+Stats="*res://Scripts/Stats.gd"
 
 [display]
 

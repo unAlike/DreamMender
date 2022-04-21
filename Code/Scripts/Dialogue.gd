@@ -1,17 +1,21 @@
 extends CanvasLayer
 
+export var Radius = 200
+export(PoolStringArray) var Text
+export(PoolStringArray) var Text2
+export(PoolStringArray) var Text3
+var InRadius = false
+var Interacting = false
+var Interactable = true
+var Tracker = 0
+var At = 0
+var Moving = false
+
 onready var Box = get_node("Background")
 onready var Dialogue = get_node("Background/RichTextLabel")
 onready var Duration = get_node("Timer")
 onready var Bubble = get_node("ENTER")
-export var Radius = 200
-export(PoolStringArray) var Text
-export(PoolStringArray) var Next
-var InRadius = false
-var Interacting = false
-var Interactable = true
-var At = 0
-onready var Player = get_tree().current_scene.get_node("Player")
+onready var Player = get_tree().get_current_scene().get_node("Player")
 onready var NPC = get_parent().get_node("NPC")
 onready var Spools = get_tree().get_current_scene().get_node("Player/Projectile")
 
@@ -54,6 +58,14 @@ func _process(delta):
 	elif Input.is_action_just_pressed("ui_accept") and !Interactable:
 		Box.visible = false
 		Interacting = false
+	
+	# Pause player movement while interacting
+	if InRadius and Interacting and !Moving:
+		Player.set_physics_process(false)
+		Spools.set_process(false)
+	elif InRadius and !Interacting:
+		Player.set_physics_process(true)
+		Spools.set_process(true)
 
 func Message():
 	pass

@@ -9,10 +9,16 @@ func _ready():
 #	pass
 
 func Message():
+	if Tracker == 1:
+		Text = Text2
+	elif Tracker == 2:
+		Text = Text3
 	Box.visible = true
 	Dialogue.text = Text[At]
 	Dialogue.visible_characters = 0
 	Duration.start()
 	if At == 9:
-		Spools.redSpool = true
+		Stats.setRed(true)
 		get_parent().get_node("NPC").animation = "Idle"
+	if At == Text.size() - 1:
+		Tracker += 1
