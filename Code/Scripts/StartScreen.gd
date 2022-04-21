@@ -1,7 +1,8 @@
 extends Control
 
 func _ready():
-	$MenuButtons/StartButton.grab_focus()
+	##$MenuButtons/StartButton.grab_focus()
+	pass
 
 func _on_StartButton_pressed():
 	get_tree().change_scene("res://Scenes/MainLevel.tscn")
