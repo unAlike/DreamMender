@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=2]
+[gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -49,6 +49,9 @@
 [ext_resource path="res://Audio/Music/Dreamy_Ambient_Song.mp3" type="AudioStream" id=47]
 [ext_resource path="res://Audio/Music/Outdoor Ambience Inside Tree.wav" type="AudioStream" id=48]
 [ext_resource path="res://Audio/Music/Cave_Ambience2.wav" type="AudioStream" id=49]
+[ext_resource path="res://Scripts/Vanish.gd" type="Script" id=50]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=66]
 
 [sub_resource type="Shader" id=29]
 code = "shader_type canvas_item;
@@ -459,6 +462,15 @@ position = Vector2( 538.239, 227.32 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
+
+[node name="Sprite" parent="Player" index="4"]
+frame = 3
+
+[node name="AnimationTree" parent="Player" index="6"]
+parameters/playback = SubResource( 66 )
+
+[node name="Camera2D" parent="Player" index="7"]
+process_mode = 0
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 33212, 9023 )
@@ -1494,6 +1506,7 @@ position = Vector2( 0, 160 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -1522,16 +1535,17 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 6
+frame = 4
 playing = true
 flip_h = true
+script = ExtResource( 50 )
 
 [node name="Shadow2" parent="Shadows" instance=ExtResource( 37 )]
 position = Vector2( 19424.1, 1052.74 )
 scale = Vector2( 1.06895, 1.07015 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
-frame = 2
+frame = 0
 
 [node name="Camera2D" parent="Shadows/Shadow2" index="2"]
 position = Vector2( -191.143, -50.0334 )
@@ -1614,6 +1628,7 @@ scale = Vector2( 0.0774465, 0.0737734 )
 [connection signal="body_entered" from="BlueRiftGroup/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="WaterDeath" to="Player" method="_on_SpikeHitbox_body_entered"]
 
+[editable path="Player"]
 [editable path="UnstableYellowRift/YellowRift/Platform"]
 [editable path="UnstableYellowRift2/YellowRift/Platform"]
 [editable path="UnstableYellowRift3/YellowRift/Platform"]

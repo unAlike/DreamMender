@@ -21,11 +21,12 @@ func _process(delta):
 	elif !Interacting:
 		if lerpTime>=0:
 			lerpTime-=delta
+			get_parent().get_node("LerpCam").zoom = lerp(PlayerCam.zoom, Cam.zoom, lerpTime)
+			get_parent().get_node("LerpCam").global_position = lerp(PlayerCam.global_position, Cam.global_position, lerpTime)
+			get_parent().get_node("LerpCam").current = true
 		else:
 			PlayerCam.current = true
-		get_parent().get_node("LerpCam").zoom = lerp(PlayerCam.zoom, Cam.zoom, lerpTime)
-		get_parent().get_node("LerpCam").global_position = lerp(PlayerCam.global_position, Cam.global_position, lerpTime)
-		get_parent().get_node("LerpCam").current = true
+		
 		
 	if Fade:
 		Sub.modulate.a = lerp(Sub.modulate.a, 0, FadeSpeed)
