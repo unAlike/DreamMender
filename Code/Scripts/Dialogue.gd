@@ -10,12 +10,14 @@ var Interactable = true
 var Tracker = 0
 var At = 0
 var Moving = false
+var Cutscene = false
 
 onready var Box = get_node("Background")
 onready var Dialogue = get_node("Background/RichTextLabel")
 onready var Duration = get_node("Timer")
 onready var Bubble = get_node("ENTER")
 onready var Player = get_tree().get_current_scene().get_node("Player")
+onready var PlayerCam = get_tree().get_current_scene().get_node("Player/Camera2D")
 onready var NPC = get_parent().get_node("NPC")
 onready var Spools = get_tree().get_current_scene().get_node("Player/Projectile")
 
@@ -36,6 +38,11 @@ func _process(delta):
 			Bubble.visible = true
 		else:
 			Bubble.visible = false
+		
+		if Cutscene and InRadius:
+			Cutscene = false
+			Message()
+			At += 1
 		
 		if Input.is_action_just_pressed("ui_accept") and InRadius:
 			if !Interacting:

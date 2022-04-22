@@ -8,10 +8,14 @@ onready var Cam = get_parent().get_node("Camera2D")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Cutscene = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if InRadius and Interactable:
+		Cam.current = true
+	elif !Interacting:
+		PlayerCam.current = true
 	if Fade:
 		Sub.modulate.a = lerp(Sub.modulate.a, 0, FadeSpeed)
 
