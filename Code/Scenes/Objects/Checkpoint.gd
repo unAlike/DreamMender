@@ -10,9 +10,10 @@ func _ready():
 
 
 func _on_Checkpoint_body_entered(body):
-	if not activated:
-		checkpoint_sprite.set_texture(checkpoint_on)
-		Checkpoint.last_position = global_position
-		$Hit.play()
-		activated = true
-	
+	if body.name == "Player":
+		if not activated:
+			checkpoint_sprite.set_texture(checkpoint_on)
+			Checkpoint.last_position = global_position
+			$Hit.play()
+			activated = true
+		

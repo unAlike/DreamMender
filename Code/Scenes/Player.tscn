@@ -510,7 +510,6 @@ pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="Collectables" type="Label" parent="CanvasLayer"]
-visible = false
 margin_left = 859.0
 margin_top = 8.0
 margin_right = 941.0
@@ -527,6 +526,9 @@ margin_left = 84.0
 margin_top = -15.0
 margin_right = 160.0
 margin_bottom = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -559,7 +561,6 @@ text = "Resume"
 flat = true
 
 [node name="Collections" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-visible = false
 margin_top = 24.0
 margin_right = 83.0
 margin_bottom = 44.0
@@ -578,32 +579,6 @@ margin_bottom = 44.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
 text = "Controls"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Save" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-visible = false
-margin_top = 72.0
-margin_right = 83.0
-margin_bottom = 92.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
-text = "Save"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Load" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-visible = false
-margin_top = 72.0
-margin_right = 83.0
-margin_bottom = 92.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
-text = "Load"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -708,6 +683,4 @@ stream = ExtResource( 13 )
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Resume" to="CanvasLayer" method="_on_Resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Collections" to="CanvasLayer" method="_on_Collections_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Controls" to="CanvasLayer" method="_on_Controls_pressed"]
-[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Save" to="CanvasLayer" method="_on_Save_pressed"]
-[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Load" to="CanvasLayer" method="_on_Load_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/MainMenu" to="CanvasLayer" method="_on_MainMenu_pressed"]

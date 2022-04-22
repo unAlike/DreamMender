@@ -50,7 +50,6 @@ var credits = [
 	],[
 		"Cole Puertas",
 		"Composer"
-		
 	],[
 		"Satbir Mangat",
 		"Sound Designer"

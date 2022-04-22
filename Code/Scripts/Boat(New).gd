@@ -11,6 +11,7 @@ export var bobSpeed = 1
 func _ready():
 	fromPos = get_node("fromPos").global_position
 	toPos = get_node("toPos").global_position
+
 func _process(delta):
 	bobCounter += delta*bobSpeed
 	var y = fromPos.y+sin(bobCounter)*bob
@@ -19,8 +20,6 @@ func _process(delta):
 			lerpVal += delta/15
 	global_position = Vector2(lerp(fromPos.x, toPos.x, lerpVal),y)
 
-
 func _on_CollisionDetector_body_entered(body):
 	if body.name == "Player":
-		print("on Boat")
 		moving = true

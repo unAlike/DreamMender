@@ -1,5 +1,7 @@
 extends "res://Scripts/Dialogue.gd"
 
+signal yellow_thread
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,7 +20,8 @@ func Message():
 	Dialogue.visible_characters = 0
 	Duration.start()
 	if At == 9:
-		Stats.setYellow(true)
+		Spools.yellowSpool = true
+		emit_signal("yellow_thread")
 		get_parent().get_node("NPC").animation = "Idle"
 	if At == Text.size() - 1:
 		Tracker += 1

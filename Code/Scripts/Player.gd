@@ -23,6 +23,8 @@ var stateConditions
 var timeFalling = 0
 var blueFlipY
 var rng : RandomNumberGenerator
+onready var pickupCountObject := $CanvasLayer/Collectables/Count
+var pickupCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -187,15 +189,6 @@ func _draw():
 		threadPath[l].y+=1
 	pass
 
-func save():
-	var save_dict = {
-		"filename" : get_filename(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x, # Vector2 is not supported by JSON
-		"pos_y" : position.y
-	}
-	return save_dict
-
 #Checks all Player Raycast2D's to check if on ground
 func GroundCheck():
 	if is_on_floor() or $RayCast2D3.is_colliding():
@@ -218,10 +211,7 @@ func GetGroundTouching():
 
 # Kills player
 func die():
-	print("player killed")
 	emit_signal("hit")
-	#queue_free()
-	#get_tree().reload_current_scene()
 	if Checkpoint.last_position != null:
 		global_position = Checkpoint.last_position
 	else:
@@ -233,10 +223,9 @@ func footStep():
 
 	
 
-# Checks for collision with dangerous objects that kill player and calls die() function
+# Checks for collision with spikes that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):
 	if body.name == "Player":
-		print("Touchs")
 		die()
 
 # Flips player and player's gravity
@@ -248,5 +237,10 @@ func flipPlayer():
 
 func _on_Area2D_body_entered(body):
 	inBlueRift = true
-#	Stats.setBlue(true)
-	pass # Replace with function body.
+	get_tree().get_current_scene().get_node("Player/Projectile").yellowSpool = true
+	get_tree().get_current_scene().get_node("Player/Projectile").blueSpool = true
+
+# When the player collects a button
+func _on_Collectable_get_button():
+	pickupCount += 1
+	pickupCountObject.text = str(pickupCount)
