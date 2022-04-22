@@ -22,6 +22,8 @@ var lastState = null
 var stateConditions
 var timeFalling = 0
 var blueFlipY
+onready var pickupCountObject := $CanvasLayer/Collectables/Count
+var pickupCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -188,3 +190,8 @@ func _on_Area2D_body_entered(body):
 	inBlueRift = true
 	get_tree().get_current_scene().get_node("Player/Projectile").yellowSpool = true
 	get_tree().get_current_scene().get_node("Player/Projectile").blueSpool = true
+
+# When the player collects a button
+func _on_Collectable_get_button():
+	pickupCount += 1
+	pickupCountObject.text = str(pickupCount)

@@ -92,6 +92,46 @@ gradient = SubResource( 2 )
 [sub_resource type="CircleShape2D" id=33]
 radius = 427.181
 
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 2100, 0, 300, 452 )
+
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 40 )
@@ -156,48 +196,13 @@ region = Rect2( 1800, 0, 300, 452 )
 [sub_resource type="AtlasTexture" id=19]
 region = Rect2( 2100, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 2100, 0, 300, 452 )
-
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "Red",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "Blue",
@@ -207,11 +212,6 @@ animations = [ {
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "Red",
-"speed": 5.0
 } ]
 
 [node name="Map" type="StaticBody2D"]
@@ -220,7 +220,7 @@ scale = Vector2( 0.988409, 0.989795 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 26836.1, 129.32 )
+position = Vector2( 538.239, 166.701 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -232,7 +232,154 @@ position = Vector2( 33212, 9023 )
 z_index = 50
 
 [node name="Collectable" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 5488.62, -1224.5 )
+position = Vector2( 1342.56, 101.031 )
+
+[node name="Collectable2" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 2113.5, -202.062 )
+
+[node name="Collectable3" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 3607.82, -140.433 )
+
+[node name="Collectable10" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 4579.08, -460.702 )
+
+[node name="Collectable4" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 6605.57, -1270.97 )
+
+[node name="Collectable5" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 7534.33, -1745.82 )
+
+[node name="Collectable8" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 8530.88, -1402.31 )
+
+[node name="Collectable9" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 10746.6, -1167.92 )
+
+[node name="Collectable6" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 11577.2, -1108.31 )
+
+[node name="Collectable7" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 14712.5, -1200.25 )
+
+[node name="Collectable11" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 16836.1, -2440.91 )
+
+[node name="Collectable12" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 18038.1, -971.918 )
+
+[node name="Collectable13" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17654.6, 25.2579 )
+
+[node name="Collectable14" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17762.9, 122.248 )
+
+[node name="Collectable15" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17869.1, 230.351 )
+
+[node name="Collectable16" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17969.3, 358.66 )
+
+[node name="Collectable17" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 18055.3, 478.887 )
+
+[node name="Collectable18" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 18158.5, 627.402 )
+
+[node name="Collectable19" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 21279.7, 223.279 )
+
+[node name="Collectable20" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 21860.4, 188.928 )
+
+[node name="Collectable21" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24082.1, -1421.51 )
+
+[node name="Collectable22" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24538.4, -2233.8 )
+
+[node name="Collectable23" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24967.4, -2567.2 )
+
+[node name="Collectable24" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26438.4, 254.598 )
+
+[node name="Collectable25" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26836.1, 249.547 )
+
+[node name="Collectable26" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27205.3, 246.516 )
+
+[node name="Collectable27" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27534.2, 243.485 )
+
+[node name="Collectable28" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 28062.3, 286.928 )
+
+[node name="Collectable29" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33101.7, 360.681 )
+
+[node name="Collectable30" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33348.5, 431.402 )
+
+[node name="Collectable31" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33573.1, 592.042 )
+
+[node name="Collectable32" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33750.2, 826.434 )
+
+[node name="Collectable33" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 31293.7, 4209.96 )
+
+[node name="Collectable34" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 30220.3, 3260.27 )
+
+[node name="Collectable35" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 29416, 3555.28 )
+
+[node name="Collectable36" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26578.1, 4681.78 )
+
+[node name="Collectable37" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26841.1, 4386.77 )
+
+[node name="Collectable38" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27093, 3688.64 )
+
+[node name="Collectable39" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24118.6, 4102.87 )
+
+[node name="Collectable40" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24111.5, 4535.28 )
+
+[node name="Collectable41" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24100.3, 4999.01 )
+
+[node name="Collectable42" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24093.3, 5463.76 )
+
+[node name="Collectable43" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25437.9, 8008.73 )
+
+[node name="Collectable44" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25120.2, 8692.71 )
+
+[node name="Collectable45" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27366.2, 7511.66 )
+
+[node name="Collectable46" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 28620.7, 6982.25 )
+
+[node name="Collectable47" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 29965.3, 7788.48 )
+
+[node name="Collectable48" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 30520.8, 7796.56 )
+
+[node name="Collectable49" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 31072.2, 7792.52 )
+
+[node name="Collectable50" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 31526.4, 7799.59 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
 
@@ -253,6 +400,10 @@ scale = Vector2( 4.07565, 4.07565 )
 
 [node name="Checkpoint4" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 19823.8, 1012.33 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint8" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 25565.3, -2531.84 )
 scale = Vector2( 4.07565, 4.07565 )
 
 [node name="Checkpoint5" parent="CheckPoints" instance=ExtResource( 8 )]
@@ -1122,7 +1273,7 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 28 )
 animation = "Yellow"
-frame = 4
+frame = 7
 playing = true
 flip_h = true
 script = ExtResource( 36 )
@@ -1147,10 +1298,57 @@ position = Vector2( 431.093, -1.61649 )
 position = Vector2( 16.0859, -6.06186 )
 scale = Vector2( 0.0774465, 0.0737734 )
 
-[node name="Checkpoint" parent="." instance=ExtResource( 8 )]
-position = Vector2( 27331.8, 200.041 )
-
 [connection signal="hit" from="Player" to="WaterDeath" method="_on_Player_hit"]
+[connection signal="get_button" from="Collectables/Collectable" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable2" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable3" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable10" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable4" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable5" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable8" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable9" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable6" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable7" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable11" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable12" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable13" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable14" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable15" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable16" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable17" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable18" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable19" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable20" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable21" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable22" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable23" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable24" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable25" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable26" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable27" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable28" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable29" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable30" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable31" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable32" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable33" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable34" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable35" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable36" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable37" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable38" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable39" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable40" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable41" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable42" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable43" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable44" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable45" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable46" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable47" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable48" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable49" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable50" to="Player" method="_on_Collectable_get_button"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
