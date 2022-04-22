@@ -5,6 +5,46 @@
 [ext_resource path="res://Art/Character/DW_Shadow_Red_Character_Idle_Sprite_Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Art/Character/DW_Shadow_Blue_Character_Idle_Sprite_Sheet.png" type="Texture" id=4]
 
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2100, 0, 300, 452 )
+
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 3 )
@@ -85,48 +125,13 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2100, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 2100, 0, 300, 452 )
-
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Blue",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
 "name": "Red",
@@ -136,18 +141,12 @@ animations = [ {
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
-"loop": true,
-"name": "Blue",
-"speed": 5.0
 } ]
 
 [node name="Shadow" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )
-Radius = 200
 Text = PoolStringArray( "Do you know who I am\?", "Do you know what I am\?", "You must not know.", "If you did, then you would run the other way. This I know.", "You will cower at the first sign of danger. This I know.", "You will run at the first opportunity, seek comfort in what you do know.", "This I know." )
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
@@ -207,7 +206,7 @@ __meta__ = {
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 28 )
 animation = "Red"
-frame = 7
+frame = 4
 playing = true
 flip_h = true
 

@@ -20,7 +20,7 @@ func Message():
 	Dialogue.visible_characters = 0
 	Duration.start()
 	if At == 9:
-		Spools.yellowSpool = true
+		Stats.setYellow(true)
 		emit_signal("yellow_thread")
 		get_parent().get_node("NPC").animation = "Idle"
 	if At == Text.size() - 1:

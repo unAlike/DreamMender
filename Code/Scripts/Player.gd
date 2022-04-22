@@ -237,8 +237,6 @@ func flipPlayer():
 
 func _on_Area2D_body_entered(body):
 	inBlueRift = true
-	get_tree().get_current_scene().get_node("Player/Projectile").yellowSpool = true
-	get_tree().get_current_scene().get_node("Player/Projectile").blueSpool = true
 
 # When the player collects a button
 func _on_Collectable_get_button():
