@@ -22,6 +22,7 @@ var lastState = null
 var stateConditions
 var timeFalling = 0
 var blueFlipY
+var rng : RandomNumberGenerator
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,6 +30,8 @@ func _ready():
 	stateConditions = $AnimationTree.get("parameters/conditions")
 	$Reflection.scale = $Sprite.scale
 	blueFlipY = get_tree().current_scene.get_node("BlueRiftGroup").get_node("Rifts").get_node("BlueRiftFlip").global_position.y
+	rng = RandomNumberGenerator.new()
+
 
 func get_Input():
 	dir = 0
@@ -54,6 +57,7 @@ func get_Input():
 
 # Called when jumping off the ground
 func Jump():
+	footStep()
 	state_machine.travel("jump")
 	vel.y = -jumpPower * scale.y
 
@@ -222,6 +226,12 @@ func die():
 		global_position = Checkpoint.last_position
 	else:
 		get_tree().reload_current_scene()
+		
+func footStep():
+	rng.randomize()
+	$Sounds/Footsteps.get_children()[rng.randf_range(0, 4)].play()
+
+	
 
 # Checks for collision with dangerous objects that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):

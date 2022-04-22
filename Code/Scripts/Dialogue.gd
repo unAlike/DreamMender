@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-export var Radius = 200
+export var Radius = 20
 export(PoolStringArray) var Text
 export(PoolStringArray) var Text2
 export(PoolStringArray) var Text3

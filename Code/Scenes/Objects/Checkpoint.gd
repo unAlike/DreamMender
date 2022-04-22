@@ -1,5 +1,6 @@
 extends Area2D
 
+var activated = false
 var checkpoint_on = preload("res://Art/Misc/DW_Checkpoint_On.png")
 onready var checkpoint_sprite = get_node("Sprite")
 
@@ -9,5 +10,9 @@ func _ready():
 
 
 func _on_Checkpoint_body_entered(body):
-	checkpoint_sprite.set_texture(checkpoint_on)
-	Checkpoint.last_position = global_position
+	if not activated:
+		checkpoint_sprite.set_texture(checkpoint_on)
+		Checkpoint.last_position = global_position
+		$Hit.play()
+		activated = true
+	

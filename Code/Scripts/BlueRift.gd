@@ -24,6 +24,7 @@ func Interact():
 	player.inBlueRift = true
 	riftTimer.start()
 	if riftActive:
+		$OpenRift.play()
 		riftActive = !riftActive
 		if !player.flipped:
 			player.flipPlayer()

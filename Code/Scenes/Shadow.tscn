@@ -45,46 +45,6 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2100, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 2100, 0, 300, 452 )
-
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 4 )
@@ -125,6 +85,46 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 2100, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 2100, 0, 300, 452 )
+
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
@@ -132,14 +132,14 @@ animations = [ {
 "name": "Yellow",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "Red",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "Blue",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "Red",
 "speed": 5.0
 } ]
 
@@ -147,7 +147,7 @@ animations = [ {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )
-Radius = 2750
+Radius = 200
 Text = PoolStringArray( "Do you know who I am\?", "Do you know what I am\?", "You must not know.", "If you did, then you would run the other way. This I know.", "You will cower at the first sign of danger. This I know.", "You will run at the first opportunity, seek comfort in what you do know.", "This I know." )
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
@@ -207,11 +207,22 @@ __meta__ = {
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 28 )
 animation = "Red"
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2( 0.25, 0.25 )
+position = Vector2( -159, -55 )
+zoom = Vector2( 0.5, 0.5 )
+process_mode = 0
+smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="LerpCam" type="Camera2D" parent="."]
+position = Vector2( -159, -55 )
+zoom = Vector2( 0.5, 0.5 )
+process_mode = 0
+smoothing_enabled = true
+editor_draw_limits = true
 
 [connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_Timer_timeout"]

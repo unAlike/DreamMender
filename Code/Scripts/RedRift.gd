@@ -17,6 +17,8 @@ func _ready():
 func _process(delta):
 	if riftActive:
 		$Rift/InnerHex.animation = "Open"
+		if not $OpenRift.playing:
+			$OpenRift.play()
 		if riftTimer.time_left>.1:
 			for obj in objectList:
 				var d = obj[0].position.length()
@@ -27,6 +29,8 @@ func _process(delta):
 			for obj in spinList:
 				get_node(obj).rotation_degrees = lerp(toRotation,fromRotation,riftTimer.time_left/riftTimer.wait_time)
 	else:
+		if not $CloseRift.playing:
+			$CloseRift.play()
 		if riftTimer.time_left>.1:
 			for obj in objectList:
 				var d = obj[0].position.length()

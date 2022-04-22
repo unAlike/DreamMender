@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/BlueRift.gd" type="Script" id=1]
 [ext_resource path="res://Art/Rifts/Blue_Rift_Closed_Sprite_Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Art/Rifts/Blue_Rift_Open_Sprite_Sheet.png" type="Texture" id=3]
-[ext_resource path="res://Audio/Dreamy_Ambient_Song.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Audio/Rifts/Blue/Rift_fx.wav" type="AudioStream" id=4]
 [ext_resource path="res://Art/Misc/light.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -111,10 +111,6 @@ one_shot = true
 one_shot = true
 
 [node name="OpenRift" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 0, -2 )
-stream = ExtResource( 4 )
-
-[node name="CloseRift" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, -2 )
 stream = ExtResource( 4 )
 

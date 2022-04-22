@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/yellow_rift_.wav-62c101bc8e9944621b82cc148d441274.sample"
+
+[deps]
+
+source_file="res://Audio/Rifts/Yellow/yellow_rift_.wav"
+dest_files=[ "res://.import/yellow_rift_.wav-62c101bc8e9944621b82cc148d441274.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Outdoor Ambience Inside Tree.wav-10a0005dceaae9f02e385f11c2135018.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Outdoor Ambience Inside Tree.wav"
+dest_files=[ "res://.import/Outdoor Ambience Inside Tree.wav-10a0005dceaae9f02e385f11c2135018.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

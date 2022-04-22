@@ -5,7 +5,7 @@ export var FadeSpeed = .025
 
 onready var Sub = get_parent().get_node("NPC")
 onready var Cam = get_parent().get_node("Camera2D")
-
+var lerpTime = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Cutscene = true
@@ -13,9 +13,20 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if InRadius and Interactable:
-		Cam.current = true
+		if lerpTime<=1:
+			lerpTime+=delta
+		get_parent().get_node("LerpCam").zoom = lerp(PlayerCam.zoom, Cam.zoom, lerpTime)
+		get_parent().get_node("LerpCam").global_position = lerp(PlayerCam.global_position, Cam.global_position, lerpTime)
+		get_parent().get_node("LerpCam").current = true
 	elif !Interacting:
-		PlayerCam.current = true
+		if lerpTime>=0:
+			lerpTime-=delta
+		else:
+			PlayerCam.current = true
+		get_parent().get_node("LerpCam").zoom = lerp(PlayerCam.zoom, Cam.zoom, lerpTime)
+		get_parent().get_node("LerpCam").global_position = lerp(PlayerCam.global_position, Cam.global_position, lerpTime)
+		get_parent().get_node("LerpCam").current = true
+		
 	if Fade:
 		Sub.modulate.a = lerp(Sub.modulate.a, 0, FadeSpeed)
 
