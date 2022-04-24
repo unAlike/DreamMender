@@ -101,7 +101,7 @@ func Process_On_Wall(delta):
 	if is_on_wall() and numWallJump>0:
 		state_machine.travel("wall")
 		timeOnWall += delta
-		vel.y = timeOnWall*100
+		vel.y = timeOnWall*100*(gravity/abs(gravity))
 	#if vel.y>gravity:
 		#vel.y = gravity
 	else:
