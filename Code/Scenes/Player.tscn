@@ -461,7 +461,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 6
+frame = 4
 playing = true
 centered = false
 
@@ -484,7 +484,7 @@ parameters/conditions/onGround = false
 parameters/conditions/onWall = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 5, -67 )
+position = Vector2( 1, -232 )
 current = true
 zoom = Vector2( 2, 2 )
 smoothing_enabled = true

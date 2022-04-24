@@ -467,10 +467,13 @@ max_distance = 10120.0
 attenuation = 0.000126375
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 32880.1, 4114.99 )
+position = Vector2( 539.25, 207.114 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
+
+[node name="Sprite" parent="Player" index="4"]
+frame = 5
 
 [node name="AnimationTree" parent="Player" index="6"]
 parameters/playback = SubResource( 66 )
@@ -1280,6 +1283,53 @@ position = Vector2( -0.779785, 2.02606 )
 [node name="toPos" parent="YellowRift2/Platform" index="2"]
 position = Vector2( 17.9326, -215.052 )
 
+[node name="Cave Art" type="Node2D" parent="."]
+
+[node name="DirtBg" type="Sprite" parent="Cave Art"]
+position = Vector2( 28360.7, 4098.83 )
+scale = Vector2( 1.6996, 1.31898 )
+z_index = -3642
+texture = ExtResource( 59 )
+
+[node name="Grass" type="Node2D" parent="Cave Art"]
+modulate = Color( 0.231373, 0.686275, 0, 1 )
+position = Vector2( 0, 1.01028 )
+
+[node name="Level3Tangle" type="Sprite" parent="Cave Art/Grass"]
+position = Vector2( 31915.9, 4272.6 )
+rotation = -0.0596597
+scale = Vector2( 0.391636, 0.586554 )
+texture = ExtResource( 51 )
+
+[node name="Level3Tangle2" type="Sprite" parent="Cave Art/Grass"]
+position = Vector2( 30274.9, 4678.45 )
+scale = Vector2( 0.31297, 0.774735 )
+texture = ExtResource( 51 )
+
+[node name="Level3Tangle3" type="Sprite" parent="Cave Art/Grass"]
+position = Vector2( 31031.3, 4534.21 )
+rotation = 0.0486403
+scale = Vector2( 0.0842542, 0.438691 )
+texture = ExtResource( 51 )
+
+[node name="Level3Tangle4" type="Sprite" parent="Cave Art/Grass"]
+position = Vector2( 24676.2, 4208.68 )
+rotation = -0.161398
+scale = Vector2( 0.147109, 0.738168 )
+texture = ExtResource( 51 )
+
+[node name="Level3Tangle5" type="Sprite" parent="Cave Art/Grass"]
+position = Vector2( 25258.8, 4174.6 )
+rotation = 0.0306139
+scale = Vector2( 0.161244, 0.774735 )
+texture = ExtResource( 51 )
+
+[node name="Level3Tangle6" type="Sprite" parent="Cave Art/Grass"]
+position = Vector2( 28136.1, 4278.66 )
+rotation = 2.8383
+scale = Vector2( 0.19613, 0.420941 )
+texture = ExtResource( 51 )
+
 [node name="CaveFloor" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 15614, 5013 )
 scale = Vector2( 1, 1.00741 )
@@ -1465,7 +1515,7 @@ position = Vector2( 1503.92, 193.465 )
 polygon = PoolVector2Array( 604.625, -826.923, 608.703, 19.8994, 358.9, 21.0049, 358.9, 60.8032, 610.744, 59.6978, 646.43, 61.9087, 646.43, -826.923 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D2"]
-color = Color( 0.215686, 0.211765, 0.211765, 1 )
+color = Color( 0.215686, 0.211765, 0.211765, 0 )
 
 [node name="Area2D" type="Area2D" parent="BlueRiftGroup"]
 position = Vector2( 0.486328, 12.2368 )
@@ -1885,12 +1935,6 @@ position = Vector2( 431.093, -1.61649 )
 [node name="Shadow3" parent="Boat" instance=ExtResource( 38 )]
 position = Vector2( 16.0859, -6.06186 )
 scale = Vector2( 0.0774465, 0.0737734 )
-
-[node name="DirtBg" type="Sprite" parent="."]
-position = Vector2( 28360.7, 4098.83 )
-scale = Vector2( 1.6996, 1.31898 )
-z_index = -3642
-texture = ExtResource( 59 )
 
 [connection signal="hit" from="Player" to="WaterDeath" method="_on_Player_hit"]
 [connection signal="get_button" from="Collectables/Collectable" to="Player" method="_on_Collectable_get_button"]

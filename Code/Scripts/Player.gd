@@ -211,6 +211,7 @@ func GetGroundTouching():
 
 # Kills player
 func die():
+	get_tree()
 	emit_signal("hit")
 	if Checkpoint.last_position != null:
 		global_position = Checkpoint.last_position
