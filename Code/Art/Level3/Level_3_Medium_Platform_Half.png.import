@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level_3_Background.png-cc1ab073ad3da3b6bc587b4dfed1cd6f.stex"
+path="res://.import/Level_3_Medium_Platform_Half.png-dcab7393d5229c38f612fc7d5b863890.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Level3/Level_3_Background.png"
-dest_files=[ "res://.import/Level_3_Background.png-cc1ab073ad3da3b6bc587b4dfed1cd6f.stex" ]
+source_file="res://Art/Level3/Level_3_Medium_Platform_Half.png"
+dest_files=[ "res://.import/Level_3_Medium_Platform_Half.png-dcab7393d5229c38f612fc7d5b863890.stex" ]
 
 [params]
 

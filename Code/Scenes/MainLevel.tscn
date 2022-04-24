@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -29,10 +29,10 @@
 [ext_resource path="res://Art/Level1/Bark.png" type="Texture" id=27]
 [ext_resource path="res://Art/Level1/DW_small_tree.png" type="Texture" id=28]
 [ext_resource path="res://Art/Level2/rock_texture.png" type="Texture" id=29]
-[ext_resource path="res://Art/Level3/Level_3_Background_Layer_2.png" type="Texture" id=30]
+[ext_resource path="res://Art/Level3/paralax/Level_3_Background_Layer_2.png" type="Texture" id=30]
 [ext_resource path="res://Rifts/BlueRift.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Art/Level3/Level_3_Background_Layer_1.png" type="Texture" id=32]
-[ext_resource path="res://Art/Level3/Level_3_Background.png" type="Texture" id=33]
+[ext_resource path="res://Art/Level3/paralax/Level_3_Background_Layer_1.png" type="Texture" id=32]
+[ext_resource path="res://Art/Level3/paralax/Level_3_Background.png" type="Texture" id=33]
 [ext_resource path="res://Scenes/Utility/Particle.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Scenes/Tachi2.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Art/Character/DW_Tachi.png" type="Texture" id=36]
@@ -50,6 +50,14 @@
 [ext_resource path="res://Audio/Music/Outdoor Ambience Inside Tree.wav" type="AudioStream" id=48]
 [ext_resource path="res://Audio/Music/Cave_Ambience2.wav" type="AudioStream" id=49]
 [ext_resource path="res://Scripts/Vanish.gd" type="Script" id=50]
+[ext_resource path="res://Art/Level3/Level_3_Tangle.png" type="Texture" id=51]
+[ext_resource path="res://Art/Level3/Level_3_Ground.png" type="Texture" id=52]
+[ext_resource path="res://Art/Level3/Level_3_Platform.png" type="Texture" id=53]
+[ext_resource path="res://Art/Level3/Level_3_Medium_Platform_Half.png" type="Texture" id=54]
+[ext_resource path="res://Art/Level3/Level_3_Medium_Platform_Full.png" type="Texture" id=55]
+[ext_resource path="res://Art/Level3/Level_3_Small_Platform_Half.png" type="Texture" id=56]
+[ext_resource path="res://Art/Level3/Level_3_Platform_Long.png" type="Texture" id=57]
+[ext_resource path="res://Art/Level3/Level_3_Small_Platform.png" type="Texture" id=58]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=66]
 
@@ -142,44 +150,44 @@ flags = 4
 atlas = ExtResource( 43 )
 region = Rect2( 3682, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 45 )
+atlas = ExtResource( 44 )
 region = Rect2( 0, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
-atlas = ExtResource( 45 )
+atlas = ExtResource( 44 )
 region = Rect2( 526, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 45 )
+atlas = ExtResource( 44 )
 region = Rect2( 1052, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 45 )
+atlas = ExtResource( 44 )
 region = Rect2( 1578, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 45 )
+atlas = ExtResource( 44 )
 region = Rect2( 2104, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 45 )
+atlas = ExtResource( 44 )
 region = Rect2( 2630, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 45 )
+atlas = ExtResource( 44 )
 region = Rect2( 3156, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 45 )
+atlas = ExtResource( 44 )
 region = Rect2( 3682, 0, 526, 583 )
 
 [sub_resource type="AtlasTexture" id=17]
@@ -222,44 +230,44 @@ flags = 4
 atlas = ExtResource( 36 )
 region = Rect2( 3682, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
-atlas = ExtResource( 44 )
+atlas = ExtResource( 45 )
 region = Rect2( 0, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
-atlas = ExtResource( 44 )
+atlas = ExtResource( 45 )
 region = Rect2( 526, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
-atlas = ExtResource( 44 )
+atlas = ExtResource( 45 )
 region = Rect2( 1052, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
-atlas = ExtResource( 44 )
+atlas = ExtResource( 45 )
 region = Rect2( 1578, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=44]
 flags = 4
-atlas = ExtResource( 44 )
+atlas = ExtResource( 45 )
 region = Rect2( 2104, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=45]
 flags = 4
-atlas = ExtResource( 44 )
+atlas = ExtResource( 45 )
 region = Rect2( 2630, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=46]
 flags = 4
-atlas = ExtResource( 44 )
+atlas = ExtResource( 45 )
 region = Rect2( 3156, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=47]
 flags = 4
-atlas = ExtResource( 44 )
+atlas = ExtResource( 45 )
 region = Rect2( 3682, 0, 526, 583 )
 
 [sub_resource type="SpriteFrames" id=48]
@@ -269,9 +277,9 @@ animations = [ {
 "name": "Needle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
-"name": "Blue",
+"name": "Red",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
@@ -279,51 +287,11 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
 "loop": true,
-"name": "Red",
+"name": "Blue",
 "speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=57]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=58]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=59]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=60]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=61]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=62]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=63]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=64]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=49]
 flags = 4
@@ -363,6 +331,46 @@ region = Rect2( 1800, 0, 300, 452 )
 [sub_resource type="AtlasTexture" id=56]
 flags = 4
 atlas = ExtResource( 39 )
+region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 40 )
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=34]
@@ -407,14 +415,14 @@ region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="SpriteFrames" id=65]
 animations = [ {
-"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
-"loop": true,
-"name": "Blue",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
 "loop": true,
 "name": "Red",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
+"loop": true,
+"name": "Blue",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
@@ -458,7 +466,7 @@ max_distance = 10120.0
 attenuation = 0.000126375
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 538.239, 227.32 )
+position = Vector2( 24100.3, 7455.08 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
@@ -1339,6 +1347,7 @@ flip_v = true
 script = ExtResource( 10 )
 
 [node name="MirrorBottom" type="Sprite" parent="BlueRiftGroup"]
+visible = false
 material = ExtResource( 11 )
 position = Vector2( -457.215, 840.334 )
 rotation = 3.14159
@@ -1358,7 +1367,7 @@ scale = Vector2( 1.0196, 1.10551 )
 position = Vector2( 227.373, 200.992 )
 
 [node name="BlueRift2" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
-position = Vector2( 688.23, 1012.65 )
+position = Vector2( 688.537, 1023.04 )
 
 [node name="BlueRift3" parent="BlueRiftGroup/Rifts" instance=ExtResource( 31 )]
 position = Vector2( 1023.68, -87.3354 )
@@ -1406,6 +1415,11 @@ position = Vector2( 3927.64, 257.957 )
 position = Vector2( 311.531, -314.969 )
 scale = Vector2( 3.22747, 3.07734 )
 
+[node name="Sprite" parent="BlueRiftGroup/Rifts/YellowRift/Platform" index="0"]
+position = Vector2( -1.75836, 3.26637 )
+scale = Vector2( 0.192333, 0.231884 )
+texture = ExtResource( 53 )
+
 [node name="fromPos" parent="BlueRiftGroup/Rifts/YellowRift/Platform" index="1"]
 position = Vector2( -97.1641, 102.351 )
 
@@ -1418,6 +1432,11 @@ position = Vector2( 4586.8, 270.243 )
 [node name="Platform" parent="BlueRiftGroup/Rifts/YellowRift2" groups=["killNeedle"] instance=ExtResource( 13 )]
 position = Vector2( -341.445, -224.499 )
 scale = Vector2( -3.43716, 3.54631 )
+
+[node name="Sprite" parent="BlueRiftGroup/Rifts/YellowRift2/Platform" index="0"]
+position = Vector2( 0.428409, 6.29834 )
+scale = Vector2( 0.198658, 0.217266 )
+texture = ExtResource( 53 )
 
 [node name="fromPos" parent="BlueRiftGroup/Rifts/YellowRift2/Platform" index="1"]
 position = Vector2( -99.3389, 63.3049 )
@@ -1438,10 +1457,10 @@ position = Vector2( 4913.81, 761.683 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider", "killNeedle"]]
 position = Vector2( 522.037, 559.39 )
-polygon = PoolVector2Array( -11.2148, -12.1611, -53.0195, -12.1611, -34.666, -1198.38, -75.4492, -1198.38, -89.7246, -250.952, -91.7637, -13.2666, -1228.62, -12.1611, -1229.64, 12.1602, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -424.154, 658.885, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 440.469, 11.0547, 569.959, 11.0547, 610.744, 11.0547, 803.449, 13.2656, 803.449, 360.396, 836.076, 360.396, 1088.94, 373.663, 1085.88, 637.88, 1127.68, 636.774, 1571.21, 643.408, 1569.17, 1214.96, 1620.15, 1212.75, 3820.29, 1296.87, 4630.06, 1127.09, 4622.84, 12.4189, 4583.64, 12.4189, 4585.71, 1111.46, 3319.17, 1145.32, 3316.31, 828.077, 3315.75, 765.234, 3311.73, 360.895, 4181.33, 357.544, 4178.24, 315.102, 3311.73, 319.569, 2177.01, 321.803, 2178.04, 350.843, 2548.38, 354.193, 2552.5, 579.809, 2585.51, 582.043, 2583.45, 354.193, 3267.37, 356.427, 3277.69, 1189.64, 1616.88, 1178.47, 1617.91, 662.46, 1755.1, 659.109, 1758.2, 627.836, 1619.13, 625.72, 1619.13, 573.761, 1620.15, 4.42188, 1583.45, 5.52734, 1581.41, 268.64, 1317.33, 271.956, 1317.33, 326.126, 1582.33, 318.588, 1581.41, 575.972, 1127.68, 577.077, 1128.7, 466.526, 1128.7, 339.392, 836.076, 339.392, 834.472, 281.882, 828.939, 11.0547, 1622.19, 13.2656, 2146.06, 12.4189, 2147.1, 322.92, 1863.42, 319.569, 1752.01, 321.803, 1753.04, 355.31, 1856.2, 355.31, 1861.36, 639.005, 1857.23, 752.93, 1854.13, 796.489, 1869.61, 1178.47, 1905.71, 1178.47, 1907.78, 641.239, 2020.87, 639.152, 2663.91, 641.239, 2675.26, 1150.55, 2722.71, 1152.78, 2719.61, 641.239, 2812.72, 639.883, 3071.38, 640.122, 3064.15, 589.861, 1899.52, 586.511, 1895.4, 355.31, 2175.98, 353.076, 2175.98, 12.4189, 4030.73, 4.60059, 4179.27, 14.6523, 4189.59, 779.736, 3316.89, 778.619, 3316.89, 805.425, 4223.63, 804.308, 4214.35, 11.3018, 8113.64, 11.3018, 8107.46, -19.9717, 4214.35, -30.0244, 4212.28, -1365.85, 3610.88, -1232.94, 3612.95, -678.949, 3645.96, -678.949, 3650.08, -1175.97, 3807.91, -1154.75, 3809.97, -686.767, 3837.82, -689.001, 3837.82, -1156.99, 4191.65, -1144.7, 4176.18, -26.6729, 2046.01, -12.8459, 1897.46, -16.6211, 1894.37, -313.719, 2153.29, -313.719, 2155.35, -353.928, 1890.24, -353.928, 1885.08, -621.986, 3252.93, -611.935, 3250.87, -349.46, 2364.76, -356.162, 2370.95, -615.285, 2318.34, -614.168, 2314.21, -353.928, 2318.34, -309.251, 3247.77, -305.901, 3260.15, -12.1533, 3317.92, -12.1533, 3285.94, -618.636, 3285.94, -654.377, 3275.63, -1152.52, 3246.74, -1153.64, 3249.84, -646.559, 2427.68, -655.494, 2418.4, -1246.34, 2059.41, -1236.29, 1888.18, -1228.47, 1866.51, -1144.7, 1913.96, -1149.17, 1924.28, -800.692, 1967.61, -799.575, 2254.38, -800.692, 2254.38, -830.849, 1965.54, -829.732, 1967.61, -1144.7, 2367.85, -1150.29, 2368.88, -657.728, 2101.71, -657.728, 2052.19, -656.611, 1886.11, -651.026, 1853.1, -651.026, 1855.98, -13.0336, 1620.15, -13.2666, 1581.41, -14.3721, 825.881, -12.1611, 836.076, -346.025, 1129.72, -342.709, 1129.72, -370.347, 1129.72, -609.138, 1406.04, -605.821, 1406.04, -634.564, 1124.62, -637.881, 1083.84, -640.092, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 484.313, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.449, -306.227, 595.449, -347.131, 355.842, -348.237, 355.374, -166.263, 353.803, -12.1611 )
+polygon = PoolVector2Array( -11.2148, -12.1611, -53.0195, -12.1611, -34.666, -1198.38, -75.4492, -1198.38, -89.7246, -250.952, -91.7637, -13.2666, -1228.62, -12.1611, -1229.64, 12.1602, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -424.154, 658.885, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 440.469, 11.0547, 569.959, 11.0547, 610.744, 11.0547, 803.449, 13.2656, 803.449, 360.396, 836.076, 360.396, 1088.94, 373.663, 1085.88, 637.88, 1127.68, 636.774, 1571.21, 643.408, 1569.17, 1214.96, 1620.15, 1212.75, 3820.29, 1296.87, 4630.06, 1127.09, 4622.84, 12.4189, 4583.64, 12.4189, 4585.71, 1111.46, 3319.17, 1145.32, 3316.31, 828.077, 3315.75, 765.234, 3311.73, 360.895, 4181.33, 357.544, 4178.24, 315.102, 3311.73, 319.569, 2177.01, 321.803, 2178.04, 350.843, 2548.38, 354.193, 2552.5, 579.809, 2585.51, 582.043, 2583.45, 354.193, 3267.37, 356.427, 3277.69, 1189.64, 1616.88, 1178.47, 1617.91, 662.46, 1755.1, 659.109, 1758.2, 627.836, 1619.13, 625.72, 1619.13, 573.761, 1620.15, 4.42188, 1583.45, 5.52734, 1581.41, 268.64, 1317.33, 271.956, 1317.33, 326.126, 1582.33, 318.588, 1581.41, 575.972, 1127.68, 577.077, 1128.7, 466.526, 1128.7, 339.392, 836.076, 339.392, 834.472, 281.882, 828.939, 11.0547, 1622.19, 13.2656, 2146.06, 12.4189, 2147.1, 322.92, 1863.42, 319.569, 1752.01, 321.803, 1753.04, 355.31, 1856.2, 355.31, 1861.36, 639.005, 1857.23, 752.93, 1854.13, 796.489, 1869.61, 1178.47, 1905.71, 1178.47, 1907.78, 641.239, 2020.87, 639.152, 2663.91, 641.239, 2675.26, 1150.55, 2722.71, 1152.78, 2719.61, 641.239, 2812.72, 639.883, 3071.38, 640.122, 3064.15, 589.861, 1899.52, 586.511, 1895.4, 355.31, 2175.98, 353.076, 2175.98, 12.4189, 4030.73, 4.60059, 4179.27, 14.6523, 4189.59, 779.736, 3316.89, 778.619, 3316.89, 805.425, 4223.63, 804.308, 4214.35, 11.3018, 8113.64, 11.3018, 8107.46, -19.9717, 4214.35, -30.0244, 4212.28, -1365.85, 3610.88, -1232.94, 3612.95, -678.949, 3645.96, -678.949, 3650.08, -1175.97, 3813.07, -1172.62, 3809.97, -686.767, 3837.82, -689.001, 3838.86, -1174.86, 4188.56, -1168.16, 4176.18, -26.6729, 2046.01, -12.8459, 1897.46, -16.6211, 1894.37, -313.719, 2153.29, -313.719, 2155.35, -353.928, 1890.24, -353.928, 1885.08, -621.986, 3252.93, -611.935, 3250.87, -349.46, 2364.76, -356.162, 2370.95, -615.285, 2318.34, -614.168, 2314.21, -353.928, 2318.34, -309.251, 3247.77, -305.901, 3260.15, -12.1533, 3317.92, -12.1533, 3285.94, -618.636, 3285.94, -654.377, 3275.63, -1152.52, 3246.74, -1153.64, 3249.84, -646.559, 2427.68, -655.494, 2418.4, -1246.34, 2059.41, -1236.29, 1888.18, -1228.47, 1866.51, -1144.7, 1913.96, -1149.17, 1924.28, -800.692, 1967.61, -799.575, 2254.38, -800.692, 2254.38, -830.849, 1965.54, -829.732, 1967.61, -1144.7, 2367.85, -1150.29, 2368.88, -657.728, 2101.71, -657.728, 2052.19, -656.611, 1886.11, -651.026, 1853.1, -651.026, 1855.98, -13.0336, 1620.15, -13.2666, 1581.41, -14.3721, 825.881, -12.1611, 836.076, -346.025, 1129.72, -342.709, 1129.72, -370.347, 1129.72, -609.138, 1406.04, -605.821, 1406.04, -634.564, 1124.62, -637.881, 1083.84, -640.092, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 484.313, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.449, -306.227, 595.449, -347.131, 355.842, -348.237, 355.374, -166.263, 353.803, -12.1611 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D"]
-color = Color( 0.215686, 0.211765, 0.211765, 1 )
+color = Color( 0.215686, 0.211765, 0.211765, 0 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider", "killNeedle"]]
 position = Vector2( 1503.92, 193.465 )
@@ -1457,6 +1476,307 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueRiftGroup/Area2D"]
 position = Vector2( -334.773, -906.98 )
 shape = SubResource( 33 )
+
+[node name="Art" type="Node2D" parent="BlueRiftGroup"]
+
+[node name="Ground" type="Node2D" parent="BlueRiftGroup/Art"]
+
+[node name="Level3Ground" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 1249.98, 552.859 )
+scale = Vector2( 1.0196, 1.10551 )
+texture = ExtResource( 52 )
+
+[node name="Level3Tangle" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 1179.83, 499.247 )
+texture = ExtResource( 51 )
+
+[node name="Level3Tangle2" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 1187.81, 628.771 )
+texture = ExtResource( 51 )
+flip_v = true
+
+[node name="Level3Ground2" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 5064.69, 552.859 )
+scale = Vector2( 1.0196, 1.10551 )
+texture = ExtResource( 52 )
+
+[node name="Level3Tangle3" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 4994.54, 499.247 )
+texture = ExtResource( 51 )
+
+[node name="Level3Tangle4" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 5002.52, 628.771 )
+texture = ExtResource( 51 )
+flip_v = true
+
+[node name="Level3Ground3" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 8872.18, 553.976 )
+scale = Vector2( 1.0196, 1.10551 )
+texture = ExtResource( 52 )
+
+[node name="Level3Tangle5" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 8802.03, 500.364 )
+texture = ExtResource( 51 )
+
+[node name="Level3Tangle6" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
+position = Vector2( 8810.01, 629.888 )
+texture = ExtResource( 51 )
+flip_v = true
+
+[node name="Walls" type="Node2D" parent="BlueRiftGroup/Art"]
+position = Vector2( 1.51758, -0.0493164 )
+
+[node name="Level3MediumPlatformHalf" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 900.178, 369.664 )
+rotation = -1.56731
+scale = Vector2( 0.745573, 1 )
+texture = ExtResource( 54 )
+
+[node name="Level3SmallPlatformHalf" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1022.76, 231.151 )
+scale = Vector2( 0.695866, 1.52756 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformFull" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 893.205, 1133.64 )
+rotation = -1.57516
+scale = Vector2( 1.19027, 1.02901 )
+texture = ExtResource( 55 )
+
+[node name="Level3SmallPlatformHalf2" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1014.51, 882.31 )
+scale = Vector2( 0.648858, 1.46055 )
+texture = ExtResource( 56 )
+
+[node name="Level3SmallPlatformHalf3" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1098.36, 745.743 )
+rotation = 1.56519
+scale = Vector2( 0.860554, 1 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf2" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 484.277, 1190.57 )
+rotation = -3.12272
+scale = Vector2( 1.43411, 1.12312 )
+texture = ExtResource( 54 )
+
+[node name="Level3MediumPlatformHalf3" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 137.449, 1443.59 )
+rotation = -1.56352
+scale = Vector2( 1, 1.29453 )
+texture = ExtResource( 54 )
+
+[node name="Level3MediumPlatformHalf4" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 454.98, -34.5684 )
+rotation = -1.56351
+scale = Vector2( 2.1629, 1.55589 )
+texture = ExtResource( 54 )
+
+[node name="Level3SmallPlatformHalf4" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2199.67, 1199.51 )
+scale = Vector2( 0.528083, 1.10551 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf5" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2116.32, 1181.26 )
+rotation = 1.56326
+scale = Vector2( 2.24705, 1.31987 )
+texture = ExtResource( 54 )
+
+[node name="Level3SmallPlatformHalf5" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1956.31, 851.036 )
+rotation = 3.12858
+scale = Vector2( 0.728718, 1.52002 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf6" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1829.45, 1169.35 )
+rotation = 3.14035
+texture = ExtResource( 54 )
+
+[node name="Level3SmallPlatformHalf6" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1342.71, 769.895 )
+rotation = 1.57089
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf7" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1337.62, -57.4366 )
+rotation = -1.57432
+scale = Vector2( 2.27147, 1.13082 )
+texture = ExtResource( 54 )
+
+[node name="Level3SmallPlatformHalf8" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1790.04, -62.5474 )
+scale = Vector2( 0.834281, 1 )
+texture = ExtResource( 56 )
+
+[node name="Level3SmallPlatform" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1623.89, 74.8447 )
+rotation = 1.56773
+scale = Vector2( 0.836083, 1.43737 )
+texture = ExtResource( 58 )
+
+[node name="Level3SmallPlatform2" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1499.86, 912.466 )
+scale = Vector2( 0.874869, 1 )
+texture = ExtResource( 58 )
+
+[node name="Level3SmallPlatform3" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1631.15, 1044.57 )
+rotation = 1.57026
+scale = Vector2( 0.74292, 1 )
+texture = ExtResource( 58 )
+
+[node name="Level3SmallPlatformHalf7" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1517.71, 198.81 )
+scale = Vector2( 0.834281, 1 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf8" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2129.25, -151.776 )
+rotation = 1.566
+scale = Vector2( 1.79776, 1.20152 )
+texture = ExtResource( 54 )
+
+[node name="Level3SmallPlatformHalf9" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 1974.68, 237.99 )
+rotation = -3.13456
+scale = Vector2( 0.778121, 1 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf9" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2390.95, 255.664 )
+rotation = -4.70466
+scale = Vector2( 1.24017, 1.15245 )
+texture = ExtResource( 54 )
+
+[node name="Level3SmallPlatformHalf10" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2558.27, 222.265 )
+scale = Vector2( 0.735043, 1.28184 )
+texture = ExtResource( 56 )
+
+[node name="Level3SmallPlatformHalf11" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2864.02, 132.436 )
+rotation = 1.56317
+scale = Vector2( 0.994051, 1 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf10" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 3787.84, 231.797 )
+rotation = 1.55903
+scale = Vector2( 1.09249, 1 )
+texture = ExtResource( 54 )
+
+[node name="Level3PlatformLong" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 3091.59, -75.9507 )
+scale = Vector2( 1.3629, 1.10551 )
+texture = ExtResource( 57 )
+
+[node name="Level3MediumPlatformHalf11" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 3785.83, -332.713 )
+rotation = -1.58287
+texture = ExtResource( 54 )
+
+[node name="Level3SmallPlatformHalf16" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 3093.59, 1071.36 )
+rotation = 1.56268
+scale = Vector2( 0.78034, 1 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformFull2" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 3314.92, 229.524 )
+scale = Vector2( 0.953312, 1.31312 )
+texture = ExtResource( 55 )
+
+[node name="Level3SmallPlatformHalf12" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2912.3, -410.784 )
+rotation = -1.58603
+scale = Vector2( 1.43772, 1.93676 )
+texture = ExtResource( 56 )
+
+[node name="Level3SmallPlatformHalf13" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2464.25, -398.823 )
+rotation = 1.57421
+scale = Vector2( 1.10933, 1.17367 )
+texture = ExtResource( 56 )
+
+[node name="Level3SmallPlatformHalf14" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2652.14, -258.007 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf12" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 4144.4, -379.367 )
+rotation = 1.56596
+texture = ExtResource( 54 )
+
+[node name="Level3MediumPlatformHalf13" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 4343.67, -376.139 )
+rotation = 1.56901
+texture = ExtResource( 54 )
+flip_v = true
+
+[node name="Level3MediumPlatformFull3" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 4710.72, -28.5253 )
+rotation = 1.56569
+scale = Vector2( 1.04422, 1 )
+texture = ExtResource( 55 )
+
+[node name="Level3SmallPlatformHalf17" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 3217.44, 1437.46 )
+rotation = 1.55679
+scale = Vector2( 1.25003, 1.71354 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformFull4" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 4716.93, 956.37 )
+rotation = 1.56168
+scale = Vector2( 0.798471, 1 )
+texture = ExtResource( 55 )
+
+[node name="Level3PlatformLong2" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2986.22, 1172.83 )
+rotation = 3.13933
+scale = Vector2( 1.14061, 1 )
+texture = ExtResource( 57 )
+
+[node name="Level3MediumPlatformFull5" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 4202.58, 897.996 )
+texture = ExtResource( 55 )
+
+[node name="Level3MediumPlatformFull6" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 3299.96, 904.697 )
+texture = ExtResource( 55 )
+
+[node name="Level3MediumPlatformFull7" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2790.37, 908.047 )
+texture = ExtResource( 55 )
+
+[node name="Level3SmallPlatformHalf15" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2678.06, 756.188 )
+rotation = 1.55885
+scale = Vector2( 0.951753, 1 )
+texture = ExtResource( 56 )
+
+[node name="Level3MediumPlatformHalf14" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 2402.24, 1283.12 )
+rotation = -1.57599
+scale = Vector2( 1.52637, 1 )
+texture = ExtResource( 54 )
+
+[node name="Level3MediumPlatformFull8" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 3808.8, 1365.77 )
+rotation = 1.56724
+texture = ExtResource( 55 )
+
+[node name="Level3MediumPlatformFull9" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 4275.32, 1351.46 )
+scale = Vector2( 0.928464, 1 )
+texture = ExtResource( 55 )
+
+[node name="Level3MediumPlatformFull10" type="Sprite" parent="BlueRiftGroup/Art/Walls"]
+position = Vector2( 5124.45, 1092.56 )
+rotation = 1.55966
+texture = ExtResource( 55 )
 
 [node name="EndGamePortal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 32500.7, 7590.46 )
@@ -1495,7 +1815,7 @@ position = Vector2( 36969.5, 4147.32 )
 
 [node name="NPC" parent="Tachi2" index="1"]
 position = Vector2( 32.3906, -39.3984 )
-frame = 2
+frame = 5
 
 [node name="Tachi3" parent="." instance=ExtResource( 41 )]
 position = Vector2( 23900, 7870 )
@@ -1505,6 +1825,7 @@ position = Vector2( 0, 160 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
+frame = 3
 playing = true
 flip_h = true
 flip_v = true
@@ -1533,7 +1854,7 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 6
+frame = 1
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -1544,7 +1865,7 @@ position = Vector2( 19424.1, 1052.74 )
 scale = Vector2( 1.06895, 1.07015 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
-frame = 2
+frame = 5
 
 [node name="Camera2D" parent="Shadows/Shadow2" index="2"]
 position = Vector2( -191.143, -50.0334 )

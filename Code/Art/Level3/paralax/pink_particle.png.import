@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level 3.png-972eb6779db06f565517838853044189.stex"
+path="res://.import/pink_particle.png-7b2680904ff19fd8445b838615b4d5f9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Level3/Level 3.png"
-dest_files=[ "res://.import/Level 3.png-972eb6779db06f565517838853044189.stex" ]
+source_file="res://Art/Level3/paralax/pink_particle.png"
+dest_files=[ "res://.import/pink_particle.png-7b2680904ff19fd8445b838615b4d5f9.stex" ]
 
 [params]
 

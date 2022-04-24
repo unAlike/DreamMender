@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level_3_Background_Layer_1.png-578ca780943ce0d57b3bfc0946472356.stex"
+path="res://.import/Level_3_Tangle.png-9a1627e810d81b5339c680b3a797a314.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Level3/Level_3_Background_Layer_1.png"
-dest_files=[ "res://.import/Level_3_Background_Layer_1.png-578ca780943ce0d57b3bfc0946472356.stex" ]
+source_file="res://Art/Level3/Level_3_Tangle.png"
+dest_files=[ "res://.import/Level_3_Tangle.png-9a1627e810d81b5339c680b3a797a314.stex" ]
 
 [params]
 
