@@ -23,7 +23,7 @@ var stateConditions
 var timeFalling = 0
 var blueFlipY
 var rng : RandomNumberGenerator
-onready var pickupCountObject := $CanvasLayer/Collectables/Count
+onready var pickupCountObject := $Progress/Control/Count
 var pickupCount = 0
 
 # Called when the node enters the scene tree for the first time.

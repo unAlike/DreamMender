@@ -15,8 +15,8 @@ func _process(delta):
 		Throw()
 		$Timer.start()
 	
-	# For testing purposes press "P" to unlock all spools
-	if Input.is_action_just_pressed("Cheat"):
+	# Press "P" and "crouch" at the same time to unlock all spools
+	if Input.is_action_just_pressed("Cheat") and Input.is_action_just_pressed("crouch"):
 		Stats.setYellow(true)
 		Stats.setRed(true)
 		Stats.setBlue(true)
