@@ -20,6 +20,7 @@ func _process(delta):
 		Stats.setYellow(true)
 		Stats.setRed(true)
 		Stats.setBlue(true)
+		get_tree().get_current_scene().get_node("Player/Progress/Control").Blue()
 		print("Unlocked all spools")
 
 func Throw():

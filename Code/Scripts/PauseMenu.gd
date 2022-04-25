@@ -19,9 +19,6 @@ func _on_Resume_pressed():
 	$PauseMenu.visible = !$PauseMenu.visible
 	get_tree().paused = !get_tree().paused
 
-func _on_Collections_pressed():
-	pass
-
 func _on_Controls_pressed():
 	$PauseMenu.visible = !$PauseMenu.visible
 	$ControlsMenu.visible = !$ControlsMenu.visible

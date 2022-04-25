@@ -20,6 +20,7 @@ onready var Player = get_tree().get_current_scene().get_node("Player")
 onready var PlayerCam = get_tree().get_current_scene().get_node("Player/Camera2D")
 onready var NPC = get_parent().get_node("NPC")
 onready var Spools = get_tree().get_current_scene().get_node("Player/Projectile")
+onready var Prog = get_tree().get_current_scene().get_node("Player/Progress/Control")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

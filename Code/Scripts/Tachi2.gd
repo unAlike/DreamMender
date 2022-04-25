@@ -19,6 +19,7 @@ func Message():
 	Duration.start()
 	if At == 9:
 		Stats.setRed(true)
+		Prog.Red()
 		get_parent().get_node("NPC").animation = "Idle"
 	if At == Text.size() - 1:
 		Tracker += 1

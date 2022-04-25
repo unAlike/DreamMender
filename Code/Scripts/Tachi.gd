@@ -21,6 +21,7 @@ func Message():
 	Duration.start()
 	if At == 9:
 		Stats.setYellow(true)
+		Prog.Yellow()
 		emit_signal("yellow_thread")
 		get_parent().get_node("NPC").animation = "Idle"
 	if At == Text.size() - 1:

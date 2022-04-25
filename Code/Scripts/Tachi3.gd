@@ -15,6 +15,7 @@ func Message():
 	Duration.start()
 	if At == 2:
 		Stats.setBlue(true)
+		Prog.Blue()
 		get_parent().get_node("NPC").animation = "Idle"
 		get_parent().get_node("NPC2").animation = "Idle"
 	if At == Text.size() - 1:
