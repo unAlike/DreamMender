@@ -99,11 +99,11 @@ one_shot = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -125, -9, -57, -95, 59, -95, 114, -1, 54, 97, -61, 97 )
 
-[node name="OpenRift" type="AudioStreamPlayer2D" parent="."]
+[node name="OpenRift" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
 position = Vector2( 0, -2 )
 stream = ExtResource( 6 )
 
-[node name="CloseRift" type="AudioStreamPlayer2D" parent="."]
+[node name="CloseRift" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
 position = Vector2( 0, -2 )
 stream = ExtResource( 5 )
 

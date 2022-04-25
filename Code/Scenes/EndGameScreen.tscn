@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/EndGameScreen.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/EndGameScreen.gd" type="Script" id=1]
 [ext_resource path="res://Art/MainMenu/DW_Main_Menu.png" type="Texture" id=2]
+
 
 [node name="EndGameScreen" type="Control"]
 anchor_right = 1.0

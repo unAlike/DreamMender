@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=1]
-[ext_resource path="res://Art/Misc/Hard.png" type="Texture" id=2]
 [ext_resource path="res://Art/MainMenu/DW_Main_Menu.png" type="Texture" id=3]
+[ext_resource path="res://Audio/Music/1st Song.wav" type="AudioStream" id=4]
 
 [node name="StartMenu" type="Control"]
 anchor_right = 1.0
@@ -79,22 +79,10 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "QUIT"
 flat = true
 
-[node name="CharacterImage" type="TextureRect" parent="."]
-visible = false
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -161.0
-margin_top = -266.0
-margin_right = -11.0
-margin_bottom = 124.0
-rect_rotation = 0.368145
-rect_scale = Vector2( -0.669299, 0.676098 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -26.0
+autoplay = true
 
 [connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
