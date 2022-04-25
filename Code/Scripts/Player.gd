@@ -18,6 +18,7 @@ var state_machine : AnimationNodeStateMachinePlayback
 var lastGround
 var flipped = false
 var inBlueRift = false
+var otherAnimationPlaying = false
 var lastState = null
 var stateConditions
 var timeFalling = 0
@@ -211,18 +212,18 @@ func GetGroundTouching():
 
 # Kills player
 func die():
-	get_tree()
 	emit_signal("hit")
+	
+	$Sprite.play("death")
+	
 	if Checkpoint.last_position != null:
 		global_position = Checkpoint.last_position
 	else:
 		get_tree().reload_current_scene()
-		
+
 func footStep():
 	rng.randomize()
 	$Sounds/Footsteps.get_children()[rng.randf_range(0, 4)].play()
-
-	
 
 # Checks for collision with spikes that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):
@@ -243,4 +244,3 @@ func _on_Area2D_body_entered(body):
 func _on_Collectable_get_button():
 	pickupCount += 1
 	pickupCountObject.text = str(pickupCount)
-	

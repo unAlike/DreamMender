@@ -127,46 +127,6 @@ gradient = SubResource( 2 )
 [sub_resource type="CircleShape2D" id=33]
 radius = 427.181
 
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 0, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 526, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 1052, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 1578, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 2104, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 2630, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 3156, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 3682, 0, 526, 583 )
-
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 44 )
@@ -205,46 +165,6 @@ region = Rect2( 3156, 0, 526, 583 )
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 44 )
-region = Rect2( 3682, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 45 )
-region = Rect2( 0, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 45 )
-region = Rect2( 526, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 45 )
-region = Rect2( 1052, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 45 )
-region = Rect2( 1578, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=44]
-flags = 4
-atlas = ExtResource( 45 )
-region = Rect2( 2104, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=45]
-flags = 4
-atlas = ExtResource( 45 )
-region = Rect2( 2630, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=46]
-flags = 4
-atlas = ExtResource( 45 )
-region = Rect2( 3156, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=47]
-flags = 4
-atlas = ExtResource( 45 )
 region = Rect2( 3682, 0, 526, 583 )
 
 [sub_resource type="AtlasTexture" id=1]
@@ -287,16 +207,96 @@ flags = 4
 atlas = ExtResource( 43 )
 region = Rect2( 3682, 0, 526, 583 )
 
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 45 )
+region = Rect2( 0, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 45 )
+region = Rect2( 526, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 45 )
+region = Rect2( 1052, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 45 )
+region = Rect2( 1578, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 45 )
+region = Rect2( 2104, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 45 )
+region = Rect2( 2630, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 45 )
+region = Rect2( 3156, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 45 )
+region = Rect2( 3682, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 526, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 1052, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 1578, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 2104, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 2630, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 3156, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 3682, 0, 526, 583 )
+
 [sub_resource type="SpriteFrames" id=48]
 animations = [ {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "Red",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 42 ), SubResource( 43 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Needle",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
@@ -304,9 +304,9 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 42 ), SubResource( 43 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
-"name": "Needle",
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -490,7 +490,7 @@ maxNumDJump = 2
 
 [node name="Sprite" parent="Player" index="4"]
 animation = "idle"
-frame = 7
+frame = 4
 
 [node name="AnimationTree" parent="Player" index="6"]
 parameters/playback = SubResource( 66 )
@@ -541,7 +541,7 @@ position = Vector2( 14712.5, -1200.25 )
 position = Vector2( 16836.1, -2440.91 )
 
 [node name="Collectable12" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 18038.1, -971.918 )
+position = Vector2( 18160.5, -1026.48 )
 
 [node name="Collectable13" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 17654.6, 25.2579 )
@@ -598,7 +598,7 @@ position = Vector2( 33350, 130 )
 position = Vector2( 33650, 430 )
 
 [node name="Collectable33" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 31293.7, 4209.96 )
+position = Vector2( 31297.8, 4262.5 )
 
 [node name="Collectable34" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 30220.3, 3260.27 )
@@ -607,13 +607,19 @@ position = Vector2( 30220.3, 3260.27 )
 position = Vector2( 29416, 3555.28 )
 
 [node name="Collectable36" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 26578.1, 4681.78 )
+position = Vector2( 26812.8, 4388.79 )
 
 [node name="Collectable37" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 26841.1, 4386.77 )
+position = Vector2( 25867.8, 5175.82 )
+
+[node name="Collectable67" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25831.4, 5109.14 )
+
+[node name="Collectable68" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25909.3, 5109.14 )
 
 [node name="Collectable38" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 27093, 3688.64 )
+position = Vector2( 27081.9, 3757.34 )
 
 [node name="Collectable39" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 24118.6, 4102.87 )
@@ -628,10 +634,16 @@ position = Vector2( 24100.3, 4999.01 )
 position = Vector2( 24093.3, 5463.76 )
 
 [node name="Collectable43" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 25437.9, 8008.73 )
+position = Vector2( 25429.8, 8022.87 )
+
+[node name="Collectable69" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 28380, 8454.27 )
+
+[node name="Collectable70" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 28904, 8448.21 )
 
 [node name="Collectable44" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 25120.2, 8692.71 )
+position = Vector2( 25131.3, 8703.82 )
 
 [node name="Collectable45" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 27366.2, 7511.66 )
@@ -640,16 +652,16 @@ position = Vector2( 27366.2, 7511.66 )
 position = Vector2( 28620.7, 6982.25 )
 
 [node name="Collectable47" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 29965.3, 7788.48 )
+position = Vector2( 29983.5, 7870.32 )
 
 [node name="Collectable48" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 30520.8, 7796.56 )
+position = Vector2( 30539, 7878.4 )
 
 [node name="Collectable49" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 31072.2, 7792.52 )
+position = Vector2( 31090.4, 7874.36 )
 
 [node name="Collectable50" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 31526.4, 7799.59 )
+position = Vector2( 31544.6, 7881.43 )
 
 [node name="Collectable52" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 33750, 630 )
@@ -668,6 +680,30 @@ position = Vector2( 33900, 1030 )
 
 [node name="Collectable57" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 33950, 1230 )
+
+[node name="Collectable31" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25860, -2671.26 )
+
+[node name="Collectable51" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26160, -2371.26 )
+
+[node name="Collectable61" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26260, -2171.26 )
+
+[node name="Collectable62" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25710, -2571.26 )
+
+[node name="Collectable63" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26010, -2571.26 )
+
+[node name="Collectable64" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26360, -1971.26 )
+
+[node name="Collectable65" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26410, -1771.26 )
+
+[node name="Collectable66" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26460, -1571.26 )
 
 [node name="Collectable29" parent="Collectables" instance=ExtResource( 16 )]
 position = Vector2( 26500, 300 )
@@ -2390,12 +2426,16 @@ texture = ExtResource( 23 )
 [connection signal="get_button" from="Collectables/Collectable35" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable36" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable37" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable67" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable68" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable38" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable39" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable40" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable41" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable42" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable43" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable69" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable70" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable44" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable45" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable46" to="Player" method="_on_Collectable_get_button"]
@@ -2409,6 +2449,14 @@ texture = ExtResource( 23 )
 [connection signal="get_button" from="Collectables/Collectable55" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable56" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable57" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable31" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable51" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable61" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable62" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable63" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable64" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable65" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable66" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable29" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable58" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable59" to="Player" method="_on_Collectable_get_button"]
