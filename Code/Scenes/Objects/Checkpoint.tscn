@@ -19,7 +19,7 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+[node name="Hit" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
 stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Checkpoint_body_entered"]

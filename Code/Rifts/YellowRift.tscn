@@ -98,7 +98,7 @@ position = Vector2( 1, -1 )
 scale = Vector2( 0.640497, 0.725867 )
 frames = SubResource( 7 )
 animation = "Open"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Position2D" type="Position2D" parent="Rift"]
@@ -124,7 +124,7 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 9 )
 
-[node name="OpenRift" type="AudioStreamPlayer2D" parent="."]
+[node name="OpenRift" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
 position = Vector2( 0, -2 )
 stream = ExtResource( 6 )
 volume_db = -13.0

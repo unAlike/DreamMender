@@ -243,3 +243,4 @@ func _on_Area2D_body_entered(body):
 func _on_Collectable_get_button():
 	pickupCount += 1
 	pickupCountObject.text = str(pickupCount)
+	

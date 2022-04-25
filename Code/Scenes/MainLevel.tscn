@@ -308,46 +308,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=49]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=50]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=51]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=52]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=53]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=54]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=55]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=56]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 2100, 0, 300, 452 )
-
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 39 )
@@ -384,6 +344,46 @@ atlas = ExtResource( 39 )
 region = Rect2( 1800, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=56]
 flags = 4
 atlas = ExtResource( 39 )
 region = Rect2( 2100, 0, 300, 452 )
@@ -430,14 +430,14 @@ region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="SpriteFrames" id=65]
 animations = [ {
-"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
-"loop": true,
-"name": "Red",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
 "name": "Yellow",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
+"loop": true,
+"name": "Red",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
@@ -453,27 +453,27 @@ script = ExtResource( 1 )
 
 [node name="Music" type="Node2D" parent="."]
 
-[node name="Level1" type="AudioStreamPlayer2D" parent="Music"]
+[node name="Level1" type="AudioStreamPlayer2D" parent="Music" groups=["music", "sound"]]
 position = Vector2( 7303.66, 2620.74 )
 stream = ExtResource( 46 )
 autoplay = true
 max_distance = 14416.0
 attenuation = 1e-05
 
-[node name="Tree" type="AudioStreamPlayer2D" parent="Music"]
+[node name="Tree" type="AudioStreamPlayer2D" parent="Music" groups=["music", "sound"]]
 position = Vector2( 21175.4, -1489.2 )
 stream = ExtResource( 48 )
 autoplay = true
 max_distance = 7685.0
 
-[node name="Cave" type="AudioStreamPlayer2D" parent="Music"]
+[node name="Cave" type="AudioStreamPlayer2D" parent="Music" groups=["music", "sound"]]
 position = Vector2( 28615.7, 3611.86 )
 stream = ExtResource( 49 )
 autoplay = true
 max_distance = 3314.0
 attenuation = 0.0669861
 
-[node name="Blue" type="AudioStreamPlayer2D" parent="Music"]
+[node name="Blue" type="AudioStreamPlayer2D" parent="Music" groups=["music", "sound"]]
 position = Vector2( 28083.5, 16374.1 )
 stream = ExtResource( 47 )
 autoplay = true
@@ -487,7 +487,8 @@ maxNumWallJump = 2
 maxNumDJump = 2
 
 [node name="Sprite" parent="Player" index="4"]
-frame = 6
+animation = "idle"
+frame = 5
 
 [node name="AnimationTree" parent="Player" index="6"]
 parameters/playback = SubResource( 66 )
@@ -1394,7 +1395,6 @@ flip_v = true
 script = ExtResource( 10 )
 
 [node name="MirrorBottom" type="Sprite" parent="BlueRiftGroup"]
-visible = false
 material = ExtResource( 11 )
 position = Vector2( -457.215, 840.334 )
 rotation = 3.14159

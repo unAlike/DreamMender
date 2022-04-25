@@ -18,4 +18,6 @@ texture = ExtResource( 1 )
 scale = Vector2( 8.76, 8.76 )
 shape = SubResource( 1 )
 
+[node name="Sound" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
+
 [connection signal="body_entered" from="ButtonArea2D" to="." method="_on_ButtonArea2D_body_entered"]

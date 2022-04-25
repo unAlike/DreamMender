@@ -110,7 +110,7 @@ one_shot = true
 [node name="unstableTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="OpenRift" type="AudioStreamPlayer2D" parent="."]
+[node name="OpenRift" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
 position = Vector2( 0, -2 )
 stream = ExtResource( 4 )
 
