@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/stalagtite_01_02.png-bd42cf0a85855e46b4db2ff2752cb820.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Art/Level2/stalagtite_01_02.png"
+dest_files=[ "res://.import/stalagtite_01_02.png-bd42cf0a85855e46b4db2ff2752cb820.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

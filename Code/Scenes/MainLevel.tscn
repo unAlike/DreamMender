@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -59,6 +59,20 @@
 [ext_resource path="res://Art/Level3/Level_3_Platform_Long.png" type="Texture" id=57]
 [ext_resource path="res://Art/Level3/Level_3_Small_Platform.png" type="Texture" id=58]
 [ext_resource path="res://Art/Level2/Dirt_BG.png" type="Texture" id=59]
+[ext_resource path="res://Art/Level2/stalagtite_01.png" type="Texture" id=60]
+[ext_resource path="res://Art/Level2/stalagtite_02.png" type="Texture" id=61]
+[ext_resource path="res://Art/Level2/Cave_Floor_big.png" type="Texture" id=62]
+[ext_resource path="res://Art/Level2/Fade_01.png" type="Texture" id=63]
+[ext_resource path="res://Art/Level2/Cave_Roof_01.png" type="Texture" id=64]
+[ext_resource path="res://Art/Level2/Geode_piece_1.png" type="Texture" id=65]
+[ext_resource path="res://Art/Level2/Cave_Floor_02.png" type="Texture" id=66]
+[ext_resource path="res://Art/Level2/door_02.png" type="Texture" id=68]
+[ext_resource path="res://Art/Level2/Geode_puzzle_Cave_bottom_02.png" type="Texture" id=69]
+[ext_resource path="res://Art/Level2/Geode_puzzle_Cave_top.png" type="Texture" id=70]
+[ext_resource path="res://Art/Level2/Cave_Wall.png" type="Texture" id=71]
+[ext_resource path="res://Art/Level2/Fade_02.png" type="Texture" id=72]
+[ext_resource path="res://Art/Level2/stalagtite_01_03.png" type="Texture" id=73]
+[ext_resource path="res://Art/Level2/long_walls.png" type="Texture" id=74]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=66]
 
@@ -467,13 +481,13 @@ max_distance = 10120.0
 attenuation = 0.000126375
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 539.25, 207.114 )
+position = Vector2( 24803.5, 3873.53 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
 
 [node name="Sprite" parent="Player" index="4"]
-frame = 5
+frame = 0
 
 [node name="AnimationTree" parent="Player" index="6"]
 parameters/playback = SubResource( 66 )
@@ -986,7 +1000,7 @@ position = Vector2( -77.2085, -154.447 )
 
 [node name="SpikeTreeLeft" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( -102, 1954 )
-polygon = PoolVector2Array( 23872, 1521, 24818, 1527, 26012, 1795, 26152, 1682, 26326, 1647, 26507, 1618, 26726, 1576, 26952, 1588, 27202, 1629, 27451, 1697, 27121, 2310, 27160, 2415, 27548, 1900, 27640, 1848, 27787, 2010, 27859, 2237, 27877, 2414, 28599, 2192, 28777, 2058, 28879, 1760, 29091, 1553, 29288, 1488, 29369, 1773, 29395, 1520, 29482, 1293, 29625, 1172, 29806, 1153, 30012, 1147, 30361, 1166, 30816, 1153, 31060.8, 1271.92, 31143, 1444, 31138, 1545, 31239.9, 1976.11, 31307.7, 1715.45, 31404.8, 1639.67, 31812.6, 1864.97, 33091.4, 1922.56, 33266.4, 1864.97, 33219, -661, 33215, -918, 33219, -1042, 33215, -1191, 33250, -1480, 33152, -1528, 33085, -1566, 32980, -1506, 32762.6, -946.721, 31895.5, -622.411, 29586.8, -526.432, 28597.3, -566.844, 28115.7, -946.721, 27873, -1474, 27901, -1600, 25513, -1596, 25487, -1925, 25413, -2352, 25350, -2498, 25343, -2755, 25343, -3604, 25475, -3937, 25811, -4352, 25060, -4428, 24833, -4118, 24671, -3956, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20667.4, -1357.92, 20361.8, -1069.98, 19949, -827, 18640, -813, 18535, -870, 18489, -967, 18326, -1071, 18003.5, -1298.31, 17991.4, -1167.98, 18093.5, -1123.53, 18184.6, -1058.87, 18232, -955, 17832.3, -930.582, 17612, -1036, 17464, -1130, 17320, -1472, 17316, -1898, 17273, -2219, 17329, -2522, 17549, -2437, 17653, -2396, 17758, -2405, 17850, -2392, 17855, -2456, 17761, -2486, 17729, -2534, 17801, -2632, 17793, -2665, 17681, -2558, 17599, -2536, 17513, -2540, 17446, -2576, 17361, -2592, 17480, -3049, 17488, -3213, 17553, -3148, 17581, -3145, 17588, -3194, 17564, -3232, 17511, -3283, 17619, -3245, 17740, -3250, 17818, -3251, 17870, -3262, 17740, -3291, 17777, -3318, 17645, -3308, 17415, -3412, 17440, -3709, 17496, -4145, 17430, -4169, 17298, -4184, 16938, -4199, 16869, -4160, 16992, -4088, 17202, -3900, 17319, -3759, 16991, -2374, 16775, -1251, 16775, -713, 16986.7, 70.6616, 23595.3, 81.775, 23579, 1298, 23615, 1742, 23650, 2218, 23674, 3266, 23876, 3322, 23872, 1968 )
+polygon = PoolVector2Array( 23872, 1521, 24818, 1527, 26012, 1795, 26152, 1682, 26326, 1647, 26507, 1618, 26726, 1576, 26952, 1588, 27202, 1629, 27451, 1697, 27121, 2310, 27160, 2415, 27548, 1900, 27640, 1848, 27787, 2010, 27859, 2237, 27877, 2414, 28599, 2192, 28777, 2058, 28879, 1760, 29091, 1553, 29207.4, 1453.78, 29229.6, 1501.26, 29231.6, 1539.65, 29241.8, 1564.91, 29256.9, 1605.32, 29268.1, 1589.16, 29295.4, 1666.95, 29298.4, 1701.3, 29307.5, 1725.55, 29303.5, 1762.93, 29322.7, 1815.47, 29332.8, 1859.92, 29345, 1762.93, 29372.3, 1640.68, 29383.4, 1594.21, 29395.5, 1533.59, 29405.7, 1533.59, 29421.8, 1461.86, 29482, 1293, 29625, 1172, 29806, 1153, 30012, 1147, 30361, 1166, 30816, 1153, 31060.8, 1271.92, 31066.9, 1299.2, 31093.2, 1349.71, 31138.7, 1600.27, 31185.3, 1951.86, 31193.4, 1994.29, 31193.4, 2073.1, 31216.7, 2077.14, 31235.9, 1992.27, 31237.9, 1771.01, 31253.1, 1761.92, 31266.2, 1709.38, 31276.3, 1703.32, 31295.6, 1485.1, 31313.8, 1502.27, 31332, 1681.1, 31341.1, 1841.74, 31392.7, 1882.15, 31430.1, 1901.34, 31583.9, 1898.31, 31645.6, 1912.46, 31803.5, 1906.4, 31858.1, 1925.59, 31977.5, 1901.34, 32071.6, 1907.41, 32137.2, 1893.79, 32222.3, 1901.34, 32284.5, 1890.28, 32415.5, 1897.3, 32474.2, 1913.47, 32575.4, 1909.43, 32678.6, 1901.34, 32733.2, 1931.65, 33107.6, 1897.3, 33157.1, 1824.56, 33193.6, 1514.39, 33219, -661, 33215, -918, 33219, -1042, 33215, -1191, 33250, -1480, 33152, -1528, 33085, -1566, 32980, -1506, 32762.6, -946.721, 31895.5, -622.411, 29586.8, -526.432, 28597.3, -566.844, 28115.7, -946.721, 27873, -1474, 27901, -1600, 25513, -1596, 25487, -1925, 25413, -2352, 25350, -2498, 25343, -2755, 25343, -3604, 25475, -3937, 25811, -4352, 25060, -4428, 24833, -4118, 24671, -3956, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20667.4, -1357.92, 20361.8, -1069.98, 19949, -827, 18640, -813, 18535, -870, 18489, -967, 18326, -1071, 18003.5, -1298.31, 17991.4, -1167.98, 18093.5, -1123.53, 18184.6, -1058.87, 18232, -955, 17832.3, -930.582, 17612, -1036, 17464, -1130, 17320, -1472, 17316, -1898, 17273, -2219, 17329, -2522, 17549, -2437, 17653, -2396, 17758, -2405, 17850, -2392, 17855, -2456, 17761, -2486, 17729, -2534, 17801, -2632, 17793, -2665, 17681, -2558, 17599, -2536, 17513, -2540, 17446, -2576, 17361, -2592, 17480, -3049, 17488, -3213, 17553, -3148, 17581, -3145, 17588, -3194, 17564, -3232, 17511, -3283, 17619, -3245, 17740, -3250, 17818, -3251, 17870, -3262, 17740, -3291, 17777, -3318, 17645, -3308, 17415, -3412, 17440, -3709, 17496, -4145, 17430, -4169, 17298, -4184, 16938, -4199, 16869, -4160, 16992, -4088, 17202, -3900, 17319, -3759, 16991, -2374, 16775, -1251, 16775, -713, 16986.7, 70.6616, 23595.3, 81.775, 23579, 1298, 23615, 1742, 23650, 2218, 23674, 3266, 23876, 3322, 23872, 1968 )
 
 [node name="Polygon2D" type="Polygon2D" parent="SpikeTreeLeft"]
 texture = ExtResource( 29 )
@@ -1286,68 +1300,37 @@ position = Vector2( 17.9326, -215.052 )
 [node name="Cave Art" type="Node2D" parent="."]
 
 [node name="DirtBg" type="Sprite" parent="Cave Art"]
-position = Vector2( 28360.7, 4098.83 )
-scale = Vector2( 1.6996, 1.31898 )
+position = Vector2( 28360.7, 4311.5 )
+scale = Vector2( 1.6996, 1.43347 )
 z_index = -3642
 texture = ExtResource( 59 )
-
-[node name="Grass" type="Node2D" parent="Cave Art"]
-modulate = Color( 0.231373, 0.686275, 0, 1 )
-position = Vector2( 0, 1.01028 )
-
-[node name="Level3Tangle" type="Sprite" parent="Cave Art/Grass"]
-position = Vector2( 31915.9, 4272.6 )
-rotation = -0.0596597
-scale = Vector2( 0.391636, 0.586554 )
-texture = ExtResource( 51 )
-
-[node name="Level3Tangle2" type="Sprite" parent="Cave Art/Grass"]
-position = Vector2( 30274.9, 4678.45 )
-scale = Vector2( 0.31297, 0.774735 )
-texture = ExtResource( 51 )
-
-[node name="Level3Tangle3" type="Sprite" parent="Cave Art/Grass"]
-position = Vector2( 31031.3, 4534.21 )
-rotation = 0.0486403
-scale = Vector2( 0.0842542, 0.438691 )
-texture = ExtResource( 51 )
-
-[node name="Level3Tangle4" type="Sprite" parent="Cave Art/Grass"]
-position = Vector2( 24676.2, 4208.68 )
-rotation = -0.161398
-scale = Vector2( 0.147109, 0.738168 )
-texture = ExtResource( 51 )
-
-[node name="Level3Tangle5" type="Sprite" parent="Cave Art/Grass"]
-position = Vector2( 25258.8, 4174.6 )
-rotation = 0.0306139
-scale = Vector2( 0.161244, 0.774735 )
-texture = ExtResource( 51 )
-
-[node name="Level3Tangle6" type="Sprite" parent="Cave Art/Grass"]
-position = Vector2( 28136.1, 4278.66 )
-rotation = 2.8383
-scale = Vector2( 0.19613, 0.420941 )
-texture = ExtResource( 51 )
 
 [node name="CaveFloor" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 15614, 5013 )
 scale = Vector2( 1, 1.00741 )
-polygon = PoolVector2Array( 17520, -644, 17487, -725, 17076, -745, 15567, -660.105, 15577, -444.703, 15259, -459.592, 15254, -294.814, 15052.1, -296.763, 14740, -299.777, 14267, -289.851, 14109, -299.779, 14029, -435.771, 13939, -714.701, 13905, -1393.67, 13763, -925.14, 13747, -690.881, 13632, -476.47, 13484.3, -474.203, 13392.2, -567.471, 13190.9, -631.655, 13012.8, -612.601, 12772, -514.19, 12528, -486.396, 12139, -355.365, 12065, -108.198, 11946, 144.926, 11827, 313.674, 11669, 470.512, 11420, 593.599, 11103, 656.135, 11008, 563.82, 11086, -0.992676, 11009, -11.9116, 10815, 639.26, 10526, 548.93, 10289, 392.093, 10136, 172.72, 9891, -482.423, 10130, -656.135, 10227, -692.863, 10341, -715.693, 10409, -842.751, 9958, -786.171, 9319, -804.042, 8804, -725.623, 8815, -175.698, 8814, 1428.42, 9118, 1603.12, 11254, 1746.06, 17329, 1741.1, 17367, 2902.49, 17933, 2910.43, 20419.7, 1479.4, 22702.1, -336.809, 22380.4, -1251.43, 21922.1, -1961.47, 21181.5, -3255.19, 21234.1, -6206.66, 20991.3, -6774.29, 20963, -6050.21, 20714.1, -3838.86, 20280, -2619.36, 20123.2, -2158.04, 20246.7, -1625.51, 20305.3, -1478.08, 20323.6, -1279.52, 20299.3, -1215.33, 20247.7, -1163.18, 20250.7, -1039.83, 20256.8, -996.703, 20410.6, -1100, 20529.9, -1210.32, 20639.2, -1222.35, 20735.3, -1120.06, 20862.8, -1011.75, 20841.6, -1212.32, 20927.6, -1345.71, 21043.9, -1368.77, 21072.2, -1245.42, 21035.8, -1079.94, 21153.2, -1246.42, 21217.9, -1452.01, 21286.7, -1460.03, 21281.7, -1307.6, 21355.5, -1383.81, 21456.7, -1421.92, 21533.6, -1302.58, 21535.6, -1177.22, 21448.6, -830.225, 21306.9, -826.214, 21132.9, -785.096, 20761.6, -700.854, 20282.1, -694.837, 20267.9, -691.828, 20236.5, -673.776, 20190, -681.799, 20150.5, -687.817 )
+polygon = PoolVector2Array( 17520, -644, 17487, -725, 17186.2, -741.972, 16455.7, -695.84, 15610.9, -656.727, 15569.4, -640.681, 15561.4, -576.497, 15547.2, -470.192, 15248.7, -462.169, 15245.7, -421.051, 15196.1, -369.904, 15189, -296.694, 14251.2, -308.729, 14263.3, -383.944, 14148, -426.065, 14100.4, -394.976, 14080.2, -498.272, 14054.9, -498.272, 14024.5, -650.71, 13991.2, -777.073, 13951.7, -921.487, 13929.4, -1030.8, 13909.2, -1127.08, 13895, -1266.48, 13879.9, -1383.81, 13863.7, -1306.59, 13859.6, -1266.48, 13836.4, -1222.35, 13805, -1108.02, 13807, -1007.73, 13778.7, -937.533, 13774.6, -858.306, 13730.1, -722.917, 13696.7, -643.69, 13678.5, -682.802, 13654.2, -645.696, 13606.7, -515.322, 13604.7, -477.212, 13484.3, -474.203, 13392.2, -567.471, 13190.9, -631.655, 13012.8, -612.601, 12772, -514.19, 12537.3, -435.091, 12063.8, -29.9282, 11946, 144.926, 11827, 313.674, 11669, 470.512, 11420, 593.599, 11103, 656.135, 11008, 563.82, 11086, -0.992676, 11009, -11.9116, 10815, 639.26, 10526, 548.93, 10289, 392.093, 10136, 172.72, 9891, -482.423, 10130, -656.135, 10227, -692.863, 10341, -715.693, 10409, -842.751, 9958, -786.171, 9319, -804.042, 8804, -725.623, 8815, -175.698, 8814, 1428.42, 9118, 1603.12, 11254, 1746.06, 17329, 1741.1, 17367, 2902.49, 17933, 2910.43, 20419.7, 1479.4, 22702.1, -336.809, 22380.4, -1251.43, 21922.1, -1961.47, 21181.5, -3255.19, 21234.1, -6206.66, 20991.3, -6774.29, 20963, -6050.21, 20714.1, -3838.86, 20280, -2619.36, 20123.2, -2158.04, 20246.7, -1625.51, 20305.3, -1478.08, 20323.6, -1279.52, 20299.3, -1215.33, 20247.7, -1163.18, 20250.7, -1039.83, 20256.8, -996.703, 20410.6, -1100, 20529.9, -1210.32, 20639.2, -1222.35, 20927.6, -1345.71, 21043.9, -1368.77, 21072.2, -1245.42, 21127.9, -1000.71, 21153.2, -1246.42, 21217.9, -1452.01, 21286.7, -1460.03, 21281.7, -1307.6, 21355.5, -1383.81, 21456.7, -1421.92, 21533.6, -1302.58, 21535.6, -1177.22, 21448.6, -830.225, 21431.4, -717.903, 20269.9, -709.88, 20236.5, -673.776, 20190, -681.799, 20150.5, -687.817 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CaveFloor"]
 texture = ExtResource( 29 )
 
 [node name="Level2DoorRedRift" parent="." instance=ExtResource( 6 )]
-position = Vector2( 33103.2, 4308.3 )
+position = Vector2( 33600, 4100 )
 riftActive = false
 Time = 10
-toRotation = 180
+toRotation = 90
 
 [node name="Platform" parent="Level2DoorRedRift" instance=ExtResource( 13 )]
-position = Vector2( -4.55078, -371.226 )
-rotation = 1.57536
-scale = Vector2( 6.00825, 6.7487 )
+position = Vector2( -500, 0 )
+rotation = 1.5708
+scale = Vector2( 6, 6 )
+
+[node name="Sprite" parent="Level2DoorRedRift/Platform" index="0"]
+rotation = -1.5708
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 68 )
+
+[node name="CollisionPolygon2D" parent="Level2DoorRedRift/Platform" index="3"]
+polygon = PoolVector2Array( 266.519, 159.986, 273.255, 155.434, 280.664, 155.265, 284.705, 152.904, 294.64, 156.614, 299.355, 156.277, 304.574, 157.626, 309.289, 155.939, 317.866, 156.964, 327.812, 154.928, 339.262, 153.41, 347.681, 155.265, 352.733, 158.638, 354.922, 160.661, 355.427, 170.947, 352.059, 174.656, 347.681, 177.523, 328.99, 178.198, 312.152, 176.511, 303.564, 176.849, 298.176, 175.162, 291.609, 176.511, 276.454, 178.029, 267.867, 176.68, 264.162, 172.97 )
 
 [node name="PinkRiftCirclePuzzle" type="Node2D" parent="."]
 position = Vector2( 26725, 4546 )
@@ -1367,6 +1350,11 @@ polygon = PoolVector2Array( -558.707, 493.427, -644.703, 382.292, -709.455, 249.
 [node name="Polygon2D" type="Polygon2D" parent="PinkRiftCirclePuzzle/StaticBody2D/CollisionPolygon2D"]
 position = Vector2( 31640.4, 4364.9 )
 texture = ExtResource( 29 )
+
+[node name="Sprite" type="Sprite" parent="PinkRiftCirclePuzzle/StaticBody2D/CollisionPolygon2D"]
+position = Vector2( 4.32014, -52.5693 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 65 )
 
 [node name="BlueRiftArea" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 24456, 7443 )
@@ -1859,11 +1847,11 @@ self_modulate = Color( 0.909804, 0, 0, 1 )
 polygon = PoolVector2Array( 212.127, -323.613, 325.541, -323.613, 327.657, 151.706, 730.861, 156.063, 731.27, -332.327, 921.16, -324.405, 921.939, -7.12955, 873.195, 34.857, 749.238, 487.994, 149.127, 646.433, -342.21, 687.232, -344.734, -133.836, -373.505, -331.931, -6.86795, -331.931 )
 
 [node name="Tachi2" parent="." instance=ExtResource( 35 )]
-position = Vector2( 36969.5, 4147.32 )
+position = Vector2( 36940.2, 4249.36 )
 
 [node name="NPC" parent="Tachi2" index="1"]
-position = Vector2( 32.3906, -39.3984 )
-frame = 7
+position = Vector2( -76.8984, -38.3906 )
+frame = 5
 
 [node name="Tachi3" parent="." instance=ExtResource( 41 )]
 position = Vector2( 23900, 7870 )
@@ -1873,7 +1861,7 @@ position = Vector2( 0, 160 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
-frame = 5
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -1882,7 +1870,7 @@ flip_v = true
 position = Vector2( 11137.1, 4288.77 )
 
 [node name="YellowRift" parent="StableRift4" instance=ExtResource( 3 )]
-position = Vector2( 24473.7, -149.526 )
+position = Vector2( 24436.2, -134.375 )
 InputObjectList = [ NodePath("Platform") ]
 
 [node name="Platform" parent="StableRift4/YellowRift" instance=ExtResource( 13 )]
@@ -1892,8 +1880,16 @@ scale = Vector2( 5, 5 )
 collision_layer = 1
 collision_mask = 1
 
+[node name="Sprite" parent="StableRift4/YellowRift/Platform" index="0"]
+rotation = 1.5708
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 68 )
+
 [node name="fromPos" parent="StableRift4/YellowRift/Platform" index="1"]
 position = Vector2( -100, 0 )
+
+[node name="CollisionPolygon2D" parent="StableRift4/YellowRift/Platform" index="3"]
+polygon = PoolVector2Array( 273.337, 154.513, 286.067, 153.704, 301.828, 154.715, 320.013, 155.12, 329.712, 156.739, 345.877, 153.703, 354.97, 154.715, 357.395, 159.167, 355.576, 169.891, 354, 174, 349.514, 176.973, 342.846, 177.175, 336.178, 179.806, 326.53, 175.391, 323.246, 175.557, 317.184, 174.545, 312.133, 176.367, 302.636, 174.748, 294.149, 177.176, 281.015, 178.39, 273.135, 176.569, 268.285, 172.724, 266.669, 158.56 )
 
 [node name="Shadows" type="Node2D" parent="."]
 
@@ -1902,7 +1898,7 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 3
+frame = 4
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -1913,7 +1909,7 @@ position = Vector2( 19424.1, 1052.74 )
 scale = Vector2( 1.06895, 1.07015 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
-frame = 7
+frame = 0
 
 [node name="Camera2D" parent="Shadows/Shadow2" index="2"]
 position = Vector2( -191.143, -50.0334 )
@@ -1935,6 +1931,236 @@ position = Vector2( 431.093, -1.61649 )
 [node name="Shadow3" parent="Boat" instance=ExtResource( 38 )]
 position = Vector2( 16.0859, -6.06186 )
 scale = Vector2( 0.0774465, 0.0737734 )
+
+[node name="Lvl2Cave" type="Node2D" parent="."]
+
+[node name="Floor" type="Node2D" parent="Lvl2Cave"]
+
+[node name="Grass" type="Node2D" parent="Lvl2Cave/Floor"]
+modulate = Color( 0.231373, 0.686275, 0, 1 )
+position = Vector2( -0.00197983, 1.01025 )
+scale = Vector2( 1, 1 )
+
+[node name="CaveFloorBig" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 30013.9, 4879.8 )
+scale = Vector2( 1.00012, 1 )
+texture = ExtResource( 62 )
+
+[node name="CaveFloorBig3" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 31728.8, 4781.8 )
+scale = Vector2( 1, 1.40718 )
+texture = ExtResource( 62 )
+flip_h = true
+
+[node name="CaveFloorBig2" type="Sprite" parent="Lvl2Cave/Floor/CaveFloorBig3"]
+position = Vector2( 371.084, -211.525 )
+rotation = -0.037226
+scale = Vector2( 1.03215, 0.711596 )
+texture = ExtResource( 62 )
+
+[node name="Stalagtite01" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 29212.1, 3472.44 )
+scale = Vector2( 0.740663, 0.654246 )
+texture = ExtResource( 60 )
+flip_h = true
+flip_v = true
+
+[node name="CaveRoof04" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 31291.6, 3274.43 )
+rotation = 0.610865
+scale = Vector2( 0.756219, 1 )
+texture = ExtResource( 64 )
+
+[node name="CaveRoof01" type="Sprite" parent="Lvl2Cave/Floor/CaveRoof04"]
+position = Vector2( 1211.51, -183.948 )
+rotation = -0.486976
+scale = Vector2( 1.22571, 1.11638 )
+texture = ExtResource( 64 )
+
+[node name="GeodePuzzleCaveBottom" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 26905.9, 4956.58 )
+texture = ExtResource( 69 )
+
+[node name="CaveFloor02" type="Sprite" parent="Lvl2Cave/Floor/GeodePuzzleCaveBottom"]
+position = Vector2( 2114.51, -367.294 )
+scale = Vector2( 1, 0.718014 )
+texture = ExtResource( 66 )
+flip_h = true
+
+[node name="CaveRoof02" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 23597.4, 4898.63 )
+rotation = 1.5708
+scale = Vector2( 1.51003, 1 )
+texture = ExtResource( 71 )
+flip_v = true
+
+[node name="Stalagtite0103" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 29407.9, 4125.1 )
+texture = ExtResource( 73 )
+flip_h = true
+
+[node name="Fade04" type="Sprite" parent="Lvl2Cave/Floor"]
+show_behind_parent = true
+position = Vector2( 30461.1, 5673.9 )
+scale = Vector2( 1.20092, 0.927465 )
+texture = ExtResource( 63 )
+
+[node name="Fade05" type="Sprite" parent="Lvl2Cave/Floor"]
+show_behind_parent = true
+position = Vector2( 27056.2, 6202.29 )
+scale = Vector2( 1.13193, 0.428372 )
+texture = ExtResource( 63 )
+
+[node name="Fade06" type="Sprite" parent="Lvl2Cave/Floor"]
+show_behind_parent = true
+position = Vector2( 36621.5, 4890.91 )
+scale = Vector2( 0.409243, 0.408165 )
+texture = ExtResource( 63 )
+
+[node name="Blend" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 29940, 5393.42 )
+scale = Vector2( 0.476689, 0.699585 )
+texture = ExtResource( 72 )
+
+[node name="Fade07" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 32260.4, 5638.04 )
+scale = Vector2( 0.401403, 0.963331 )
+texture = ExtResource( 63 )
+
+[node name="Fade08" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 28584.2, 5651.86 )
+rotation = 0.785398
+scale = Vector2( 0.178453, 0.897394 )
+texture = ExtResource( 63 )
+
+[node name="Blend2" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 32152.2, 4955.57 )
+scale = Vector2( 0.470466, 0.699585 )
+texture = ExtResource( 72 )
+
+[node name="Blend3" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 31067.1, 5356.67 )
+scale = Vector2( 0.476689, 0.699585 )
+texture = ExtResource( 72 )
+
+[node name="Blend4" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 28396.2, 5421.41 )
+rotation = -0.785398
+scale = Vector2( 0.476689, 0.49504 )
+texture = ExtResource( 72 )
+
+[node name="Blend5" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 26531.5, 6063.88 )
+scale = Vector2( 0.80449, 0.327382 )
+texture = ExtResource( 72 )
+
+[node name="LongWalls" type="Sprite" parent="Lvl2Cave/Floor"]
+position = Vector2( 25022, 5341.42 )
+scale = Vector2( 0.5, 0.395525 )
+texture = ExtResource( 74 )
+
+[node name="Ceiling" type="Node2D" parent="Lvl2Cave"]
+
+[node name="Stalagtite03" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 31108.6, 3632.06 )
+scale = Vector2( 0.649804, 0.717332 )
+texture = ExtResource( 61 )
+
+[node name="Stalagtite0101" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 36916.9, 3707.84 )
+scale = Vector2( 0.415396, 0.36231 )
+texture = ExtResource( 60 )
+flip_v = true
+
+[node name="Stalagtite02" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 36725.7, 3769.47 )
+scale = Vector2( 0.459932, 0.455473 )
+texture = ExtResource( 61 )
+
+[node name="CaveRoof02" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 37262.9, 4019.19 )
+rotation = 1.5708
+scale = Vector2( 0.855631, 1 )
+texture = ExtResource( 71 )
+
+[node name="CaveFloorBig2" type="Sprite" parent="Lvl2Cave/Ceiling/CaveRoof02"]
+position = Vector2( 532.325, 805.717 )
+rotation = -1.5708
+scale = Vector2( 0.683775, 1.16873 )
+texture = ExtResource( 62 )
+
+[node name="CaveRoof03" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 30223.3, 2935.96 )
+texture = ExtResource( 64 )
+
+[node name="CaveRoof04" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 28892.9, 3380.5 )
+rotation = -0.841249
+scale = Vector2( 0.756219, 1 )
+texture = ExtResource( 64 )
+
+[node name="GeodePuzzleCaveTop" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 26845.2, 3854.33 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 70 )
+
+[node name="CaveRoof05" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 24149.9, 3320.89 )
+texture = ExtResource( 64 )
+
+[node name="Fade01" type="Sprite" parent="Lvl2Cave/Ceiling"]
+show_behind_parent = true
+position = Vector2( 26275.6, 2423.23 )
+scale = Vector2( 1.50747, 0.724898 )
+texture = ExtResource( 63 )
+
+[node name="Blend" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 30382.2, 2400.5 )
+scale = Vector2( 0.832308, 0.742944 )
+texture = ExtResource( 72 )
+
+[node name="Fade03" type="Sprite" parent="Lvl2Cave/Ceiling"]
+show_behind_parent = true
+position = Vector2( 30713.5, 2142.87 )
+scale = Vector2( 1.06762, 0.724898 )
+texture = ExtResource( 63 )
+
+[node name="Fade04" type="Sprite" parent="Lvl2Cave/Ceiling"]
+show_behind_parent = true
+position = Vector2( 32006.2, 2570.48 )
+scale = Vector2( 0.434948, 0.889831 )
+texture = ExtResource( 63 )
+
+[node name="Blend2" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 27375.3, 2697.53 )
+scale = Vector2( 0.832308, 0.742944 )
+texture = ExtResource( 72 )
+
+[node name="Blend3" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 24578.9, 2714.7 )
+scale = Vector2( 0.832308, 0.742944 )
+texture = ExtResource( 72 )
+
+[node name="Blend4" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 31934.1, 3103.67 )
+scale = Vector2( 0.435926, 0.742944 )
+texture = ExtResource( 72 )
+
+[node name="Blend6" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 36627.8, 4953.55 )
+scale = Vector2( 0.423376, 0.713504 )
+texture = ExtResource( 72 )
+
+[node name="Fade06" type="Sprite" parent="Lvl2Cave/Ceiling"]
+show_behind_parent = true
+position = Vector2( 37682.3, 4189.25 )
+scale = Vector2( 0.215751, 1.10983 )
+texture = ExtResource( 63 )
+
+[node name="Blend7" type="Sprite" parent="Lvl2Cave/Ceiling"]
+position = Vector2( 38094.6, 3872.52 )
+scale = Vector2( 0.356549, 1.34451 )
+texture = ExtResource( 72 )
 
 [connection signal="hit" from="Player" to="WaterDeath" method="_on_Player_hit"]
 [connection signal="get_button" from="Collectables/Collectable" to="Player" method="_on_Collectable_get_button"]
@@ -2011,6 +2237,8 @@ scale = Vector2( 0.0774465, 0.0737734 )
 [editable path="StableYellowRift3/Platform"]
 [editable path="YellowRift6/Platform"]
 [editable path="YellowRift2/Platform"]
+[editable path="Level2DoorRedRift"]
+[editable path="Level2DoorRedRift/Platform"]
 [editable path="BlueRiftGroup/Rifts/YellowRift/Platform"]
 [editable path="BlueRiftGroup/Rifts/YellowRift2/Platform"]
 [editable path="Tachi2"]
