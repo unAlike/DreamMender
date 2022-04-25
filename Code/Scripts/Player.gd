@@ -181,7 +181,13 @@ func _process(delta):
 	$Reflection.frames = $Sprite.frames
 	$Reflection.frame = $Sprite.frame
 	$Reflection.flip_h = $Sprite.flip_h
-	pass
+	var scrollSpeed = .1
+	var relSize = OS.get_screen_size()/get_viewport().get_size()
+	print(relSize)
+	$Camera2D.offset_h =((((get_viewport().get_mouse_position().x/(get_viewport().size.x*relSize.x))-.5)*relSize.x)*4)+1
+	$Camera2D.offset_v =((((get_viewport().get_mouse_position().y/(get_viewport().size.y*relSize.y))-.5)*relSize.y)*4)+1
+	print( $Camera2D.offset_h)
+	print( $Camera2D.offset_v)
 
 func _draw():
 	for l in range(0,threadPath.size()-1):

@@ -14,17 +14,19 @@ func _ready():
 func _process(delta):
 	if InRadius and Interactable:
 		if lerpTime<=1:
-			lerpTime+=delta
-		get_parent().get_node("LerpCam").zoom = lerp(PlayerCam.zoom, Cam.zoom, lerpTime)
-		get_parent().get_node("LerpCam").global_position = lerp(PlayerCam.global_position, Cam.global_position, lerpTime)
-		get_parent().get_node("LerpCam").current = true
-	elif !Interacting:
-		if lerpTime>=0:
-			lerpTime-=delta
+			get_parent().get_node("LerpCam").current = true
 			get_parent().get_node("LerpCam").zoom = lerp(PlayerCam.zoom, Cam.zoom, lerpTime)
 			get_parent().get_node("LerpCam").global_position = lerp(PlayerCam.global_position, Cam.global_position, lerpTime)
+			lerpTime+=delta
+	elif !Interacting:
+		if lerpTime>=0:
 			get_parent().get_node("LerpCam").current = true
+			get_parent().get_node("LerpCam").zoom = lerp(PlayerCam.zoom, Cam.zoom, lerpTime)
+			get_parent().get_node("LerpCam").global_position = lerp(PlayerCam.global_position, Cam.global_position, lerpTime)
+			lerpTime-=delta
 		else:
+			get_parent().get_node("LerpCam").zoom = PlayerCam.zoom
+			get_parent().get_node("LerpCam").global_position = PlayerCam.global_position
 			PlayerCam.current = true
 		
 		
