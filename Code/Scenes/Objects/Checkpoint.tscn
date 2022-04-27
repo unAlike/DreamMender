@@ -4,8 +4,8 @@
 [ext_resource path="res://Art/Misc/DW_Checkpoint_Off.png" type="Texture" id=2]
 [ext_resource path="res://Audio/Checkpoint noise.wav" type="AudioStream" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 18.5 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 40.0
 
 [node name="Checkpoint" type="Area2D"]
 scale = Vector2( 0.56, 0.56 )
