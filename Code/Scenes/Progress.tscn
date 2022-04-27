@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Art/Misc/Button.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Progress.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Progress.gd" type="Script" id=2]
 [ext_resource path="res://Art/UI/Thread_UI_Empty (1).png" type="Texture" id=3]
 [ext_resource path="res://Art/UI/Thread_UI_Blue.png" type="Texture" id=4]
 [ext_resource path="res://Art/UI/Thread_UI_Red.png" type="Texture" id=5]
@@ -10,61 +10,72 @@
 [node name="Progress" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="None" type="Sprite" parent="Control"]
-position = Vector2( 75, 75 )
-scale = Vector2( 0.5, 0.5 )
+[node name="None" type="TextureRect" parent="Control"]
+margin_left = 20.0
+margin_top = 20.0
+rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Y" type="Sprite" parent="Control"]
+[node name="Y" type="TextureRect" parent="Control"]
 visible = false
-position = Vector2( 75, 75 )
-scale = Vector2( 0.5, 0.5 )
+margin_left = 20.0
+margin_top = 20.0
+rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 
-[node name="YR" type="Sprite" parent="Control"]
+[node name="YR" type="TextureRect" parent="Control"]
 visible = false
-position = Vector2( 75, 75 )
-scale = Vector2( 0.5, 0.5 )
+margin_left = 20.0
+margin_top = 20.0
+rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="YRB" type="Sprite" parent="Control"]
+[node name="YRB" type="TextureRect" parent="Control"]
 visible = false
-position = Vector2( 75, 75 )
-scale = Vector2( 0.5, 0.5 )
+margin_left = 20.0
+margin_top = 20.0
+rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Sprite2" type="Sprite" parent="Control"]
-position = Vector2( 900, 50 )
-scale = Vector2( 0.25, 0.25 )
+[node name="Button" type="TextureRect" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -158.0
+margin_top = 25.0
+margin_bottom = 158.0
+rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Count" type="RichTextLabel" parent="Control"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 890.0
-margin_top = 45.0
-margin_right = 990.0
-margin_bottom = 65.0
+margin_left = -100.0
+margin_top = 38.0
+margin_bottom = 58.0
 text = "0 "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = 890.0
-margin_top = 45.0
-margin_right = 990.0
-margin_bottom = 65.0
-text = "   / 100"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Timer" type="Timer" parent="Control"]
+wait_time = 3.0
+one_shot = true

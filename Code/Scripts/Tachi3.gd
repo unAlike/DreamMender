@@ -9,14 +9,18 @@ func _ready():
 #	pass
 
 func Message():
+	if Tracker == 1:
+		Text = Text2
 	Box.visible = true
 	Dialogue.text = Text[At]
 	Dialogue.visible_characters = 0
 	Duration.start()
-	if At == 2:
+	if At == 7:
 		Stats.setBlue(true)
 		Prog.Blue()
 		get_parent().get_node("NPC").animation = "Idle"
 		get_parent().get_node("NPC2").animation = "Idle"
 	if At == Text.size() - 1:
-		Interactable = false
+		Tracker += 1
+		if Tracker == 2:
+			Interactable = false

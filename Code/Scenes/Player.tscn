@@ -61,6 +61,56 @@ flags = 5
 atlas = ExtResource( 5 )
 region = Rect2( 2100, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=109]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 264, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=110]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 528, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=111]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 792, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=112]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=106]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=107]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
 [sub_resource type="AtlasTexture" id=58]
 flags = 5
 atlas = ExtResource( 4 )
@@ -121,67 +171,12 @@ flags = 5
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=109]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 264, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=110]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 528, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=111]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 792, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=112]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=82]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=70]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=71]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=106]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=107]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
 "loop": true,
 "name": "idle",
 "speed": 10.0
-}, {
-"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
 }, {
 "frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ) ],
 "loop": false,
@@ -193,15 +188,20 @@ animations = [ {
 "name": "wallJump",
 "speed": 10.0
 }, {
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 106 ), SubResource( 107 ) ],
 "loop": false,
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 83 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -493,30 +493,11 @@ zoom = Vector2( 2, 2 )
 smoothing_enabled = true
 smoothing_speed = 2.0
 
+[node name="Progress" parent="." instance=ExtResource( 15 )]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
 script = ExtResource( 2 )
-
-[node name="Collectables" type="Label" parent="CanvasLayer"]
-visible = false
-margin_left = 840.0
-margin_top = 40.0
-margin_right = 922.0
-margin_bottom = 54.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Count" type="Label" parent="CanvasLayer/Collectables"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 84.0
-margin_top = -15.0
-margin_right = 160.0
-margin_bottom = -1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -756,8 +737,6 @@ stream = ExtResource( 13 )
 [node name="Jump2" type="AudioStreamPlayer2D" parent="Sounds/Jump" groups=["sfx", "sound"]]
 
 [node name="Jump3" type="AudioStreamPlayer2D" parent="Sounds/Jump" groups=["sfx", "sound"]]
-
-[node name="Progress" parent="." instance=ExtResource( 15 )]
 
 [node name="Music" type="Node2D" parent="."]
 

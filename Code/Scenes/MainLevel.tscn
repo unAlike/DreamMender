@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=177 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -11,22 +11,19 @@
 [ext_resource path="res://Scenes/Objects/EndGamePortal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Reflect.gd" type="Script" id=10]
 [ext_resource path="res://Shaders/Reflect.tres" type="Material" id=11]
-[ext_resource path="res://Art/Level1/DW__Stump_1_2.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Utility/Platform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Utility/Spikes.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Art/Level1/tree_1-right_02.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Objects/Collectable.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Art/Level1/DW_Flower_Stump_02.png" type="Texture" id=17]
 [ext_resource path="res://Art/Level1/inner_Tree.png" type="Texture" id=18]
-[ext_resource path="res://Art/Level1/DW_Flower_Stump_2_2.png" type="Texture" id=19]
+[ext_resource path="res://Art/Level1/Spike_Puzzle_part_01.png" type="Texture" id=19]
 [ext_resource path="res://Art/Level1/tree_1-left.png" type="Texture" id=20]
 [ext_resource path="res://Art/Level1/tree_1-left-full.png" type="Texture" id=21]
 [ext_resource path="res://Art/Level1/Wood_06.png" type="Texture" id=22]
 [ext_resource path="res://Art/Level1/DW_grassy_platform_2.png" type="Texture" id=23]
 [ext_resource path="res://Art/Level1/DW_Wood_01.png" type="Texture" id=24]
 [ext_resource path="res://Art/Level1/Wood_04.png" type="Texture" id=25]
-[ext_resource path="res://Art/Level1/DW_Grass_and_wood.png" type="Texture" id=26]
-[ext_resource path="res://Art/Level1/Bark.png" type="Texture" id=27]
 [ext_resource path="res://Art/Level1/DW_small_tree.png" type="Texture" id=28]
 [ext_resource path="res://Art/Level2/rock_texture.png" type="Texture" id=29]
 [ext_resource path="res://Art/Level3/paralax/Level_3_Background_Layer_2.png" type="Texture" id=30]
@@ -74,9 +71,20 @@
 [ext_resource path="res://Art/Level2/Fade_02.png" type="Texture" id=72]
 [ext_resource path="res://Art/Level2/stalagtite_01_03.png" type="Texture" id=73]
 [ext_resource path="res://Art/Level2/long_walls.png" type="Texture" id=74]
-[ext_resource path="res://Art/Level1/DW_Platform_Green.png" type="Texture" id=75]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=66]
+[ext_resource path="res://Art/Level1/Thorn_Puzzle_backround_piece.png" type="Texture" id=75]
+[ext_resource path="res://Scenes/Shadow3.tscn" type="PackedScene" id=76]
+[ext_resource path="res://Scenes/Shadow4.tscn" type="PackedScene" id=77]
+[ext_resource path="res://Art/Character/DW_Shadow_Blue_Character_Idle_Sprite_Sheet.png" type="Texture" id=78]
+[ext_resource path="res://Art/Level1/platform_NEW_1.png" type="Texture" id=79]
+[ext_resource path="res://Art/Level1/DW_Flower_Stump_2_02.png" type="Texture" id=80]
+[ext_resource path="res://Art/Level1/1st_tree.png" type="Texture" id=81]
+[ext_resource path="res://Art/Level1/Spike_Puzzle_part_03.png" type="Texture" id=82]
+[ext_resource path="res://Art/Level1/Thorn_Puzzle_bottom_piece.png" type="Texture" id=83]
+[ext_resource path="res://Art/Level1/Thorn_Puzzle_top_piece.png" type="Texture" id=84]
+[ext_resource path="res://Art/Level1/DW_Platform_Green_02.png" type="Texture" id=86]
+[ext_resource path="res://Art/Level1/platform_NEW_2.png" type="Texture" id=87]
+[ext_resource path="res://Art/Level1/DW_Tall_Platform.png" type="Texture" id=88]
+[ext_resource path="res://Art/Level1/DW_Tall_Long_Platform.png" type="Texture" id=89]
 
 [sub_resource type="Shader" id=29]
 code = "shader_type canvas_item;
@@ -124,48 +132,10 @@ colors = PoolColorArray( 0.207411, 0.18182, 0.604492, 1, 0.154393, 0.139805, 0.4
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
 
+[sub_resource type="AnimationNodeStateMachinePlayback" id=66]
+
 [sub_resource type="CircleShape2D" id=33]
 radius = 427.181
-
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 43 )
-region = Rect2( 0, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=42]
-flags = 4
-atlas = ExtResource( 43 )
-region = Rect2( 526, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=43]
-flags = 4
-atlas = ExtResource( 43 )
-region = Rect2( 1052, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 43 )
-region = Rect2( 1578, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 43 )
-region = Rect2( 2104, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 43 )
-region = Rect2( 2630, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 43 )
-region = Rect2( 3156, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 43 )
-region = Rect2( 3682, 0, 526, 583 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
@@ -247,6 +217,46 @@ flags = 4
 atlas = ExtResource( 45 )
 region = Rect2( 3682, 0, 526, 583 )
 
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 43 )
+region = Rect2( 0, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 43 )
+region = Rect2( 526, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 43 )
+region = Rect2( 1052, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 43 )
+region = Rect2( 1578, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 43 )
+region = Rect2( 2104, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 43 )
+region = Rect2( 2630, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 43 )
+region = Rect2( 3156, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 43 )
+region = Rect2( 3682, 0, 526, 583 )
+
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 36 )
@@ -289,11 +299,6 @@ region = Rect2( 3682, 0, 526, 583 )
 
 [sub_resource type="SpriteFrames" id=48]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 42 ), SubResource( 43 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "Needle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "Red",
@@ -302,6 +307,11 @@ animations = [ {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
 "loop": true,
 "name": "Blue",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 42 ), SubResource( 43 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Needle",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
@@ -350,46 +360,6 @@ flags = 4
 atlas = ExtResource( 39 )
 region = Rect2( 2100, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=57]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=58]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=59]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=60]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=61]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=62]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=63]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=64]
-flags = 4
-atlas = ExtResource( 40 )
-region = Rect2( 2100, 0, 300, 452 )
-
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 39 )
@@ -430,6 +400,46 @@ flags = 4
 atlas = ExtResource( 39 )
 region = Rect2( 2100, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 2100, 0, 300, 452 )
+
 [sub_resource type="SpriteFrames" id=65]
 animations = [ {
 "frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
@@ -437,21 +447,191 @@ animations = [ {
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
-"loop": true,
-"name": "Blue",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
+"loop": true,
+"name": "Blue",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="SpriteFrames" id=91]
+animations = [ {
+"frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
+"loop": true,
+"name": "Red",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ) ],
+"loop": true,
+"name": "Yellow",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
+"loop": true,
+"name": "Blue",
+"speed": 5.0
 } ]
 
 [node name="Map" type="StaticBody2D"]
-position = Vector2( 48, -503 )
-scale = Vector2( 0.988409, 0.989795 )
+position = Vector2( 10710, 1299 )
 script = ExtResource( 1 )
+
+[node name="Water" type="Node2D" parent="."]
+position = Vector2( -93705.1, 6929.7 )
+rotation = 1.57083
+scale = Vector2( 0.669486, 19265.6 )
+
+[node name="1stWater" type="Sprite" parent="Water"]
+material = SubResource( 30 )
+z_index = 3685
+texture = SubResource( 3 )
+offset = Vector2( -8595.23, -5.23591 )
+
+[node name="1stWater2" type="Sprite" parent="Water"]
+material = SubResource( 30 )
+position = Vector2( -4344.56, -4.98292 )
+scale = Vector2( 0.561879, 0.277666 )
+texture = SubResource( 3 )
+offset = Vector2( -8595.23, -5.23591 )
+
+[node name="SpikeTreeRight" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1292, 1394 )
+polygon = PoolVector2Array( 17014.2, -769.628, 17094.1, -715.072, 17375.4, -713.051, 17507.9, -704.968, 18170.6, -700.927, 18250.5, -704.968, 18494.3, -757.505, 18639, -840.35, 19080.1, -1267.71, 19347.2, -1432.39, 19732.7, -1562.72, 20073.7, -1703.15, 20691.8, -1649.61, 20893, -1619, 21218.9, -1515.24, 21452.6, -1384.91, 21521.4, -1257.61, 21605.4, -1176.78, 21826, -1089.9, 21964.6, -1000.99, 22348, -1158.6, 22506.9, -1830.45, 22415.8, -2134.56, 22465.4, -2645.77, 22566.5, -3039.8, 22638.4, -3137.8, 22715.3, -3356.02, 22707.2, -3480.29, 22802.3, -3753.07, 22821.5, -4017.78, 22890.3, -4294.6, 23116.9, -4766.42, 23624.8, -5242.27, 23828.2, -5174.58, 24021.4, -5174.58, 24656.8, -4932.11, 24807.5, -4819.96, 24990.6, -4704.79, 25080.7, -4474.44, 25094.9, -3974.33, 25142.4, -3939.98, 25210.2, -3936.95, 25276, -3972.31, 25315.4, -4142.04, 25315.4, -4194.58, 25242.6, -4347.14, 25250.7, -4497.67, 25283, -4647.2, 25295.2, -4740.15, 25218.3, -4882.6, 25130.3, -4922, 25030.1, -4904.83, 24907.7, -4994.75, 24724.6, -5062.44, 24564.7, -5189.74, 24469.6, -5240.25, 24048.7, -5292.79, 23785.7, -5453.43, 16198.7, -4564.35, 16100.6, -4451.2, 16125.9, -4380.48, 16255.4, -4341.07, 16404.1, -4232.97, 16700.6, -3991.51, 16762.3, -3865.22, 16777.4, -3744.99, 16703.6, -3190.33, 16521.5, -3161.03, 16364.7, -3085.26, 16351.5, -3054.95, 16529.6, -3108.5, 16698.5, -3125.67, 16698.5, -3085.26, 16632.8, -3054.95, 16548.8, -3006.46, 16495.2, -2970.08, 16603.4, -2997.36, 16599.4, -2964.02, 16663.1, -3011.51, 16689.4, -3019.59, 16701.6, -2923.61, 16744.1, -2702.35, 16831.1, -2429.57, 16816.8, -2338.84, 16717.8, -2418.45, 16673.2, -2433.61, 16675.3, -2366.93, 16756.2, -2307.32, 16626.7, -2316.41, 16441.6, -2267.92, 16363.6, -2236.6, 16503.3, -2240.64, 16487.1, -2201.24, 16589.3, -2236.6, 16682.3, -2246.7, 16794.6, -2213.36, 16780.5, -2142.64, 16789.6, -2044.64, 16743, -1814.29, 16714.7, -1793.07, 16732.9, -1706.19, 16664.1, -1638.5, 16548.8, -1582.93, 16425.4, -1558.68, 16460.8, -1528.37, 16317.1, -1447.55, 16427.4, -1465.73, 16507.3, -1493.01, 16571.1, -1506.14, 16616.6, -1525.34, 16636.8, -1520.29, 16710.7, -1563.73, 16760.2, -1608.19, 16750.1, -1571.81, 16709.7, -1499.07, 16729.9, -1490.99, 16719.8, -1461.69, 16748.1, -1422.29, 16788.6, -1469.77, 16830.1, -1318.23, 16879.6, -1302.06, 16989.9, -1080.8, 16926.2, -1017.15, 16934.3, -921.175 )
+
+[node name="Polygon2D" type="Polygon2D" parent="SpikeTreeRight"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="SpikeTreeLeft" type="CollisionPolygon2D" parent="." groups=["collider"]]
+position = Vector2( -102, 1954 )
+polygon = PoolVector2Array( 23863.4, 1587.14, 23982.8, 1568.95, 24061.7, 1576.02, 24141.6, 1555.52, 24230.7, 1566.93, 24295.3, 1550.37, 24432, 1559.86, 24484.6, 1576.02, 24683.9, 1568.95, 24741.6, 1590.17, 25055.2, 1564.91, 25180.7, 1599.26, 25247.5, 1670.99, 25897, 1861.94, 26012, 1795, 26429, 1666, 26726, 1623, 26990.3, 1628.64, 27203, 1671, 27425, 1753, 27140, 2306, 27150, 2324, 27345, 2084, 27411, 2043, 27637, 1788, 27776, 2015, 27871, 2185, 27860, 2395, 28599, 2192, 28728.8, 2163.01, 28777.4, 2122.6, 28749, 2044.81, 28921, 1826.58, 29111.2, 1600.27, 29239.7, 1472.97, 29269.1, 1546.72, 29274.1, 1598.25, 29289.3, 1643.71, 29292.3, 1711.41, 29303.5, 1762.93, 29329.8, 1809.41, 29347, 1889.22, 29360.1, 1777.08, 29374.3, 1672, 29384.4, 1658.87, 29410.7, 1533.59, 29439, 1454.79, 29475.5, 1303.24, 29491.7, 1303.24, 29528.1, 1185.03, 29625, 1172, 29806, 1153, 30012, 1147, 30361, 1166, 30816, 1153, 31060.8, 1271.92, 31066.9, 1299.2, 31093.2, 1349.71, 31138.7, 1600.27, 31185.3, 1951.86, 31193.4, 1994.29, 31193.4, 2073.1, 31216.7, 2077.14, 31235.9, 1992.27, 31237.9, 1771.01, 31253.1, 1761.92, 31266.2, 1709.38, 31276.3, 1703.32, 31295.6, 1485.1, 31341.1, 1841.74, 31391.7, 1895.28, 31645.6, 1912.46, 31766, 1925.59, 31803.5, 1906.4, 32025, 1912.46, 32079.7, 1895.28, 32208.1, 1894.27, 32279, 1906.4, 32353.8, 1897.3, 32415.5, 1909.43, 32464.1, 1911.45, 32511.7, 1907.41, 32641.2, 1925.59, 32700.9, 1903.36, 32841.5, 1916.5, 32919.4, 1900.33, 33057, 1902.35, 33096.4, 1887.2, 33151.1, 1838.7, 33179.4, 1508.33, 33219, -661, 33215, -918, 33219, -1042, 33215, -1191, 33250, -1480, 33102.5, -1551.9, 33078.2, -1551.9, 32980, -1506, 32762.6, -946.721, 31895.5, -622.411, 29586.8, -526.432, 28597.3, -566.844, 27768, -984, 27716, -1207, 27827, -1392, 27873, -1474, 27949, -1483, 27950, -1533, 27767.6, -1599.84, 25745.2, -1597.36, 25938.5, -1971.18, 26145.9, -2061.09, 26033.6, -2305.59, 25790.8, -2506.64, 25744.2, -2680.41, 25695.7, -3282.56, 25656.2, -3538.17, 25590.4, -3901.88, 25595.5, -4100.91, 25583.4, -4337.32, 25601.6, -4429.26, 25648.1, -4508.06, 25803.9, -4665.67, 25799.9, -4815.2, 25632.9, -4785.9, 25392.1, -4594.95, 25275.8, -4329.24, 25100.8, -4303.98, 24810.4, -4333.28, 25080.5, -4018.06, 25171.6, -3752.35, 25205, -3577.57, 25142.2, -3241.14, 25142.2, -2730.93, 25096.7, -2170.21, 25013.8, -1710.52, 25130.1, -1442.78, 24999.6, -1210.41, 24744, -1093, 24575.7, -843.669, 24453.3, -803.257, 24342, -900.246, 24304.5, -917.422, 24073.9, -851.752, 24073.9, -809.319, 24177.1, -712.329, 24073.9, -635.545, 23817.9, -587.05, 23672.2, -746.679, 23362.6, -843.669, 23080.3, -985.113, 22827.4, -1298.31, 22539.1, -1508.45, 22160.7, -1619.59, 21750.9, -1656.97, 21482.8, -1627.67, 21098.4, -1474.1, 20680.5, -1227.59, 20339.6, -878.02, 18494.2, -865.896, 18477, -912.37, 18204.8, -1126.56, 17968.1, -1221.53, 17959, -1111.4, 18126.9, -1023.5, 18244.3, -881.051, 17636.2, -879.03, 17465.3, -951.772, 17343.9, -1129.59, 17320, -1472, 17348.9, -2334.89, 17440, -2439.96, 17556.2, -2476.57, 17602.9, -2467.24, 17654.5, -2433.9, 17778.9, -2417.73, 17866.9, -2448.04, 17846.7, -2499.57, 17761, -2486, 17692.9, -2530.89, 17452.1, -2586.45, 17343.9, -2583.42, 17334.7, -3297.71, 17442.7, -3245.68, 17564.4, -3136.06, 17568.5, -3194.66, 17512.8, -3256.29, 17621.1, -3232.04, 17718.2, -3238.1, 17765.7, -3239.11, 17830.5, -3251.24, 17767.8, -3258.31, 17721.2, -3272.45, 17738.4, -3297.71, 17666.6, -3286.6, 17584.6, -3288.62, 17449.1, -3342.17, 17326.7, -3409.86, 17286.2, -3842.27, 17262.9, -4095.86, 17009, -4076.66, 17037.3, -4014.02, 17069.7, -3945.32, 17075.7, -3874.6, 16747.9, -1584.23, 16549.6, -1517.55, 16327.1, -1491.28, 16241.1, -1447.83, 16753, -1442.78, 16775, -1251, 16775, -713, 16986.7, 70.6616, 23595.3, 81.775, 23579, 1298, 23615, 1742, 23650, 2218, 23674, 3266, 23908.9, 3342.05, 23912, 3145.04, 23925.1, 2855.08, 23919.1, 2355.98, 23914, 2007.43, 23921.1, 1744.75 )
+
+[node name="Polygon2D" type="Polygon2D" parent="SpikeTreeLeft"]
+texture = ExtResource( 29 )
+polygon = PoolVector2Array( 27453, 967, 27571, 924, 27533, 1042 )
 
 [node name="Music" type="Node2D" parent="."]
 
@@ -483,13 +663,10 @@ max_distance = 10120.0
 attenuation = 0.000126375
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 530, 290 )
+position = Vector2( 0, 0 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
-
-[node name="Sprite" parent="Player" index="4"]
-frame = 4
 
 [node name="AnimationTree" parent="Player" index="6"]
 parameters/playback = SubResource( 66 )
@@ -502,220 +679,6 @@ stream = null
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 33212, 9023 )
-
-[node name="Collectables" type="Node2D" parent="."]
-z_index = 50
-
-[node name="Collectable" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 1342.56, 101.031 )
-
-[node name="Collectable2" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 2113.5, -202.062 )
-
-[node name="Collectable3" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 3607.82, -140.433 )
-
-[node name="Collectable10" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 4579.08, -460.702 )
-
-[node name="Collectable4" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 6605.57, -1270.97 )
-
-[node name="Collectable5" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 7534.33, -1745.82 )
-
-[node name="Collectable8" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 8530.88, -1402.31 )
-
-[node name="Collectable9" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 10746.6, -1167.92 )
-
-[node name="Collectable6" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 11577.2, -1108.31 )
-
-[node name="Collectable7" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 14712.5, -1200.25 )
-
-[node name="Collectable11" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 16836.1, -2440.91 )
-
-[node name="Collectable12" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 18038.1, -971.918 )
-
-[node name="Collectable13" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 17654.6, 25.2579 )
-
-[node name="Collectable14" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 17762.9, 122.248 )
-
-[node name="Collectable15" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 17869.1, 230.351 )
-
-[node name="Collectable16" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 17969.3, 358.66 )
-
-[node name="Collectable17" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 18055.3, 478.887 )
-
-[node name="Collectable18" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 18158.5, 627.402 )
-
-[node name="Collectable19" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 21279.7, 223.279 )
-
-[node name="Collectable20" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 21860.4, 188.928 )
-
-[node name="Collectable21" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 24082.1, -1421.51 )
-
-[node name="Collectable22" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 24538.4, -2233.8 )
-
-[node name="Collectable23" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 24967.4, -2567.2 )
-
-[node name="Collectable24" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 26750, 300 )
-
-[node name="Collectable25" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 27000, 300 )
-
-[node name="Collectable26" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 27250, 300 )
-
-[node name="Collectable27" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 27500, 300 )
-
-[node name="Collectable28" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 28000, 286.928 )
-
-[node name="Collectable30" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 33350, 130 )
-
-[node name="Collectable32" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 33650, 430 )
-
-[node name="Collectable33" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 31293.7, 4209.96 )
-
-[node name="Collectable34" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 30220.3, 3260.27 )
-
-[node name="Collectable35" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 29416, 3555.28 )
-
-[node name="Collectable36" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 26578.1, 4681.78 )
-
-[node name="Collectable37" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 26841.1, 4386.77 )
-
-[node name="Collectable38" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 27093, 3688.64 )
-
-[node name="Collectable39" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 24118.6, 4102.87 )
-
-[node name="Collectable40" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 24111.5, 4535.28 )
-
-[node name="Collectable41" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 24100.3, 4999.01 )
-
-[node name="Collectable42" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 24093.3, 5463.76 )
-
-[node name="Collectable43" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 25437.9, 8008.73 )
-
-[node name="Collectable44" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 25120.2, 8692.71 )
-
-[node name="Collectable45" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 27366.2, 7511.66 )
-
-[node name="Collectable46" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 28620.7, 6982.25 )
-
-[node name="Collectable47" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 29965.3, 7788.48 )
-
-[node name="Collectable48" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 30520.8, 7796.56 )
-
-[node name="Collectable49" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 31072.2, 7792.52 )
-
-[node name="Collectable50" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 31526.4, 7799.59 )
-
-[node name="Collectable52" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 33750, 630 )
-
-[node name="Collectable53" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 33200, 230 )
-
-[node name="Collectable54" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 33500, 230 )
-
-[node name="Collectable55" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 33850, 830 )
-
-[node name="Collectable56" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 33900, 1030 )
-
-[node name="Collectable57" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 33950, 1230 )
-
-[node name="Collectable29" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 26500, 300 )
-
-[node name="Collectable58" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 38100, 2500 )
-
-[node name="Collectable59" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 38100, 2250 )
-
-[node name="Collectable60" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 37600, 1600 )
-
-[node name="CheckPoints" type="Node2D" parent="."]
-
-[node name="Checkpoint7" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 973.654, 188.986 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 32546, 3836 )
-
-[node name="Checkpoint2" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 5172.96, -1250.76 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint3" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 10272.1, -1132.56 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint4" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 19823.8, 1012.33 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint8" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 25565.3, -2531.84 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint5" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 32648.4, 4141.26 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint6" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 24522.2, 4006.89 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint9" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 36855.2, 2990.52 )
-scale = Vector2( 4.07565, 4.07565 )
 
 [node name="Paralax" type="ParallaxBackground" parent="."]
 layer = -1
@@ -857,41 +820,210 @@ motion_mirroring = Vector2( 3840, 0 )
 position = Vector2( 1512, 158 )
 texture = ExtResource( 7 )
 
-[node name="1stWater" type="Sprite" parent="."]
-material = SubResource( 30 )
-position = Vector2( -93705.1, 6929.7 )
-rotation = 1.57083
-scale = Vector2( 0.669486, 19265.6 )
-z_index = 3685
-texture = SubResource( 3 )
-offset = Vector2( -8595.23, -5.23591 )
+[node name="Lvl1" type="Node2D" parent="."]
 
-[node name="1stWater2" type="Sprite" parent="."]
-material = SubResource( 30 )
-position = Vector2( 2293.95, 4024.31 )
-rotation = 1.57083
-scale = Vector2( 0.37617, 5349.41 )
-texture = SubResource( 3 )
-offset = Vector2( -8595.23, -5.23591 )
+[node name="1StTree" type="Sprite" parent="Lvl1"]
+position = Vector2( 250, -300 )
+texture = ExtResource( 81 )
+
+[node name="DwFlowerStump202" type="Sprite" parent="Lvl1"]
+position = Vector2( 2828.79, 263.691 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 80 )
+
+[node name="ThornPuzzleBottomPiece2" type="Sprite" parent="Lvl1"]
+position = Vector2( -2800, -600 )
+texture = ExtResource( 83 )
+flip_h = true
+
+[node name="Layer1" type="Node2D" parent="Lvl1"]
+
+[node name="ThornPuzzleBackroundPiece" type="Sprite" parent="Lvl1/Layer1"]
+position = Vector2( 21700, -1000 )
+texture = ExtResource( 75 )
+
+[node name="UnstableRedRift" type="Node2D" parent="Lvl1/Layer1"]
+position = Vector2( 24465.6, -1284.1 )
+
+[node name="PinkRift" parent="Lvl1/Layer1/UnstableRedRift" instance=ExtResource( 6 )]
+riftUnstable = true
+toRotation = 180
+
+[node name="Platform" parent="Lvl1/Layer1/UnstableRedRift/PinkRift" instance=ExtResource( 13 )]
+position = Vector2( 300.598, 339.102 )
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" parent="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform" index="0"]
+texture = ExtResource( 86 )
+
+[node name="Platform2" parent="Lvl1/Layer1/UnstableRedRift/PinkRift" instance=ExtResource( 13 )]
+position = Vector2( -451.115, -17.5372 )
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" parent="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform2" index="0"]
+texture = ExtResource( 86 )
+
+[node name="Platform3" parent="Lvl1/Layer1/UnstableRedRift/PinkRift" instance=ExtResource( 13 )]
+position = Vector2( 346.123, -430.754 )
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" parent="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform3" index="0"]
+texture = ExtResource( 86 )
+
+[node name="DwTallPlatform" type="Sprite" parent="Lvl1/Layer1"]
+position = Vector2( 26525, 700 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 88 )
+flip_h = true
+
+[node name="DwSmallTree" type="Sprite" parent="Lvl1/Layer1"]
+modulate = Color( 0.458824, 0.541176, 0.282353, 1 )
+show_behind_parent = true
+position = Vector2( 25047.3, -5097.91 )
+scale = Vector2( 0.943826, 0.999373 )
+texture = ExtResource( 28 )
+
+[node name="DwWood01" type="Sprite" parent="Lvl1/Layer1"]
+modulate = Color( 1, 0.701961, 0.701961, 1 )
+show_behind_parent = true
+position = Vector2( 22634.2, -3402.78 )
+rotation = 1.95872
+scale = Vector2( 0.845168, 0.416332 )
+texture = ExtResource( 24 )
+
+[node name="Layer2" type="Node2D" parent="Lvl1"]
+
+[node name="Wood06" type="Sprite" parent="Lvl1/Layer2"]
+modulate = Color( 0.552941, 0.756863, 0.466667, 1 )
+position = Vector2( 18000, -1700 )
+rotation = 2.96706
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 22 )
+
+[node name="DwWood02" type="Sprite" parent="Lvl1/Layer2"]
+modulate = Color( 0.780392, 0.678431, 0.678431, 1 )
+position = Vector2( 17462, -547 )
+rotation = 1.5708
+scale = Vector2( 0.208123, 0.107716 )
+texture = ExtResource( 24 )
+
+[node name="Wood04" type="Sprite" parent="Lvl1/Layer2"]
+modulate = Color( 0.65098, 0.788235, 0.670588, 1 )
+position = Vector2( 17450, -1300 )
+rotation = -2.96706
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 25 )
+
+[node name="Wood05" type="Sprite" parent="Lvl1/Layer2"]
+modulate = Color( 0.682353, 0.682353, 0.682353, 1 )
+position = Vector2( 18000, -900 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 25 )
+
+[node name="DwWood03" type="Sprite" parent="Lvl1/Layer2"]
+position = Vector2( 18500, 1300 )
+rotation = -0.962147
+scale = Vector2( 0.4, 0.3 )
+texture = ExtResource( 24 )
+
+[node name="Wood07" type="Sprite" parent="Lvl1/Layer2"]
+modulate = Color( 0.682353, 0.682353, 0.682353, 1 )
+position = Vector2( 18000, -200 )
+rotation = -0.523599
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 25 )
+flip_v = true
+
+[node name="ThornPuzzleBottomPiece" type="Sprite" parent="Lvl1/Layer2"]
+position = Vector2( 20800, -300 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 83 )
+
+[node name="ThornPuzzleTopPiece" type="Sprite" parent="Lvl1/Layer2"]
+position = Vector2( 22000, -1700 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 84 )
+
+[node name="Spikes" type="Node2D" parent="Lvl1/Layer2"]
+
+[node name="SpikeHitbox4" parent="Lvl1/Layer2/Spikes" instance=ExtResource( 14 )]
+position = Vector2( 17604, 1012 )
+rotation = 0.174533
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" parent="Lvl1/Layer2/Spikes/SpikeHitbox4" index="0"]
+position = Vector2( 69.8594, 16.1138 )
+
+[node name="CollisionPolygon2D" parent="Lvl1/Layer2/Spikes/SpikeHitbox4" index="1"]
+polygon = PoolVector2Array( 152.244, -69.4929, 206.268, 98.6809, 142.371, 104.87, 10.2363, 109.892, -65.0684, 91.6917, 6.55273, -72.2358 )
+
+[node name="SpikeHitbox2" parent="Lvl1/Layer2/Spikes" instance=ExtResource( 14 )]
+position = Vector2( 17413, -679 )
+rotation = 0.174533
+scale = Vector2( 1, 1 )
+
+[node name="SpikeHitbox5" parent="Lvl1/Layer2/Spikes" instance=ExtResource( 14 )]
+position = Vector2( 17447, 973 )
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" parent="Lvl1/Layer2/Spikes/SpikeHitbox5" index="0"]
+texture = ExtResource( 19 )
+
+[node name="CollisionPolygon2D" parent="Lvl1/Layer2/Spikes/SpikeHitbox5" index="1"]
+polygon = PoolVector2Array( 112.998, -16, 40.998, 123, -25.002, 92, -112.002, 11, -12.002, -124, 111.998, -53 )
+
+[node name="SpikeHitbox6" parent="Lvl1/Layer2/Spikes" instance=ExtResource( 14 )]
+position = Vector2( 17288, 707.999 )
+rotation = 0.872665
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" parent="Lvl1/Layer2/Spikes/SpikeHitbox6" index="0"]
+position = Vector2( 64.9531, -12.0703 )
+texture = ExtResource( 82 )
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Lvl1/Layer2/Spikes/SpikeHitbox6" index="1"]
+polygon = PoolVector2Array( 216.318, -18.2148, 154.073, 138.42, 31.8135, 95.8809, -88.5352, 18.3945, -58.3398, -163.829 )
+
+[node name="SpikeHitbox7" parent="Lvl1/Layer2/Spikes" instance=ExtResource( 14 )]
+position = Vector2( 23964, -1642 )
+rotation = 2.44346
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" parent="Lvl1/Layer2/Spikes/SpikeHitbox7" index="0"]
+position = Vector2( 64.9531, -12.0703 )
+texture = ExtResource( 19 )
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Lvl1/Layer2/Spikes/SpikeHitbox7" index="1"]
+polygon = PoolVector2Array( 76.2539, -134.438, 177.336, -1.32031, 82.6797, 85.041, 24.5898, 110.707, -45.373, -23.7139, -46.7734, -64.0508 )
+
+[node name="SpikeHitbox8" parent="Lvl1/Layer2/Spikes" instance=ExtResource( 14 )]
+position = Vector2( 24946, -1287 )
+rotation = -0.698132
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" parent="Lvl1/Layer2/Spikes/SpikeHitbox8" index="0"]
+position = Vector2( 64.9531, -12.0703 )
+texture = ExtResource( 19 )
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Lvl1/Layer2/Spikes/SpikeHitbox8" index="1"]
+polygon = PoolVector2Array( 76.1328, -135.844, 178.746, -1.43945, 83.2012, 82.8691, 26.3711, 114.814, -46.0137, -22.9443, -44.7188, -64.9365 )
+
+[node name="SpikeHitbox3" parent="Lvl1/Layer2/Spikes" instance=ExtResource( 14 )]
+position = Vector2( 18012, -647 )
+rotation = -1.5708
+scale = Vector2( 1, 1 )
 
 [node name="StumpJumps" type="CollisionPolygon2D" parent="."]
 position = Vector2( -16385, 1157 )
-polygon = PoolVector2Array( 16659, -827, 16660, -1215, 16495, -2681, 15974, -31416, 16221, -1486, 16247, -665, 16329, -662, 16443, -643, 16749, -647, 17417, -212, 17673, -272, 19385, -261, 19589, -268, 19538, -405, 19642, -841, 19570, -985, 19578, -1157, 19274, -1167, 19250, -1067, 19124, -987, 19118, -1043, 18902, -1021, 18840, -1009, 18772, -949, 18728, -875, 18762, -817, 18836, -729, 18858, -599, 18914, -389, 18450.2, -336.287, 18078, -337, 18304, -644, 18277, -807, 18290, -850, 18279, -878, 18148, -874, 18114, -952, 17921, -936, 17912, -622, 17933, -349, 17572, -390, 17652, -653, 17652, -853, 17629, -879, 17364, -874, 17282, -885, 17266, -839, 17230, -803, 17175, -788, 17057, -825, 16947, -834, 16842, -839, 16706, -825 )
-
-[node name="DwStump12" type="Sprite" parent="StumpJumps"]
-position = Vector2( 17074, -899 )
-scale = Vector2( 0.254883, 0.307547 )
-texture = ExtResource( 12 )
+polygon = PoolVector2Array( 16702, -908, 16591, -985, 16552, -1025, 16478.7, -1054, 16215, -1054, 16147, -1083, 16115, -1152, 16105, -1263, 16128, -1383, 16158, -1439, 16328.4, -1482, 16438, -1492, 16461, -1481, 16511, -1493, 16560, -1485, 16588, -1455, 16689, -1544, 16806, -1587, 16835, -1657, 16926, -1769, 16941, -1827, 16495, -2681, 15974, -31416, 15720.3, -663.969, 17417, -212, 19589, -268, 19538, -405, 19684, -669, 19700, -741, 19659, -883, 19592, -981, 19578, -1157, 19259, -1161, 19251, -1145, 19245, -989, 19122, -986, 19107, -1040, 18856, -1031, 18675, -873, 18730, -847, 18816, -721, 18797, -671, 18914, -389, 18078, -337, 18349, -675, 18314, -722, 18278, -782, 18282, -822, 18294, -864, 18278, -878, 18155, -875, 18124, -951, 17916, -941, 17915, -919, 17788, -813, 17828, -793, 17860, -747, 17898, -715, 17933, -349, 17572, -390, 17627, -667, 17667, -756, 17670, -807, 17657, -850, 17636, -869, 17270.4, -862.935, 17194, -829, 17157, -800, 17106, -774, 17080, -773, 17044, -783, 16996, -810.47, 16849, -848 )
 
 [node name="DwFlowerStump02" type="Sprite" parent="StumpJumps"]
 position = Vector2( 18073, -797 )
 scale = Vector2( 0.179159, 0.156219 )
 texture = ExtResource( 17 )
-
-[node name="DwFlowerStump22" type="Sprite" parent="StumpJumps"]
-position = Vector2( 19220, -888 )
-scale = Vector2( 0.286724, 0.306638 )
-texture = ExtResource( 19 )
 
 [node name="DwGrassyPlatform2" type="Sprite" parent="StumpJumps"]
 position = Vector2( 20463, -886 )
@@ -901,11 +1033,11 @@ texture = ExtResource( 23 )
 
 [node name="WallJumpTreeTop" type="CollisionPolygon2D" parent="."]
 position = Vector2( -12961, 340 )
-polygon = PoolVector2Array( 17721, -515, 17714, -729, 17479, -733, 17478, -872, 17588, -880, 17587, -911, 17474, -917, 17438, -1239, 17381, -1485, 17333, -1559, 17339, -1222, 17307, -1058, 17214, -1123, 17175, -1138, 17163, -1055, 17271, -756, 17271, -498, 17497, -516 )
+polygon = PoolVector2Array( 17721, -515, 17714, -729, 17479, -733, 17478, -872, 17588, -880, 17587, -911, 17474, -917, 17438, -1239, 17381, -1485, 17362, -1558, 17321, -1556, 17339, -1222, 17307, -1058, 17214, -1123, 17175, -1138, 17163, -1055, 17271, -756, 17271, -498, 17497, -516 )
 
 [node name="WallJumpTreeBottom" type="CollisionPolygon2D" parent="."]
 position = Vector2( -13686, 1127 )
-polygon = PoolVector2Array( 18193, -249, 19002, -186, 18987, -255, 18979, -628, 19070, -538, 19226, -502, 19264, -543, 19181, -611, 19012, -943, 18892, -1579, 18869, -1843, 18854, -2006, 18858, -2074, 18886, -2072, 19037, -1998, 19223, -1978, 19390, -2025, 19405, -2052, 19260, -2040, 19185, -2033, 19077, -2040, 18997, -2076, 19083, -2075, 19176, -2113, 19236, -2127, 19286, -2154, 19182, -2143, 19189, -2160, 19192, -2173, 19165, -2164, 19098, -2137, 19051, -2126, 18967, -2141, 18900, -2144, 18969, -2295, 18747, -2297, 18654, -2086, 18653, -2001, 18671, -1865, 18557, -1861, 18557, -1825, 18683, -1825, 18707, -1661, 18640, -1657, 18636, -1260, 18752, -1268, 18771, -1123, 18933, -657, 18867, -357, 18280, -365, 18231, -667, 18203, -797, 18206, -1109, 18521, -1107, 18523, -1139, 18192, -1141, 17997, -1105, 17742, -952, 17541, -892, 17487, -852, 17512, -840, 17519, -817, 17528, -803, 17555, -798, 17586, -734, 17577, -699, 17583, -670, 17615, -629, 17622, -590 )
+polygon = PoolVector2Array( 18193, -249, 19002, -186, 18987, -255, 18979, -628, 19070, -538, 19226, -502, 19264, -543, 19181, -611, 19012, -943, 18892, -1579, 18869, -1843, 18854, -2006, 18858, -2074, 18886, -2072, 19037, -1998, 19223, -1978, 19390, -2025, 19405, -2052, 19260, -2040, 19185, -2033, 19077, -2040, 18997, -2076, 19083, -2075, 19176, -2113, 19236, -2127, 19286, -2154, 19182, -2143, 19189, -2160, 19192, -2173, 19165, -2164, 19098, -2137, 19051, -2126, 18967, -2141, 18900, -2144, 18969, -2295, 18747, -2297, 18654, -2086, 18653, -2001, 18671, -1865, 18557, -1861, 18557, -1825, 18683, -1825, 18707, -1661, 18640, -1657, 18636, -1260, 18752, -1268, 18771, -1123, 18933, -657, 18867, -357, 18280, -365, 18231, -667, 18203, -797, 18206, -1109, 18521, -1107, 18523, -1139, 18192, -1141, 17967, -1101, 17481, -873, 17481, -848, 17512, -840, 17555, -798, 17587, -737, 17581, -692, 17605, -637 )
 
 [node name="Wood06" type="Sprite" parent="WallJumpTreeBottom"]
 position = Vector2( 19066, -2073 )
@@ -945,11 +1077,17 @@ riftUnstable = true
 position = Vector2( -9, -304 )
 scale = Vector2( 4.80683, 5.3145 )
 
+[node name="Sprite" parent="YellowRifts/YellowRift/Platform" index="0"]
+texture = ExtResource( 86 )
+
 [node name="fromPos" parent="YellowRifts/YellowRift/Platform" index="1"]
 position = Vector2( 2.08044, -0.376343 )
 
 [node name="toPos" parent="YellowRifts/YellowRift/Platform" index="2"]
 position = Vector2( 0, -101.797 )
+
+[node name="CollisionPolygon2D" parent="YellowRifts/YellowRift/Platform" index="3"]
+polygon = PoolVector2Array( 259, 164, 360, 162, 365, 172, 257, 172 )
 
 [node name="YellowRift2" parent="YellowRifts" instance=ExtResource( 3 )]
 position = Vector2( 7064, -688 )
@@ -960,6 +1098,9 @@ riftUnstable = true
 position = Vector2( -9, -304 )
 scale = Vector2( 4.80683, 5.3145 )
 
+[node name="Sprite" parent="YellowRifts/YellowRift2/Platform" index="0"]
+texture = ExtResource( 86 )
+
 [node name="fromPos" parent="YellowRifts/YellowRift2/Platform" index="1"]
 position = Vector2( 0.208008, -0.940826 )
 
@@ -967,7 +1108,7 @@ position = Vector2( 0.208008, -0.940826 )
 position = Vector2( -4.78479, -105.372 )
 
 [node name="CollisionPolygon2D" parent="YellowRifts/YellowRift2/Platform" index="3"]
-polygon = PoolVector2Array( 260.447, 166.941, 268.56, 163.554, 281.667, 162.613, 296.021, 161.484, 306.423, 160.355, 319.53, 160.543, 329.307, 161.86, 340.749, 161.86, 351.775, 161.484, 360, 162, 365, 172, 354, 174, 342, 178, 323, 179, 311, 181, 306, 177, 299, 177, 277, 175, 261, 173, 257, 172 )
+polygon = PoolVector2Array( 263.385, 163.125, 360.204, 162.365, 363.361, 165.026, 365, 172, 257, 172, 257.491, 166.547 )
 
 [node name="YellowRift3" parent="YellowRifts" instance=ExtResource( 3 )]
 position = Vector2( 8034, -684 )
@@ -978,6 +1119,9 @@ riftUnstable = true
 position = Vector2( -9, -304 )
 scale = Vector2( 4.80683, 5.3145 )
 
+[node name="Sprite" parent="YellowRifts/YellowRift3/Platform" index="0"]
+texture = ExtResource( 86 )
+
 [node name="fromPos" parent="YellowRifts/YellowRift3/Platform" index="1"]
 position = Vector2( 0, -1.31714 )
 
@@ -985,7 +1129,7 @@ position = Vector2( 0, -1.31714 )
 position = Vector2( -6.86523, -107.63 )
 
 [node name="CollisionPolygon2D" parent="YellowRifts/YellowRift3/Platform" index="3"]
-polygon = PoolVector2Array( 263.151, 166.753, 268.144, 163.742, 278.13, 163.742, 289.364, 162.801, 298.31, 161.484, 313.704, 162.613, 325.563, 163.554, 335.964, 163.178, 346.99, 161.296, 353.856, 161.672, 360, 162, 365, 172, 354, 174, 342, 178, 323, 179, 311, 181, 306, 177, 299, 177, 277, 175, 261, 173, 257, 172 )
+polygon = PoolVector2Array( 257.332, 166.365, 264.278, 162.182, 360, 162, 362.992, 164.273, 365, 172, 257, 172 )
 
 [node name="YellowRift4" parent="YellowRifts" instance=ExtResource( 3 )]
 position = Vector2( 10752, -1002 )
@@ -998,8 +1142,14 @@ position = Vector2( 3282, 12 )
 rotation = 3.14159
 scale = Vector2( 9.99792, -10.0244 )
 
+[node name="Sprite" parent="YellowRifts/YellowRift4/Platform" index="0"]
+texture = ExtResource( 86 )
+
 [node name="fromPos" parent="YellowRifts/YellowRift4/Platform" index="1"]
 position = Vector2( 245.851, 0.199509 )
+
+[node name="CollisionPolygon2D" parent="YellowRifts/YellowRift4/Platform" index="3"]
+polygon = PoolVector2Array( 259, 164, 360, 162, 365, 172, 257, 172 )
 
 [node name="YellowRift5" parent="YellowRifts" instance=ExtResource( 3 )]
 position = Vector2( 15427, -930 )
@@ -1010,25 +1160,35 @@ position = Vector2( 165, -245 )
 rotation = -3.14159
 scale = Vector2( 8.40582, -7.41355 )
 
+[node name="Sprite" parent="YellowRifts/YellowRift5/Platform" index="0"]
+scale = Vector2( 0.045, 0.045 )
+texture = ExtResource( 86 )
+
 [node name="fromPos" parent="YellowRifts/YellowRift5/Platform" index="1"]
 position = Vector2( -1.42761, 0.269775 )
 
 [node name="toPos" parent="YellowRifts/YellowRift5/Platform" index="2"]
 position = Vector2( -77.2085, -154.447 )
 
+[node name="CollisionPolygon2D" parent="YellowRifts/YellowRift5/Platform" index="3"]
+polygon = PoolVector2Array( 259, 164, 360, 162, 365, 172, 257, 172 )
+
 [node name="StableYellowRift3" parent="YellowRifts" instance=ExtResource( 3 )]
-position = Vector2( 24066, 977 )
+position = Vector2( 24378.6, 923.424 )
 InputObjectList = [ NodePath("Platform") ]
 
 [node name="Platform" parent="YellowRifts/StableYellowRift3" instance=ExtResource( 13 )]
 position = Vector2( 2, -171 )
-scale = Vector2( 5.36, 5.12 )
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" parent="YellowRifts/StableYellowRift3/Platform" index="0"]
+texture = ExtResource( 86 )
 
 [node name="fromPos" parent="YellowRifts/StableYellowRift3/Platform" index="1"]
-position = Vector2( -1.30615, -1.3672 )
+position = Vector2( 0, 0 )
 
 [node name="toPos" parent="YellowRifts/StableYellowRift3/Platform" index="2"]
-position = Vector2( -5.22363, -249.023 )
+position = Vector2( 0, -250 )
 
 [node name="YellowRift6" parent="YellowRifts" instance=ExtResource( 3 )]
 position = Vector2( 30771, 3431 )
@@ -1080,8 +1240,9 @@ position = Vector2( -100, 0 )
 polygon = PoolVector2Array( 273.337, 154.513, 286.067, 153.704, 301.828, 154.715, 320.013, 155.12, 329.712, 156.739, 345.877, 153.703, 354.97, 154.715, 357.395, 159.167, 355.576, 169.891, 354, 174, 349.514, 176.973, 342.846, 177.175, 336.178, 179.806, 326.53, 175.391, 323.246, 175.557, 317.184, 174.545, 312.133, 176.367, 302.636, 174.748, 294.149, 177.176, 281.015, 178.39, 273.135, 176.569, 268.285, 172.724, 266.669, 158.56 )
 
 [node name="YellowRift9" parent="YellowRifts" instance=ExtResource( 3 )]
-position = Vector2( 38994, 2958.19 )
+position = Vector2( 38800, 2950 )
 InputObjectList = [ NodePath("../YellowRift2/Platform") ]
+delay = 2.0
 
 [node name="Platform" parent="YellowRifts/YellowRift9" instance=ExtResource( 13 )]
 position = Vector2( 0, -150 )
@@ -1100,270 +1261,87 @@ position = Vector2( 0, 150 )
 polygon = PoolVector2Array( 357.395, 159.167, 355.576, 169.891, 267.898, 169.331, 266.669, 158.56 )
 
 [node name="Tachi\'s Island" type="CollisionPolygon2D" parent="."]
-position = Vector2( -8394, -266 )
-polygon = PoolVector2Array( 17653, -280, 18156, -212, 18429, -322, 18474, -493, 19016, -595, 19042, -663, 18919, -697, 18746, -714, 18383, -725, 18117, -718, 17949, -717, 17726, -718, 17560, -732, 17337, -730, 17242, -728, 17143, -696, 17135, -660, 17260, -628, 17314, -590, 17407, -543 )
+position = Vector2( -8500, -266 )
+polygon = PoolVector2Array( 18573, -496, 18595, -550, 18643, -580, 18835, -581, 18944, -639, 19017, -696, 18859.9, -750.125, 18145, -753, 17844.9, -680.753, 17249, -673, 17171, -617, 17450, -490, 17608, -465, 17729, -409, 17745, -361, 17815, -319, 18147, -276, 18339, -310, 18424, -362, 18536, -452 )
 
 [node name="DwGrassyPlatform2" type="Sprite" parent="Tachi\'s Island"]
-position = Vector2( 18067, -555 )
-rotation = 0.147431
-scale = Vector2( 0.915333, 0.532525 )
-texture = ExtResource( 23 )
+position = Vector2( 18100, -550 )
+scale = Vector2( 1, 0.4 )
+texture = ExtResource( 79 )
 
 [node name="Tachi" parent="Tachi\'s Island" instance=ExtResource( 5 )]
 position = Vector2( 18039.8, -813.011 )
 
-[node name="SpikeTreeLeft" type="CollisionPolygon2D" parent="." groups=["collider"]]
-position = Vector2( -102, 1954 )
-polygon = PoolVector2Array( 23863.4, 1587.14, 23982.8, 1568.95, 24061.7, 1576.02, 24141.6, 1555.52, 24230.7, 1566.93, 24295.3, 1550.37, 24432, 1559.86, 24484.6, 1576.02, 24683.9, 1568.95, 24741.6, 1590.17, 25055.2, 1564.91, 25180.7, 1599.26, 25247.5, 1670.99, 25897, 1861.94, 26012, 1795, 26152, 1682, 26326, 1647, 26507, 1618, 26726, 1576, 26952, 1588, 27202, 1629, 27451, 1697, 27121, 2310, 27160, 2415, 27548, 1900, 27640, 1848, 27787, 2010, 27859, 2237, 27872.9, 2405.49, 28599, 2192, 28728.8, 2163.01, 28777.4, 2122.6, 28749, 2044.81, 28921, 1826.58, 29111.2, 1600.27, 29239.7, 1472.97, 29269.1, 1546.72, 29274.1, 1598.25, 29289.3, 1643.71, 29292.3, 1711.41, 29303.5, 1762.93, 29329.8, 1809.41, 29347, 1889.22, 29360.1, 1777.08, 29374.3, 1672, 29384.4, 1658.87, 29410.7, 1533.59, 29439, 1454.79, 29475.5, 1303.24, 29491.7, 1303.24, 29528.1, 1185.03, 29625, 1172, 29806, 1153, 30012, 1147, 30361, 1166, 30816, 1153, 31060.8, 1271.92, 31066.9, 1299.2, 31093.2, 1349.71, 31138.7, 1600.27, 31185.3, 1951.86, 31193.4, 1994.29, 31193.4, 2073.1, 31216.7, 2077.14, 31235.9, 1992.27, 31237.9, 1771.01, 31253.1, 1761.92, 31266.2, 1709.38, 31276.3, 1703.32, 31295.6, 1485.1, 31341.1, 1841.74, 31391.7, 1895.28, 31645.6, 1912.46, 31766, 1925.59, 31803.5, 1906.4, 32025, 1912.46, 32079.7, 1895.28, 32208.1, 1894.27, 32279, 1906.4, 32353.8, 1897.3, 32415.5, 1909.43, 32464.1, 1911.45, 32511.7, 1907.41, 32641.2, 1925.59, 32700.9, 1903.36, 32841.5, 1916.5, 32919.4, 1900.33, 33057, 1902.35, 33096.4, 1887.2, 33151.1, 1838.7, 33179.4, 1508.33, 33219, -661, 33215, -918, 33219, -1042, 33215, -1191, 33250, -1480, 33102.5, -1551.9, 33078.2, -1551.9, 32980, -1506, 32762.6, -946.721, 31895.5, -622.411, 29586.8, -526.432, 28597.3, -566.844, 28115.7, -946.721, 27873, -1474, 27901, -1600, 25513, -1596, 25487, -1925, 25413, -2352, 25350, -2498, 25343, -2755, 25343, -3604, 25475, -3937, 25811, -4352, 25060, -4428, 24833, -4118, 24671, -3956, 24673, -3845, 24775, -3162, 24794.3, -1984.95, 24764, -1600, 24767.7, -1513.65, 24744, -1093, 24260, -891, 22715, -1008, 22395, -1521, 21947, -1724, 21445, -1691, 21060, -1531, 20667.4, -1357.92, 20361.8, -1069.98, 19949, -827, 18640, -813, 18535, -870, 18489, -967, 18326, -1071, 18003.5, -1298.31, 17991.4, -1167.98, 18093.5, -1123.53, 18184.6, -1058.87, 18232, -955, 17832.3, -930.582, 17612, -1036, 17464, -1130, 17320, -1472, 17316, -1898, 17273, -2219, 17329, -2522, 17549, -2437, 17653, -2396, 17758, -2405, 17850, -2392, 17855, -2456, 17761, -2486, 17729, -2534, 17801, -2632, 17793, -2665, 17681, -2558, 17599, -2536, 17513, -2540, 17446, -2576, 17361, -2592, 17480, -3049, 17488, -3213, 17553, -3148, 17581, -3145, 17588, -3194, 17564, -3232, 17511, -3283, 17619, -3245, 17740, -3250, 17818, -3251, 17870, -3262, 17740, -3291, 17777, -3318, 17645, -3308, 17415, -3412, 17440, -3709, 17496, -4145, 17430, -4169, 17298, -4184, 16938, -4199, 16869, -4160, 16992, -4088, 17202, -3900, 17319, -3759, 16991, -2374, 16775, -1251, 16775, -713, 16986.7, 70.6616, 23595.3, 81.775, 23579, 1298, 23615, 1742, 23650, 2218, 23674, 3266, 23908.9, 3342.05, 23912, 3145.04, 23925.1, 2855.08, 23919.1, 2355.98, 23914, 2007.43, 23921.1, 1744.75 )
-
-[node name="Polygon2D" type="Polygon2D" parent="SpikeTreeLeft"]
-texture = ExtResource( 29 )
-polygon = PoolVector2Array( 27453, 967, 27571, 924, 27533, 1042 )
-
-[node name="Wood10" type="Sprite" parent="SpikeTreeLeft"]
-position = Vector2( 19094, -1494 )
-texture = ExtResource( 22 )
-
-[node name="InnerTree2" type="Sprite" parent="SpikeTreeLeft"]
-modulate = Color( 0.698039, 0.733333, 0.701961, 1 )
-position = Vector2( 17898.5, -1249 )
-scale = Vector2( 1.0081, 1 )
-texture = ExtResource( 18 )
-
-[node name="InnerTree" type="Sprite" parent="SpikeTreeLeft"]
-modulate = Color( 0.760784, 0.686275, 0.686275, 1 )
-position = Vector2( 17952, -2921 )
-scale = Vector2( 0.972, 1.488 )
-texture = ExtResource( 18 )
-
-[node name="Wood07" type="Sprite" parent="SpikeTreeLeft"]
-modulate = Color( 0.682353, 0.682353, 0.682353, 1 )
-position = Vector2( 18312, -2167 )
-rotation = -0.430829
-scale = Vector2( 0.616432, -0.697242 )
-texture = ExtResource( 25 )
-
-[node name="SpikeHitbox4" parent="SpikeTreeLeft" instance=ExtResource( 14 )]
-position = Vector2( 17756, -1067 )
-rotation = 0.487278
-scale = Vector2( 0.323992, 2.45794 )
-
-[node name="CollisionShape2D" parent="SpikeTreeLeft/SpikeHitbox4" index="1"]
-position = Vector2( 6.25391, 9.8064 )
-
-[node name="SpikeHitbox3" parent="SpikeTreeLeft" instance=ExtResource( 14 )]
-position = Vector2( 18388.8, -2473.93 )
-rotation = -1.57263
-scale = Vector2( 0.113254, 1.11582 )
-
-[node name="SPIKESNOTSPRITESHEET" parent="SpikeTreeLeft/SpikeHitbox3" index="0"]
-scale = Vector2( 9.67806, 1.13733 )
-
-[node name="Wood06" type="Sprite" parent="SpikeTreeLeft"]
-modulate = Color( 0.552941, 0.756863, 0.466667, 1 )
-position = Vector2( 18259, -3600 )
-rotation = 2.99147
-scale = Vector2( 0.405618, 0.465257 )
-texture = ExtResource( 22 )
-
-[node name="SpikeHitbox2" parent="SpikeTreeLeft" instance=ExtResource( 14 )]
-position = Vector2( 17536.1, -2600 )
-rotation = 0.282275
-scale = Vector2( 0.113254, 1.11582 )
-
-[node name="DwWood02" type="Sprite" parent="SpikeTreeLeft"]
-modulate = Color( 0.780392, 0.678431, 0.678431, 1 )
-position = Vector2( 17564, -2501 )
-rotation = -1.52555
-scale = Vector2( 0.208123, 0.107716 )
-texture = ExtResource( 24 )
-
-[node name="Wood04" type="Sprite" parent="SpikeTreeLeft"]
-modulate = Color( 0.65098, 0.788235, 0.670588, 1 )
-position = Vector2( 17571, -3272 )
-rotation = -2.9234
-scale = Vector2( 0.42076, 0.458541 )
-texture = ExtResource( 25 )
-
-[node name="DwWood01" type="Sprite" parent="SpikeTreeLeft"]
-modulate = Color( 0.839216, 0.796078, 0.796078, 1 )
-position = Vector2( 17147.5, -2211.04 )
-rotation = -6.22727
-scale = Vector2( 0.744012, 0.712984 )
-texture = ExtResource( 24 )
-
-[node name="Wood05" type="Sprite" parent="SpikeTreeLeft"]
-modulate = Color( 0.682353, 0.682353, 0.682353, 1 )
-position = Vector2( 18232, -2787 )
-rotation = 0.344512
-scale = Vector2( 0.566922, 0.536943 )
-texture = ExtResource( 25 )
-
-[node name="DwWood03" type="Sprite" parent="SpikeTreeLeft"]
-position = Vector2( 18558, -764 )
-rotation = -0.962147
-scale = Vector2( 0.439411, 0.262431 )
-texture = ExtResource( 24 )
-
-[node name="DwGrassAndWood" type="Sprite" parent="SpikeTreeLeft"]
-position = Vector2( 19334, -813 )
-rotation = -1.60807
-scale = Vector2( 0.368079, -0.270103 )
-texture = ExtResource( 26 )
-
-[node name="DwSmallTree" type="Sprite" parent="SpikeTreeLeft"]
-show_behind_parent = true
-position = Vector2( 17211, -4033 )
-rotation = -0.20893
-scale = Vector2( -0.256237, 0.240326 )
-texture = ExtResource( 28 )
-
-[node name="Bark" type="Sprite" parent="SpikeTreeLeft"]
-position = Vector2( 18277, -2825 )
-scale = Vector2( 3.84591, 3.98774 )
-texture = ExtResource( 27 )
-
 [node name="TreeBlock" parent="." instance=ExtResource( 3 )]
-position = Vector2( 17599, -1884 )
+position = Vector2( 17500, -1800 )
 InputObjectList = [ NodePath("Platform") ]
 
 [node name="Platform" parent="TreeBlock" instance=ExtResource( 13 )]
 position = Vector2( 16, 184 )
 rotation = -3.14159
-scale = Vector2( -6.40436, -4.65076 )
+scale = Vector2( 6, 6 )
+
+[node name="Sprite" parent="TreeBlock/Platform" index="0"]
+scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 86 )
+flip_h = true
+flip_v = true
 
 [node name="fromPos" parent="TreeBlock/Platform" index="1"]
-position = Vector2( 0.156128, -0.215027 )
+position = Vector2( 0, 0 )
 
 [node name="toPos" parent="TreeBlock/Platform" index="2"]
-position = Vector2( 12.6476, 162.554 )
+position = Vector2( 0, -120 )
+
+[node name="CollisionPolygon2D" parent="TreeBlock/Platform" index="3"]
+polygon = PoolVector2Array( 262.938, 161.536, 359.558, 160.694, 359.221, 165.241, 352.813, 169.787, 270.863, 171.471, 263.613, 167.598 )
 
 [node name="ThornPuzzle" type="Node2D" parent="."]
 position = Vector2( -8394, -266 )
 
 [node name="YellowRift" parent="ThornPuzzle" instance=ExtResource( 3 )]
-position = Vector2( 29913, 942 )
+position = Vector2( 30087, 1178 )
 z_index = 6
 riftUnstable = true
+Time = 2
 
 [node name="SpikeHitbox4" parent="ThornPuzzle/YellowRift" instance=ExtResource( 14 )]
-position = Vector2( -572, -159 )
-rotation = 2.72969
-scale = Vector2( 0.224, -1.507 )
+position = Vector2( -908, -408 )
+rotation = -0.174533
 
-[node name="CollisionShape2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4" index="1"]
-position = Vector2( 6.25391, 9.8064 )
+[node name="Sprite" parent="ThornPuzzle/YellowRift/SpikeHitbox4" index="0"]
+texture = ExtResource( 82 )
+
+[node name="CollisionPolygon2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4" index="1"]
+polygon = PoolVector2Array( 125, -151, 154, 27, 39, 106, -89, 150, -150, -1 )
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4"]
-position = Vector2( 0.390625, -115.888 )
+position = Vector2( 166.293, 289.271 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4"]
 
 [node name="SpikeHitbox5" parent="ThornPuzzle/YellowRift" instance=ExtResource( 14 )]
-position = Vector2( 72, -348 )
-rotation = -0.0733038
-scale = Vector2( 0.148, 1.206 )
-
-[node name="CollisionShape2D" parent="ThornPuzzle/YellowRift/SpikeHitbox5" index="1"]
-position = Vector2( 6.25391, 9.8064 )
+position = Vector2( -137, -662 )
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox5"]
-position = Vector2( 0.390625, -115.888 )
+position = Vector2( 40, 340 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox5"]
 
 [node name="SpikeHitbox6" parent="ThornPuzzle/YellowRift" instance=ExtResource( 14 )]
-position = Vector2( 526, -280 )
-rotation = 0.436332
-scale = Vector2( 0.141, 0.884 )
+position = Vector2( 718, -483 )
+rotation = 0.174533
 
-[node name="CollisionShape2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6" index="1"]
-position = Vector2( 6.25391, 9.8064 )
+[node name="Sprite" parent="ThornPuzzle/YellowRift/SpikeHitbox6" index="0"]
+texture = ExtResource( 19 )
+
+[node name="CollisionPolygon2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6" index="1"]
+polygon = PoolVector2Array( 110, -13, 42, 123, -20, 94, -112, 10, -11, -123, 112, -52 )
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6"]
-position = Vector2( -21.5938, -151.919 )
+position = Vector2( -229, 284 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6"]
-
-[node name="UnstableRedRift" type="Node2D" parent="."]
-position = Vector2( 24080, -1211 )
-
-[node name="PinkRift" parent="UnstableRedRift" instance=ExtResource( 6 )]
-riftUnstable = true
-toRotation = 180
-
-[node name="Platform" parent="UnstableRedRift/PinkRift" instance=ExtResource( 13 )]
-position = Vector2( 300.598, 339.102 )
-scale = Vector2( 5, 5 )
-
-[node name="Platform2" parent="UnstableRedRift/PinkRift" instance=ExtResource( 13 )]
-position = Vector2( -451.115, -17.5372 )
-scale = Vector2( 5, 5 )
-
-[node name="Platform3" parent="UnstableRedRift/PinkRift" instance=ExtResource( 13 )]
-position = Vector2( 346.123, -430.754 )
-scale = Vector2( 5, 5 )
-
-[node name="SpikeTreeRight" type="CollisionPolygon2D" parent="."]
-position = Vector2( 1292, 1394 )
-polygon = PoolVector2Array( 17302, -869, 17471, -823, 17630, -720, 17872, -702, 18126, -680, 18358, -743, 18297, -614, 18444, -758, 18494, -798, 18522, -710, 18610, -861, 18743, -1022, 19063, -1279, 19038, -1302, 19220, -1463, 19502, -1573, 19567, -1589, 19540, -1552.72, 19540, -1491, 19641, -1559, 19729, -1630, 19888, -1666, 20028, -1680, 20137, -1690, 20236, -1688, 20202, -1660, 20192, -1605, 20260, -1619, 20292, -1645, 20353, -1656, 20400, -1680, 20449, -1669, 20468, -1680, 20537, -1684, 20557, -1696, 20606, -1697, 20712, -1670, 20791, -1646, 20806, -1628, 20832, -1636, 20893, -1619, 21301, -1515, 21703, -1560, 21923, -1713, 22053, -1894, 22121, -2171, 22227, -2864, 22409, -3670, 22575, -4262, 22777, -4706, 23422, -5390, 22258, -5235, 21731, -4900, 19611, -3844, 17306, -3246, 17332, -3416, 17416, -3619, 17518, -3789, 17555, -3860, 17057, -3877, 16839, -4027, 16752, -4188, 16752, -4256, 16633, -4411, 16537, -4522, 16475, -4550, 16373, -4624, 16316, -4643, 16268, -4508, 16410, -4428, 16480, -4301, 16500, -4182, 16622, -4055, 16639, -3911, 16901, -3634, 16908, -3143, 16702, -3130, 16568, -3094, 16518, -3060, 16500, -3006, 16698, -3067, 16848, -3075, 16935, -3046, 16839, -3034, 16740, -2973, 16638, -2898, 16756, -2929, 16752, -2890, 16890, -2973, 16920, -2975, 16980, -2340, 16974, -2250, 16899, -2341, 16833, -2386, 16819, -2311, 16883, -2224, 16712, -2284, 16434, -2305, 16666, -2217, 16787, -2155, 16945, -2083, 17053, -1979, 17084, -1834, 17002, -1779, 16865, -1656, 16625, -1615, 16677, -1580, 16502, -1499, 16756, -1534, 16851, -1539, 16980, -1622, 16899, -1498, 16970, -1423, 17139, -1672, 17191, -1437, 17175, -1144, 17160, -1056, 17198, -959 )
-
-[node name="Polygon2D" type="Polygon2D" parent="SpikeTreeRight"]
-color = Color( 0, 0, 0, 1 )
-
-[node name="Wood04" type="Sprite" parent="SpikeTreeRight"]
-position = Vector2( 19920, -1803 )
-rotation = -0.273939
-texture = ExtResource( 25 )
-
-[node name="Wood05" type="Sprite" parent="SpikeTreeRight"]
-position = Vector2( 19195, -1568 )
-rotation = -0.562801
-texture = ExtResource( 25 )
-
-[node name="Wood06" type="Sprite" parent="SpikeTreeRight"]
-position = Vector2( 18757, -1281 )
-rotation = 1.91313
-texture = ExtResource( 25 )
-
-[node name="Wood07" type="Sprite" parent="SpikeTreeRight"]
-position = Vector2( 20637, -1795 )
-texture = ExtResource( 25 )
-
-[node name="Wood08" type="Sprite" parent="SpikeTreeRight"]
-position = Vector2( 20637, -1795 )
-texture = ExtResource( 25 )
-
-[node name="Wood09" type="Sprite" parent="SpikeTreeRight"]
-position = Vector2( 20637, -1795 )
-texture = ExtResource( 25 )
-
-[node name="Bark" type="Sprite" parent="SpikeTreeRight"]
-position = Vector2( 22435, -3084 )
-scale = Vector2( -4.08714, 3.97739 )
-texture = ExtResource( 27 )
-
-[node name="Bark2" type="Sprite" parent="SpikeTreeRight"]
-position = Vector2( 23159, -1749 )
-rotation = 0.124468
-scale = Vector2( 5.708, 5.447 )
-texture = ExtResource( 27 )
-
-[node name="DwSmallTree" type="Sprite" parent="SpikeTreeRight"]
-modulate = Color( 0.803922, 0.694118, 0.588235, 1 )
-show_behind_parent = true
-position = Vector2( 23011, -5235 )
-rotation = 0.331747
-scale = Vector2( 0.943826, 0.999373 )
-texture = ExtResource( 28 )
-
-[node name="DwWood01" type="Sprite" parent="SpikeTreeRight"]
-modulate = Color( 1, 0.701961, 0.701961, 1 )
-show_behind_parent = true
-position = Vector2( 21273, -4744 )
-rotation = 8.2419
-scale = Vector2( 0.845168, 0.416332 )
-texture = ExtResource( 24 )
 
 [node name="CaveBack" type="Node2D" parent="."]
 
@@ -1382,7 +1360,7 @@ texture = ExtResource( 59 )
 [node name="CaveFloor" type="CollisionPolygon2D" parent="." groups=["collider"]]
 position = Vector2( 15614, 5013 )
 scale = Vector2( 1, 1.00741 )
-polygon = PoolVector2Array( 17520, -644, 17458.3, -645.696, 17359.2, -721.915, 17186.2, -741.972, 16455.7, -695.84, 15610.9, -656.727, 15569.4, -640.681, 15561.4, -576.497, 15547.2, -470.192, 15248.7, -462.169, 15245.7, -421.051, 15196.1, -369.904, 15189, -296.694, 14251.2, -308.729, 14263.3, -383.944, 14148, -426.065, 14100.4, -394.976, 14080.2, -498.272, 14054.9, -498.272, 14024.5, -650.71, 13991.2, -777.073, 13951.7, -921.487, 13929.4, -1030.8, 13909.2, -1127.08, 13895, -1266.48, 13879.9, -1383.81, 13863.7, -1306.59, 13859.6, -1266.48, 13836.4, -1222.35, 13805, -1108.02, 13807, -1007.73, 13778.7, -937.533, 13774.6, -858.306, 13730.1, -722.917, 13696.7, -643.69, 13678.5, -682.802, 13654.2, -645.696, 13636, -594.549, 13487.3, -623.632, 13382.1, -617.615, 13307.2, -612.601, 13210.1, -640.681, 12915.7, -614.606, 12824.6, -582.514, 12571.7, -443.114, 12439.2, -337.812, 12063.8, -29.9282, 11673.3, 303.028, 11636.9, 338.128, 11556.9, 359.189, 11412.3, 393.287, 11286.8, 412.341, 11163.4, 424.376, 11039.9, 421.367, 11086, -0.992676, 11009, -11.9116, 10824.4, 404.318, 10710.1, 388.272, 10568.5, 340.134, 10343.9, 241.852, 10185, 222.797, 9896.69, -483.229, 10132.4, -640.681, 10169.9, -668.762, 10201.2, -680.796, 10250.8, -692.831, 10271, -703.863, 10324.7, -700.854, 10341, -715.693, 10363.1, -772.058, 10389.4, -819.194, 10099, -773.061, 9861.28, -776.07, 9850.16, -830.225, 9790.46, -830.225, 9760.11, -879.366, 8809.09, -870.341, 8759.51, -823.205, 8759.51, -667.759, 8792.9, -639.678, 8783.79, -170.331, 8795.93, 571.799, 8823.25, 1580.7, 11254, 1746.06, 17329, 1741.1, 22498.8, 277.956, 22487.6, -1754.88, 24768.7, -1766.47, 24778.2, -1995.57, 24982.6, -2902.17, 25071.6, -3081.69, 25806.1, -3450.75, 24919.8, -3450.75, 24788.3, -3271.23, 24748.8, -3019.51, 24663.9, -2873.09, 24603.2, -2592.28, 24340.1, -2435.83, 24088.2, -2425.81, 23948.6, -2396.72, 23862.8, -2314.58, 23705.8, -2276.38, 23621.8, -2183.11, 23622.8, -2151.02, 23712.8, -2152.02, 23830.2, -2078.81, 23926.4, -1965.88, 22705.7, -1950.91, 22702.1, -2019.64, 22717.3, -2049.73, 22683.9, -2080.82, 22638.4, -2070.79, 22607, -2075.8, 22581.7, -2138.98, 22416.8, -2131.96, 22341.9, -2068.78, 22301.5, -2020.64, 22338.9, -1992.56, 22363.3, -1946.72, 21521.4, -1936.4, 21238.2, -1902.3, 21027.7, -1847.14, 20988.3, -1774.94, 20984.2, -1547.28, 21001.4, -1533.24, 21010.5, -1393.84, 20990.3, -1278.51, 21034.8, -1303.58, 21057.1, -1377.8, 21128.9, -1471.06, 21131.9, -1470.06, 21142, -1448, 21168.3, -1317.62, 21174.4, -1247.42, 21182.5, -1200.29, 21184.5, -1199.28, 21188.6, -1181.23, 21186.6, -1156.16, 21192.6, -1147.14, 21198.7, -1148.14, 21205.8, -1170.2, 21210.8, -1277.51, 21215.9, -1278.51, 21222, -1299.57, 21226, -1301.58, 21234.1, -1386.82, 21245.2, -1447, 21259.4, -1393.84, 21267.5, -1392.84, 21281.7, -1328.66, 21300.9, -1260.46, 21325.2, -1158.17, 21338.3, -1039.83, 21346.4, -1082.95, 21367.7, -1150.14, 21368.7, -1185.24, 21377.8, -1217.34, 21380.8, -1248.43, 21411.2, -1337.68, 21434.4, -1262.47, 21433.7, -1130.67, 21446.6, -1079.94, 21439.5, -1012.75, 21450.6, -963.608, 21447.6, -849.28, 21430.4, -801.142, 21428.4, -752.001, 21434.4, -689.822, 21301.9, -717.903, 20262.8, -715.897, 20222.4, -683.805, 20150.5, -687.817 )
+polygon = PoolVector2Array( 17458.3, -645.696, 17325, -712.719, 16455.7, -695.84, 15610.9, -656.727, 15569.4, -640.681, 15561.4, -576.497, 15547.2, -470.192, 15248.7, -462.169, 15245.7, -421.051, 15196.1, -369.904, 15189, -296.694, 14251.2, -308.729, 14263.3, -383.944, 14148, -426.065, 14100.4, -394.976, 14080.2, -498.272, 14054.9, -498.272, 14024.5, -650.71, 13991.2, -777.073, 13951.7, -921.487, 13929.4, -1030.8, 13909.2, -1127.08, 13895, -1266.48, 13879.9, -1383.81, 13863.7, -1306.59, 13859.6, -1266.48, 13836.4, -1222.35, 13805, -1108.02, 13807, -1007.73, 13778.7, -937.533, 13774.6, -858.306, 13730.1, -722.917, 13696.7, -643.69, 13678.5, -682.802, 13654.2, -645.696, 13636, -594.549, 13487.3, -623.632, 13382.1, -617.615, 13307.2, -612.601, 13210.1, -640.681, 12915.7, -614.606, 12824.6, -582.514, 12571.7, -443.114, 12439.2, -337.812, 12063.8, -29.9282, 11673.3, 303.028, 11636.9, 338.128, 11556.9, 359.189, 11412.3, 393.287, 11286.8, 412.341, 11163.4, 424.376, 10997, 428.823, 11043, 53.603, 11064, -16.8745, 11039, -22.8306, 10943, 260.073, 10898, 317.646, 10859, 418.896, 10710.1, 388.272, 10568.5, 340.134, 10343.9, 241.852, 10185, 222.797, 9896.69, -483.229, 10132.4, -640.681, 10169.9, -668.762, 10201.2, -680.796, 10250.8, -692.831, 10271, -703.863, 10324.7, -700.854, 10341, -715.693, 10363.1, -772.058, 10389.4, -819.194, 10099, -773.061, 9861.28, -776.07, 9850.16, -830.225, 9790.46, -830.225, 9760.11, -879.366, 8809.09, -870.341, 8759.51, -823.205, 8759.51, -667.759, 8792.9, -639.678, 8783.79, -170.331, 8795.93, 571.799, 8823.25, 1580.7, 11254, 1746.06, 17329, 1741.1, 22498.8, 277.956, 22487.6, -1754.88, 24768.7, -1766.47, 24778.2, -1995.57, 24982.6, -2902.17, 25071.6, -3081.69, 25806.1, -3450.75, 25436, -3789.92, 25114, -3927.89, 25030, -4059.92, 25025, -4253.48, 24591, -4258.44, 24747, -4049, 24747, -3900.1, 24930, -3795.87, 24969, -3613.23, 24919.8, -3450.75, 24788.3, -3271.23, 24748.8, -3019.51, 24663.9, -2873.09, 24603.2, -2592.28, 24304, -2512.38, 23981, -2577.9, 23717, -2484.59, 23543, -2360.51, 23668, -2153.05, 23821, -2166.94, 23911, -2070.66, 23967, -1907.86, 22768, -1880.07, 22711, -1955.51, 22702.1, -2019.64, 22717.3, -2049.73, 22683.9, -2080.82, 22638.4, -2070.79, 22607, -2075.8, 22581.7, -2138.98, 22416.8, -2131.96, 22341.9, -2068.78, 22301.5, -2020.64, 22338.9, -1992.56, 22391, -1901.91, 21180.4, -1887.15, 21027.7, -1847.14, 20988.3, -1774.94, 20984.2, -1547.28, 21001.4, -1533.24, 21010.5, -1393.84, 20990.3, -1278.51, 21034.8, -1303.58, 21057.1, -1377.8, 21128.9, -1471.06, 21131.9, -1470.06, 21142, -1448, 21168.3, -1317.62, 21174.4, -1247.42, 21182.5, -1200.29, 21184.5, -1199.28, 21188.6, -1181.23, 21186.6, -1156.16, 21192.6, -1147.14, 21198.7, -1148.14, 21205.8, -1170.2, 21210.8, -1277.51, 21215.9, -1278.51, 21222, -1299.57, 21226, -1301.58, 21234.1, -1386.82, 21245.2, -1447, 21259.4, -1393.84, 21267.5, -1392.84, 21281.7, -1328.66, 21300.9, -1260.46, 21325.2, -1158.17, 21338.3, -1039.83, 21346.4, -1082.95, 21367.7, -1150.14, 21368.7, -1185.24, 21377.8, -1217.34, 21380.8, -1248.43, 21411.2, -1337.68, 21434.4, -1262.47, 21433.7, -1130.67, 21446.6, -1079.94, 21439.5, -1012.75, 21450.6, -963.608, 21447.6, -849.28, 21430.4, -801.142, 21428.4, -752.001, 21434.4, -689.822, 21301.9, -717.903, 20298.3, -715.966, 20228, -665.072 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CaveFloor"]
 texture = ExtResource( 29 )
@@ -1392,7 +1370,6 @@ texture = ExtResource( 29 )
 [node name="Level2DoorRedRift" parent="RedRifts" instance=ExtResource( 6 )]
 position = Vector2( 33600, 4100 )
 riftActive = false
-Time = 10
 toRotation = 90
 
 [node name="Platform" parent="RedRifts/Level2DoorRedRift" instance=ExtResource( 13 )]
@@ -1429,6 +1406,16 @@ position = Vector2( 0, 0 )
 
 [node name="CollisionPolygon2D" parent="RedRifts/RedRift/Platform" index="3"]
 polygon = PoolVector2Array( 266.519, 159.986, 354.922, 160.661, 354.812, 172.457, 264.6, 172.962 )
+
+[node name="SpikeHitbox3" parent="RedRifts/RedRift/Platform" instance=ExtResource( 14 )]
+position = Vector2( 35.833, -12.5002 )
+scale = Vector2( 0.166667, 0.166667 )
+
+[node name="Sprite" parent="RedRifts/RedRift/Platform/SpikeHitbox3" index="0"]
+texture = ExtResource( 19 )
+
+[node name="CollisionPolygon2D" parent="RedRifts/RedRift/Platform/SpikeHitbox3" index="1"]
+polygon = PoolVector2Array( 112.004, -54, 112.004, -13, 41.0039, 123, -19.9961, 95, -112.996, 10, -12.9961, -122 )
 
 [node name="RedCirclePuzzle" type="Node2D" parent="."]
 position = Vector2( 26725, 4546 )
@@ -1925,13 +1912,6 @@ polygon = PoolVector2Array( 16700, -1925, 16160, -1817, 16221, -1486, 17376, 415
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D20"]
 color = Color( 0, 0, 0, 1 )
 
-[node name="DwWood01" type="Sprite" parent="."]
-show_behind_parent = true
-position = Vector2( 18098, -2566 )
-rotation = -0.778835
-scale = Vector2( 0.49799, 0.289137 )
-texture = ExtResource( 24 )
-
 [node name="WaterDeath" type="Area2D" parent="."]
 position = Vector2( 8079, 1329 )
 rotation = -2.67135e-08
@@ -1951,7 +1931,7 @@ position = Vector2( 36940.2, 4249.36 )
 
 [node name="NPC" parent="Tachi2" index="1"]
 position = Vector2( -76.8984, -38.3906 )
-frame = 6
+frame = 3
 
 [node name="Tachi3" parent="." instance=ExtResource( 41 )]
 position = Vector2( 23900, 7870 )
@@ -1961,7 +1941,7 @@ position = Vector2( 0, 160 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
-frame = 7
+frame = 4
 playing = true
 flip_h = true
 flip_v = true
@@ -1976,7 +1956,7 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 5
+frame = 2
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -1992,6 +1972,22 @@ frame = 1
 [node name="Camera2D" parent="Shadows/Shadow2" index="2"]
 position = Vector2( -191.143, -50.0334 )
 zoom = Vector2( 1, 1 )
+
+[node name="Shadow3" parent="Shadows" instance=ExtResource( 76 )]
+position = Vector2( 31875.5, 4253.41 )
+
+[node name="Shadow4" parent="Shadows" instance=ExtResource( 77 )]
+position = Vector2( 27512.9, 7890.52 )
+
+[node name="NPC2" type="AnimatedSprite" parent="Shadows/Shadow4"]
+position = Vector2( 0, 130 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 91 )
+animation = "Blue"
+frame = 2
+playing = true
+flip_h = true
+flip_v = true
 
 [node name="Boat" parent="." instance=ExtResource( 42 )]
 position = Vector2( 28294, 345.526 )
@@ -2010,183 +2006,188 @@ position = Vector2( 431.093, -1.61649 )
 position = Vector2( 16.791, -7.37526 )
 scale = Vector2( 0.103108, 0.0959493 )
 
-[node name="Lvl2Cave" type="Node2D" parent="."]
+[node name="Lvl2" type="Node2D" parent="."]
 
-[node name="Layer1" type="Node2D" parent="Lvl2Cave"]
+[node name="Layer1" type="Node2D" parent="Lvl2"]
 
-[node name="CaveFloorBig" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Stalagtite05" type="Sprite" parent="Lvl2/Layer1"]
+position = Vector2( 26560, 5374 )
+rotation = -2.87979
+scale = Vector2( 0.65, 0.717 )
+texture = ExtResource( 61 )
+
+[node name="Stalagtite03" type="Sprite" parent="Lvl2/Layer1"]
+position = Vector2( 31108.6, 3632.06 )
+scale = Vector2( 0.65, 0.717 )
+texture = ExtResource( 61 )
+
+[node name="CaveFloorBig" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 30013.9, 4879.8 )
 scale = Vector2( 1.00012, 1 )
 texture = ExtResource( 62 )
 
-[node name="CaveFloorBig3" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="CaveFloorBig3" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 31728.8, 4781.8 )
 scale = Vector2( 1, 1.40718 )
 texture = ExtResource( 62 )
 flip_h = true
 
-[node name="CaveFloorBig2" type="Sprite" parent="Lvl2Cave/Layer1/CaveFloorBig3"]
+[node name="CaveFloorBig2" type="Sprite" parent="Lvl2/Layer1/CaveFloorBig3"]
 position = Vector2( 371.084, -211.525 )
 rotation = -0.037226
 scale = Vector2( 1.03215, 0.711596 )
 texture = ExtResource( 62 )
 
-[node name="Stalagtite01" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Stalagtite01" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 29212.1, 3472.44 )
 scale = Vector2( 0.740663, 0.654246 )
 texture = ExtResource( 60 )
 flip_h = true
 flip_v = true
 
-[node name="CaveRoof04" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="CaveRoof04" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 31291.6, 3274.43 )
 rotation = 0.610865
 scale = Vector2( 0.756219, 1 )
 texture = ExtResource( 64 )
 
-[node name="GeodePuzzleCaveBottom" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="GeodePuzzleCaveBottom" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 26905.9, 4956.58 )
 texture = ExtResource( 69 )
 
-[node name="CaveFloor02" type="Sprite" parent="Lvl2Cave/Layer1/GeodePuzzleCaveBottom"]
+[node name="CaveFloor02" type="Sprite" parent="Lvl2/Layer1/GeodePuzzleCaveBottom"]
 position = Vector2( 2114.51, -367.294 )
 scale = Vector2( 1, 0.718014 )
 texture = ExtResource( 66 )
 flip_h = true
 
-[node name="CaveRoof02" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="CaveRoof02" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 23620.8, 5093.23 )
 rotation = 1.5708
 scale = Vector2( 1.7, 1 )
 texture = ExtResource( 71 )
 flip_v = true
 
-[node name="Stalagtite0103" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Stalagtite0103" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 29407.9, 4125.1 )
 texture = ExtResource( 73 )
 flip_h = true
 
-[node name="Fade04" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Fade04" type="Sprite" parent="Lvl2/Layer1"]
 show_behind_parent = true
 position = Vector2( 30461.1, 5673.9 )
 scale = Vector2( 1.20092, 0.927465 )
 texture = ExtResource( 63 )
 
-[node name="Fade05" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Fade05" type="Sprite" parent="Lvl2/Layer1"]
 show_behind_parent = true
 position = Vector2( 27056.2, 6202.29 )
 scale = Vector2( 1.13193, 0.428372 )
 texture = ExtResource( 63 )
 
-[node name="Fade06" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Fade06" type="Sprite" parent="Lvl2/Layer1"]
 show_behind_parent = true
 position = Vector2( 36621.5, 4890.91 )
 scale = Vector2( 0.409243, 0.408165 )
 texture = ExtResource( 63 )
 
-[node name="Blend" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Blend" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 29940, 5393.42 )
 scale = Vector2( 0.476689, 0.699585 )
 texture = ExtResource( 72 )
 
-[node name="Fade07" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Fade07" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 32260.4, 5638.04 )
 scale = Vector2( 0.401403, 0.963331 )
 texture = ExtResource( 63 )
 
-[node name="Fade08" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Fade08" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 28584.2, 5651.86 )
 rotation = 0.785398
 scale = Vector2( 0.178453, 0.897394 )
 texture = ExtResource( 63 )
 
-[node name="Blend2" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Blend2" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 32152.2, 4955.57 )
 scale = Vector2( 0.470466, 0.699585 )
 texture = ExtResource( 72 )
 
-[node name="Blend3" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Blend3" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 31067.1, 5356.67 )
 scale = Vector2( 0.476689, 0.699585 )
 texture = ExtResource( 72 )
 
-[node name="Blend4" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Blend4" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 28396.2, 5421.41 )
 rotation = -0.785398
 scale = Vector2( 0.476689, 0.49504 )
 texture = ExtResource( 72 )
 
-[node name="Blend5" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Blend5" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 26531.5, 6063.88 )
 scale = Vector2( 0.80449, 0.327382 )
 texture = ExtResource( 72 )
 
-[node name="LongWalls" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="LongWalls" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 25022, 5341.42 )
 scale = Vector2( 0.5, 0.395525 )
 texture = ExtResource( 74 )
 
-[node name="Fade09" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Fade09" type="Sprite" parent="Lvl2/Layer1"]
 show_behind_parent = true
 position = Vector2( 22429.5, 4199.35 )
 scale = Vector2( 0.503081, 2.50203 )
 texture = ExtResource( 63 )
 
-[node name="Fade10" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="Fade10" type="Sprite" parent="Lvl2/Layer1"]
 position = Vector2( 39623.9, 4435.77 )
 scale = Vector2( 0.876851, 0.865331 )
 texture = ExtResource( 63 )
 
-[node name="GeodePuzzleCaveTop" type="Sprite" parent="Lvl2Cave/Layer1"]
-position = Vector2( 40800, 2625 )
+[node name="GeodePuzzleCaveTop" type="Sprite" parent="Lvl2/Layer1"]
+position = Vector2( 40796, 2625 )
 rotation = 1.5708
 scale = Vector2( 0.3, 0.4 )
 texture = ExtResource( 70 )
 flip_h = true
 
-[node name="CaveFloorBig2" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="CaveFloorBig2" type="Sprite" parent="Lvl2/Layer1"]
 show_behind_parent = true
 position = Vector2( 40270, 3333 )
 texture = ExtResource( 62 )
 
-[node name="CaveFloorBig4" type="Sprite" parent="Lvl2Cave/Layer1"]
+[node name="CaveFloorBig4" type="Sprite" parent="Lvl2/Layer1"]
 show_behind_parent = true
 position = Vector2( 38690.5, 3333 )
 texture = ExtResource( 62 )
 flip_h = true
 
-[node name="Stalagtite0104" type="Sprite" parent="Lvl2Cave/Layer1"]
-position = Vector2( 36119.7, 3490.62 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 73 )
-flip_h = true
-
-[node name="Layer2" type="Node2D" parent="Lvl2Cave"]
-
-[node name="Stalagtite03" type="Sprite" parent="Lvl2Cave/Layer2"]
-position = Vector2( 31108.6, 3632.06 )
-scale = Vector2( 0.649804, 0.717332 )
-z_index = -15
+[node name="Stalagtite04" type="Sprite" parent="Lvl2/Layer1"]
+position = Vector2( 27270, 3951 )
+rotation = 0.610865
+scale = Vector2( 0.65, 0.717 )
 texture = ExtResource( 61 )
 
-[node name="Stalagtite0101" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Layer2" type="Node2D" parent="Lvl2"]
+
+[node name="Stalagtite0101" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 36969.5, 3737.14 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 67 )
 flip_v = true
 
-[node name="Stalagtite02" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Stalagtite02" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 36809.6, 3689.65 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 61 )
 
-[node name="CaveRoof02" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="CaveRoof02" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 37262.9, 4019.19 )
 rotation = 1.5708
 scale = Vector2( 0.855631, 1 )
 texture = ExtResource( 71 )
 
-[node name="GeodePuzzleCaveBottom02" type="Sprite" parent="Lvl2Cave/Layer2/CaveRoof02"]
+[node name="GeodePuzzleCaveBottom02" type="Sprite" parent="Lvl2/Layer2/CaveRoof02"]
 show_behind_parent = true
 position = Vector2( 75, 350 )
 rotation = -3.05997e-06
@@ -2194,166 +2195,434 @@ scale = Vector2( 0.467491, 0.4 )
 texture = ExtResource( 69 )
 flip_v = true
 
-[node name="CaveFloorBig2" type="Sprite" parent="Lvl2Cave/Layer2/CaveRoof02"]
+[node name="CaveFloorBig2" type="Sprite" parent="Lvl2/Layer2/CaveRoof02"]
 position = Vector2( 532.325, 805.717 )
 rotation = -1.5708
 scale = Vector2( 0.683775, 1.16873 )
 texture = ExtResource( 62 )
 
-[node name="CaveRoof03" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="CaveRoof03" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 30223.3, 2935.96 )
 texture = ExtResource( 64 )
 
-[node name="CaveRoof04" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="CaveRoof04" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 28855.5, 3432.03 )
 rotation = -0.841249
 texture = ExtResource( 64 )
 
-[node name="GeodePuzzleCaveTop" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="GeodePuzzleCaveTop" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 26845.2, 3854.33 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 70 )
 
-[node name="CaveRoof05" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="CaveRoof05" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 24149.9, 3320.89 )
 texture = ExtResource( 64 )
 
-[node name="CaveRoof06" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="CaveRoof06" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 32139.5, 3652.27 )
 texture = ExtResource( 64 )
 flip_h = true
 
-[node name="Fade01" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Fade01" type="Sprite" parent="Lvl2/Layer2"]
 show_behind_parent = true
 position = Vector2( 26275.6, 2423.23 )
 scale = Vector2( 1.50747, 0.724898 )
 texture = ExtResource( 63 )
 
-[node name="Blend" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Blend" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 30382.2, 2400.5 )
 scale = Vector2( 0.832308, 0.742944 )
 texture = ExtResource( 72 )
 
-[node name="Fade03" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Fade03" type="Sprite" parent="Lvl2/Layer2"]
 show_behind_parent = true
 position = Vector2( 30713.5, 2284.06 )
 scale = Vector2( 1.06762, 0.583708 )
 texture = ExtResource( 63 )
 
-[node name="Fade04" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Fade04" type="Sprite" parent="Lvl2/Layer2"]
 show_behind_parent = true
-position = Vector2( 32034.3, 2580.84 )
-scale = Vector2( 0.420886, 0.879474 )
+position = Vector2( 32134.8, 2580.84 )
+scale = Vector2( 0.471118, 0.879474 )
 texture = ExtResource( 63 )
 
-[node name="Blend2" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Blend2" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 27375.3, 2697.53 )
 scale = Vector2( 0.832308, 0.742944 )
 texture = ExtResource( 72 )
 
-[node name="Blend3" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Blend3" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 24578.9, 2750.06 )
 scale = Vector2( 0.832308, 0.742944 )
 texture = ExtResource( 72 )
 
-[node name="Blend4" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Blend4" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 32031.8, 3103.67 )
 scale = Vector2( 0.42284, 0.742944 )
 texture = ExtResource( 72 )
 
-[node name="Blend6" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Blend6" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 36627.8, 4953.55 )
 scale = Vector2( 0.423376, 0.713504 )
 texture = ExtResource( 72 )
 
-[node name="Fade06" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Fade06" type="Sprite" parent="Lvl2/Layer2"]
 show_behind_parent = true
 position = Vector2( 37682.3, 4189.25 )
 scale = Vector2( 0.215751, 1.10983 )
 texture = ExtResource( 63 )
 
-[node name="Blend7" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Blend7" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 37913.5, 4102.87 )
 scale = Vector2( 0.268582, 1.23963 )
 texture = ExtResource( 72 )
 
-[node name="Blend5" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Blend5" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 22605, 4593.88 )
 scale = Vector2( 0.462313, 3.08168 )
 texture = ExtResource( 72 )
 
-[node name="Blend8" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Blend8" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 31301, 2811.59 )
 rotation = 0.610865
 scale = Vector2( 0.3, 0.5 )
 texture = ExtResource( 72 )
 
-[node name="CaveRoof07" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="Area2D" type="KinematicBody2D" parent="Lvl2/Layer2"]
 position = Vector2( 36000, 2975 )
 rotation = 1.5708
-texture = ExtResource( 64 )
-flip_h = true
-
-[node name="Area2D" type="KinematicBody2D" parent="Lvl2Cave/Layer2/CaveRoof07"]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lvl2Cave/Layer2/CaveRoof07/Area2D"]
-visible = false
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lvl2/Layer2/Area2D"]
 polygon = PoolVector2Array( -167.348, 200.039, -31.9666, 193.969, 117.56, 204.086, 851.045, 187.898, 909.643, 129.219, 930.859, -188.461, 949.043, -392.836, 925.806, -427.234, 842.961, -404.977, 824.835, -374.723, 820.735, -251.195, 758.096, -263.332, 403.477, -372.598, 96.343, -237.027, -170.379, -250.18, -412.854, -338.199, -562.379, -514.238, -543.183, -634.633, -765.452, -570.895, -1012.98, -504.121, -991.761, -431.277, -1261.51, -311.895, -1263.53, -38.7266, -916.998, 41.1992, -858.4, 190.934 )
 
-[node name="GeodePuzzleCaveTop2" type="Sprite" parent="Lvl2Cave/Layer2"]
-position = Vector2( 36380, 2880 )
-rotation = 1.5708
+[node name="Stalagtite0104" type="Sprite" parent="Lvl2/Layer2/Area2D"]
+position = Vector2( 515.62, -119.711 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 73 )
+flip_h = true
+
+[node name="CaveRoof07" type="Sprite" parent="Lvl2/Layer2/Area2D"]
+texture = ExtResource( 64 )
+flip_h = true
+
+[node name="GeodePuzzleCaveTop2" type="Sprite" parent="Lvl2/Layer2/Area2D"]
+position = Vector2( -95.0012, -380 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 70 )
 flip_h = true
 flip_v = true
 
-[node name="Blend9" type="Sprite" parent="Lvl2Cave/Layer2"]
-position = Vector2( 39319.8, 3748.25 )
+[node name="Blend9" type="Sprite" parent="Lvl2/Layer2"]
+position = Vector2( 39312.8, 3748.25 )
 scale = Vector2( 0.876574, 0.48025 )
 texture = ExtResource( 72 )
 
-[node name="DwWood02" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="DwWood02" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 36132.8, 1391.2 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 24 )
 flip_h = true
 
-[node name="DwSmallTree" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="DwSmallTree" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 40512.6, 662.763 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 28 )
 flip_h = true
 
-[node name="DwPlatformGreen" type="Sprite" parent="Lvl2Cave/Layer2"]
-position = Vector2( 37836.9, 3141.21 )
-scale = Vector2( 1, 0.5 )
-texture = ExtResource( 75 )
+[node name="DwPlatformGreen02" type="Sprite" parent="Lvl2/Layer2"]
+position = Vector2( 37530, 3150 )
+scale = Vector2( 0.75, 0.5 )
+texture = ExtResource( 86 )
 
-[node name="DwGrassAndWood" type="Sprite" parent="Lvl2Cave/Layer2"]
-position = Vector2( 39750, 3050 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 26 )
+[node name="DwTallLongPlatform" type="Sprite" parent="Lvl2/Layer2"]
+position = Vector2( 39100, 3500 )
+scale = Vector2( 0.75, 0.5 )
+texture = ExtResource( 89 )
 
-[node name="DwFlowerStump02" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="DwFlowerStump02" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 38150, 3000 )
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 17 )
 
-[node name="DwWood03" type="Sprite" parent="Lvl2Cave/Layer2"]
+[node name="DwTallPlatform2" type="Sprite" parent="Lvl2/Layer2"]
+position = Vector2( 34400, 4550 )
+scale = Vector2( 0.6, 0.3 )
+texture = ExtResource( 89 )
+flip_h = true
+
+[node name="DwWood03" type="Sprite" parent="Lvl2/Layer2"]
 position = Vector2( 40500, 2200 )
 scale = Vector2( 0.8, 0.4 )
 texture = ExtResource( 24 )
 
-[node name="DwGrassyPlatform2" type="Sprite" parent="Lvl2Cave/Layer2/DwWood03"]
+[node name="DwGrassyPlatform2" type="Sprite" parent="Lvl2/Layer2/DwWood03"]
 position = Vector2( -625, 1500 )
-scale = Vector2( 0.9375, 1.875 )
-texture = ExtResource( 23 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 87 )
+flip_h = true
+
+[node name="ThornPuzzleBottomPiece" type="Sprite" parent="Lvl2/Layer2"]
+position = Vector2( 43700, 2625 )
+texture = ExtResource( 83 )
+flip_h = true
+
+[node name="Collectables" type="Node2D" parent="."]
+z_index = 50
+
+[node name="Collectable" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 1342.56, 101.031 )
+
+[node name="Collectable2" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 2113.5, -202.062 )
+
+[node name="Collectable3" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 3607.82, -140.433 )
+
+[node name="Collectable10" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 4579.08, -460.702 )
+
+[node name="Collectable4" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 6605.57, -1270.97 )
+
+[node name="Collectable5" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 7534.33, -1745.82 )
+
+[node name="Collectable8" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 8530.88, -1402.31 )
+
+[node name="Collectable9" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 10746.6, -1167.92 )
+
+[node name="Collectable6" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 11577.2, -1108.31 )
+
+[node name="Collectable7" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 14712.5, -1200.25 )
+
+[node name="Collectable11" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 16836.1, -2440.91 )
+
+[node name="Collectable12" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 18068, -1042 )
+
+[node name="Collectable13" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17654.6, 25.2579 )
+
+[node name="Collectable14" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17762.9, 122.248 )
+
+[node name="Collectable15" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17869.1, 230.351 )
+
+[node name="Collectable16" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17969.3, 358.66 )
+
+[node name="Collectable17" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 18055.3, 478.887 )
+
+[node name="Collectable18" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 18158.5, 627.402 )
+
+[node name="Collectable19" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 21279.7, 223.279 )
+
+[node name="Collectable20" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 21860.4, 188.928 )
+
+[node name="Collectable21" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24082.1, -1421.51 )
+
+[node name="Collectable22" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24538.4, -2233.8 )
+
+[node name="Collectable23" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24967.4, -2567.2 )
+
+[node name="Collectable24" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26750, 300 )
+
+[node name="Collectable25" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27000, 300 )
+
+[node name="Collectable26" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27250, 300 )
+
+[node name="Collectable27" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27500, 300 )
+
+[node name="Collectable28" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 28000, 286.928 )
+
+[node name="Collectable30" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33350, 130 )
+
+[node name="Collectable32" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33650, 430 )
+
+[node name="Collectable33" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 31293.7, 4209.96 )
+
+[node name="Collectable34" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 30220.3, 3260.27 )
+
+[node name="Collectable35" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 29416, 3555.28 )
+
+[node name="Collectable36" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26578.1, 4681.78 )
+
+[node name="Collectable37" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26841.1, 4386.77 )
+
+[node name="Collectable38" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27093, 3688.64 )
+
+[node name="Collectable39" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24118.6, 4102.87 )
+
+[node name="Collectable40" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24111.5, 4535.28 )
+
+[node name="Collectable41" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24100.3, 4999.01 )
+
+[node name="Collectable42" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 24093.3, 5463.76 )
+
+[node name="Collectable43" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25437.9, 8008.73 )
+
+[node name="Collectable44" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25120.2, 8692.71 )
+
+[node name="Collectable45" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 27366.2, 7511.66 )
+
+[node name="Collectable46" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 28620.7, 6982.25 )
+
+[node name="Collectable47" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 29965.3, 7788.48 )
+
+[node name="Collectable48" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 30520.8, 7796.56 )
+
+[node name="Collectable49" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 31072.2, 7792.52 )
+
+[node name="Collectable50" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 31526.4, 7799.59 )
+
+[node name="Collectable52" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33750, 630 )
+
+[node name="Collectable53" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33200, 230 )
+
+[node name="Collectable54" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33500, 230 )
+
+[node name="Collectable55" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33850, 830 )
+
+[node name="Collectable56" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33900, 1030 )
+
+[node name="Collectable57" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 33950, 1230 )
+
+[node name="Collectable29" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26500, 300 )
+
+[node name="Collectable58" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 38100, 2500 )
+
+[node name="Collectable59" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 38100, 2250 )
+
+[node name="Collectable60" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 37600, 1600 )
+
+[node name="Collectable31" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 17992, 1006 )
+
+[node name="Collectable51" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25900, -2700 )
+
+[node name="Collectable61" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26000, -2500 )
+
+[node name="Collectable62" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25800, -2900 )
+
+[node name="Collectable63" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 26100, -2300 )
+
+[node name="Collectable64" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25800, -700 )
+
+[node name="Collectable65" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 25800, -1000 )
+
+[node name="CheckPoints" type="Node2D" parent="."]
+
+[node name="Checkpoint7" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 973.654, 188.986 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 32546, 3836 )
+
+[node name="Checkpoint2" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 5172.96, -1250.76 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint3" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 10277, -1150 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint4" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 20001, 959 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint8" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 25613, -2967 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint5" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 32648.4, 4141.26 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint6" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 24522.2, 4006.89 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint9" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 36855.2, 2990.52 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint10" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 17050, -2250 )
+scale = Vector2( 4.07565, 4.07565 )
 
 [connection signal="hit" from="Player" to="WaterDeath" method="_on_Player_hit"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox7" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox8" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="RedRifts/RedRift/Platform/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="BlueRiftGroup/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="WaterDeath" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="get_button" from="Collectables/Collectable" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable2" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable3" to="Player" method="_on_Collectable_get_button"]
@@ -2412,16 +2681,25 @@ texture = ExtResource( 23 )
 [connection signal="get_button" from="Collectables/Collectable58" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable59" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable60" to="Player" method="_on_Collectable_get_button"]
-[connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="SpikeTreeLeft/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="BlueRiftGroup/Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="WaterDeath" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="get_button" from="Collectables/Collectable31" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable51" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable61" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable62" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable63" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable64" to="Player" method="_on_Collectable_get_button"]
+[connection signal="get_button" from="Collectables/Collectable65" to="Player" method="_on_Collectable_get_button"]
 
 [editable path="Player"]
+[editable path="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform"]
+[editable path="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform2"]
+[editable path="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform3"]
+[editable path="Lvl1/Layer2/Spikes/SpikeHitbox4"]
+[editable path="Lvl1/Layer2/Spikes/SpikeHitbox2"]
+[editable path="Lvl1/Layer2/Spikes/SpikeHitbox5"]
+[editable path="Lvl1/Layer2/Spikes/SpikeHitbox6"]
+[editable path="Lvl1/Layer2/Spikes/SpikeHitbox7"]
+[editable path="Lvl1/Layer2/Spikes/SpikeHitbox8"]
+[editable path="Lvl1/Layer2/Spikes/SpikeHitbox3"]
 [editable path="YellowRifts/YellowRift/Platform"]
 [editable path="YellowRifts/YellowRift2/Platform"]
 [editable path="YellowRifts/YellowRift3/Platform"]
@@ -2432,8 +2710,6 @@ texture = ExtResource( 23 )
 [editable path="YellowRifts/YellowRift7/Platform"]
 [editable path="YellowRifts/YellowRift8/Platform"]
 [editable path="YellowRifts/YellowRift9/Platform"]
-[editable path="SpikeTreeLeft/SpikeHitbox4"]
-[editable path="SpikeTreeLeft/SpikeHitbox3"]
 [editable path="TreeBlock/Platform"]
 [editable path="ThornPuzzle/YellowRift/SpikeHitbox4"]
 [editable path="ThornPuzzle/YellowRift/SpikeHitbox5"]
@@ -2442,6 +2718,7 @@ texture = ExtResource( 23 )
 [editable path="RedRifts/Level2DoorRedRift/Platform"]
 [editable path="RedRifts/RedRift"]
 [editable path="RedRifts/RedRift/Platform"]
+[editable path="RedRifts/RedRift/Platform/SpikeHitbox3"]
 [editable path="BlueRiftGroup/Rifts/YellowRift/Platform"]
 [editable path="BlueRiftGroup/Rifts/YellowRift2/Platform"]
 [editable path="Tachi2"]

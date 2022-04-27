@@ -16,10 +16,16 @@ func _process(delta):
 		Sub.modulate.a = lerp(Sub.modulate.a, 0, FadeSpeed)
 
 func Message():
+	if Tracker == 1:
+		Text = Text2
+	elif Tracker == 2:
+		Text = Text3
 	Box.visible = true
 	Dialogue.text = Text[At]
 	Dialogue.visible_characters = 0
 	Duration.start()
 	if At == Text.size() - 1:
-		Fade = true
-		Interactable = false
+		Tracker += 1
+		if Tracker == 3:
+			Fade = true
+			Interactable = false

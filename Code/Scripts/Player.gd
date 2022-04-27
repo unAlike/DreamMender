@@ -25,6 +25,7 @@ var blueFlipY
 var rng : RandomNumberGenerator
 onready var pickupCountObject := $Progress/Control/Count
 var pickupCount = 0
+export var collectableCount = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -242,5 +243,5 @@ func _on_Area2D_body_entered(body):
 # When the player collects a button
 func _on_Collectable_get_button():
 	pickupCount += 1
-	pickupCountObject.text = str(pickupCount)
+	pickupCountObject.text = str(pickupCount," / ",collectableCount)
 	
