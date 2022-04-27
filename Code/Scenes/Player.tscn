@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/Progress.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Audio/Music/Dreamy_Ambient_Song.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Audio/Music/1st Song.wav" type="AudioStream" id=17]
+[ext_resource path="res://Art/Misc/Button.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 13, 41 )
@@ -60,56 +61,6 @@ region = Rect2( 1800, 0, 300, 452 )
 flags = 5
 atlas = ExtResource( 5 )
 region = Rect2( 2100, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=109]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 264, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=110]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 528, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=111]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 792, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=112]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=82]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=70]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=71]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=106]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=107]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=58]
 flags = 5
@@ -171,6 +122,56 @@ flags = 5
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=82]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=106]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=107]
+flags = 5
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=109]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 264, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=110]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 528, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=111]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 792, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=112]
+flags = 5
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
@@ -178,30 +179,30 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ) ],
-"loop": false,
-"name": "jump",
-"speed": 15.0
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
 }, {
 "frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": false,
 "name": "wallJump",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 83 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 106 ), SubResource( 107 ) ],
 "loop": false,
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ) ],
+"loop": false,
+"name": "jump",
+"speed": 15.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -464,7 +465,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 7
+frame = 2
 playing = true
 centered = false
 
@@ -529,31 +530,19 @@ custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
 text = "Resume"
 flat = true
 
-[node name="Collections" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+[node name="Sound" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
 margin_top = 24.0
 margin_right = 83.0
 margin_bottom = 44.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
-text = "Collections"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sound" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 48.0
-margin_right = 83.0
-margin_bottom = 68.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
 text = "Sound"
 flat = true
 
 [node name="Controls" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 72.0
+margin_top = 48.0
 margin_right = 83.0
-margin_bottom = 92.0
+margin_bottom = 68.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
 text = "Controls"
@@ -563,9 +552,9 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 96.0
+margin_top = 72.0
 margin_right = 83.0
-margin_bottom = 116.0
+margin_bottom = 92.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
 text = "Main Menu"
@@ -654,6 +643,29 @@ margin_bottom = 166.0
 text = "Back"
 flat = true
 
+[node name="Button" type="TextureRect" parent="CanvasLayer/PauseMenu"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -158.0
+margin_top = 25.0
+margin_bottom = 158.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="RichTextLabel" parent="CanvasLayer/PauseMenu"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
+margin_top = 38.0
+margin_bottom = 58.0
+text = "0 "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ControlsMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false
 anchor_right = 1.0
@@ -672,7 +684,7 @@ margin_left = -100.0
 margin_top = -100.0
 margin_right = 100.0
 margin_bottom = 100.0
-text = "				Controls:
+text = "Controls:
 
 W/Space - Jump
 A/Left - Move Left
@@ -681,6 +693,9 @@ E/Enter - Interact
 Mouse - Aim
 Left Click - Throw Needle
 Scroll - Zoom In/Out"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RayCast2D3" type="RayCast2D" parent="."]
 position = Vector2( 0, -31 )
@@ -752,7 +767,6 @@ stream = ExtResource( 16 )
 volume_db = -26.0
 
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Resume" to="CanvasLayer" method="_on_Resume_pressed"]
-[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Collections" to="CanvasLayer" method="_on_Collections_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Sound" to="CanvasLayer" method="_on_Sound_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Controls" to="CanvasLayer" method="_on_Controls_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/MainMenu" to="CanvasLayer" method="_on_MainMenu_pressed"]

@@ -54,7 +54,6 @@ func get_Input():
 		vel.x = lerp(vel.x, 0, .1)
 	if Input.is_action_just_released("zoomin") and $Camera2D.zoom > Vector2(1,1):
 		$Camera2D.zoom = $Camera2D.zoom - Vector2(.1,.1)
-		print("IN")
 	if Input.is_action_just_released("zoomout") and $Camera2D.zoom < Vector2(2.4,2.4):
 		$Camera2D.zoom = $Camera2D.zoom+Vector2(.1,.1)
 

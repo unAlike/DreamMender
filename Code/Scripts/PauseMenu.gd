@@ -9,19 +9,19 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
+		$PauseMenu/Count.text = str(get_parent().pickupCount," / ",get_parent().collectableCount)
 		if Input.is_action_just_pressed("ui_cancel") and InControls:
 			$PauseMenu.visible = !$PauseMenu.visible
 			$ControlsMenu.visible = !$ControlsMenu.visible
-			InControls = !InControls
+			InControls = false
 		elif Input.is_action_just_pressed("ui_cancel") and InSound:
 			$PauseMenu/VBoxContainer.visible = true
 			$"PauseMenu/Sound Sliders".visible = false
 			InSound = false
-		#if Input.is_action_just_pressed("ui_cancel") and !InControls:
 		else:
 			$PauseMenu.visible = !$PauseMenu.visible
 			get_tree().paused = !get_tree().paused
-		
+
 func _on_Resume_pressed():
 	$PauseMenu.visible = !$PauseMenu.visible
 	get_tree().paused = !get_tree().paused

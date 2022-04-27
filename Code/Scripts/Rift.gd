@@ -37,7 +37,6 @@ func Interact():
 	if riftUnstable:
 		pass
 	else:
-		print("BOB")
 		if riftActive == original:
 			riftActive = !riftActive
 		riftTimer.start()

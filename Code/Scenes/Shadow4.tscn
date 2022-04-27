@@ -149,7 +149,7 @@ animations = [ {
 script = ExtResource( 1 )
 Text = PoolStringArray( "Look at me.", "Why do you fear me\?", "I am you.", "Your darkness. Your insecurity.", "Your loneliness.", "LOOK AT ME!" )
 Text2 = PoolStringArray( "You are alone. This I know.", "You are scared. This I know.", "But you fear others more than you fear loneliness.", "And thus, the darkness feeds on you little by little.", "The loneliness will overcome you. This I know.", "And this you know." )
-Text3 = PoolStringArray( "What happens when you leave this dream\?", "To whom will you speak\?", "You do naught but spend time with the voices in your head.", "You disagree\?", "But I am you.", "The others are part of you. This I know.", "The Porcupine\? The voice of kindness, but still your own.", "The loneliness is feeding…", "festering…", "rotting…", "This I know." )
+Text3 = PoolStringArray( "What happens when you leave this dream\?", "To whom will you speak\?", "You do nothing but spend time with the voices in your head.", "You disagree\?", "But I am you.", "The others are part of you. This I know.", "The Porcupine\? The voice of kindness, but still your own.", "The loneliness is feeding…", "festering…", "rotting…", "This I know." )
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -208,7 +208,7 @@ __meta__ = {
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 28 )
 animation = "Blue"
-frame = 4
+frame = 6
 playing = true
 flip_h = true
 
