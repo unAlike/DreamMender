@@ -26,6 +26,7 @@ var blueFlipY
 var rng : RandomNumberGenerator
 onready var pickupCountObject := $CanvasLayer/Collectables/Count
 var pickupCount = 0
+var isLive = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,7 +35,6 @@ func _ready():
 	$Reflection.scale = $Sprite.scale
 	blueFlipY = get_tree().current_scene.get_node("BlueRiftGroup").get_node("Rifts").get_node("BlueRiftFlip").global_position.y
 	rng = RandomNumberGenerator.new()
-
 
 func get_Input():
 	dir = 0
@@ -109,6 +109,8 @@ func Process_On_Wall(delta):
 		timeOnWall = 0
 
 func _physics_process(delta):
+	if not isLive:
+		return
 	get_Input()
 	
 	# Updates Player's State in lastState
@@ -210,25 +212,31 @@ func GetGroundTouching():
 		return get_floor_angle()
 	return null
 
-# Kills player
+# Revives player at last checkpoint
 func die():
-	emit_signal("hit")
-	
-	$Sprite.play("death")
-	
+	isLive = true
+	set_physics_process(true)
+	$AnimationTree.active = true
 	if Checkpoint.last_position != null:
 		global_position = Checkpoint.last_position
 	else:
 		get_tree().reload_current_scene()
 
-func footStep():
-	rng.randomize()
-	$Sounds/Footsteps.get_children()[rng.randf_range(0, 4)].play()
-
 # Checks for collision with spikes that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):
 	if body.name == "Player":
+		isLive = false
+		set_physics_process(false)
+		$AnimationTree.active = false
+		emit_signal("hit")
+		$Sprite.play("death")
+		yield($Sprite, "animation_finished")
+		$Sprite.play("idle")
 		die()
+
+func footStep():
+	rng.randomize()
+	$Sounds/Footsteps.get_children()[rng.randf_range(0, 4)].play()
 
 # Flips player and player's gravity
 # Sets flipped to current reflection
