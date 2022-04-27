@@ -21,3 +21,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Area2D_body_entered(body):
 	if body.name == "Obsticles":
 		queue_free()
+	if body in get_tree().get_nodes_in_group("killNeedle"):
+		queue_free()

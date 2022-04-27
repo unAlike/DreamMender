@@ -183,10 +183,11 @@ func _process(delta):
 	$Reflection.flip_h = $Sprite.flip_h
 	var scrollSpeed = .1
 	var relSize = OS.get_screen_size()/get_viewport().get_size()
+	var vp = get_viewport()
 	print(relSize)
 	if !inBlueRift:
-		$Camera2D.offset_h =((((get_viewport().get_mouse_position().x/(get_viewport().size.x*relSize.x))-.5)*relSize.x)*4)+1
-		$Camera2D.offset_v =((((get_viewport().get_mouse_position().y/(get_viewport().size.y*relSize.y))-.5)*relSize.y)*4)+1
+		$Camera2D.offset_h = clamp( ((((vp.get_mouse_position().x-vp.size.x/4)/vp.size.x) *4* OS.get_screen_size().x) / OS.get_screen_size().x),-1,1)
+		$Camera2D.offset_v = clamp( ((((vp.get_mouse_position().y-vp.size.y/4)/vp.size.y) *4* OS.get_screen_size().y) / OS.get_screen_size().y),-1,1)
 	print( $Camera2D.offset_h)
 	print( $Camera2D.offset_v)
 
