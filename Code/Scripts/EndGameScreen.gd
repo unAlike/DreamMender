@@ -4,7 +4,7 @@ const section_time := 2.0
 const line_time := 0.3
 const base_speed := 100
 const speed_up_multiplier := 10.0
-const title_color := Color.blueviolet
+const title_color := Color.royalblue
 
 var scroll_speed := base_speed
 var speed_up := false
@@ -58,14 +58,14 @@ var credits = [
 		"Sound Designer"
 	],[
 		"Michael Tetzlaff",
-		"Professor"
+		"Producer"
 	],[
 		"Developed with Godot Engine",
 		"https://godotengine.org/license"
 	],[
 		"Special thanks",
-		"My family",
-		"My friends",
+		"Family",
+		"Friends",
 		"UW Stout GDD and SGX Staff"
 	]
 ]

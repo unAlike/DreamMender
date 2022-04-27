@@ -483,14 +483,14 @@ max_distance = 10120.0
 attenuation = 0.000126375
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 530, 290 )
+position = Vector2( 31829.9, 7851.12 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
 
 [node name="Sprite" parent="Player" index="4"]
 animation = "idle"
-frame = 4
+frame = 7
 
 [node name="AnimationTree" parent="Player" index="6"]
 parameters/playback = SubResource( 66 )
@@ -1988,7 +1988,7 @@ position = Vector2( 36940.2, 4249.36 )
 
 [node name="NPC" parent="Tachi2" index="1"]
 position = Vector2( -76.8984, -38.3906 )
-frame = 2
+frame = 7
 
 [node name="Tachi3" parent="." instance=ExtResource( 41 )]
 position = Vector2( 23900, 7870 )
@@ -1998,7 +1998,6 @@ position = Vector2( 0, 160 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
-frame = 3
 playing = true
 flip_h = true
 flip_v = true
@@ -2013,7 +2012,7 @@ position = Vector2( 16865.5, -2296.44 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 1
+frame = 6
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -2024,7 +2023,7 @@ position = Vector2( 19424.1, 1052.74 )
 scale = Vector2( 1.06895, 1.07015 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
-frame = 5
+frame = 2
 
 [node name="Camera2D" parent="Shadows/Shadow2" index="2"]
 position = Vector2( -191.143, -50.0334 )
