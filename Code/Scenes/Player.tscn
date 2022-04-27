@@ -156,11 +156,6 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 900, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=83]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
 [sub_resource type="AtlasTexture" id=106]
 flags = 4
 atlas = ExtResource( 6 )
@@ -170,6 +165,11 @@ region = Rect2( 0, 0, 300, 452 )
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -193,14 +193,14 @@ animations = [ {
 "name": "wallJump",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 83 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 106 ), SubResource( 107 ) ],
 "loop": false,
 "name": "wall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
 "speed": 5.0
 } ]
 
@@ -468,7 +468,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 7
+frame = 3
 playing = true
 centered = false
 
@@ -491,7 +491,6 @@ parameters/conditions/onGround = false
 parameters/conditions/onWall = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1, 2 )
 current = true
 zoom = Vector2( 2, 2 )
 limit_top = -1000000

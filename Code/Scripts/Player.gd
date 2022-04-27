@@ -184,8 +184,9 @@ func _process(delta):
 	var scrollSpeed = .1
 	var relSize = OS.get_screen_size()/get_viewport().get_size()
 	print(relSize)
-	$Camera2D.offset_h =((((get_viewport().get_mouse_position().x/(get_viewport().size.x*relSize.x))-.5)*relSize.x)*4)+1
-	$Camera2D.offset_v =((((get_viewport().get_mouse_position().y/(get_viewport().size.y*relSize.y))-.5)*relSize.y)*4)+1
+	if !inBlueRift:
+		$Camera2D.offset_h =((((get_viewport().get_mouse_position().x/(get_viewport().size.x*relSize.x))-.5)*relSize.x)*4)+1
+		$Camera2D.offset_v =((((get_viewport().get_mouse_position().y/(get_viewport().size.y*relSize.y))-.5)*relSize.y)*4)+1
 	print( $Camera2D.offset_h)
 	print( $Camera2D.offset_v)
 
@@ -200,15 +201,6 @@ func GroundCheck():
 	if is_on_floor() or $RayCast2D3.is_colliding():
 		return true
 	return false
-#	var raycasters = []
-#	for c in get_children():
-#		if c is RayCast2D:
-#			raycasters.append(c)
-#	for c in raycasters:
-#		if c.is_colliding():
-#			lastGround = c.get_collision_normal()
-#			return true
-#	return false
 
 func GetGroundTouching():
 	if is_on_floor():
@@ -244,6 +236,10 @@ func flipPlayer():
 
 func _on_Area2D_body_entered(body):
 	inBlueRift = true
+	$Camera2D.drag_margin_left = 0
+	$Camera2D.drag_margin_right = 0
+	$Camera2D.drag_margin_bottom = 0
+	$Camera2D.drag_margin_top = 0
 
 # When the player collects a button
 func _on_Collectable_get_button():

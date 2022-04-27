@@ -22,6 +22,10 @@ func _process(delta):
 
 func Interact():
 	player.inBlueRift = true
+	player.get_node("Camera2D").drag_margin_left = 0
+	player.get_node("Camera2D").drag_margin_right = 0
+	player.get_node("Camera2D").drag_margin_top = 0
+	player.get_node("Camera2D").drag_margin_bottom = 0
 	riftTimer.start()
 	if riftActive:
 		$OpenRift.play()
