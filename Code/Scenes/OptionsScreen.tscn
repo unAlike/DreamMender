@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/OptionsScreen.gd" type="Script" id=1]
 [ext_resource path="res://Art/MainMenu/DW_Main_Menu.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/VerdanaFontDefault.tres" type="DynamicFont" id=3]
 
 [node name="OptionsMenu" type="Control"]
 anchor_right = 1.0
@@ -28,10 +29,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -21.0
-margin_top = 78.0
-margin_right = 25.0
-margin_bottom = 98.0
+margin_top = 100.0
+margin_right = 51.0
+margin_bottom = 132.0
 custom_colors/font_color = Color( 0, 0.188235, 0.0313726, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "BACK"
 flat = true
 __meta__ = {
@@ -43,11 +45,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -143.0
-margin_top = -62.0
-margin_right = 147.0
-margin_bottom = 58.0
+margin_left = -220.0
+margin_top = -104.0
+margin_right = 233.0
+margin_bottom = 96.0
 custom_colors/font_color = Color( 0, 0.188235, 0.0313726, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Move: [A]/[D] or [Left]/[Right] Arrows
 Jump/Double Jump: [W] or [Space]
 Throw Needle: [Left Click]
