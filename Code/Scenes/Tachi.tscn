@@ -213,7 +213,7 @@ __meta__ = {
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 25 )
 animation = "Needle"
-frame = 3
+frame = 5
 playing = true
 
 [connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_Timer_timeout"]
