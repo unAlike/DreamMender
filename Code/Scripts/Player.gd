@@ -27,6 +27,7 @@ onready var pickupCountObject := $Progress/Control/Count
 var pickupCount = 0
 var musicFade = -1
 export var collectableCount = 100
+var isLive = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -112,6 +113,8 @@ func Process_On_Wall(delta):
 		timeOnWall = 0
 
 func _physics_process(delta):
+	if not isLive:
+		return
 	get_Input()
 	
 	# Updates Player's State in lastState
@@ -221,10 +224,11 @@ func GetGroundTouching():
 		return get_floor_angle()
 	return null
 
-# Kills player
+# Revives player at last checkpoint
 func die():
-	get_tree()
-	emit_signal("hit")
+	isLive = true
+	set_physics_process(true)
+	$AnimationTree.active = true
 	if Checkpoint.last_position != null:
 		global_position = Checkpoint.last_position
 	else:
@@ -258,6 +262,13 @@ func endThrow():
 # Checks for collision with spikes that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):
 	if body.name == "Player":
+		isLive = false
+		set_physics_process(false)
+		$AnimationTree.active = false
+		emit_signal("hit")
+		$Sprite.play("death")
+		yield($Sprite, "animation_finished")
+		$Sprite.play("idle")
 		die()
 
 # Flips player and player's gravity
