@@ -25,6 +25,7 @@ var blueFlipY
 var rng : RandomNumberGenerator
 onready var pickupCountObject := $Progress/Control/Count
 var pickupCount = 0
+var musicFade = -1
 export var collectableCount = 100
 
 # Called when the node enters the scene tree for the first time.
@@ -177,13 +178,23 @@ func _physics_process(delta):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if global_position.y > 5500:
+		if not $Music/Song3.playing:
+			$Music/Song3.play()
+			$Music/Song3.volume_db = -30
+		if $Music/Song1.volume_db < -40:
+			$Music/Song1.playing = false
+		else:
+			$Music/Song1.volume_db -= delta*20
+		if $Music/Song3.volume_db < 0:
+			$Music/Song3.volume_db += delta*20
+		
 	$Reflection.global_position.y =  blueFlipY + (blueFlipY - global_position.y)
 	$Reflection.animation = $Sprite.animation
 	$Reflection.playing = $Sprite.playing
 	$Reflection.frames = $Sprite.frames
 	$Reflection.frame = $Sprite.frame
 	$Reflection.flip_h = $Sprite.flip_h
-	var scrollSpeed = .1
 	var relSize = OS.get_screen_size()/get_viewport().get_size()
 	var vp = get_viewport()
 #	print(relSize)

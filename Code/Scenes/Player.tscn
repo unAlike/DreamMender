@@ -626,7 +626,8 @@ flip_v = true
 position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
-animation = "fall"
+animation = "idle"
+frame = 1
 playing = true
 centered = false
 
@@ -825,7 +826,7 @@ align = 1
 margin_top = 139.0
 margin_right = 205.0
 margin_bottom = 155.0
-min_value = -80.0
+min_value = -30.0
 max_value = 6.0
 value = -15.0
 scrollable = false
@@ -999,13 +1000,13 @@ bus = "SFX"
 
 [node name="Music" type="Node2D" parent="."]
 
-[node name="Song1" type="AudioStreamPlayer" parent="Music" groups=["music", "sound"]]
+[node name="Song1" type="AudioStreamPlayer" parent="Music"]
 pause_mode = 2
 stream = ExtResource( 17 )
 autoplay = true
 bus = "Music"
 
-[node name="Song3" type="AudioStreamPlayer" parent="Music" groups=["music", "sound"]]
+[node name="Song3" type="AudioStreamPlayer" parent="Music"]
 pause_mode = 2
 stream = ExtResource( 16 )
 bus = "Music"
