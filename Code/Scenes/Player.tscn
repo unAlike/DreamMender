@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Art/Character/DW_Character_Throw_Sprite Sheet_Down.png" type="Texture" id=18]
 [ext_resource path="res://Art/Character/DW_Character_Throw_Sprite Sheet_Forward.png" type="Texture" id=19]
 [ext_resource path="res://Art/Misc/Button.png" type="Texture" id=20]
+[ext_resource path="res://Fonts/Verdana.ttf" type="DynamicFontData" id=21]
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 13, 41 )
@@ -564,6 +565,33 @@ graph_offset = Vector2( -161, -10.7701 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 resource_local_to_scene = false
 
+[sub_resource type="DynamicFont" id=137]
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=138]
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=140]
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=139]
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=131]
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=132]
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=133]
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=134]
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=136]
+font_data = ExtResource( 21 )
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -1 )
 script = ExtResource( 1 )
@@ -596,7 +624,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 2
+frame = 6
 playing = true
 centered = false
 
@@ -649,24 +677,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ControlsMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ControlsMenu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -100.0
-margin_right = 100.0
-margin_bottom = 100.0
-text = "				Controls:
+margin_left = -179.0
+margin_top = -122.5
+margin_right = 179.0
+margin_bottom = 122.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-W/Space - Jump
-A/Left - Move Left
-D/Right - Move Right
-E/Enter - Interact
-Mouse - Aim
-Left Click - Throw Needle
-Scroll - Zoom In/Out"
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/ControlsMenu/VBoxContainer"]
+margin_right = 358.0
+margin_bottom = 4.0
+
+[node name="Controls" type="Label" parent="CanvasLayer/ControlsMenu/VBoxContainer"]
+margin_top = 8.0
+margin_right = 358.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 137 )
+text = "Controls"
+align = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/ControlsMenu/VBoxContainer"]
+margin_top = 33.0
+margin_right = 358.0
+margin_bottom = 37.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ControlsMenu/VBoxContainer"]
+margin_top = 41.0
+margin_right = 358.0
+margin_bottom = 206.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 138 )
+text = "Move: [A]/[D] or [Left]/[Right] Arrows
+Jump/Double Jump: [W] or [Space]
+Throw Needle: [Left Click]
+Interact: [E] or [Enter]
+Aim Needle: Mouse
+Throw Needle: Left Click
+Zoom In/Out: Scroll Wheel"
+
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/ControlsMenu/VBoxContainer"]
+margin_top = 210.0
+margin_right = 358.0
+margin_bottom = 214.0
+
+[node name="Back" type="Button" parent="CanvasLayer/ControlsMenu/VBoxContainer"]
+margin_top = 218.0
+margin_right = 358.0
+margin_bottom = 245.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_fonts/font = SubResource( 140 )
+text = "Back"
+flat = true
 
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -679,10 +749,14 @@ __meta__ = {
 
 [node name="Sound Sliders" type="VBoxContainer" parent="CanvasLayer/PauseMenu"]
 visible = false
-margin_left = 411.0
-margin_top = 218.0
-margin_right = 616.0
-margin_bottom = 431.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.5
+margin_top = -106.5
+margin_right = 102.5
+margin_bottom = 106.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -694,66 +768,76 @@ margin_bottom = 4.0
 [node name="Main" type="Label" parent="CanvasLayer/PauseMenu/Sound Sliders"]
 margin_top = 8.0
 margin_right = 205.0
-margin_bottom = 22.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 137 )
 text = "Main Volume"
 align = 1
 
 [node name="MainSlider" type="HSlider" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 26.0
+margin_top = 33.0
 margin_right = 205.0
-margin_bottom = 42.0
+margin_bottom = 49.0
 value = 100.0
 scrollable = false
 
 [node name="HSeparator" type="HSeparator" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 46.0
+margin_top = 53.0
 margin_right = 205.0
-margin_bottom = 50.0
+margin_bottom = 57.0
 
 [node name="Music" type="Label" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 54.0
+margin_top = 61.0
 margin_right = 205.0
-margin_bottom = 68.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 138 )
 text = "Music"
 align = 1
 
 [node name="Music Slider" type="HSlider" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 72.0
+margin_top = 86.0
 margin_right = 205.0
-margin_bottom = 88.0
+margin_bottom = 102.0
 max_value = 60.0
 value = 30.0
 scrollable = false
 
 [node name="HSeparator2" type="HSeparator" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 92.0
+margin_top = 106.0
 margin_right = 205.0
-margin_bottom = 96.0
+margin_bottom = 110.0
 
 [node name="Sound FX" type="Label" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 100.0
+margin_top = 114.0
 margin_right = 205.0
-margin_bottom = 114.0
+margin_bottom = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 139 )
 text = "Sound FX"
 align = 1
 
 [node name="FXSlider" type="HSlider" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 118.0
+margin_top = 139.0
 margin_right = 205.0
-margin_bottom = 134.0
+margin_bottom = 155.0
 max_value = 60.0
 value = 30.0
 scrollable = false
 
 [node name="HSeparator3" type="HSeparator" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 138.0
+margin_top = 159.0
 margin_right = 205.0
-margin_bottom = 142.0
+margin_bottom = 163.0
 
 [node name="BackBtn" type="Button" parent="CanvasLayer/PauseMenu/Sound Sliders"]
-margin_top = 146.0
+margin_top = 167.0
 margin_right = 205.0
-margin_bottom = 166.0
+margin_bottom = 194.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_fonts/font = SubResource( 140 )
 text = "Back"
 flat = true
 
@@ -771,28 +855,34 @@ __meta__ = {
 }
 
 [node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_right = 83.0
-margin_bottom = 20.0
+margin_right = 107.0
+margin_bottom = 27.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_fonts/font = SubResource( 131 )
 text = "Resume"
 flat = true
 
 [node name="Sound" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 24.0
-margin_right = 83.0
-margin_bottom = 44.0
+margin_top = 31.0
+margin_right = 107.0
+margin_bottom = 58.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_fonts/font = SubResource( 132 )
 text = "Sound"
 flat = true
 
 [node name="Controls" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 48.0
-margin_right = 83.0
-margin_bottom = 68.0
+margin_top = 62.0
+margin_right = 107.0
+margin_bottom = 89.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_fonts/font = SubResource( 133 )
 text = "Controls"
 flat = true
 __meta__ = {
@@ -800,11 +890,13 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 72.0
-margin_right = 83.0
-margin_bottom = 92.0
+margin_top = 93.0
+margin_right = 107.0
+margin_bottom = 120.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_fonts/font = SubResource( 134 )
 text = "Main Menu"
 flat = true
 __meta__ = {
@@ -815,8 +907,9 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -100.0
-margin_top = 38.0
-margin_bottom = 58.0
+margin_top = 34.0
+margin_bottom = 98.0
+custom_fonts/normal_font = SubResource( 136 )
 text = "0 "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -903,6 +996,7 @@ pause_mode = 2
 stream = ExtResource( 16 )
 volume_db = -26.0
 
+[connection signal="pressed" from="CanvasLayer/ControlsMenu/VBoxContainer/Back" to="CanvasLayer" method="_on_Back_pressed"]
 [connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/MainSlider" to="CanvasLayer" method="_on_MainSlider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/Music Slider" to="CanvasLayer" method="_on_Music_Slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/FXSlider" to="CanvasLayer" method="_on_FXSlider_value_changed"]

@@ -45,13 +45,17 @@ func _on_BackBtn_pressed():
 	$PauseMenu.get_node("Sound Sliders").set_visible(false)
 	InSound = false
 
+func _on_Back_pressed():
+	$PauseMenu.visible = !$PauseMenu.visible
+	$ControlsMenu.visible = !$ControlsMenu.visible
+	InControls = false
+
 func _on_MainSlider_value_changed(val):
 	for s in get_tree().get_nodes_in_group("sound"):
 		if s in get_tree().get_nodes_in_group("music"):
 			s.volume_db = (get_node("PauseMenu/Sound Sliders/Music Slider").value * (val/100)) -60
 		if s in get_tree().get_nodes_in_group("sfx"):
 			s.volume_db = -60 + (get_node("PauseMenu/Sound Sliders/FXSlider").value * (val/100)) -60
-		
 
 func _on_Music_Slider_value_changed(val):
 	for s in get_tree().get_nodes_in_group("music"):
