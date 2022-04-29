@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/EndGameScreen.gd" type="Script" id=1]
-[ext_resource path="res://Art/MainMenu/DW_Main_Menu.png" type="Texture" id=2]
-
+[ext_resource path="res://Art/MainMenu/DW_Credits.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/VerdanaFontDefault.tres" type="DynamicFont" id=3]
 
 [node name="EndGameScreen" type="Control"]
 anchor_right = 1.0
@@ -11,11 +11,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Background" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.560784, 0.560784, 0.560784, 1 )
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -26,22 +21,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -532.0
+color = Color( 0.117647, 0.117647, 0.117647, 0.596078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CreditsContainer" type="Control" parent="."]
-anchor_left = 0.5
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -219.0
-margin_top = -344.0
-margin_right = 219.0
-margin_bottom = 355.0
+margin_left = -480.392
+margin_top = -349.5
+margin_right = -42.3934
+margin_bottom = 349.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextLine" type="Label" parent="CreditsContainer"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -14.0
-custom_colors/font_color = Color( 0, 0.188235, 0.0313726, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
 align = 1
 valign = 1
 __meta__ = {
