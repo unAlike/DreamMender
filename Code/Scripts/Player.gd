@@ -226,6 +226,9 @@ func GetGroundTouching():
 
 # Revives player at last checkpoint
 func die():
+	get_tree().current_scene.get_node("Boat").moving = false
+	get_tree().current_scene.get_node("Boat").lerpVal = 0
+	get_tree().current_scene.get_node("Boat").moving = false
 	isLive = true
 	set_physics_process(true)
 	$AnimationTree.active = true
