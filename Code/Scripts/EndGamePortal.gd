@@ -1,5 +1,9 @@
 extends Area2D
 
+var endGame = preload("res://Scenes/EndGameScreen.tscn")
+
+signal win
+
 export var Wait = 5
 export var GrowSpeed = .005
 export var GrowSize = 5
@@ -19,4 +23,6 @@ func _on_EndGamePortal_body_entered(body):
 		Grow = true
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Scenes/EndGameScreen.tscn")
+	Checkpoint.last_position = null
+	get_tree().current_scene.queue_free()
+	get_tree().change_scene_to(endGame)
