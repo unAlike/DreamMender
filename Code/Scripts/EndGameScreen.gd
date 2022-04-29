@@ -48,6 +48,9 @@ var credits = [
 		"Character Animator",
 		"Additional Environment Artist"
 	],[
+		"In Collaboration with",
+		"Michigan Tech University"
+	],[
 		"Cole Puertas",
 		"Composer"
 	],[
