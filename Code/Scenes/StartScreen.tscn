@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/VerdanaFontDefault.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Art/MainMenu/DW_Main_Menu.png" type="Texture" id=3]
 [ext_resource path="res://Audio/Music/1st Song.wav" type="AudioStream" id=4]
+[ext_resource path="res://Fonts/Verdana.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 5 )
 
 [node name="StartMenu" type="Control"]
 anchor_right = 1.0
@@ -54,19 +67,30 @@ shortcut_in_tooltip = false
 text = "START"
 flat = true
 
-[node name="OptionsButton" type="Button" parent="MenuButtons"]
+[node name="SoundButton" type="Button" parent="MenuButtons"]
 margin_top = 47.0
 margin_right = 168.0
 margin_bottom = 79.0
+focus_neighbour_top = NodePath("../QuitButton")
 custom_colors/font_color = Color( 0, 0.188235, 0.0313726, 1 )
 custom_fonts/font = ExtResource( 2 )
-text = "OPTIONS"
+shortcut_in_tooltip = false
+text = "SOUND"
 flat = true
 
-[node name="CreditsButton" type="Button" parent="MenuButtons"]
+[node name="ControlsButton" type="Button" parent="MenuButtons"]
 margin_top = 94.0
 margin_right = 168.0
 margin_bottom = 126.0
+custom_colors/font_color = Color( 0, 0.188235, 0.0313726, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "CONTROLS"
+flat = true
+
+[node name="CreditsButton" type="Button" parent="MenuButtons"]
+margin_top = 141.0
+margin_right = 168.0
+margin_bottom = 173.0
 custom_colors/font_color = Color( 0, 0.188235, 0.0313726, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "CREDITS"
@@ -84,11 +108,114 @@ custom_fonts/font = ExtResource( 2 )
 text = "QUIT"
 flat = true
 
+[node name="Sound Sliders" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -68.0
+margin_right = 100.0
+margin_bottom = 145.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator4" type="HSeparator" parent="Sound Sliders"]
+margin_right = 205.0
+margin_bottom = 4.0
+
+[node name="Main" type="Label" parent="Sound Sliders"]
+margin_top = 8.0
+margin_right = 205.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Main Volume"
+align = 1
+
+[node name="MainSlider" type="HSlider" parent="Sound Sliders"]
+margin_top = 33.0
+margin_right = 205.0
+margin_bottom = 49.0
+min_value = -30.0
+max_value = 0.0
+scrollable = false
+
+[node name="HSeparator" type="HSeparator" parent="Sound Sliders"]
+margin_top = 53.0
+margin_right = 205.0
+margin_bottom = 57.0
+
+[node name="Music" type="Label" parent="Sound Sliders"]
+margin_top = 61.0
+margin_right = 205.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Music"
+align = 1
+
+[node name="Music Slider" type="HSlider" parent="Sound Sliders"]
+margin_top = 86.0
+margin_right = 205.0
+margin_bottom = 102.0
+min_value = -30.0
+max_value = 6.0
+value = -15.0
+scrollable = false
+
+[node name="HSeparator2" type="HSeparator" parent="Sound Sliders"]
+margin_top = 106.0
+margin_right = 205.0
+margin_bottom = 110.0
+
+[node name="Sound FX" type="Label" parent="Sound Sliders"]
+margin_top = 114.0
+margin_right = 205.0
+margin_bottom = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Sound FX"
+align = 1
+
+[node name="FXSlider" type="HSlider" parent="Sound Sliders"]
+margin_top = 139.0
+margin_right = 205.0
+margin_bottom = 155.0
+min_value = -30.0
+max_value = 6.0
+value = -15.0
+scrollable = false
+
+[node name="HSeparator3" type="HSeparator" parent="Sound Sliders"]
+margin_top = 159.0
+margin_right = 205.0
+margin_bottom = 163.0
+
+[node name="BackBtn" type="Button" parent="Sound Sliders"]
+margin_top = 167.0
+margin_right = 205.0
+margin_bottom = 194.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.737255, 0.313726, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Back"
+flat = true
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
+bus = "Music"
 
 [connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="MenuButtons/SoundButton" to="." method="_on_SoundButton_pressed"]
+[connection signal="pressed" from="MenuButtons/ControlsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="value_changed" from="Sound Sliders/MainSlider" to="." method="_on_MainSlider_value_changed"]
+[connection signal="value_changed" from="Sound Sliders/Music Slider" to="." method="_on_Music_Slider_value_changed"]
+[connection signal="value_changed" from="Sound Sliders/FXSlider" to="." method="_on_FXSlider_value_changed"]
+[connection signal="pressed" from="Sound Sliders/BackBtn" to="." method="_on_BackBtn_pressed"]

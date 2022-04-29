@@ -53,10 +53,22 @@ func _on_Back_pressed():
 	InControls = false
 
 func _on_MainSlider_value_changed(val):
-	AudioServer.set_bus_volume_db(0,val)
+	if val == get_node("PauseMenu/Sound Sliders/MainSlider").min_value:
+		AudioServer.set_bus_mute(0, true)
+	else:
+		AudioServer.set_bus_mute(0, false)
+		AudioServer.set_bus_volume_db(0,val)
 		
 func _on_Music_Slider_value_changed(val):
-	AudioServer.set_bus_volume_db(1,val)
+	if val == get_node("PauseMenu/Sound Sliders/MainSlider").min_value:
+		AudioServer.set_bus_mute(1, true)
+	else:
+		AudioServer.set_bus_mute(1, false)
+		AudioServer.set_bus_volume_db(1,val)
 	
 func _on_FXSlider_value_changed(val):
-	AudioServer.set_bus_volume_db(2,val)
+	if val == get_node("PauseMenu/Sound Sliders/MainSlider").min_value:
+		AudioServer.set_bus_mute(2, true)
+	else:
+		AudioServer.set_bus_mute(2, false)
+		AudioServer.set_bus_volume_db(2,val)
