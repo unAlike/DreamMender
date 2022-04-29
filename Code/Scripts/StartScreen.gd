@@ -1,4 +1,5 @@
 extends Control
+var gameScene = preload("res://Scenes/MainLevel.tscn")
 
 func _ready():
 	AudioServer.set_bus_volume_db(0,6)
@@ -7,7 +8,7 @@ func _ready():
 	pass
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Scenes/MainLevel.tscn")
+	get_tree().change_scene_to(gameScene)
 
 func _on_OptionsButton_pressed():
 	var options = load("res://Scenes/OptionsScreen.tscn").instance()
