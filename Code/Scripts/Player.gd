@@ -177,7 +177,6 @@ func _physics_process(delta):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print($AnimationTree.get("parameters/conditions/throwing"))
 	$Reflection.global_position.y =  blueFlipY + (blueFlipY - global_position.y)
 	$Reflection.animation = $Sprite.animation
 	$Reflection.playing = $Sprite.playing
@@ -230,10 +229,8 @@ func throwAnim():
 		$Sprite.flip_h = true
 	if get_global_mouse_position().y > global_position.y:
 		$Sprite.animation = "throwdown"
-		print("F")
 	else:
 		$Sprite.animation = "throwforward"
-		print("D")
 func endThrow():
 	$AnimationTree.set("parameters/conditions/throwing", false)
 

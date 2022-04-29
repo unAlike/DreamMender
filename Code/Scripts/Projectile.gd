@@ -28,7 +28,6 @@ func _process(delta):
 		print("Unlocked all spools")
 
 func Throw():
-	print("IAMRUNNINGd")
 	var Needle = NeedleScene.instance()
 	get_tree().current_scene.add_child(Needle)
 	Needle.global_position = $Node2D/Position2D.global_position
