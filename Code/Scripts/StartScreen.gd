@@ -1,7 +1,9 @@
 extends Control
 
 func _ready():
-	##$MenuButtons/StartButton.grab_focus()
+	AudioServer.set_bus_volume_db(0,6)
+	AudioServer.set_bus_volume_db(1,-15)
+	AudioServer.set_bus_volume_db(2,-15)
 	pass
 
 func _on_StartButton_pressed():

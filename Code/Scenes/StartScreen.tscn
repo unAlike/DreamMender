@@ -86,8 +86,8 @@ flat = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -2.999
 autoplay = true
+bus = "Music"
 
 [connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_OptionsButton_pressed"]

@@ -36,7 +36,6 @@ func _ready():
 	blueFlipY = get_tree().current_scene.get_node("BlueRiftGroup").get_node("Rifts").get_node("BlueRiftFlip").global_position.y
 	rng = RandomNumberGenerator.new()
 
-
 func get_Input():
 	dir = 0
 	if Input.is_action_pressed("walk_right"):
@@ -178,6 +177,7 @@ func _physics_process(delta):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print($AnimationTree.get("parameters/conditions/throwing"))
 	$Reflection.global_position.y =  blueFlipY + (blueFlipY - global_position.y)
 	$Reflection.animation = $Sprite.animation
 	$Reflection.playing = $Sprite.playing
@@ -187,7 +187,6 @@ func _process(delta):
 	var scrollSpeed = .1
 	var relSize = OS.get_screen_size()/get_viewport().get_size()
 	var vp = get_viewport()
-	print(state_machine.get_current_node())
 #	print(relSize)
 	if !inBlueRift:
 		$Camera2D.offset_h = clamp( ((((vp.get_mouse_position().x-vp.size.x/4)/vp.size.x) *4* OS.get_screen_size().x) / OS.get_screen_size().x),-1,1)

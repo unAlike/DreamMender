@@ -14,16 +14,6 @@ radius = 47.0106
 offsets = PoolRealArray( 0.00552486, 0.414365, 0.834254, 0.994475 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.0718232 )
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 173, 134 )
-
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 173, 0, 173, 134 )
-
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 4 )
@@ -44,16 +34,26 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 522, 0, 174, 134 )
 
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 173, 134 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 173, 0, 173, 134 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 14 ), SubResource( 15 ) ],
-"loop": true,
-"name": "Closed",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "Open",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "Closed",
 "speed": 5.0
 } ]
 
@@ -98,7 +98,7 @@ position = Vector2( 1, -1 )
 scale = Vector2( 0.640497, 0.725867 )
 frames = SubResource( 7 )
 animation = "Open"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Position2D" type="Position2D" parent="Rift"]
@@ -129,6 +129,7 @@ position = Vector2( 0, -2 )
 stream = ExtResource( 6 )
 volume_db = -13.0
 max_distance = 2069.0
+bus = "SFX"
 
 [connection signal="area_entered" from="." to="." method="Interact"]
 [connection signal="body_entered" from="Rift" to="." method="_on_Rift_body_entered"]

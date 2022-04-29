@@ -9,16 +9,6 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 47.0106
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 177, 223 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 177, 0, 177, 223 )
-
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 3 )
@@ -39,16 +29,26 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 531, 0, 177, 223 )
 
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 177, 223 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 177, 0, 177, 223 )
+
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "Closed",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Open",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Closed",
 "speed": 5.0
 } ]
 
@@ -113,5 +113,6 @@ one_shot = true
 [node name="OpenRift" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
 position = Vector2( 0, -2 )
 stream = ExtResource( 4 )
+bus = "SFX"
 
 [connection signal="body_entered" from="Rift" to="." method="_on_Rift_body_entered"]

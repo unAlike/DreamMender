@@ -55,14 +55,14 @@ animations = [ {
 "name": "Open",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "Closed",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Middle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "Closed",
 "speed": 5.0
 } ]
 
@@ -108,9 +108,11 @@ polygon = PoolVector2Array( -125, -9, -57, -95, 59, -95, 114, -1, 54, 97, -61, 9
 [node name="OpenRift" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
 position = Vector2( 0, -2 )
 stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="CloseRift" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
 position = Vector2( 0, -2 )
 stream = ExtResource( 5 )
+bus = "SFX"
 
 [connection signal="body_entered" from="Rift" to="." method="_on_Rift_body_entered"]

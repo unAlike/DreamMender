@@ -5,7 +5,9 @@ var InControls = false
 var InSound = false
 
 func _ready():
-	pass # Replace with function body.
+	$"PauseMenu/Sound Sliders/MainSlider".value = AudioServer.get_bus_volume_db(0)
+	$"PauseMenu/Sound Sliders/Music Slider".value = AudioServer.get_bus_volume_db(1)
+	$"PauseMenu/Sound Sliders/FXSlider".value = AudioServer.get_bus_volume_db(2)
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -51,16 +53,10 @@ func _on_Back_pressed():
 	InControls = false
 
 func _on_MainSlider_value_changed(val):
-	for s in get_tree().get_nodes_in_group("sound"):
-		if s in get_tree().get_nodes_in_group("music"):
-			s.volume_db = (get_node("PauseMenu/Sound Sliders/Music Slider").value * (val/100)) -60
-		if s in get_tree().get_nodes_in_group("sfx"):
-			s.volume_db = -60 + (get_node("PauseMenu/Sound Sliders/FXSlider").value * (val/100)) -60
-
+	AudioServer.set_bus_volume_db(0,val)
+		
 func _on_Music_Slider_value_changed(val):
-	for s in get_tree().get_nodes_in_group("music"):
-		s.volume_db =  (val*(get_node("PauseMenu/Sound Sliders/MainSlider").value/100)) - 60
-
+	AudioServer.set_bus_volume_db(1,val)
+	
 func _on_FXSlider_value_changed(val):
-	for s in get_tree().get_nodes_in_group("sfx"):
-		s.volume_db = (val*(get_node("PauseMenu/Sound Sliders/MainSlider").value/100)) - 60
+	AudioServer.set_bus_volume_db(2,val)
