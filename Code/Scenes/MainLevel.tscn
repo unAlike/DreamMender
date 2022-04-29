@@ -749,7 +749,7 @@ scale = Vector2( 0.669486, 19265.6 )
 
 [node name="1stWater" type="Sprite" parent="Water"]
 material = SubResource( 30 )
-z_index = 3685
+z_index = 2000
 texture = SubResource( 3 )
 offset = Vector2( -8595.23, -5.23591 )
 
@@ -798,10 +798,13 @@ max_distance = 3314.0
 attenuation = 0.0669861
 
 [node name="Player" parent="." instance=ExtResource( 26 )]
-position = Vector2( 32866, 195 )
+position = Vector2( 53, -5 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
+
+[node name="Sprite" parent="Player" index="4"]
+frame = 4
 
 [node name="AnimationTree" parent="Player" index="6"]
 parameters/playback = SubResource( 66 )
@@ -1118,6 +1121,7 @@ flip_v = true
 [node name="ThornPuzzleBottomPiece" type="Sprite" parent="Lvl1/Layer2"]
 position = Vector2( 20800, -300 )
 scale = Vector2( 2, 2 )
+z_index = 3000
 texture = ExtResource( 83 )
 
 [node name="ThornPuzzleTopPiece" type="Sprite" parent="Lvl1/Layer2"]
@@ -2086,7 +2090,7 @@ position = Vector2( 36940.2, 4249.36 )
 
 [node name="NPC" parent="Tachi2" index="1"]
 position = Vector2( -76.8984, -38.3906 )
-frame = 5
+frame = 7
 
 [node name="Tachi3" parent="." instance=ExtResource( 16 )]
 position = Vector2( 23900, 7870 )
@@ -2096,7 +2100,6 @@ position = Vector2( 0, 160 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
-frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -2859,7 +2862,7 @@ position = Vector2( 16927, -2178 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 4
+frame = 6
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -2871,7 +2874,7 @@ scale = Vector2( 1.06895, 1.07015 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
-frame = 0
+frame = 2
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow2"]
 position = Vector2( -143.225, -69.8406 )
@@ -2888,7 +2891,7 @@ position = Vector2( 31875.5, 4253.41 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow3" index="1"]
-frame = 4
+frame = 6
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow3"]
 position = Vector2( 147.5, -63.41 )
@@ -2908,7 +2911,7 @@ position = Vector2( 2, 719 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 4
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -2921,7 +2924,7 @@ position = Vector2( 0, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Yellow"
-frame = 7
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2931,7 +2934,7 @@ position = Vector2( 50, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Red"
-frame = 4
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -2941,7 +2944,7 @@ position = Vector2( 100, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Blue"
-frame = 5
+frame = 7
 playing = true
 flip_h = true
 flip_v = true
@@ -2951,7 +2954,7 @@ position = Vector2( 25000, 4118 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow6" index="1"]
-frame = 3
+frame = 5
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow6"]
 position = Vector2( 162, -25.0001 )
@@ -2971,7 +2974,7 @@ position = Vector2( 2, 697 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 2
+frame = 4
 playing = true
 flip_h = true
 flip_v = true
@@ -2984,7 +2987,6 @@ position = Vector2( 0, 124 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 6
 playing = true
 flip_h = true
 flip_v = true
