@@ -1,6 +1,6 @@
 extends Control
 
-const section_time := 2.0
+const section_time := 1.6
 const line_time := 0.3
 const base_speed := 150
 const speed_up_multiplier := 10.0
@@ -41,12 +41,12 @@ var credits = [
 	],[
 		"Ryan Wayne",
 		"Lead Artist",
-		"Lead Enviornment Artist"
+		"Lead Environment Artist"
 	],[
 		"Toni Madges",
 		"Lead Character Artist",
 		"Character Animator",
-		"Additional Environments Artist"
+		"Additional Environment Artist"
 	],[
 		"Cole Puertas",
 		"Composer"
@@ -64,8 +64,8 @@ var credits = [
 		"https://godotengine.org/license"
 	],[
 		"Special thanks",
-		"My family",
-		"My friends",
+		"Family",
+		"Friends",
 		"UW Stout GDD and SGX Staff"
 	]
 ]

@@ -25,7 +25,7 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -532.0
+margin_left = -644.0
 color = Color( 0.117647, 0.117647, 0.117647, 0.596078 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -36,13 +36,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -480.392
-margin_top = -349.5
-margin_right = -42.3934
-margin_bottom = 349.5
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -534.0
+margin_top = -349.0
+margin_right = -96.0015
+margin_bottom = 350.0
 
 [node name="TextLine" type="Label" parent="CreditsContainer"]
 anchor_top = 1.0
