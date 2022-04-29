@@ -213,7 +213,6 @@ __meta__ = {
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Yellow"
-frame = 3
 playing = true
 flip_h = true
 
@@ -222,6 +221,7 @@ position = Vector2( 50, 0 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Red"
+frame = 5
 playing = true
 flip_h = true
 
@@ -230,7 +230,7 @@ position = Vector2( 100, 0 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 1
+frame = 6
 playing = true
 flip_h = true
 
