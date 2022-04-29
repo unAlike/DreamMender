@@ -26,7 +26,7 @@ var rng : RandomNumberGenerator
 onready var pickupCountObject := $Progress/Control/Count
 var pickupCount = 0
 var musicFade = -1
-export var collectableCount = 100
+onready var collectableCount = get_parent().get_node("Collectables").get_child_count()
 var isLive = true
 
 # Called when the node enters the scene tree for the first time.
