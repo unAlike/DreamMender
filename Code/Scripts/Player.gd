@@ -31,6 +31,7 @@ export var collectableCount = 100
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
 	stateConditions = $AnimationTree.get("parameters/conditions")
+	$AnimationTree.set("parameters/conditions/throwing", false)
 	$Reflection.scale = $Sprite.scale
 	blueFlipY = get_tree().current_scene.get_node("BlueRiftGroup").get_node("Rifts").get_node("BlueRiftFlip").global_position.y
 	rng = RandomNumberGenerator.new()
@@ -62,6 +63,7 @@ func Jump():
 	footStep()
 	state_machine.travel("jump")
 	vel.y = -jumpPower * scale.y
+	
 
 # Called when jumping off a wall
 func Wall_Jump():
@@ -91,10 +93,11 @@ func Update_Last_State():
 	if GroundCheck():
 		numWallJump = maxNumWallJump
 		numDJump = maxNumDJump
-		if dir!=0:
-			state_machine.travel("run")
-		if dir == 0:
-			state_machine.travel("idle")
+		if not $AnimationTree.get("parameters/conditions/throwing"):
+			if dir!=0:
+				state_machine.travel("run")
+			if dir == 0:
+				state_machine.travel("idle")
 
 # Checks if player is on wall and handles acordingly
 func Process_On_Wall(delta):
@@ -184,12 +187,12 @@ func _process(delta):
 	var scrollSpeed = .1
 	var relSize = OS.get_screen_size()/get_viewport().get_size()
 	var vp = get_viewport()
-	print(relSize)
+	print(state_machine.get_current_node())
+#	print(relSize)
 	if !inBlueRift:
 		$Camera2D.offset_h = clamp( ((((vp.get_mouse_position().x-vp.size.x/4)/vp.size.x) *4* OS.get_screen_size().x) / OS.get_screen_size().x),-1,1)
 		$Camera2D.offset_v = clamp( ((((vp.get_mouse_position().y-vp.size.y/4)/vp.size.y) *4* OS.get_screen_size().y) / OS.get_screen_size().y),-1,1)
-	print( $Camera2D.offset_h)
-	print( $Camera2D.offset_v)
+#	print( $Camera2D.offse
 
 func _draw():
 	for l in range(0,threadPath.size()-1):
@@ -221,7 +224,19 @@ func footStep():
 	rng.randomize()
 	$Sounds/Footsteps.get_children()[rng.randf_range(0, 4)].play()
 
-	
+func throwAnim():
+	if get_global_mouse_position().x > global_position.x:
+		$Sprite.flip_h = false
+	else:
+		$Sprite.flip_h = true
+	if get_global_mouse_position().y > global_position.y:
+		$Sprite.animation = "throwdown"
+		print("F")
+	else:
+		$Sprite.animation = "throwforward"
+		print("D")
+func endThrow():
+	$AnimationTree.set("parameters/conditions/throwing", false)
 
 # Checks for collision with spikes that kill player and calls die() function
 func _on_SpikeHitbox_body_entered(body):

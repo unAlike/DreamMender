@@ -12,8 +12,12 @@ func _ready():
 func _process(delta):
 	$Node2D.look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("left_click") and $Timer.get_time_left() == 0 and Stats.getYellow():
-		Throw()
 		$Timer.start()
+		get_parent().get_node("AnimationTree").set("parameters/conditions/throwing", true)
+		get_parent().state_machine.travel("throw")
+		if get_parent().state_machine.get_current_node() != "throw":
+			yield(get_tree().create_timer(.05), "timeout")
+			get_parent().get_node("AnimationTree").set("parameters/conditions/throwing", false)
 	
 	# Press "P" and "crouch" at the same time to unlock all spools
 	if Input.is_action_just_pressed("Cheat") and Input.is_action_just_pressed("crouch"):
@@ -24,6 +28,7 @@ func _process(delta):
 		print("Unlocked all spools")
 
 func Throw():
+	print("IAMRUNNINGd")
 	var Needle = NeedleScene.instance()
 	get_tree().current_scene.add_child(Needle)
 	Needle.global_position = $Node2D/Position2D.global_position

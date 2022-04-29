@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Scenes/Progress.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Audio/Music/Dreamy_Ambient_Song.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Audio/Music/1st Song.wav" type="AudioStream" id=17]
+[ext_resource path="res://Art/Character/DW_Character_Throw_Sprite Sheet_Down.png" type="Texture" id=18]
+[ext_resource path="res://Art/Character/DW_Character_Throw_Sprite Sheet_Forward.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 13, 41 )
@@ -60,6 +62,106 @@ region = Rect2( 1800, 0, 300, 452 )
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=120]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 303, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=122]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 606, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=123]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 909, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 1212, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=109]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 264, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=110]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 528, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=111]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 792, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=112]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=115]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=116]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 303, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=117]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 606, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=118]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 909, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=119]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 1212, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=106]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=107]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=58]
 flags = 4
@@ -121,56 +223,6 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=109]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 264, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=110]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 528, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=111]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 792, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=112]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=82]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=70]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=71]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=106]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=107]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
@@ -178,19 +230,29 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": false,
+"name": "wallJump",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ) ],
+"loop": false,
+"name": "throwforward",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ) ],
 "loop": false,
 "name": "jump",
 "speed": 15.0
 }, {
-"frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
+"frames": [ SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ) ],
 "loop": false,
-"name": "wallJump",
+"name": "throwdown",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 106 ), SubResource( 107 ) ],
@@ -198,10 +260,10 @@ animations = [ {
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 83 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -302,6 +364,53 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=125]
+resource_name = "throw"
+length = 0.6
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "throwAnim"
+}, {
+"args": [  ],
+"method": "endThrow"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Projectile")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "Throw"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="Animation" id=74]
 resource_name = "wall"
 length = 0.1
@@ -370,6 +479,9 @@ animation = "jump"
 [sub_resource type="AnimationNodeAnimation" id=39]
 animation = "run"
 
+[sub_resource type="AnimationNodeAnimation" id=126]
+animation = "throw"
+
 [sub_resource type="AnimationNodeAnimation" id=76]
 animation = "wall"
 
@@ -416,22 +528,37 @@ priority = 32
 [sub_resource type="AnimationNodeStateMachineTransition" id=114]
 advance_condition = "falling"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=127]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=128]
+switch_mode = 2
+auto_advance = true
+priority = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=129]
+advance_condition = "throwing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=130]
+
 [sub_resource type="AnimationNodeStateMachine" id=42]
 states/fall/node = SubResource( 85 )
 states/fall/position = Vector2( 229.346, 48.786 )
 states/idle/node = SubResource( 38 )
-states/idle/position = Vector2( 237.337, 384.507 )
+states/idle/position = Vector2( 209.337, 381.84 )
 states/jump/node = SubResource( 44 )
 states/jump/position = Vector2( 77.6667, 199.667 )
 states/run/node = SubResource( 39 )
 states/run/position = Vector2( 514.333, 357.988 )
+states/throw/node = SubResource( 126 )
+states/throw/position = Vector2( 449.333, 173.897 )
 states/wall/node = SubResource( 76 )
 states/wall/position = Vector2( 846.629, 48.8025 )
 states/wallJump/node = SubResource( 77 )
 states/wallJump/position = Vector2( 846.222, 217 )
-transitions = [ "wall", "wallJump", SubResource( 79 ), "wallJump", "wall", SubResource( 80 ), "idle", "jump", SubResource( 97 ), "jump", "fall", SubResource( 98 ), "fall", "idle", SubResource( 99 ), "fall", "wall", SubResource( 100 ), "wallJump", "fall", SubResource( 101 ), "idle", "run", SubResource( 102 ), "run", "idle", SubResource( 103 ), "wall", "fall", SubResource( 104 ), "run", "fall", SubResource( 105 ), "wall", "idle", SubResource( 113 ), "idle", "fall", SubResource( 114 ) ]
+transitions = [ "wall", "wallJump", SubResource( 79 ), "wallJump", "wall", SubResource( 80 ), "idle", "jump", SubResource( 97 ), "jump", "fall", SubResource( 98 ), "fall", "idle", SubResource( 99 ), "fall", "wall", SubResource( 100 ), "wallJump", "fall", SubResource( 101 ), "idle", "run", SubResource( 102 ), "run", "idle", SubResource( 103 ), "wall", "fall", SubResource( 104 ), "run", "fall", SubResource( 105 ), "wall", "idle", SubResource( 113 ), "idle", "fall", SubResource( 114 ), "throw", "idle", SubResource( 127 ), "throw", "fall", SubResource( 128 ), "idle", "throw", SubResource( 129 ), "fall", "throw", SubResource( 130 ) ]
 start_node = "idle"
-graph_offset = Vector2( -163, -51.7701 )
+graph_offset = Vector2( -161, -10.7701 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 resource_local_to_scene = false
@@ -456,8 +583,8 @@ scale = Vector2( 0.658644, 1.95727 )
 position = Vector2( -29, -1 )
 scale = Vector2( 0.205, 0.242 )
 frames = SubResource( 4 )
-animation = "wall"
-frame = 1
+animation = "throwforward"
+frame = 4
 playing = true
 centered = false
 flip_h = true
@@ -467,7 +594,7 @@ flip_v = true
 position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
-animation = "idle"
+animation = "fall"
 playing = true
 centered = false
 
@@ -477,6 +604,7 @@ anims/fall = SubResource( 84 )
 anims/idle = SubResource( 36 )
 anims/jump = SubResource( 37 )
 anims/run = SubResource( 32 )
+anims/throw = SubResource( 125 )
 anims/wall = SubResource( 74 )
 anims/wallJump = SubResource( 75 )
 
@@ -488,6 +616,7 @@ parameters/playback = SubResource( 43 )
 parameters/conditions/falling = false
 parameters/conditions/onGround = false
 parameters/conditions/onWall = false
+parameters/conditions/throwing = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -502,6 +631,8 @@ drag_margin_right = 0.75
 drag_margin_bottom = 0.75
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="Progress" parent="." instance=ExtResource( 15 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -528,7 +659,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
+[node name="ControlsMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -537,68 +668,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ControlsMenu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -41.5
-margin_top = -70.0
-margin_right = 41.5
-margin_bottom = 70.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+text = "				Controls:
 
-[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_right = 83.0
-margin_bottom = 20.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
-text = "Resume"
-flat = true
+W/Space - Jump
+A/Left - Move Left
+D/Right - Move Right
+E/Enter - Interact
+Mouse - Aim
+Left Click - Throw Needle
+Scroll - Zoom In/Out"
 
-[node name="Collections" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 24.0
-margin_right = 83.0
-margin_bottom = 44.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
-text = "Collections"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sound" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 48.0
-margin_right = 83.0
-margin_bottom = 68.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
-text = "Sound"
-flat = true
-
-[node name="Controls" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 72.0
-margin_right = 83.0
-margin_bottom = 92.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
-text = "Controls"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainMenu" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
-margin_top = 96.0
-margin_right = 83.0
-margin_bottom = 116.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
-text = "Main Menu"
-flat = true
+[node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.588235 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -683,33 +776,71 @@ margin_bottom = 166.0
 text = "Back"
 flat = true
 
-[node name="ControlsMenu" type="ColorRect" parent="CanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.588235 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ControlsMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -100.0
-margin_right = 100.0
-margin_bottom = 100.0
-text = "				Controls:
+margin_left = -41.5
+margin_top = -70.0
+margin_right = 41.5
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-W/Space - Jump
-A/Left - Move Left
-D/Right - Move Right
-E/Enter - Interact
-Mouse - Aim
-Left Click - Throw Needle
-Scroll - Zoom In/Out"
+[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_right = 83.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Resume"
+flat = true
+
+[node name="Collections" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 24.0
+margin_right = 83.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Collections"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 48.0
+margin_right = 83.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Sound"
+flat = true
+
+[node name="Controls" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 72.0
+margin_right = 83.0
+margin_bottom = 92.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Controls"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 96.0
+margin_right = 83.0
+margin_bottom = 116.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.196078, 0, 1, 1 )
+text = "Main Menu"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RayCast2D3" type="RayCast2D" parent="."]
 position = Vector2( 0, -31 )
@@ -767,8 +898,6 @@ stream = ExtResource( 13 )
 
 [node name="Jump3" type="AudioStreamPlayer2D" parent="Sounds/Jump" groups=["sfx", "sound"]]
 
-[node name="Progress" parent="." instance=ExtResource( 15 )]
-
 [node name="Music" type="Node2D" parent="."]
 
 [node name="Song1" type="AudioStreamPlayer" parent="Music" groups=["music", "sound"]]
@@ -782,12 +911,12 @@ pause_mode = 2
 stream = ExtResource( 16 )
 volume_db = -26.0
 
+[connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/MainSlider" to="CanvasLayer" method="_on_MainSlider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/Music Slider" to="CanvasLayer" method="_on_Music_Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/FXSlider" to="CanvasLayer" method="_on_FXSlider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Sound Sliders/BackBtn" to="CanvasLayer" method="_on_BackBtn_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Resume" to="CanvasLayer" method="_on_Resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Collections" to="CanvasLayer" method="_on_Collections_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Sound" to="CanvasLayer" method="_on_Sound_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Controls" to="CanvasLayer" method="_on_Controls_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/MainMenu" to="CanvasLayer" method="_on_MainMenu_pressed"]
-[connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/MainSlider" to="CanvasLayer" method="_on_MainSlider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/Music Slider" to="CanvasLayer" method="_on_Music_Slider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/PauseMenu/Sound Sliders/FXSlider" to="CanvasLayer" method="_on_FXSlider_value_changed"]
-[connection signal="pressed" from="CanvasLayer/PauseMenu/Sound Sliders/BackBtn" to="CanvasLayer" method="_on_BackBtn_pressed"]

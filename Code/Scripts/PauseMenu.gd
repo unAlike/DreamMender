@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		$PauseMenu/Count.text = str(get_parent().pickupCount," / ",get_parent().collectableCount)
+		$Collectables/Count.text = str(get_parent().pickupCount) + " / " + str(get_parent().collectableCount)
 		if Input.is_action_just_pressed("ui_cancel") and InControls:
 			$PauseMenu.visible = !$PauseMenu.visible
 			$ControlsMenu.visible = !$ControlsMenu.visible
