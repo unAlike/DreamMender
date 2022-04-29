@@ -60,7 +60,7 @@ func get_Input():
 
 # Called when jumping off the ground
 func Jump():
-	footStep()
+	jumpSound()
 	state_machine.travel("jump")
 	vel.y = -jumpPower * scale.y
 	
@@ -78,6 +78,7 @@ func Wall_Jump():
 # Called when player is already in air
 # and wants to jump again
 func Double_Jump():
+	jumpSound()
 	$Sprite.frame = 0
 	$Sprite.playing = true
 	$AnimationPlayer.play()
@@ -233,7 +234,16 @@ func footStep():
 	rng.randomize()
 	$Sounds/Footsteps.get_children()[rng.randf_range(0, 4)].play()
 
+func throwSound():
+	rng.randomize()
+	$Sounds/Throw.get_children()[rng.randf_range(0, 2)].play()
+	
+func jumpSound():
+	rng.randomize()
+	$Sounds/Jump.get_children()[rng.randf_range(0, 2)].play()
+
 func throwAnim():
+	throwSound()
 	if get_global_mouse_position().x > global_position.x:
 		$Sprite.flip_h = false
 	else:
