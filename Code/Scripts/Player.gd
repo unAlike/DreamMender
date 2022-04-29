@@ -226,6 +226,8 @@ func GetGroundTouching():
 
 # Revives player at last checkpoint
 func die():
+	get_parent().get_node("Boat/Shadow3/CanvasLayer").Tracker = 0
+	get_parent().get_node("Boat/Shadow3/CanvasLayer").At = 0
 	get_tree().current_scene.get_node("Boat").moving = false
 	get_tree().current_scene.get_node("Boat").lerpVal = 0
 	get_tree().current_scene.get_node("Boat").moving = false

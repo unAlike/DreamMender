@@ -142,6 +142,46 @@ gradient = SubResource( 2 )
 [sub_resource type="CircleShape2D" id=33]
 radius = 427.181
 
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 526, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 1052, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 1578, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 2104, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 2630, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 3156, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 3682, 0, 526, 583 )
+
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 44 )
@@ -262,48 +302,13 @@ flags = 4
 atlas = ExtResource( 43 )
 region = Rect2( 3682, 0, 526, 583 )
 
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 0, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 526, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 1052, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 1578, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 2104, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 2630, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 3156, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 3682, 0, 526, 583 )
-
 [sub_resource type="SpriteFrames" id=48]
 animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "Red",
@@ -317,11 +322,6 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 42 ), SubResource( 43 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "Needle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
-"loop": true,
-"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -2102,7 +2102,7 @@ script = ExtResource( 91 )
 
 [node name="NPC" parent="Tachi2" index="1"]
 position = Vector2( -76.8984, -38.3906 )
-frame = 6
+frame = 1
 
 [node name="SceneCam" type="Camera2D" parent="Tachi2"]
 position = Vector2( -285.199, -182.36 )
@@ -2123,7 +2123,7 @@ position = Vector2( 0, 160 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
-frame = 7
+frame = 2
 playing = true
 flip_h = true
 flip_v = true
@@ -2150,7 +2150,6 @@ bobSpeed = 2
 
 [node name="CollisionShape2D" parent="Boat/CollisionDetector" index="0"]
 position = Vector2( 8.00024, -10.7526 )
-scale = Vector2( 1, 1 )
 
 [node name="toPos" parent="Boat" index="3"]
 position = Vector2( 400, 0 )
@@ -2897,7 +2896,6 @@ position = Vector2( 16927, -2178 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 5
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -2909,7 +2907,7 @@ scale = Vector2( 1.06895, 1.07015 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
-frame = 1
+z_index = 4000
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow2"]
 position = Vector2( -143.225, -69.8406 )
@@ -2926,7 +2924,7 @@ position = Vector2( 31875.5, 4253.41 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow3" index="1"]
-frame = 5
+frame = 0
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow3"]
 position = Vector2( 147.5, -63.41 )
@@ -2946,7 +2944,6 @@ position = Vector2( 2, 719 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 5
 playing = true
 flip_h = true
 flip_v = true
@@ -2959,6 +2956,7 @@ position = Vector2( 0, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Yellow"
+frame = 3
 playing = true
 flip_h = true
 flip_v = true
@@ -2968,7 +2966,6 @@ position = Vector2( 50, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Red"
-frame = 5
 playing = true
 flip_h = true
 flip_v = true
@@ -2978,7 +2975,7 @@ position = Vector2( 100, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Blue"
-frame = 6
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2988,7 +2985,7 @@ position = Vector2( 25000, 4118 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow6" index="1"]
-frame = 4
+frame = 7
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow6"]
 position = Vector2( 162, -25.0001 )
@@ -3008,7 +3005,7 @@ position = Vector2( 2, 697 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 3
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -3021,7 +3018,7 @@ position = Vector2( 0, 124 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 7
+frame = 2
 playing = true
 flip_h = true
 flip_v = true
