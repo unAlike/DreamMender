@@ -55,23 +55,23 @@ animations = [ {
 "name": "Open",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "Closed",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Middle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "Closed",
+"speed": 5.0
 } ]
 
-[node name="RedRift" type="Area2D"]
+[node name="RedRift" type="Area2D" groups=["noJump"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 2 )
 
-[node name="Rift" type="Area2D" parent="."]
+[node name="Rift" type="Area2D" parent="." groups=["noJump"]]
 collision_layer = 3
 collision_mask = 3
 
@@ -80,7 +80,6 @@ position = Vector2( -3, 2 )
 scale = Vector2( 1.96038, 1.8821 )
 frames = SubResource( 9 )
 animation = "Open"
-frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rift"]

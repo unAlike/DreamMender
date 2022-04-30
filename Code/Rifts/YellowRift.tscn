@@ -60,11 +60,11 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=9]
 radius = 48.0
 
-[node name="YellowRift" type="Area2D" groups=["YellowRift"]]
+[node name="YellowRift" type="Area2D" groups=["YellowRift", "noJump"]]
 script = ExtResource( 3 )
 InputObjectList = [ null ]
 
-[node name="Rift" type="Area2D" parent="."]
+[node name="Rift" type="Area2D" parent="." groups=["noJump"]]
 collision_layer = 3
 collision_mask = 3
 monitorable = false

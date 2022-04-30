@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
 
-[node name="Checkpoint" type="Area2D"]
+[node name="Checkpoint" type="Area2D" groups=["noJump"]]
 scale = Vector2( 0.56, 0.56 )
 script = ExtResource( 1 )
 

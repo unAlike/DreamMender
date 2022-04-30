@@ -37,6 +37,8 @@ func _ready():
 	$Reflection.scale = $Sprite.scale
 	blueFlipY = get_tree().current_scene.get_node("BlueRiftGroup").get_node("Rifts").get_node("BlueRiftFlip").global_position.y
 	rng = RandomNumberGenerator.new()
+	for n in get_tree().get_nodes_in_group("noJump"):
+		$RayCast2D3.add_exception(n)
 
 func get_Input():
 	dir = 0
