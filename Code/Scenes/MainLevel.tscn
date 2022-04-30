@@ -798,13 +798,13 @@ max_distance = 3314.0
 attenuation = 0.0669861
 
 [node name="Player" parent="." instance=ExtResource( 26 )]
-position = Vector2( 38103, 2746 )
+position = Vector2( 32851, 166 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
 
 [node name="Sprite" parent="Player" index="4"]
-frame = 1
+frame = 4
 
 [node name="AnimationTree" parent="Player" index="6"]
 parameters/playback = SubResource( 66 )
@@ -1642,6 +1642,9 @@ Time = 6
 fromRotation = 90
 toRotation = 45
 
+[node name="InnerHex" parent="RedRifts/RedRift/Rift" index="0"]
+frame = 0
+
 [node name="OpenRift" parent="RedRifts/RedRift" index="5"]
 bus = "Master"
 
@@ -1839,7 +1842,7 @@ collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider", "killNeedle"]]
 position = Vector2( 522.037, 559.39 )
-polygon = PoolVector2Array( -53.0195, -12.1611, -34.666, -1198.38, -90, -1197.27, -90, -13.267, -1228.62, -12.1611, -1229.64, 12.1602, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 803.449, 13.2656, 803.449, 360.396, 1094.04, 363.713, 1094.04, 636.774, 1572.23, 632.353, 1569.17, 1214.96, 4631.04, 1223.8, 4622.84, 12.4189, 4583.64, 12.4189, 4572.92, 1174.05, 3317.79, 1181.79, 3311.73, 360.895, 4181.33, 357.544, 4178.24, 315.102, 3311.73, 319.569, 2177.01, 321.803, 2178.04, 350.843, 2548.38, 354.193, 2552.5, 579.809, 2585.51, 582.043, 2583.45, 354.193, 3267.37, 356.427, 3277.69, 1189.64, 1616.88, 1178.47, 1617.91, 662.46, 1755.1, 659.109, 1758.2, 627.836, 1619.13, 625.72, 1621.17, 17.6875, 1585.48, 17.6875, 1581.41, 268.64, 1320.39, 275.271, 1320.39, 307.332, 1582.42, 304.015, 1578.35, 585.921, 1128.7, 587.026, 1128.7, 339.392, 836.076, 339.392, 834.035, 11.0547, 1622.19, 13.2656, 2146.06, 12.4189, 2147.1, 322.92, 1752.01, 321.803, 1753.04, 355.31, 1856.2, 355.31, 1869.61, 1178.47, 1905.71, 1178.47, 1907.78, 641.239, 2663.91, 641.239, 2675.26, 1150.55, 2722.71, 1152.78, 2719.61, 641.239, 3071.38, 640.122, 3064.15, 589.861, 1899.52, 586.511, 1895.4, 355.31, 2175.98, 353.076, 2175.98, 12.4189, 4187.51, -3.31738, 4189.59, 779.736, 3316.89, 778.619, 3316.89, 805.425, 4223.63, 804.308, 4204.85, -3.31738, 8107.89, 11.0547, 8107.46, -19.9717, 4204.85, -27.6387, 4208.92, -1230.44, 3610.88, -1232.94, 3612.95, -678.949, 3645.96, -678.949, 3650.08, -1175.97, 3813.07, -1172.62, 3809.97, -686.767, 3837.82, -689.001, 3838.86, -1174.86, 4188.56, -1168.16, 4187.51, -27.6387, 1897.46, -16.6211, 1894.37, -313.719, 2152.38, -313.967, 2152.38, -355.976, 1894.42, -353.765, 1893.4, -603.611, 3252.93, -611.935, 3250.87, -349.46, 2360.38, -354.87, 2358.34, -605.822, 2326.74, -605.822, 2329.79, -309.544, 3248.46, -317.283, 3261.71, -24.3223, 3291.28, -23.2168, 3275.63, -1152.52, 3246.74, -1153.64, 3249.84, -646.559, 2427.68, -655.494, 2419.52, -1182.9, 1925.01, -1176.27, 1930.11, -800.392, 2254.38, -800.692, 2254.38, -830.849, 1961.72, -829.135, 1962.74, -1127.62, 2365.48, -1129.83, 2368.88, -657.728, 1853.1, -651.026, 1855.98, -13.0336, 1620.15, -13.2666, 1581.41, -14.3721, 837.094, -12.1611, 836.076, -346.025, 1111.37, -342.71, 1127.68, -606.927, 1401.96, -606.927, 1401.96, -633.459, 1088.94, -635.67, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.449, -306.227, 595.447, -340.499, 355.842, -338.288, 353.803, -12.1611 )
+polygon = PoolVector2Array( -53.0195, -12.1611, -34.666, -1198.38, -90, -1197.27, -90, -13.267, -1228, -12, -1228, 10, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 803.449, 13.2656, 803.449, 360.396, 1094.04, 363.713, 1094.04, 636.774, 1572.23, 632.353, 1569.17, 1214.96, 4631.04, 1223.8, 4622.88, 25.4258, 4583.12, 26.5313, 4572.92, 1174.05, 3317.79, 1181.79, 3311.73, 360.895, 4181.33, 357.544, 4178.24, 315.102, 3311.73, 319.569, 2177.01, 321.803, 2178.04, 350.843, 2548.38, 354.193, 2552.5, 579.809, 2585.51, 582.043, 2583.45, 354.193, 3267.37, 356.427, 3277.69, 1189.64, 1616.88, 1178.47, 1617.91, 662.46, 1755.1, 659.109, 1758.2, 627.836, 1619.13, 625.72, 1621.17, 17.6875, 1585.48, 17.6875, 1581.41, 268.64, 1320.39, 275.271, 1320.39, 307.332, 1582.42, 304.015, 1578.35, 585.921, 1128.7, 587.026, 1128.7, 339.392, 836.076, 339.392, 834.035, 11.0547, 1622.19, 13.2656, 2146.06, 12.4189, 2147.1, 322.92, 1752.01, 321.803, 1753.04, 355.31, 1856.2, 355.31, 1869.61, 1178.47, 1905.71, 1178.47, 1907.78, 641.239, 2663.91, 641.239, 2675.26, 1150.55, 2722.71, 1152.78, 2719.61, 641.239, 3071.38, 640.122, 3064.15, 589.861, 1899.52, 586.511, 1895.4, 355.31, 2175.98, 353.076, 2175.98, 12.4189, 4187.51, 10, 4189.59, 779.736, 3316.89, 778.619, 3316.89, 805.425, 4223.63, 804.308, 4205.87, 10, 8107.89, 10, 8107.46, -12, 4205.87, -12, 4208.92, -1230.44, 3610.88, -1232.94, 3612.95, -678.949, 3645.96, -678.949, 3650.08, -1175.97, 3813.07, -1172.62, 3809.97, -686.767, 3837.82, -689.001, 3838.86, -1174.86, 4188.56, -1168.16, 4186.49, -12, 1897.48, -13.2666, 1894.37, -313.719, 2152.38, -317.283, 2152.38, -352.659, 1894.42, -353.765, 1893.4, -603.611, 3252.93, -611.935, 3250.87, -349.46, 2360.38, -354.87, 2358.34, -605.822, 2326.74, -605.822, 2329.79, -309.544, 3248.46, -317.283, 3261.71, -24.3223, 3291.28, -23.2168, 3275.63, -1152.52, 3246.74, -1153.64, 3249.84, -646.559, 2427.68, -655.494, 2419.52, -1182.9, 1925.01, -1176.27, 1930.11, -800.392, 2254.38, -800.692, 2254.38, -830.849, 1961.72, -829.135, 1962.74, -1127.62, 2365.48, -1129.83, 2368.88, -657.728, 1853.1, -651.026, 1855.98, -13.0336, 837.094, -12.1611, 836.076, -346.025, 1111.37, -342.71, 1127.68, -606.927, 1401.96, -606.927, 1401.96, -633.459, 1088.94, -635.67, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.447, -309.544, 595.447, -340.499, 355.842, -338.288, 353.803, -12.1611 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D"]
 color = Color( 0, 0, 0, 0 )
@@ -1866,11 +1869,11 @@ z_index = -1
 
 [node name="Level3Ground" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
 position = Vector2( 1249.98, 552.859 )
-scale = Vector2( 1.0196, 1.10551 )
+scale = Vector2( 1.0196, 1.4 )
 texture = ExtResource( 52 )
 
 [node name="Level3Tangle" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
-position = Vector2( 1179.83, 499.247 )
+position = Vector2( 1179.83, 515 )
 texture = ExtResource( 51 )
 
 [node name="Level3Tangle2" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
@@ -1880,11 +1883,11 @@ flip_v = true
 
 [node name="Level3Ground2" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
 position = Vector2( 5064.69, 552.859 )
-scale = Vector2( 1.0196, 1.10551 )
+scale = Vector2( 1.0196, 1.4 )
 texture = ExtResource( 52 )
 
 [node name="Level3Tangle3" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
-position = Vector2( 4994.54, 499.247 )
+position = Vector2( 4994.54, 515 )
 texture = ExtResource( 51 )
 
 [node name="Level3Tangle4" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
@@ -1894,11 +1897,11 @@ flip_v = true
 
 [node name="Level3Ground3" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
 position = Vector2( 8872.18, 553.976 )
-scale = Vector2( 1.0196, 1.10551 )
+scale = Vector2( 1.0196, 1.4 )
 texture = ExtResource( 52 )
 
 [node name="Level3Tangle5" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
-position = Vector2( 8802.03, 500.364 )
+position = Vector2( 8802.03, 515 )
 texture = ExtResource( 51 )
 
 [node name="Level3Tangle6" type="Sprite" parent="BlueRiftGroup/Art/Ground"]
@@ -2189,7 +2192,7 @@ script = ExtResource( 91 )
 
 [node name="NPC" parent="Tachi2" index="1"]
 position = Vector2( -76.8984, -38.3906 )
-frame = 3
+frame = 0
 
 [node name="SceneCam" type="Camera2D" parent="Tachi2"]
 position = Vector2( -285.199, -182.36 )
@@ -2210,7 +2213,7 @@ position = Vector2( 0, 160 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
-frame = 4
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2676,6 +2679,9 @@ position = Vector2( 33600, 4100 )
 riftActive = false
 toRotation = 90
 
+[node name="InnerHex" parent="Level2DoorRedRift/Rift" index="0"]
+frame = 0
+
 [node name="OpenRift" parent="Level2DoorRedRift" index="5"]
 bus = "Master"
 
@@ -2696,7 +2702,7 @@ texture = ExtResource( 68 )
 polygon = PoolVector2Array( 266.519, 159.986, 273.255, 155.434, 280.664, 155.265, 284.705, 152.904, 294.64, 156.614, 299.355, 156.277, 304.574, 157.626, 309.289, 155.939, 317.866, 156.964, 327.812, 154.928, 339.262, 153.41, 347.681, 155.265, 352.733, 158.638, 354.922, 160.661, 355.427, 170.947, 352.059, 174.656, 347.681, 177.523, 328.99, 178.198, 312.152, 176.511, 303.564, 176.849, 298.176, 175.162, 291.609, 176.511, 276.454, 178.029, 267.867, 176.68, 264.162, 172.97 )
 
 [node name="Collectables" type="Node2D" parent="."]
-z_index = 4096
+z_index = 4000
 
 [node name="Collectable" parent="Collectables" instance=ExtResource( 85 )]
 position = Vector2( 1342.56, 101.031 )
@@ -2986,7 +2992,7 @@ position = Vector2( 16927, -2178 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 2
+frame = 7
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -2999,7 +3005,7 @@ script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
 z_index = 4000
-frame = 6
+frame = 3
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow2"]
 position = Vector2( -143.225, -69.8406 )
@@ -3016,7 +3022,7 @@ position = Vector2( 31876, 4260 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow3" index="1"]
-frame = 2
+frame = 7
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow3"]
 position = Vector2( 147.5, -63.41 )
@@ -3037,7 +3043,7 @@ position = Vector2( 2, 719 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 2
+frame = 7
 playing = true
 flip_h = true
 flip_v = true
@@ -3053,14 +3059,14 @@ drag_margin_right = 0.75
 drag_margin_bottom = 0.75
 
 [node name="Shadow5" parent="Shadows" instance=ExtResource( 12 )]
-position = Vector2( 29590, 7890 )
+position = Vector2( 29591, 7885 )
 
 [node name="NPC4" type="AnimatedSprite" parent="Shadows/Shadow5"]
 position = Vector2( 0, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Yellow"
-frame = 5
+frame = 2
 playing = true
 flip_h = true
 flip_v = true
@@ -3070,7 +3076,7 @@ position = Vector2( 50, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Red"
-frame = 2
+frame = 7
 playing = true
 flip_h = true
 flip_v = true
@@ -3080,7 +3086,6 @@ position = Vector2( 100, 130 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Blue"
-frame = 3
 playing = true
 flip_h = true
 flip_v = true
@@ -3090,7 +3095,7 @@ position = Vector2( 25000, 4116 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow6" index="1"]
-frame = 1
+frame = 6
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow6"]
 position = Vector2( 162, -25.0001 )
@@ -3103,26 +3108,27 @@ drag_margin_right = 0.75
 drag_margin_bottom = 0.75
 
 [node name="Shadow7" parent="Shadows" instance=ExtResource( 14 )]
-position = Vector2( 26465, 7592 )
+position = Vector2( 26473, 7588 )
 
 [node name="NPC2" type="AnimatedSprite" parent="Shadows/Shadow7"]
 position = Vector2( 2, 697 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
+frame = 5
 playing = true
 flip_h = true
 flip_v = true
 
 [node name="Shadow8" parent="Shadows" instance=ExtResource( 42 )]
-position = Vector2( 27542, 7891 )
+position = Vector2( 27542, 7876 )
 
 [node name="NPC2" type="AnimatedSprite" parent="Shadows/Shadow8"]
 position = Vector2( 0, 124 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 4
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
