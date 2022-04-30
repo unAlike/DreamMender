@@ -16,7 +16,7 @@
 [ext_resource path="res://Audio/Player/Footsteps/Footsteps-001.wav" type="AudioStream" id=14]
 [ext_resource path="res://Scenes/Progress.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Audio/Music/Dreamy_Ambient_Song.mp3" type="AudioStream" id=16]
-[ext_resource path="res://Audio/Music/1st Song.wav" type="AudioStream" id=17]
+[ext_resource path="res://Audio/Music/1st Song.mp3" type="AudioStream" id=17]
 [ext_resource path="res://Art/Character/DW_Character_Throw_Sprite Sheet_Down.png" type="Texture" id=18]
 [ext_resource path="res://Art/Character/DW_Character_Throw_Sprite Sheet_Forward.png" type="Texture" id=19]
 [ext_resource path="res://Art/Misc/Button.png" type="Texture" id=20]
@@ -143,61 +143,6 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 300, 0, 300, 452 )
 
-[sub_resource type="AtlasTexture" id=83]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=115]
-flags = 4
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=116]
-flags = 4
-atlas = ExtResource( 18 )
-region = Rect2( 303, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=117]
-flags = 4
-atlas = ExtResource( 18 )
-region = Rect2( 606, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=118]
-flags = 4
-atlas = ExtResource( 18 )
-region = Rect2( 909, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=119]
-flags = 4
-atlas = ExtResource( 18 )
-region = Rect2( 1212, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=120]
-flags = 4
-atlas = ExtResource( 19 )
-region = Rect2( 0, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=121]
-flags = 4
-atlas = ExtResource( 19 )
-region = Rect2( 303, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=122]
-flags = 4
-atlas = ExtResource( 19 )
-region = Rect2( 606, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=123]
-flags = 4
-atlas = ExtResource( 19 )
-region = Rect2( 909, 0, 303, 452 )
-
-[sub_resource type="AtlasTexture" id=124]
-flags = 4
-atlas = ExtResource( 19 )
-region = Rect2( 1212, 0, 303, 452 )
-
 [sub_resource type="AtlasTexture" id=141]
 flags = 4
 atlas = ExtResource( 28 )
@@ -238,6 +183,61 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 900, 0, 300, 452 )
 
+[sub_resource type="AtlasTexture" id=120]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 303, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=122]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 606, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=123]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 909, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 1212, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
+
+[sub_resource type="AtlasTexture" id=115]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=116]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 303, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=117]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 606, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=118]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 909, 0, 303, 452 )
+
+[sub_resource type="AtlasTexture" id=119]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 1212, 0, 303, 452 )
+
 [sub_resource type="AtlasTexture" id=109]
 flags = 4
 atlas = ExtResource( 3 )
@@ -275,21 +275,6 @@ animations = [ {
 "name": "wall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 83 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ) ],
-"loop": false,
-"name": "throwdown",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ) ],
-"loop": false,
-"name": "throwforward",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ), SubResource( 145 ) ],
 "loop": false,
 "name": "death",
@@ -298,6 +283,21 @@ animations = [ {
 "frames": [ SubResource( 82 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": false,
 "name": "wallJump",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ) ],
+"loop": false,
+"name": "throwforward",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ) ],
+"loop": false,
+"name": "throwdown",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ) ],
@@ -665,7 +665,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 5
+frame = 4
 playing = true
 centered = false
 

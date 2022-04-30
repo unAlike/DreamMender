@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Outdoor Ambience Inside Tree.mp3-5e44a5ae8801e3c1d2e4283f90b7bfe4.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Outdoor Ambience Inside Tree.mp3"
+dest_files=[ "res://.import/Outdoor Ambience Inside Tree.mp3-5e44a5ae8801e3c1d2e4283f90b7bfe4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
