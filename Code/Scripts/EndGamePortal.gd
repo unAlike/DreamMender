@@ -15,6 +15,7 @@ func _ready():
 func _process(delta):
 	if Grow:
 		$Light.scale = lerp($Light.scale, Vector2(GrowSize,GrowSize), GrowSpeed)
+		get_tree().current_scene.get_node("Player/Music/Song3").volume_db = lerp(get_tree().current_scene.get_node("Player/Music/Song3").volume_db, -100, GrowSpeed)
 
 func _on_EndGamePortal_body_entered(body):
 	if body.name == "Needle":
