@@ -29,16 +29,13 @@ func _process(delta):
 		NPC6.modulate.a = lerp(NPC6.modulate.a, 0, FadeSpeed)
 
 func Message():
-#	if Tracker == 1:
-#		Text = Text2
-#	elif Tracker == 2:
-#		Text = Text3
 	Box.visible = true
 	Dialogue.text = Text[At]
 	Dialogue.visible_characters = 0
 	Duration.start()
 	if At == Text.size() - 1:
 		Tracker += 1
+		At = 0
 		if Tracker == 1:
 			Text = Text2
 			Fade = true
