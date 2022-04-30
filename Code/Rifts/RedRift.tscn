@@ -80,6 +80,8 @@ position = Vector2( -3, 2 )
 scale = Vector2( 1.96038, 1.8821 )
 frames = SubResource( 9 )
 animation = "Open"
+frame = 1
+playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rift"]
 polygon = PoolVector2Array( -58, -96, 60, -95, 114, -1, 56, 97, -60, 96, -124, -8 )
