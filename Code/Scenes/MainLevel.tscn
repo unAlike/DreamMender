@@ -1,4 +1,4 @@
-[gd_scene load_steps=207 format=2]
+[gd_scene load_steps=206 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Utility/Particle.tscn" type="PackedScene" id=2]
@@ -137,50 +137,8 @@ colors = PoolColorArray( 0.207411, 0.18182, 0.604492, 1, 0.154393, 0.139805, 0.4
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=66]
-
 [sub_resource type="CircleShape2D" id=33]
 radius = 427.181
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 0, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 526, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 1052, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 1578, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 2104, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 2630, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 3156, 0, 526, 583 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 36 )
-region = Rect2( 3682, 0, 526, 583 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
@@ -302,13 +260,48 @@ flags = 4
 atlas = ExtResource( 43 )
 region = Rect2( 3682, 0, 526, 583 )
 
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 526, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 1052, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 1578, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 2104, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 2630, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 3156, 0, 526, 583 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 3682, 0, 526, 583 )
+
 [sub_resource type="SpriteFrames" id=48]
 animations = [ {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "Red",
@@ -323,47 +316,12 @@ animations = [ {
 "loop": true,
 "name": "Needle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=34]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=35]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=36]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=37]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=38]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=39]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=40]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=41]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=49]
 flags = 4
@@ -401,6 +359,46 @@ atlas = ExtResource( 39 )
 region = Rect2( 1800, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=41]
 flags = 4
 atlas = ExtResource( 39 )
 region = Rect2( 2100, 0, 300, 452 )
@@ -447,14 +445,14 @@ region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="SpriteFrames" id=65]
 animations = [ {
-"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
-"loop": true,
-"name": "Yellow",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
 "loop": true,
 "name": "Red",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "Yellow",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
@@ -462,46 +460,6 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=84]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=85]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=86]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=87]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=88]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=89]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=90]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=67]
 flags = 4
@@ -541,6 +499,46 @@ region = Rect2( 1800, 0, 300, 452 )
 [sub_resource type="AtlasTexture" id=74]
 flags = 4
 atlas = ExtResource( 40 )
+region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=75]
@@ -585,14 +583,14 @@ region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="SpriteFrames" id=91]
 animations = [ {
-"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ) ],
-"loop": true,
-"name": "Yellow",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
 "loop": true,
 "name": "Red",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ) ],
+"loop": true,
+"name": "Yellow",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
@@ -600,46 +598,6 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=108]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=109]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=110]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 600, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=111]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 900, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=112]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1200, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=113]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1500, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=114]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 1800, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=115]
-flags = 4
-atlas = ExtResource( 39 )
-region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=92]
 flags = 4
@@ -679,6 +637,46 @@ region = Rect2( 1800, 0, 300, 452 )
 [sub_resource type="AtlasTexture" id=99]
 flags = 4
 atlas = ExtResource( 40 )
+region = Rect2( 2100, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=108]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=109]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=110]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 600, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=111]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 900, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=112]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1200, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=113]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1500, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=114]
+flags = 4
+atlas = ExtResource( 39 )
+region = Rect2( 1800, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=115]
+flags = 4
+atlas = ExtResource( 39 )
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=100]
@@ -723,14 +721,14 @@ region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="SpriteFrames" id=116]
 animations = [ {
-"frames": [ SubResource( 108 ), SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ) ],
-"loop": true,
-"name": "Yellow",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ) ],
 "loop": true,
 "name": "Red",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 108 ), SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ) ],
+"loop": true,
+"name": "Yellow",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ) ],
@@ -741,6 +739,278 @@ animations = [ {
 
 [node name="Map" type="StaticBody2D"]
 script = ExtResource( 1 )
+
+[node name="Collectables" type="Node2D" parent="."]
+z_index = 4000
+
+[node name="Collectable" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 1342.56, 101.031 )
+
+[node name="Collectable2" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 2113.5, -202.062 )
+
+[node name="Collectable3" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 3607.82, -140.433 )
+
+[node name="Collectable10" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 4579.08, -460.702 )
+
+[node name="Collectable4" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 6605.57, -1270.97 )
+
+[node name="Collectable5" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 7534.33, -1745.82 )
+
+[node name="Collectable8" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 8530.88, -1402.31 )
+
+[node name="Collectable9" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 10746.6, -1167.92 )
+
+[node name="Collectable6" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 11577.2, -1108.31 )
+
+[node name="Collectable7" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 14712.5, -1200.25 )
+
+[node name="Collectable11" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 16836.1, -2440.91 )
+
+[node name="Collectable12" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 17981, -1076 )
+
+[node name="Collectable13" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 17548, -16 )
+
+[node name="Collectable14" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 17617, 111 )
+
+[node name="Collectable15" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 17693, 248 )
+
+[node name="Collectable16" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 17770, 382 )
+
+[node name="Collectable17" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 17848, 528 )
+
+[node name="Collectable18" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 17924, 686 )
+
+[node name="Collectable19" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 21275, 285 )
+
+[node name="Collectable20" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 22020, 285 )
+
+[node name="Collectable21" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 24082.1, -1421.51 )
+
+[node name="Collectable22" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 24538.4, -2233.8 )
+
+[node name="Collectable23" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 24892, -2443 )
+
+[node name="Collectable24" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 26750, 300 )
+
+[node name="Collectable25" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 27000, 300 )
+
+[node name="Collectable26" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 27250, 300 )
+
+[node name="Collectable27" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 27500, 300 )
+
+[node name="Collectable28" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 28000, 286.928 )
+
+[node name="Collectable30" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 33350, 130 )
+
+[node name="Collectable32" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 33650, 430 )
+
+[node name="Collectable33" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 31282, 4274 )
+
+[node name="Collectable34" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 29797, 3348 )
+
+[node name="Collectable35" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 29416, 3555.28 )
+
+[node name="Collectable36" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 26593, 4664 )
+
+[node name="Collectable37" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 26829, 4408 )
+
+[node name="Collectable38" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 27093, 3688.64 )
+
+[node name="Collectable39" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 24100, 4000 )
+
+[node name="Collectable40" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 24100, 4500 )
+
+[node name="Collectable41" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 24100, 5000 )
+
+[node name="Collectable42" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 24100, 5500 )
+
+[node name="Collectable43" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 25437.9, 8008.73 )
+
+[node name="Collectable44" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 25130, 8721 )
+
+[node name="Collectable45" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 27362, 7560 )
+
+[node name="Collectable46" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 28620.7, 6982.25 )
+
+[node name="Collectable71" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 28337, 7216 )
+
+[node name="Collectable72" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 28295, 7172 )
+
+[node name="Collectable73" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 28379, 7170 )
+
+[node name="Collectable47" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 29938, 7884 )
+
+[node name="Collectable48" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 30438, 7884 )
+
+[node name="Collectable49" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 30938, 7884 )
+
+[node name="Collectable50" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 31438, 7884 )
+
+[node name="Collectable52" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 33750, 630 )
+
+[node name="Collectable53" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 33200, 230 )
+
+[node name="Collectable54" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 33500, 230 )
+
+[node name="Collectable55" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 33850, 830 )
+
+[node name="Collectable56" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 33900, 1030 )
+
+[node name="Collectable57" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 33950, 1230 )
+
+[node name="Collectable29" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 26500, 300 )
+
+[node name="Collectable58" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 38100, 2500 )
+
+[node name="Collectable59" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 38100, 2250 )
+
+[node name="Collectable60" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 37600, 1600 )
+
+[node name="Collectable31" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 17996, 1039 )
+
+[node name="Collectable51" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 25900, -2700 )
+
+[node name="Collectable61" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 26000, -2500 )
+
+[node name="Collectable62" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 25800, -2900 )
+
+[node name="Collectable63" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 26100, -2300 )
+
+[node name="Collectable64" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 25800, -700 )
+
+[node name="Collectable65" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 25800, -1000 )
+
+[node name="Collectable66" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 30230, 3333 )
+
+[node name="Collectable67" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 4314, -825 )
+
+[node name="Collectable68" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 39902, 2375 )
+
+[node name="Collectable69" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 36425, 1852 )
+
+[node name="Collectable70" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 36837, 1462 )
+
+[node name="Collectable74" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 35763, 1990 )
+
+[node name="Collectable75" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 35650, 1898 )
+
+[node name="Collectable78" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 35541, 2038 )
+
+[node name="Collectable79" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 35479, 2222 )
+
+[node name="Collectable76" parent="Collectables" instance=ExtResource( 85 )]
+position = Vector2( 22651, 478 )
+
+[node name="CheckPoints" type="Node2D" parent="."]
+z_index = 4000
+
+[node name="Checkpoint7" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 973.654, 188.986 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint2" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 5172.96, -1250.76 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint3" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 10277, -1150 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint4" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 19981, 984 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint8" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 25613, -2967 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint5" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 32648.4, 4141.26 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint9" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 36855.2, 2990.52 )
+scale = Vector2( 4.07565, 4.07565 )
+
+[node name="Checkpoint10" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 17050, -2250 )
+scale = Vector2( 4.07565, 4.07565 )
 
 [node name="Water" type="Node2D" parent="."]
 position = Vector2( -93705.1, 6929.7 )
@@ -798,44 +1068,10 @@ max_distance = 3314.0
 attenuation = 0.0669861
 
 [node name="Player" parent="." instance=ExtResource( 26 )]
-position = Vector2( 32851, 166 )
+position = Vector2( 29399, 7843 )
 z_index = 4095
 maxNumWallJump = 2
 maxNumDJump = 2
-
-[node name="Sprite" parent="Player" index="4"]
-frame = 4
-
-[node name="AnimationTree" parent="Player" index="6"]
-parameters/playback = SubResource( 66 )
-
-[node name="Camera2D" parent="Player" index="7"]
-process_mode = 0
-drag_margin_h_enabled = false
-
-[node name="Footstep1" parent="Player/Sounds/Footsteps" index="0"]
-bus = "Master"
-
-[node name="Footstep2" parent="Player/Sounds/Footsteps" index="1"]
-bus = "Master"
-
-[node name="Footstep3" parent="Player/Sounds/Footsteps" index="2"]
-bus = "Master"
-
-[node name="Footstep4" parent="Player/Sounds/Footsteps" index="3"]
-bus = "Master"
-
-[node name="Footstep5" parent="Player/Sounds/Footsteps" index="4"]
-bus = "Master"
-
-[node name="Jump1" parent="Player/Sounds/Jump" index="0"]
-bus = "Master"
-
-[node name="Jump2" parent="Player/Sounds/Jump" index="1"]
-bus = "Master"
-
-[node name="Jump3" parent="Player/Sounds/Jump" index="2"]
-bus = "Master"
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 33212, 9023 )
@@ -1549,7 +1785,7 @@ texture = ExtResource( 82 )
 polygon = PoolVector2Array( 125, -151, 154, 27, 39, 106, -89, 150, -150, -1 )
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4"]
-position = Vector2( 166.293, 289.271 )
+position = Vector2( 150, 300 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox4"]
 
@@ -1561,7 +1797,7 @@ rotation = -0.109956
 z_index = -2000
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox5"]
-position = Vector2( 40, 340 )
+position = Vector2( 0, 350 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox5"]
 
@@ -1577,7 +1813,7 @@ texture = ExtResource( 19 )
 polygon = PoolVector2Array( 110, -13, 42, 123, -20, 94, -112, 10, -11, -123, 112, -52 )
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6"]
-position = Vector2( -229, 284 )
+position = Vector2( -250, 250 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox6"]
 
@@ -1593,7 +1829,7 @@ texture = ExtResource( 19 )
 polygon = PoolVector2Array( 110, -13, 42, 123, -20, 94, -112, 10, -11, -123, 112, -52 )
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox9"]
-position = Vector2( -229, 284 )
+position = Vector2( -200, 300 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox9"]
 
@@ -1605,7 +1841,7 @@ rotation = -0.610865
 z_index = -2000
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox7"]
-position = Vector2( 40, 340 )
+position = Vector2( 0, 350 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox7"]
 
@@ -1621,7 +1857,7 @@ texture = ExtResource( 19 )
 polygon = PoolVector2Array( 110, -13, 42, 123, -20, 94, -112, 10, -11, -123, 112, -52 )
 
 [node name="toPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox8"]
-position = Vector2( -229, 284 )
+position = Vector2( -200, 250 )
 
 [node name="fromPos" type="Position2D" parent="ThornPuzzle/YellowRift/SpikeHitbox8"]
 
@@ -1643,7 +1879,7 @@ fromRotation = 90
 toRotation = 45
 
 [node name="InnerHex" parent="RedRifts/RedRift/Rift" index="0"]
-frame = 0
+frame = 5
 
 [node name="OpenRift" parent="RedRifts/RedRift" index="5"]
 bus = "Master"
@@ -1842,7 +2078,7 @@ collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlueRiftGroup/Obsticles" groups=["collider", "killNeedle"]]
 position = Vector2( 522.037, 559.39 )
-polygon = PoolVector2Array( -53.0195, -12.1611, -34.666, -1198.38, -90, -1197.27, -90, -13.267, -1228, -12, -1228, 10, 353.803, 12.1602, 348.515, 608.413, -423.135, 605.82, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 11.0547, 803.449, 13.2656, 803.449, 360.396, 1094.04, 363.713, 1094.04, 636.774, 1572.23, 632.353, 1569.17, 1214.96, 4631.04, 1223.8, 4622.88, 25.4258, 4583.12, 26.5313, 4572.92, 1174.05, 3317.79, 1181.79, 3311.73, 360.895, 4181.33, 357.544, 4178.24, 315.102, 3311.73, 319.569, 2177.01, 321.803, 2178.04, 350.843, 2548.38, 354.193, 2552.5, 579.809, 2585.51, 582.043, 2583.45, 354.193, 3267.37, 356.427, 3277.69, 1189.64, 1616.88, 1178.47, 1617.91, 662.46, 1755.1, 659.109, 1758.2, 627.836, 1619.13, 625.72, 1621.17, 17.6875, 1585.48, 17.6875, 1581.41, 268.64, 1320.39, 275.271, 1320.39, 307.332, 1582.42, 304.015, 1578.35, 585.921, 1128.7, 587.026, 1128.7, 339.392, 836.076, 339.392, 834.035, 11.0547, 1622.19, 13.2656, 2146.06, 12.4189, 2147.1, 322.92, 1752.01, 321.803, 1753.04, 355.31, 1856.2, 355.31, 1869.61, 1178.47, 1905.71, 1178.47, 1907.78, 641.239, 2663.91, 641.239, 2675.26, 1150.55, 2722.71, 1152.78, 2719.61, 641.239, 3071.38, 640.122, 3064.15, 589.861, 1899.52, 586.511, 1895.4, 355.31, 2175.98, 353.076, 2175.98, 12.4189, 4187.51, 10, 4189.59, 779.736, 3316.89, 778.619, 3316.89, 805.425, 4223.63, 804.308, 4205.87, 10, 8107.89, 10, 8107.46, -12, 4205.87, -12, 4208.92, -1230.44, 3610.88, -1232.94, 3612.95, -678.949, 3645.96, -678.949, 3650.08, -1175.97, 3813.07, -1172.62, 3809.97, -686.767, 3837.82, -689.001, 3838.86, -1174.86, 4188.56, -1168.16, 4186.49, -12, 1897.48, -13.2666, 1894.37, -313.719, 2152.38, -317.283, 2152.38, -352.659, 1894.42, -353.765, 1893.4, -603.611, 3252.93, -611.935, 3250.87, -349.46, 2360.38, -354.87, 2358.34, -605.822, 2326.74, -605.822, 2329.79, -309.544, 3248.46, -317.283, 3261.71, -24.3223, 3291.28, -23.2168, 3275.63, -1152.52, 3246.74, -1153.64, 3249.84, -646.559, 2427.68, -655.494, 2419.52, -1182.9, 1925.01, -1176.27, 1930.11, -800.392, 2254.38, -800.692, 2254.38, -830.849, 1961.72, -829.135, 1962.74, -1127.62, 2365.48, -1129.83, 2368.88, -657.728, 1853.1, -651.026, 1855.98, -13.0336, 837.094, -12.1611, 836.076, -346.025, 1111.37, -342.71, 1127.68, -606.927, 1401.96, -606.927, 1401.96, -633.459, 1088.94, -635.67, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12.1611, 395.607, -12.1611, 396.627, -306.227, 595.447, -309.544, 595.447, -340.499, 355.842, -338.288, 353.803, -12.1611 )
+polygon = PoolVector2Array( -53.02, -12, -34.666, -1198.38, -90, -1197.27, -90, -12, -1228, -12, -1228, 10, 353.803, 10, 348.515, 608.413, -423.135, 605.82, -429.252, 1206.11, -357.881, 1209.43, -358.9, 653.357, 341.568, 661.096, 347.686, 1191.74, 390.51, 1202.8, 386.43, 346.025, 590.352, 347.131, 592.391, 13.2656, 556.705, 13.2656, 550.586, 310.648, 390.51, 308.438, 392.549, 10, 803.449, 10, 803.449, 360.396, 1094.04, 363.713, 1094.04, 636.774, 1572.23, 632.353, 1569.17, 1214.96, 4631.04, 1223.8, 4622.88, 25.4258, 4583.12, 26.5313, 4572.92, 1174.05, 3317.79, 1181.79, 3311.73, 360.895, 4181.33, 357.544, 4178.24, 315.102, 3311.73, 319.569, 2177.01, 321.803, 2178.04, 350.843, 2548.38, 354.193, 2552.5, 579.809, 2585.51, 582.043, 2583.45, 354.193, 3267.37, 356.427, 3277.69, 1189.64, 1616.88, 1178.47, 1617.91, 662.46, 1755.1, 659.109, 1758.2, 627.836, 1619.13, 625.72, 1621.17, 17.6875, 1585.48, 17.6875, 1581.41, 268.64, 1320.39, 275.271, 1320.39, 307.332, 1582.42, 304.015, 1578.35, 585.921, 1128.7, 587.026, 1128.7, 339.392, 836.076, 339.392, 834.035, 10, 2146.06, 10, 2147.1, 322.92, 1752.01, 321.803, 1753.04, 355.31, 1856.2, 355.31, 1869.61, 1178.47, 1905.71, 1178.47, 1907.78, 641.239, 2663.91, 641.239, 2675.26, 1150.55, 2722.71, 1152.78, 2719.61, 641.239, 3071.38, 640.122, 3064.15, 589.861, 1899.52, 586.511, 1895.4, 355.31, 2175.98, 353.076, 2175.98, 10, 4187.51, 10, 4189.59, 779.736, 3316.89, 778.619, 3316.89, 805.425, 4223.63, 804.308, 4205.87, 10, 8107.89, 10, 8107.46, -12, 4205.87, -12, 4208.92, -1230.44, 3610.88, -1232.94, 3612.95, -678.949, 3645.96, -678.949, 3650.08, -1175.97, 3813.07, -1172.62, 3809.97, -686.767, 3837.82, -689.001, 3838.86, -1174.86, 4188.56, -1168.16, 4186.49, -12, 1897.48, -12, 1894.37, -313.719, 2152.38, -317.283, 2152.38, -352.659, 1894.42, -353.765, 1893.4, -603.611, 3252.93, -611.935, 3250.87, -349.46, 2360.38, -354.87, 2358.34, -605.822, 2326.74, -605.822, 2329.79, -309.544, 3248.46, -317.283, 3261.71, -24.3223, 3291.28, -23.2168, 3275.63, -1152.52, 3246.74, -1153.64, 3249.84, -646.559, 2427.68, -655.494, 2419.52, -1182.9, 1925.01, -1176.27, 1930.11, -800.392, 2254.38, -800.692, 2254.38, -830.849, 1961.72, -829.135, 1962.74, -1127.62, 2365.48, -1129.83, 2368.88, -657.728, 1853.1, -651.026, 1855.98, -12, 837.094, -12.1611, 836.076, -346.025, 1111.37, -342.71, 1127.68, -606.927, 1401.96, -606.927, 1401.96, -633.459, 1088.94, -635.67, 1087.92, -372.558, 836.076, -370.347, 840.154, -1185.11, 795.291, -1184, 804.469, -12, 395.607, -12, 396.627, -306.227, 595.447, -309.544, 595.447, -340.499, 355.842, -338.288, 353.803, -12 )
 
 [node name="Polygon2D" type="Polygon2D" parent="BlueRiftGroup/Obsticles/CollisionPolygon2D"]
 color = Color( 0, 0, 0, 0 )
@@ -2192,7 +2428,7 @@ script = ExtResource( 91 )
 
 [node name="NPC" parent="Tachi2" index="1"]
 position = Vector2( -76.8984, -38.3906 )
-frame = 0
+frame = 1
 
 [node name="SceneCam" type="Camera2D" parent="Tachi2"]
 position = Vector2( -285.199, -182.36 )
@@ -2209,11 +2445,11 @@ position = Vector2( 23900, 7870 )
 script = ExtResource( 91 )
 
 [node name="NPC2" type="AnimatedSprite" parent="Tachi3"]
-position = Vector2( 0, 160 )
+position = Vector2( 0, 170 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
-frame = 1
+frame = 2
 playing = true
 flip_h = true
 flip_v = true
@@ -2680,7 +2916,7 @@ riftActive = false
 toRotation = 90
 
 [node name="InnerHex" parent="Level2DoorRedRift/Rift" index="0"]
-frame = 0
+frame = 5
 
 [node name="OpenRift" parent="Level2DoorRedRift" index="5"]
 bus = "Master"
@@ -2700,277 +2936,6 @@ texture = ExtResource( 68 )
 
 [node name="CollisionPolygon2D" parent="Level2DoorRedRift/Platform" index="3"]
 polygon = PoolVector2Array( 266.519, 159.986, 273.255, 155.434, 280.664, 155.265, 284.705, 152.904, 294.64, 156.614, 299.355, 156.277, 304.574, 157.626, 309.289, 155.939, 317.866, 156.964, 327.812, 154.928, 339.262, 153.41, 347.681, 155.265, 352.733, 158.638, 354.922, 160.661, 355.427, 170.947, 352.059, 174.656, 347.681, 177.523, 328.99, 178.198, 312.152, 176.511, 303.564, 176.849, 298.176, 175.162, 291.609, 176.511, 276.454, 178.029, 267.867, 176.68, 264.162, 172.97 )
-
-[node name="Collectables" type="Node2D" parent="."]
-z_index = 4000
-
-[node name="Collectable" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 1342.56, 101.031 )
-
-[node name="Collectable2" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 2113.5, -202.062 )
-
-[node name="Collectable3" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 3607.82, -140.433 )
-
-[node name="Collectable10" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 4579.08, -460.702 )
-
-[node name="Collectable4" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 6605.57, -1270.97 )
-
-[node name="Collectable5" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 7534.33, -1745.82 )
-
-[node name="Collectable8" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 8530.88, -1402.31 )
-
-[node name="Collectable9" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 10746.6, -1167.92 )
-
-[node name="Collectable6" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 11577.2, -1108.31 )
-
-[node name="Collectable7" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 14712.5, -1200.25 )
-
-[node name="Collectable11" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 16836.1, -2440.91 )
-
-[node name="Collectable12" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 17981, -1076 )
-
-[node name="Collectable13" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 17548, -16 )
-
-[node name="Collectable14" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 17617, 111 )
-
-[node name="Collectable15" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 17693, 248 )
-
-[node name="Collectable16" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 17770, 382 )
-
-[node name="Collectable17" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 17848, 528 )
-
-[node name="Collectable18" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 17924, 686 )
-
-[node name="Collectable19" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 21275, 285 )
-
-[node name="Collectable20" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 22020, 285 )
-
-[node name="Collectable21" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 24082.1, -1421.51 )
-
-[node name="Collectable22" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 24538.4, -2233.8 )
-
-[node name="Collectable23" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 24892, -2443 )
-
-[node name="Collectable24" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 26750, 300 )
-
-[node name="Collectable25" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 27000, 300 )
-
-[node name="Collectable26" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 27250, 300 )
-
-[node name="Collectable27" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 27500, 300 )
-
-[node name="Collectable28" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 28000, 286.928 )
-
-[node name="Collectable30" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 33350, 130 )
-
-[node name="Collectable32" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 33650, 430 )
-
-[node name="Collectable33" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 31282, 4274 )
-
-[node name="Collectable34" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 29797, 3348 )
-
-[node name="Collectable35" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 29416, 3555.28 )
-
-[node name="Collectable36" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 26593, 4664 )
-
-[node name="Collectable37" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 26829, 4408 )
-
-[node name="Collectable38" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 27093, 3688.64 )
-
-[node name="Collectable39" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 24100, 4000 )
-
-[node name="Collectable40" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 24100, 4500 )
-
-[node name="Collectable41" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 24100, 5000 )
-
-[node name="Collectable42" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 24100, 5500 )
-
-[node name="Collectable43" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 25437.9, 8008.73 )
-
-[node name="Collectable44" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 25130, 8721 )
-
-[node name="Collectable45" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 27362, 7560 )
-
-[node name="Collectable46" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 28620.7, 6982.25 )
-
-[node name="Collectable71" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 28337, 7216 )
-
-[node name="Collectable72" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 28295, 7172 )
-
-[node name="Collectable73" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 28379, 7170 )
-
-[node name="Collectable47" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 29938, 7884 )
-
-[node name="Collectable48" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 30438, 7884 )
-
-[node name="Collectable49" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 30938, 7884 )
-
-[node name="Collectable50" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 31438, 7884 )
-
-[node name="Collectable52" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 33750, 630 )
-
-[node name="Collectable53" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 33200, 230 )
-
-[node name="Collectable54" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 33500, 230 )
-
-[node name="Collectable55" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 33850, 830 )
-
-[node name="Collectable56" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 33900, 1030 )
-
-[node name="Collectable57" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 33950, 1230 )
-
-[node name="Collectable29" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 26500, 300 )
-
-[node name="Collectable58" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 38100, 2500 )
-
-[node name="Collectable59" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 38100, 2250 )
-
-[node name="Collectable60" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 37600, 1600 )
-
-[node name="Collectable31" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 17996, 1039 )
-
-[node name="Collectable51" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 25900, -2700 )
-
-[node name="Collectable61" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 26000, -2500 )
-
-[node name="Collectable62" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 25800, -2900 )
-
-[node name="Collectable63" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 26100, -2300 )
-
-[node name="Collectable64" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 25800, -700 )
-
-[node name="Collectable65" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 25800, -1000 )
-
-[node name="Collectable66" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 30230, 3333 )
-
-[node name="Collectable67" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 4314, -825 )
-
-[node name="Collectable68" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 39902, 2375 )
-
-[node name="Collectable69" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 36425, 1852 )
-
-[node name="Collectable70" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 36837, 1462 )
-
-[node name="Collectable74" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 35763, 1990 )
-
-[node name="Collectable75" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 35650, 1898 )
-
-[node name="Collectable78" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 35541, 2038 )
-
-[node name="Collectable79" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 35479, 2222 )
-
-[node name="Collectable76" parent="Collectables" instance=ExtResource( 85 )]
-position = Vector2( 22651, 478 )
-
-[node name="CheckPoints" type="Node2D" parent="."]
-
-[node name="Checkpoint7" parent="CheckPoints" instance=ExtResource( 9 )]
-position = Vector2( 973.654, 188.986 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint2" parent="CheckPoints" instance=ExtResource( 9 )]
-position = Vector2( 5172.96, -1250.76 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint3" parent="CheckPoints" instance=ExtResource( 9 )]
-position = Vector2( 10277, -1150 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint4" parent="CheckPoints" instance=ExtResource( 9 )]
-position = Vector2( 19981, 984 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint8" parent="CheckPoints" instance=ExtResource( 9 )]
-position = Vector2( 25613, -2967 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint5" parent="CheckPoints" instance=ExtResource( 9 )]
-position = Vector2( 32648.4, 4141.26 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint9" parent="CheckPoints" instance=ExtResource( 9 )]
-position = Vector2( 36855.2, 2990.52 )
-scale = Vector2( 4.07565, 4.07565 )
-
-[node name="Checkpoint10" parent="CheckPoints" instance=ExtResource( 9 )]
-position = Vector2( 17050, -2250 )
-scale = Vector2( 4.07565, 4.07565 )
 
 [node name="StalagSpike" parent="." instance=ExtResource( 27 )]
 position = Vector2( 29698, 3695 )
@@ -2992,7 +2957,6 @@ position = Vector2( 16927, -2178 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 7
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -3005,7 +2969,6 @@ script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
 z_index = 4000
-frame = 3
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow2"]
 position = Vector2( -143.225, -69.8406 )
@@ -3022,7 +2985,7 @@ position = Vector2( 31876, 4260 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow3" index="1"]
-frame = 7
+frame = 0
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow3"]
 position = Vector2( 147.5, -63.41 )
@@ -3039,11 +3002,10 @@ position = Vector2( 25445, 7586 )
 script = ExtResource( 91 )
 
 [node name="NPC2" type="AnimatedSprite" parent="Shadows/Shadow4"]
-position = Vector2( 2, 719 )
+position = Vector2( 0, 730 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 7
 playing = true
 flip_h = true
 flip_v = true
@@ -3060,42 +3022,53 @@ drag_margin_bottom = 0.75
 
 [node name="Shadow5" parent="Shadows" instance=ExtResource( 12 )]
 position = Vector2( 29591, 7885 )
+script = ExtResource( 91 )
 
 [node name="NPC4" type="AnimatedSprite" parent="Shadows/Shadow5"]
-position = Vector2( 0, 130 )
+position = Vector2( 0, 140 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Yellow"
-frame = 2
+frame = 3
 playing = true
 flip_h = true
 flip_v = true
 
 [node name="NPC5" type="AnimatedSprite" parent="Shadows/Shadow5"]
-position = Vector2( 50, 130 )
+position = Vector2( 50, 140 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Red"
-frame = 7
 playing = true
 flip_h = true
 flip_v = true
 
 [node name="NPC6" type="AnimatedSprite" parent="Shadows/Shadow5"]
-position = Vector2( 100, 130 )
+position = Vector2( 100, 140 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Blue"
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
+
+[node name="SceneCam" type="Camera2D" parent="Shadows/Shadow5"]
+position = Vector2( 147.5, -63.41 )
+
+[node name="LerpCam" type="Camera2D" parent="Shadows/Shadow5"]
+smoothing_speed = 1.0
+drag_margin_left = 0.75
+drag_margin_top = 0.75
+drag_margin_right = 0.75
+drag_margin_bottom = 0.75
 
 [node name="Shadow6" parent="Shadows" instance=ExtResource( 13 )]
 position = Vector2( 25000, 4116 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow6" index="1"]
-frame = 6
+frame = 7
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow6"]
 position = Vector2( 162, -25.0001 )
@@ -3109,29 +3082,51 @@ drag_margin_bottom = 0.75
 
 [node name="Shadow7" parent="Shadows" instance=ExtResource( 14 )]
 position = Vector2( 26473, 7588 )
+script = ExtResource( 91 )
 
 [node name="NPC2" type="AnimatedSprite" parent="Shadows/Shadow7"]
-position = Vector2( 2, 697 )
+position = Vector2( 0, 697 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 5
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
+
+[node name="SceneCam" type="Camera2D" parent="Shadows/Shadow7"]
+position = Vector2( 147.5, -63.41 )
+
+[node name="LerpCam" type="Camera2D" parent="Shadows/Shadow7"]
+smoothing_speed = 1.0
+drag_margin_left = 0.75
+drag_margin_top = 0.75
+drag_margin_right = 0.75
+drag_margin_bottom = 0.75
 
 [node name="Shadow8" parent="Shadows" instance=ExtResource( 42 )]
-position = Vector2( 27542, 7876 )
+position = Vector2( 27542, 7883 )
+script = ExtResource( 91 )
 
 [node name="NPC2" type="AnimatedSprite" parent="Shadows/Shadow8"]
-position = Vector2( 0, 124 )
+position = Vector2( 0, 140 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 1
+frame = 2
 playing = true
 flip_h = true
 flip_v = true
+
+[node name="SceneCam" type="Camera2D" parent="Shadows/Shadow8"]
+position = Vector2( 147.5, -63.41 )
+
+[node name="LerpCam" type="Camera2D" parent="Shadows/Shadow8"]
+smoothing_speed = 1.0
+drag_margin_left = 0.75
+drag_margin_top = 0.75
+drag_margin_right = 0.75
+drag_margin_bottom = 0.75
 
 [node name="Fade03" type="Sprite" parent="."]
 position = Vector2( 40244, 3949.51 )
@@ -3152,27 +3147,6 @@ texture = ExtResource( 72 )
 position = Vector2( 32500.7, 7590.46 )
 scale = Vector2( 6.25616, 6.29056 )
 
-[connection signal="hit" from="Player" to="WaterDeath" method="_on_Player_hit"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox7" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox8" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox9" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox10" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox11" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="YellowRifts/YellowRift6/Platform/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox9" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox7" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox8" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="RedRifts/RedRift/Platform/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
-[connection signal="body_entered" from="BlueRiftGroup/Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="WaterDeath" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="get_button" from="Collectables/Collectable" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable2" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable3" to="Player" method="_on_Collectable_get_button"]
@@ -3251,9 +3225,29 @@ scale = Vector2( 6.25616, 6.29056 )
 [connection signal="get_button" from="Collectables/Collectable78" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable79" to="Player" method="_on_Collectable_get_button"]
 [connection signal="get_button" from="Collectables/Collectable76" to="Player" method="_on_Collectable_get_button"]
+[connection signal="hit" from="Player" to="WaterDeath" method="_on_Player_hit"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox7" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox8" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox9" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox10" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="Lvl1/Layer2/Spikes/SpikeHitbox11" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="YellowRifts/YellowRift6/Platform/SpikeHitbox2" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox4" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox5" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox6" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox9" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox7" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="ThornPuzzle/YellowRift/SpikeHitbox8" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="RedRifts/RedRift/Platform/SpikeHitbox3" to="Player" method="_on_SpikeHitbox_body_entered"]
+[connection signal="body_entered" from="BlueRiftGroup/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="WaterDeath" to="Player" method="_on_SpikeHitbox_body_entered"]
 [connection signal="body_entered" from="StalagSpike" to="Player" method="_on_SpikeHitbox_body_entered"]
 
-[editable path="Player"]
 [editable path="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform"]
 [editable path="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform2"]
 [editable path="Lvl1/Layer1/UnstableRedRift/PinkRift/Platform3"]

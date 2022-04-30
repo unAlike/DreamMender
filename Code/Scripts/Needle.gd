@@ -15,9 +15,6 @@ func _physics_process(delta):
 		#print("You hit ",Collision.collider.name, " of ", Collision.collider.get_parent().name)
 		queue_free()
 
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
-
 func _on_Area2D_body_entered(body):
 	if body.name == "Obsticles":
 		queue_free()
