@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=2]
@@ -28,109 +28,125 @@
 [ext_resource path="res://Audio/Player/Throw/Throw3.wav" type="AudioStream" id=26]
 [ext_resource path="res://Audio/Player/Throw/Throw1.wav" type="AudioStream" id=27]
 [ext_resource path="res://Art/Character/DW_Character_Death.png" type="Texture" id=28]
+[ext_resource path="res://Audio/button.wav" type="AudioStream" id=29]
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 13, 41 )
 
 [sub_resource type="AtlasTexture" id=50]
-flags = 5
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=51]
-flags = 5
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 300, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=52]
-flags = 5
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 600, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=53]
-flags = 5
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 900, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=54]
-flags = 5
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1200, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=55]
-flags = 5
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1500, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=56]
-flags = 5
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1800, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=57]
-flags = 5
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=58]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=59]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 300, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=60]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 600, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=61]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 900, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=62]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 1200, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=63]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 1500, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=64]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 1800, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=65]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 2100, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=66]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 2400, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=67]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 2700, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=68]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3000, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=69]
-flags = 5
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=106]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=107]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 300, 452 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 264, 452 )
 
 [sub_resource type="AtlasTexture" id=115]
 flags = 4
@@ -208,52 +224,37 @@ atlas = ExtResource( 28 )
 region = Rect2( 1200, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=82]
-flags = 5
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 300, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=70]
-flags = 5
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 600, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=71]
-flags = 5
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 900, 0, 300, 452 )
 
 [sub_resource type="AtlasTexture" id=109]
-flags = 5
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 264, 0, 264, 452 )
 
 [sub_resource type="AtlasTexture" id=110]
-flags = 5
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 528, 0, 264, 452 )
 
 [sub_resource type="AtlasTexture" id=111]
-flags = 5
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 792, 0, 264, 452 )
 
 [sub_resource type="AtlasTexture" id=112]
-flags = 5
-atlas = ExtResource( 3 )
-region = Rect2( 1056, 0, 264, 452 )
-
-[sub_resource type="AtlasTexture" id=106]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=107]
-flags = 5
-atlas = ExtResource( 6 )
-region = Rect2( 300, 0, 300, 452 )
-
-[sub_resource type="AtlasTexture" id=83]
-flags = 5
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1056, 0, 264, 452 )
 
@@ -268,6 +269,16 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 20.0
+}, {
+"frames": [ SubResource( 106 ), SubResource( 107 ) ],
+"loop": false,
+"name": "wall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 83 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ) ],
 "loop": false,
@@ -293,16 +304,6 @@ animations = [ {
 "loop": false,
 "name": "jump",
 "speed": 15.0
-}, {
-"frames": [ SubResource( 106 ), SubResource( 107 ) ],
-"loop": false,
-"name": "wall",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 83 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=84]
@@ -585,13 +586,13 @@ priority = 2
 
 [sub_resource type="AnimationNodeStateMachine" id=42]
 states/fall/node = SubResource( 85 )
-states/fall/position = Vector2( 229.346, 48.786 )
+states/fall/position = Vector2( 209.334, 48.3636 )
 states/idle/node = SubResource( 38 )
 states/idle/position = Vector2( 209.337, 381.84 )
 states/jump/node = SubResource( 44 )
 states/jump/position = Vector2( 77.6667, 199.667 )
 states/run/node = SubResource( 39 )
-states/run/position = Vector2( 514.333, 357.988 )
+states/run/position = Vector2( 458.333, 381.791 )
 states/throw/node = SubResource( 126 )
 states/throw/position = Vector2( 449.333, 173.897 )
 states/wall/node = SubResource( 76 )
@@ -600,7 +601,7 @@ states/wallJump/node = SubResource( 77 )
 states/wallJump/position = Vector2( 846.222, 217 )
 transitions = [ "wall", "wallJump", SubResource( 79 ), "wallJump", "wall", SubResource( 80 ), "idle", "jump", SubResource( 97 ), "jump", "fall", SubResource( 98 ), "fall", "idle", SubResource( 99 ), "fall", "wall", SubResource( 100 ), "wallJump", "fall", SubResource( 101 ), "idle", "run", SubResource( 102 ), "run", "idle", SubResource( 103 ), "wall", "fall", SubResource( 104 ), "run", "fall", SubResource( 105 ), "wall", "idle", SubResource( 113 ), "idle", "fall", SubResource( 114 ), "throw", "idle", SubResource( 127 ), "throw", "fall", SubResource( 128 ), "idle", "throw", SubResource( 129 ), "fall", "throw", SubResource( 130 ) ]
 start_node = "idle"
-graph_offset = Vector2( -161, -10.7701 )
+graph_offset = Vector2( -283, -145.77 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 resource_local_to_scene = false
@@ -664,7 +665,7 @@ position = Vector2( -28, -109 )
 scale = Vector2( 0.204587, 0.241501 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 2
+frame = 5
 playing = true
 centered = false
 
@@ -1045,6 +1046,13 @@ bus = "SFX"
 
 [node name="Jump3" type="AudioStreamPlayer2D" parent="Sounds/Jump" groups=["sfx", "sound"]]
 stream = ExtResource( 24 )
+bus = "SFX"
+
+[node name="Misc" type="Node2D" parent="Sounds"]
+
+[node name="ButtonCollect" type="AudioStreamPlayer2D" parent="Sounds/Misc"]
+stream = ExtResource( 29 )
+max_distance = 1e+07
 bus = "SFX"
 
 [node name="Music" type="Node2D" parent="."]

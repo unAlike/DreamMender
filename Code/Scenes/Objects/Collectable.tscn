@@ -23,8 +23,6 @@ texture = ExtResource( 1 )
 scale = Vector2( 8.76, 8.76 )
 shape = SubResource( 1 )
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="." groups=["sfx", "sound"]]
-
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 z_index = -1
 amount = 50

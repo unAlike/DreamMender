@@ -294,6 +294,7 @@ func _on_Area2D_body_entered(body):
 
 # When the player collects a button
 func _on_Collectable_get_button():
+	get_node("Sounds/Misc/ButtonCollect").play()
 	pickupCount += 1
 	pickupCountObject.text = str(pickupCount," / ",collectableCount)
 	

@@ -12,6 +12,7 @@ var At = 0
 var Moving = false
 var Cutscene = false
 
+
 onready var Box = get_node("Background")
 onready var Dialogue = get_node("Background/RichTextLabel")
 onready var Duration = get_node("Timer")
