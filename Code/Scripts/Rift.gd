@@ -28,10 +28,6 @@ func _process(delta):
 				riftActive = !riftActive
 				riftTimer.start()
 
-	# For testing purposes press "SPACE" to Interact()
-	if Input.is_action_just_pressed("swap"):
-		Interact()
-
 # Activates an inactive rift or resets the timer of an active one
 func Interact():
 	if riftUnstable:
