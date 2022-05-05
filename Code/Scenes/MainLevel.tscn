@@ -1917,7 +1917,7 @@ fromRotation = 90
 toRotation = 45
 
 [node name="InnerHex" parent="RedRifts/RedRift/Rift" index="0"]
-frame = 4
+frame = 3
 
 [node name="OpenRift" parent="RedRifts/RedRift" index="5"]
 bus = "Master"
@@ -2472,7 +2472,6 @@ script = ExtResource( 91 )
 
 [node name="NPC" parent="Tachi2" index="1"]
 position = Vector2( -76.8984, -38.3906 )
-frame = 6
 
 [node name="SceneCam" type="Camera2D" parent="Tachi2"]
 position = Vector2( -285.199, -182.36 )
@@ -2493,7 +2492,6 @@ position = Vector2( 0, 170 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 48 )
 animation = "Blue"
-frame = 7
 playing = true
 flip_h = true
 flip_v = true
@@ -2961,7 +2959,7 @@ riftActive = false
 toRotation = 90
 
 [node name="InnerHex" parent="Level2DoorRedRift/Rift" index="0"]
-frame = 4
+frame = 3
 
 [node name="OpenRift" parent="Level2DoorRedRift" index="5"]
 bus = "Master"
@@ -3002,7 +3000,7 @@ position = Vector2( 16927, -2178 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 65 )
 animation = "Yellow"
-frame = 5
+frame = 6
 playing = true
 flip_h = true
 script = ExtResource( 50 )
@@ -3015,7 +3013,7 @@ script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow2" index="1"]
 z_index = 4000
-frame = 1
+frame = 2
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow2"]
 position = Vector2( -143.225, -69.8406 )
@@ -3032,7 +3030,7 @@ position = Vector2( 31876, 4260 )
 script = ExtResource( 91 )
 
 [node name="NPC" parent="Shadows/Shadow3" index="1"]
-frame = 5
+frame = 6
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow3"]
 position = Vector2( 147.5, -63.41 )
@@ -3053,7 +3051,7 @@ position = Vector2( 0, 730 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 5
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -3077,6 +3075,7 @@ position = Vector2( 0, 140 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Yellow"
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3086,7 +3085,7 @@ position = Vector2( 50, 140 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Red"
-frame = 5
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -3096,7 +3095,7 @@ position = Vector2( 100, 140 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 116 )
 animation = "Blue"
-frame = 6
+frame = 7
 playing = true
 flip_h = true
 flip_v = true
@@ -3114,9 +3113,6 @@ drag_margin_bottom = 0.75
 [node name="Shadow6" parent="Shadows" instance=ExtResource( 13 )]
 position = Vector2( 25000, 4116 )
 script = ExtResource( 91 )
-
-[node name="NPC" parent="Shadows/Shadow6" index="1"]
-frame = 4
 
 [node name="SceneCam" type="Camera2D" parent="Shadows/Shadow6"]
 position = Vector2( 162, -25.0001 )
@@ -3137,7 +3133,7 @@ position = Vector2( 0, 697 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 3
+frame = 4
 playing = true
 flip_h = true
 flip_v = true
@@ -3161,7 +3157,6 @@ position = Vector2( 0, 140 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 91 )
 animation = "Blue"
-frame = 7
 playing = true
 flip_h = true
 flip_v = true

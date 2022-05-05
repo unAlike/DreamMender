@@ -48,6 +48,7 @@ func _process(delta):
 		if Input.is_action_just_pressed("ui_accept") and InRadius:
 			if !Interacting:
 				Interacting = true
+				Player.get_node("Sprite").animation = "idle"
 				Message()
 				At += 1
 			elif Interacting and At == Text.size():
